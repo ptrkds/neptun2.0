@@ -123,12 +123,14 @@
     <ClCompile Include="Neptun.cpp" />
     <ClCompile Include="UserInterface.cpp" />
     <ClCompile Include="UserJSONHandler.cpp" />
+    <ClCompile Include="UserXMLHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Neptun.h" />
     <ClInclude Include="UserInterface.h" />
     <ClInclude Include="UserJSONHandler.h" />
+    <ClInclude Include="UserXMLHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
