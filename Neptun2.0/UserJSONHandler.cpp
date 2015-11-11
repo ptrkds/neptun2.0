@@ -15,19 +15,14 @@ using namespace std;
 
 void UserJSONHandler::init()
 {
-	//Document document;
-
-	//FILE* fp = fopen("UserJson.json", "rb"); // non-Windows use "r"
-	//char readBuffer[65536];
-	//FileReadStream is(fp, readBuffer, sizeof(readBuffer));
-
-	//ifstream ifs("UserJson.json");
 	
+	//FILE* pFile = fopen("UserJson.json", "rb");   //deprecated
+	FILE* pFile;
+	fopen_s(&pFile, "UserJson.json", "rb");
 
-	FILE* pFile = fopen("UserJson.json", "rb");
-	
 	char buffer[65536];
 	FileReadStream is(pFile, buffer, sizeof(buffer));
+
 	Document document;
 	document.ParseStream<0, UTF8<>, FileReadStream>(is);
 	

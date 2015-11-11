@@ -14,9 +14,12 @@ Neptun::~Neptun()
 
 void Neptun::start()
 {
-	//debug purpose
+	//program entry point
+
+	
+	//teszteléshez kell, kommenteld ki ha kell
 	UserJSONHandler handler;
 	handler.init();
-
-	//program entry point
+	//^^
+	
 }

@@ -1,0 +1,1 @@
+Csak a forrásfájlokat addoljátok / committoljátok,  a fordított (debug mappák tartalma) fájlokat ne.
