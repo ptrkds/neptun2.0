@@ -1,0 +1,36 @@
+{
+	"testnode" : "testvalue",
+	"users" :
+	[
+		{
+			"neptunCode" : "UKDUJP",
+			"name" : "Weisz Kristof",
+			"type" : "Student",
+			"lectures" : 
+			[
+				"id", "id"
+			],
+			"password" : "asdasd"
+		},
+		{
+			"neptunCode" : "BATMAN",
+			"name" : "BAT MAN",
+			"type" : "God",
+			"lectures" : 
+			[
+				"id1", "id2"
+			],
+			"password" : "nemmondommeg"
+		},
+		{
+			"neptunCode" : "000000",
+			"name" : "Null Reference",
+			"type" : "N/A",
+			"lectures" : 
+			[
+				"id1", "id2", "id3"
+			],
+			"password" : ""
+		}
+	]
+}
