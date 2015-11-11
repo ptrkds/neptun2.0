@@ -118,12 +118,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Controller.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Neptun.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
     <ClCompile Include="UserJSONHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controller.h" />
     <ClInclude Include="Neptun.h" />
+    <ClInclude Include="UserInterface.h" />
     <ClInclude Include="UserJSONHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
