@@ -1,10 +1,12 @@
 #include <iostream>
+#include "Neptun.h"
 
 using namespace std;
 
 int main() {
 
+	Neptun program;
+	program.start();
 
-	//osztály példányosítás + .start()
 	return 0;
 }
