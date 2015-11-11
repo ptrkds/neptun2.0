@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="2f976b32-3a9c-4a89-922b-84a10f47bf2d" name="UMLClassDiagram1" linkedPackageId="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="4014549e-c30a-41d3-80c1-d94010e67d1d">
+      <profileInstance Id="64eec259-d43d-4ff0-9af6-9e4aeeaf3582" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="95bd4e1c-3570-4156-9b99-4c23dd06fde3">
+      <profileInstance Id="cf56bac5-e64f-4739-b7f2-ff27fbe7f6da" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7e971e0c-2970-4309-bea5-4a91f822fb9c" name="Neptun" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="22f3ce5e-4d20-4f41-9c33-9b4021c510cc" />
+        <targetEnds>
+          <association Id="8af3f1e4-cdb1-4670-8843-fbf5afccfcf2" isDerived="false" sourceEndRoleName="Neptun" targetEndRoleName="Felhasznalok" isLeaf="false" isAbstract="false">
+            <classMoniker Id="44ac1039-82e6-418b-9362-d8ba2adfd2c4" LastKnownName="Users" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="66a1178c-33f8-46f8-bae9-b926e889176f" name="Neptun" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1a410e89-89af-4fe4-b938-7daca5407b32" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="af79397a-a41e-4f73-8b2e-cb4cb6da7d8f" name="Felhasznalok" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="5548a487-0557-4526-bd54-678d6d3d8ccb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d351b225-16cc-4bdb-b944-09cf9ff5b8a3" />
+          </association>
+          <association Id="40973ed8-30bb-40e1-8fbb-43878fccd183" isDerived="false" sourceEndRoleName="Neptun" targetEndRoleName="Termek" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ddb224b1-df21-4add-930b-899fc7a6e60d" LastKnownName="ClassRooms" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="56c32e6b-0421-43f7-936f-fa5cb40ce41c" name="Neptun" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="69e7ce04-266e-4ef6-b70d-a3ad1940926b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a6dd87b1-a7f9-4973-9aef-109b6f7bc1a4" name="Termek" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="d5888a77-4ba5-4c77-9f7d-dc51ce81ac7a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="48d6e2b7-dcc3-479a-b9ac-da6dabd5760d" />
+          </association>
+          <association Id="07b5bbad-8d48-42b2-be52-26b8e848e6b2" isDerived="false" sourceEndRoleName="Neptun" targetEndRoleName="UserInterface" isLeaf="false" isAbstract="false">
+            <classMoniker Id="9ba04286-21a4-41d2-ac6a-9da576d3834d" LastKnownName="UserInterface" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="faad212d-94b9-4100-b8b3-f4de258d4ffb" name="Neptun" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e64080f0-0f83-4813-a41c-6f128c9ece44" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="652a5516-2d06-4c42-8ea2-1844baa58d40" name="UserInterface" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="3e767453-ae96-42b0-a683-794bc48c73fd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="361f7c11-07b6-4716-974c-c8219936ca8d" />
+          </association>
+          <association Id="2e99525d-0c04-4c09-a938-ae4b767e3636" isDerived="false" sourceEndRoleName="Neptun" targetEndRoleName="Request" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c7e2ae60-8f47-4e2a-8c7b-354878e477a2" LastKnownName="RequestFunctions" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="24693784-ca30-43d9-8db5-3bd5556d94ee" name="Neptun" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4ad941a0-8e67-45a9-a7a2-8aa44383163e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aa56e410-b038-42ac-a029-15dbca968e59" name="Request" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="3b3bf74e-8046-47a4-ac63-195b2f279358" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="de67ae9e-5122-4a50-8fe1-228cb24056aa" />
+          </association>
+          <association Id="6223e340-64f0-4ac1-a731-629183fcc28c" isDerived="false" sourceEndRoleName="Neptun" targetEndRoleName="Demands" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4f5e7388-8a93-43b0-8f5b-ac6780844951" LastKnownName="Demands" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="df732948-2706-450f-8810-24fb9c8a5948" name="Neptun" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="39c7a69e-8744-4ada-a444-338eece8ac3f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="65aae7b1-ec80-437d-854d-c5beab1d2234" name="Demands" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="8c4c702d-961c-4c8b-a6d0-2f777d336e2c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6ce6800d-f2ce-417e-bf3e-86de821cc46f" />
+          </association>
+          <association Id="03047ad3-9bc5-437a-9dc6-aa8c258f5c6a" isDerived="false" sourceEndRoleName="Neptun" targetEndRoleName="Requests" isLeaf="false" isAbstract="false">
+            <classMoniker Id="21323979-ebad-4019-a4f9-72254a6cb91e" LastKnownName="Requests" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b66aeb8d-5722-4092-b6f0-80ece2aca040" name="Neptun" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a02bb940-c40a-4766-81dc-e6093cca39c9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a1f3d55-8e9b-4152-9f23-472304f35c61" name="Requests" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="28609317-85c2-40cf-8752-45a016116e3a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6632bbc2-bb09-40e1-91a1-aefc78e1303e" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="5ebb94ba-0b77-47e6-af04-a2a47cd41f73" name="UI" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b6e27b20-3623-431a-bde3-066292f8b9f7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f5c1caa5-4dcc-4480-b41a-5d75a7be0be7" LastKnownName="UserInterface" />
+            </type_NamedElement>
+          </property>
+          <property Id="b3a1bad9-608c-4952-ae9b-75595c91bea5" name="classRooms" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b5ff4328-d5c4-4668-8e67-69baf2336041" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="1ef05683-82df-4edd-8381-dbd92578079f" LastKnownName="ClassRooms" />
+            </type_NamedElement>
+          </property>
+          <property Id="fd0fa077-ab4f-4f4f-934f-af8bb7ab1b85" name="users" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e99e16ec-4bd1-40ee-b73f-6bb61efc9c98" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="83f1b74b-00c7-4592-be24-cc0a68a33865" LastKnownName="Users" />
+            </type_NamedElement>
+          </property>
+          <property Id="2f0c2645-1b62-489a-a9d6-4115f4a89a34" name="requestFunctions" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="eb34d0b4-d96e-4296-895a-fcc7c14cc4ce" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2c00b4cf-2d91-47d4-8f66-b7c86d28bf63" LastKnownName="RequestFunctions" />
+            </type_NamedElement>
+          </property>
+          <property Id="86b5e282-0a0f-421b-b864-4139226e112c" name="requests" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b869968f-1a7a-4667-9c41-74b13316727c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9be4af41-4bf8-4ffc-b33e-b07eedece230" LastKnownName="Requests" />
+            </type_NamedElement>
+          </property>
+          <property Id="157f342a-460a-4c27-8928-8390c8ae7824" name="demands" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1ff57832-2ebd-45fa-9959-1dd397a332bb" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a4b0835d-4fba-4954-8e73-cb5ddf8619be" LastKnownName="Demands" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="7edd4789-d2bd-4cf7-af5c-cd320f705e03" name="start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="64582207-e072-45bf-a45d-2b27adef8edc" />
+          </operation>
+          <operation Id="67559f85-5604-462b-b0be-f127ac1e40dc" name="exit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3397a029-aec3-445d-8ec2-341ae24600a9" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ddb224b1-df21-4add-930b-899fc7a6e60d" name="ClassRooms" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="495c0efc-caf0-4023-be5d-985d17c89a3c" />
+        <targetEnds>
+          <association Id="a3034751-090f-4c9c-9724-c1648cfcd035" isDerived="false" sourceEndRoleName="Termek" targetEndRoleName="TeremXMLHandler" isLeaf="false" isAbstract="false">
+            <classMoniker Id="46f19536-ed48-4248-8686-bc1a24ed3f76" LastKnownName="ClassRoomXmlHandler" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fd380456-6d5b-4e4b-80a5-022f947f67ec" name="Termek" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4d853089-c577-48e4-b383-745bd2a80260" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d0fa732b-ed2c-427e-a699-090525e8adb0" name="TeremXMLHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="49acb5e1-5710-40c2-886d-32bdb941fd63" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5b1bf6b5-8509-4e83-834b-374352782510" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="1fb7fdaf-7b50-477c-b695-d9b9ab2f1ae1" name="Handler" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0d540390-ba22-4596-adc8-5cb5fef5b1ab" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f724c6f5-043a-455e-a6ef-c8fc2ba49f1e" LastKnownName="ClassRoomXmlHandler" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="46f19536-ed48-4248-8686-bc1a24ed3f76" name="ClassRoomXmlHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f37664d5-261b-48c5-a61b-c21520fdd9ed" />
+        <generalsInternal>
+          <generalization Id="cc523f6f-ce3b-48a5-8ecb-a95ba4d17c68" isSubstitutable="false">
+            <classMoniker Id="b32f427d-9a23-44f8-8021-69be5024aeb9" LastKnownName="XMLHandler" />
+            <elementDefinition Id="19c3e9f7-0dd6-475b-b45e-36c64404e439" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b32f427d-9a23-44f8-8021-69be5024aeb9" name="XMLHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5485bc6f-6ff7-464b-b727-3dc65d5fd60d" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="44ac1039-82e6-418b-9362-d8ba2adfd2c4" name="Users" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="90cbd197-6fe6-4c68-9270-ab4e0146bcd2" />
+        <targetEnds>
+          <association Id="7e368a73-38ca-406f-88af-0406e5abddfc" isDerived="false" sourceEndRoleName="Felhasznalok" targetEndRoleName="FelhasznaloXMLHandler" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d95fc4ed-9dfd-4931-9d81-68ef66e0372d" LastKnownName="UserXmlHandler" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="399eb824-4f95-4387-b1c4-65716a2d8004" name="Felhasznalok" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0cead63e-444e-4883-abec-bb046f6b1800" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d90b0930-7038-4f8f-b76b-3a08a93a69d8" name="FelhasznaloXMLHandler" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="12c198e8-acd1-4856-96b3-86fc37a169aa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a3dd278e-934f-4c98-b4d0-f4c725d02b27" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="3ac9497d-9488-42a4-aaea-c1027faf7071" name="Handler" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="eb9d4380-be84-487f-80e3-e7d6eba57353" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="4c40fbf7-8c32-4641-afc2-2a4adf6adc38" LastKnownName="UserXmlHandler" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d95fc4ed-9dfd-4931-9d81-68ef66e0372d" name="UserXmlHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e6c41fee-bd35-4aee-a467-cec6502989c3" />
+        <generalsInternal>
+          <generalization Id="2956cafd-4898-41f6-8500-7b7d4ef56848" isSubstitutable="false">
+            <classMoniker Id="b32f427d-9a23-44f8-8021-69be5024aeb9" LastKnownName="XMLHandler" />
+            <elementDefinition Id="9f343be9-9fdf-42fd-bca3-fd07c0b16e72" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9ba04286-21a4-41d2-ac6a-9da576d3834d" name="UserInterface" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="371cfe23-2289-4f03-98b9-19b27686dc23" />
+        <ownedOperationsInternal>
+          <operation Id="e2dd36fc-5054-4cd8-b590-d28d13ead7fa" name="login" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fe251f2a-e4ec-41c0-9a93-8078a9a357c9" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6484fa5d-cf5d-4432-ada5-5330b9fde635" name="AdminInterface" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="56e234bb-e4e7-44df-a485-d8fcab75f28b" />
+        <generalsInternal>
+          <generalization Id="63097eff-7fff-40aa-891a-1c0884939da8" isSubstitutable="false">
+            <classMoniker Id="9ba04286-21a4-41d2-ac6a-9da576d3834d" LastKnownName="UserInterface" />
+            <elementDefinition Id="61aa4f5b-4865-4e98-ac2c-a0794d1cf14d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c43688a4-427a-4b90-87a8-394dc4705ad4" name="StudentInterface" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="df4d7e3b-8dac-44d1-b88f-21a6503bf0d2" />
+        <generalsInternal>
+          <generalization Id="ff027dec-e157-46bb-a99e-d0818d2b1837" isSubstitutable="false">
+            <classMoniker Id="9ba04286-21a4-41d2-ac6a-9da576d3834d" LastKnownName="UserInterface" />
+            <elementDefinition Id="32598c73-624b-4ac2-a84c-d4feb9fd3d4d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d338768b-7869-42e5-8dcc-08c99417a139" name="TeacherInterface" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="42a9a435-0eba-4925-92c4-7157f96058e9" />
+        <generalsInternal>
+          <generalization Id="07db07be-afb9-43a9-83c2-db302f0833b5" isSubstitutable="false">
+            <classMoniker Id="9ba04286-21a4-41d2-ac6a-9da576d3834d" LastKnownName="UserInterface" />
+            <elementDefinition Id="b01fc833-e2b5-4654-945f-1f3d392d42ac" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="f63b7023-fffe-4578-a71a-3fa69504a8cb" name="start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9080a70c-6f25-4ae2-b5ab-f8f396ba4093" />
+          </operation>
+          <operation Id="dc60570a-d2ae-4dc0-a628-bbd106421623" name="mainMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f8c5ee67-9f5d-47ac-be22-c6352b8a611d" />
+          </operation>
+          <operation Id="e654e7d2-92ad-4c33-ad02-2429db285fe7" name="filter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9fb189ec-2dfb-4ab0-b14a-d1aeda1aa801" />
+          </operation>
+          <operation Id="b7253018-6e77-4bc5-94eb-6589952da46a" name="studentBlock" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="69472406-db65-4aca-9671-b53771285fb9" />
+          </operation>
+          <operation Id="f9e4428e-d1e9-4853-9b57-bcee9e2d34ab" name="demand" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="94e0d161-5c7e-4c07-bee0-c444001b3208" />
+          </operation>
+          <operation Id="c0fab858-2555-41ca-a7e7-280bedddac43" name="demandJudgement" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f555ca44-d22f-4cbd-939d-2c2ecbd93eb7" />
+          </operation>
+          <operation Id="391809e6-9da4-4d1d-a974-758374a09920" name="demandChange" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e2b50d18-9d0b-4ebd-be58-32d48149ae4e" />
+          </operation>
+          <operation Id="74129013-dd6a-4b3c-b527-54590b3e5f60" name="timeTable" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c09be120-1889-4662-9624-32ad728c916c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="f5c1caa5-4dcc-4480-b41a-5d75a7be0be7" name="UserInterface" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::UserInterface">
+        <elementDefinition Id="371cfe23-2289-4f03-98b9-19b27686dc23" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f724c6f5-043a-455e-a6ef-c8fc2ba49f1e" name="ClassRoomXmlHandler" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::ClassRoomXmlHandler">
+        <elementDefinition Id="f37664d5-261b-48c5-a61b-c21520fdd9ed" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4c40fbf7-8c32-4641-afc2-2a4adf6adc38" name="UserXmlHandler" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::UserXmlHandler">
+        <elementDefinition Id="e6c41fee-bd35-4aee-a467-cec6502989c3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="1ef05683-82df-4edd-8381-dbd92578079f" name="ClassRooms" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::ClassRooms">
+        <elementDefinition Id="495c0efc-caf0-4023-be5d-985d17c89a3c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="83f1b74b-00c7-4592-be24-cc0a68a33865" name="Users" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Users">
+        <elementDefinition Id="90cbd197-6fe6-4c68-9270-ab4e0146bcd2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c7e2ae60-8f47-4e2a-8c7b-354878e477a2" name="RequestFunctions" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="208f7f5f-92e7-4171-8793-b2160417d20b" />
+        <ownedOperationsInternal>
+          <operation Id="44667575-5a94-431b-943e-f7d161104f31" name="requestTimeTable" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3574c11f-e25c-40a1-bc4f-2ffe7a95a326" />
+          </operation>
+          <operation Id="d5da30d6-8eb9-47bf-b1d4-77236df79724" name="requestStudentBlock" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="db071863-ed15-4cf4-ad20-eca2b9867081" />
+          </operation>
+          <operation Id="05296690-3d97-42bf-b97a-9db316bdcd64" name="requestMaintenance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="10e2ef52-b3f9-40a7-a16f-8f404aa9dddd" />
+          </operation>
+          <operation Id="5158626f-99b2-49fb-b3f5-ad9eb99211bf" name="requestLogin" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8c08d2db-0965-4178-8f60-8ee24392a00c" />
+          </operation>
+          <operation Id="b97a16ea-a6aa-43b2-9b14-5a89d27a3d11" name="requestFilter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="48b2a2e3-61a1-41d5-9a4f-4e9e67ded260" />
+          </operation>
+          <operation Id="f0fea4d0-20b7-4935-a46a-53fdb79ee9eb" name="requestDemandJudgement" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d6c03b07-67a2-4a7c-8faf-de309661e41d" />
+          </operation>
+          <operation Id="ba3d2c5a-0385-4467-addd-bbd0f91a5719" name="requestDemandSubmission" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0015eddb-3d39-4067-b890-e8f1ea63dcf9" />
+          </operation>
+          <operation Id="154729b0-348d-4c8e-929e-157d362bf8b9" name="requestDemandChange" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a7272854-db77-47a4-99bb-51a8584a8fae" />
+          </operation>
+          <operation Id="55ea23c2-b418-4205-a1f2-9b7adf5f5888" name="requestRequestSubmission" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e0a1da39-6b3d-4649-963c-ef801773b426" />
+          </operation>
+          <operation Id="9941ec7a-f6d7-47a3-a35d-3919c2f97497" name="requestRequestJudgement" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fb18f027-d666-434c-8cdd-a6df64ff5fc2" />
+          </operation>
+          <operation Id="e0db8ab0-e4cf-4f6b-901f-f33e957d3b19" name="requestRegisterForSubject" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="53b7076f-a4e8-4a68-a463-0712bd9bd40f" />
+          </operation>
+          <operation Id="3ff02df3-2f2e-43a0-99ec-988d64e2c533" name="requestDeregisterSubject" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="40e68d8a-19ed-43d1-a36e-bede4b696fde" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4f5e7388-8a93-43b0-8f5b-ac6780844951" name="Demands" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="114d6238-c3c3-48f6-9baa-47b34a09f244" />
+        <targetEnds>
+          <association Id="fb6a59c0-1926-45e3-973e-bda56a88ad81" isDerived="false" sourceEndRoleName="Demands" targetEndRoleName="UserXmlHandler1" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d0e537d2-6ed1-4e1c-9105-4f27e801b0d2" LastKnownName="DemandXmlHandler" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7224df8c-2619-4e80-a852-2421c02dc339" name="Demands" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="779438b9-39d5-4b8c-a461-2c2f1be76ec5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1af8768f-6c89-4d70-8b67-b9a8cee00de9" name="UserXmlHandler1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="073d25cc-e831-45e4-8146-df879c7141ad" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bc7b4ceb-3171-4916-a34d-17ca3caf967c" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="b3cc9c0a-d53f-4850-9ada-f932dcae55b6" name="Handler" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6126b8ce-9d1d-44fb-a5f0-2ddcf12fc882" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="d23e8481-f04a-41d6-adc1-c270e6f125d3" LastKnownName="DemandXmlHandler" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="21323979-ebad-4019-a4f9-72254a6cb91e" name="Requests" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8998ea9c-8531-4529-9449-e7dd3092e2be" />
+        <targetEnds>
+          <association Id="c1dab631-99c1-4bc2-ab66-cdc283fba54c" isDerived="false" sourceEndRoleName="Requests" targetEndRoleName="UserXmlHandler2" isLeaf="false" isAbstract="false">
+            <classMoniker Id="579d198b-4d5c-4f5d-9944-f779f8e69eb7" LastKnownName="RequestXmlHandler" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c97900c1-2ad8-40b1-9aff-9b0b2765ebdc" name="Requests" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bfe03c98-1aa5-4483-9c5b-26440ad4c4a9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="05160acf-d456-4393-84c6-585c6606f6fa" name="UserXmlHandler2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="a77359e1-da7a-4353-ad40-ce1424fecc9a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="bf409153-0ff1-494b-9734-036e174ea472" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="28aafa9c-3353-4dd1-b4b1-dee9669feb3e" name="Handler" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fae4926c-6bd9-428e-9a0c-e45a0ff6036d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7c91a535-649f-44f4-8f6b-60380b50888e" LastKnownName="RequestXmlHandler" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d0e537d2-6ed1-4e1c-9105-4f27e801b0d2" name="DemandXmlHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c54b0674-f609-4c9a-abb6-3a0668aa3c72" />
+        <generalsInternal>
+          <generalization Id="8a405d9c-58e5-41d3-a7a0-0d824b5f27f9" isSubstitutable="false">
+            <classMoniker Id="b32f427d-9a23-44f8-8021-69be5024aeb9" LastKnownName="XMLHandler" />
+            <elementDefinition Id="70cf387b-350d-4472-893d-40ea7f4621b5" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="579d198b-4d5c-4f5d-9944-f779f8e69eb7" name="RequestXmlHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d98f79bd-2e38-469f-8e19-df120d47256d" />
+        <generalsInternal>
+          <generalization Id="abe2dd3f-b6ce-4860-b6d9-16f2edde9461" isSubstitutable="false">
+            <classMoniker Id="b32f427d-9a23-44f8-8021-69be5024aeb9" LastKnownName="XMLHandler" />
+            <elementDefinition Id="a7040806-389c-4f67-8392-bd19d6082e9b" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="7c91a535-649f-44f4-8f6b-60380b50888e" name="RequestXmlHandler" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::RequestXmlHandler">
+        <elementDefinition Id="d98f79bd-2e38-469f-8e19-df120d47256d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d23e8481-f04a-41d6-adc1-c270e6f125d3" name="DemandXmlHandler" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::DemandXmlHandler">
+        <elementDefinition Id="c54b0674-f609-4c9a-abb6-3a0668aa3c72" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="2c00b4cf-2d91-47d4-8f66-b7c86d28bf63" name="RequestFunctions" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::RequestFunctions">
+        <elementDefinition Id="208f7f5f-92e7-4171-8793-b2160417d20b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9be4af41-4bf8-4ffc-b33e-b07eedece230" name="Requests" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Requests">
+        <elementDefinition Id="8998ea9c-8531-4529-9449-e7dd3092e2be" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a4b0835d-4fba-4954-8e73-cb5ddf8619be" name="Demands" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Demands">
+        <elementDefinition Id="114d6238-c3c3-48f6-9baa-47b34a09f244" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" name="neptun_2.0_uml">
+    <elementDefinition Id="fd2f2ae6-892f-4eb1-aca4-596f48131679" />
+  </package>
+</logicalClassDesignerModel>

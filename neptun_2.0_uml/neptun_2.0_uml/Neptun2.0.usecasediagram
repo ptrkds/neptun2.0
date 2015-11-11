@@ -1,0 +1,594 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="822556f6-4eb1-404c-a7d8-739fc91c67e5" name="Neptun2.0" linkedPackageId="8b0e6b29-7799-4b60-b7f6-4804e1fde1b0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="4f544ad9-102a-4bfe-907b-727eb7d29324">
+      <elementDefinition Id="0015f979-cb5b-4d88-a999-4816b547e0c9" />
+      <body>Neptun2.0</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="034fb573-914f-40c8-a28c-daae4e32c071" name="Tanár" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f5a23cb7-52a7-484a-9602-a2be1375c1d7" />
+        <generalsInternal>
+          <generalization Id="6cce7654-b61c-41e0-a352-82e7ec3b1d13" isSubstitutable="false">
+            <actorMoniker Id="82bdbc16-d618-45e3-8ba4-70be74b171f6" LastKnownName="Felhasználó" />
+            <elementDefinition Id="829f2a66-ebd5-4336-aab6-03be89efa25f" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="f836ff0d-e030-46fc-a956-2c572f6285fc" isDerived="false" sourceEndRoleName="Tanár" targetEndRoleName="szűrés" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2bba639a-1ddc-4ff9-8a2d-31a0b4e37459" LastKnownName="szűrés" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2d277d98-162c-4e08-85b9-1e3291a31058" name="Tanár" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="12d54ca9-b41b-4eda-a416-51d5d09f0783" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1e4b6b2e-2055-4b7f-902b-671557eec4a0" name="szűrés" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="38740426-bbaf-4a9f-b8fe-cc265554c9cf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2170a12a-40ba-4218-9cac-f11798ddca29" />
+          </association>
+          <association Id="472d180e-b66f-4067-ac7e-e413c218c77f" isDerived="false" sourceEndRoleName="Tanár" targetEndRoleName="tanuló letiltása" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d51f7577-0d0f-478e-b41f-728e2e7cfc92" LastKnownName="tanuló letiltása" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="52b0794d-220b-47ae-a865-333829a27102" name="Tanár" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2ff45f1b-9fbe-4249-935c-1f2311fc9cc8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="58b4bfe6-787d-433b-bab8-b0213ad2964d" name="tanuló letiltása" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="01ffd99a-ff50-4afb-a449-43b5451a0bb6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="49d807ec-d122-4fd9-8121-3fb3d10a8577" />
+          </association>
+          <association Id="5920959c-ebe3-43dc-bccd-ff13dd111dba" isDerived="false" sourceEndRoleName="Tanár" targetEndRoleName="igény felvitel" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="21e34c48-8ae1-40c0-a2d2-ccaab08ca5cf" LastKnownName="igény felvitel" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dfac4992-8db2-4891-bfb6-3938e933374f" name="Tanár" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7135292b-bb1f-41f1-a344-ab7bbd1f3f2b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e68b21d9-a312-46c4-ac72-5d5efb4600b7" name="igény felvitel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fdc731e8-a808-4937-834e-fc79d94852eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5d7dda55-80f4-4b9a-acf0-62817a84ef71" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="cea4c1fc-4cea-4cae-a822-1175adafa21d" name="Rendszergazda" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9e7120bb-4c5b-4819-9f99-9ae88afd67b4" />
+        <generalsInternal>
+          <generalization Id="cefd51a0-9a1e-4b05-af58-efafc40e733f" isSubstitutable="false">
+            <actorMoniker Id="82bdbc16-d618-45e3-8ba4-70be74b171f6" LastKnownName="Felhasználó" />
+            <elementDefinition Id="d4fabee5-3d86-490f-9da5-197b41aff1f0" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="585f53e1-7afb-4d6b-81e0-13d587ec4270" isDerived="false" sourceEndRoleName="Rendszergazda" targetEndRoleName="karbantartás" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="2a647772-72e7-4a4d-9195-558578e4ba14" LastKnownName="karbantartás" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fc2a3146-e410-4743-9cfc-ba4a9a82b51e" name="Rendszergazda" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3ab26e00-b5f1-4840-bc65-122525ead66a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="16588eeb-dfaa-48ee-b6dc-3c2c430426b9" name="karbantartás" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c0c1a866-83f0-42f3-8a44-5fadc778d6a8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fe651416-c6be-4a37-9fdf-ca5abb265938" />
+          </association>
+          <association Id="efedc712-1115-453e-9710-2a907aec0639" isDerived="false" sourceEndRoleName="Rendszergazda" targetEndRoleName="igény rögzítés" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6b97d486-a5e5-4254-bdb9-a670c67ea306" LastKnownName="igény elbírálása" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d722aacd-cd27-443c-9449-91c08ba96d9d" name="Rendszergazda" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="61458479-9c41-4d35-82f7-f12ff50bdfd0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="69e1c579-68b5-43bf-b522-9a3f46178372" name="igény rögzítés" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c3dc69de-3848-42b4-aa32-5800a5eeee2d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0d40e2f5-37b0-47fb-b118-9f8a0432d3d3" />
+          </association>
+          <association Id="464da75f-2152-484b-805e-a5f2457432b5" isDerived="false" sourceEndRoleName="Rendszergazda" targetEndRoleName="kérvény elbírálás" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="445c17cb-5457-49e5-bf8a-c15e444e3a97" LastKnownName="kérvény elbírálás" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="160b62f2-89da-43d4-b52c-32dae25b8ab9" name="Rendszergazda" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5d203080-0779-4125-ab0f-a5163f679e1f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="055edff7-fcca-4780-b592-e3d160960cb0" name="kérvény elbírálás" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="266dea82-c6b0-41ab-9d16-b66302cdc84a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c74b4159-21af-4f9f-9e74-aaf2732a904b" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="06ed5d6c-50fd-4662-ad95-2ceb803e9d15" name="Diák" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="79b9f749-198c-4ce2-a6f8-5bc094e94b69" />
+        <generalsInternal>
+          <generalization Id="8c27b352-b558-4de0-9bf6-9fa349a4b992" isSubstitutable="false">
+            <actorMoniker Id="82bdbc16-d618-45e3-8ba4-70be74b171f6" LastKnownName="Felhasználó" />
+            <elementDefinition Id="4b2a1cc7-4c2e-44d6-9c21-e9b49237644d" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="f1891e1c-e57d-41e9-a9b1-211fa9e97c51" isDerived="false" sourceEndRoleName="Diák" targetEndRoleName="kérvény leadás" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6cae8357-7332-49ad-838d-0dddd8b3588c" LastKnownName="kérvény leadás" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3e3edb38-6b65-402c-8c21-7428b0fa51a4" name="Diák" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5253a46c-8f28-4680-a597-866ac65b5314" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e727746c-42c3-4cf9-a7c1-10c203b8aebd" name="kérvény leadás" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5313267a-a3af-44bd-af53-455cbcc91eb7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ad7a3cae-28d2-4b67-8815-d24a9cd4347b" />
+          </association>
+          <association Id="0fa0c771-f640-4473-b3e3-83079e707e1a" isDerived="false" sourceEndRoleName="Diák" targetEndRoleName="tárgy felvétel" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="fc07b780-9be6-40a3-86cb-c50e7d3ff0f4" LastKnownName="tárgy felvétel" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8e112471-df92-4e81-b5b1-09d95d98bad5" name="Diák" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3e296303-8a1d-4bbf-b7d3-a0c637153c9e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="46e062d8-718f-4531-8108-3f0949a63bf8" name="tárgy felvétel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="27576aa6-d50f-4ca4-990b-32cccc20cbc6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="3c7a714d-3875-496d-bbbe-afbf06241ee1" />
+          </association>
+          <association Id="70872955-9ff7-46ef-8f89-1850ef235b1a" isDerived="false" sourceEndRoleName="Diák" targetEndRoleName="órarend lekérés" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5fb38827-4c93-4bf1-b4a4-1b3529558410" LastKnownName="órarend lekérés" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5625fa6f-ac95-4394-806d-7850868c43d9" name="Diák" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fa3fb997-e003-49fa-91dc-780123af78f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8e3b0654-51cc-44cd-840e-721f21ac1f5b" name="órarend lekérés" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1b5bd07d-cc6b-48b6-9147-f061d571c357" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="63c46314-72f5-4118-9d37-785b0af39eb4" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2bba639a-1ddc-4ff9-8a2d-31a0b4e37459" name="szűrés" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3f7b3c8e-763c-4704-b17b-136cc9eac62c" />
+        <targetEnds>
+          <association Id="bf80fe38-9fd7-4774-9443-00b3dc633578" isDerived="false" sourceEndRoleName="szűrés" targetEndRoleName="1. Szures.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="37573f89-4f8d-4f67-89fc-130270a18356" LastKnownName="1. Szures.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b51414ef-a1a9-4568-9b39-45b2aadea57d" name="szűrés" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="126c5c85-ea02-43a8-9494-edcf9e9f8585" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a96dcf7f-5aef-4d33-b36e-9a9674b46184" name="1. Szures.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d51e2fdf-ee9b-4f81-88d0-d5a5b6e0b7e1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e838fe89-ba06-4f75-9125-de0b7a639c40" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d51f7577-0d0f-478e-b41f-728e2e7cfc92" name="tanuló letiltása" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f2069d5c-c5a1-4456-b4a3-fa441ba8fd10" />
+        <targetEnds>
+          <association Id="307ce19f-14e2-4a7b-9303-ceadd400f5c2" isDerived="false" sourceEndRoleName="tanuló letiltása" targetEndRoleName="2. Tanulo letiltasa.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="78c80ae8-7732-4a4c-9393-7524e9c36270" LastKnownName="2. Tanulo letiltasa.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="30421fe9-4c4b-44b6-8264-27394bfaf140" name="tanuló letiltása" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="87f8db55-519e-470e-af8a-902f9dad8211" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="81795cd6-a54d-4c04-a13a-901dc7b40a37" name="2. Tanulo letiltasa.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c3cb6b0b-cf9d-4930-817b-f20b794908b0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="995a7eee-b001-4f2e-ad44-9672dcbd63d0" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5527d97c-1d0e-47c0-afc8-800c02b572f2" name="tárgy leadás" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a904a645-522a-407d-8922-e486f482900e" />
+        <targetEnds>
+          <association Id="5f0f5eb1-0e41-4e71-8901-bfb5f2179603" isDerived="false" sourceEndRoleName="tárgy leadás" targetEndRoleName="11. Targyleadas.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="9387572d-69cd-4447-961a-b9e5e07420f8" LastKnownName="11. Targyleadas.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5e2532c4-868b-4836-bdd0-b254024f42e9" name="tárgy leadás" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="659012b8-14c5-4c3a-847b-1ae606afe3f0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b8d91e67-9bfb-4d9b-9316-6962a8d270d7" name="11. Targyleadas.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0f44bbb9-dc0f-48b9-b20f-3ba95b73ca8e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="76ff3db2-c5a5-4f12-ad82-46f896d43a9b" />
+          </association>
+        </targetEnds>
+        <extendedCases>
+          <extend Id="678ed189-e11a-431d-a7db-e3bcfb0f01de">
+            <useCaseMoniker Id="fc07b780-9be6-40a3-86cb-c50e7d3ff0f4" LastKnownName="tárgy felvétel" />
+            <elementDefinition Id="446235b0-a0cb-4f64-8252-1049d252c230" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="fc07b780-9be6-40a3-86cb-c50e7d3ff0f4" name="tárgy felvétel" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="689bdcc3-590b-462d-83c8-adc98ec9a073" />
+        <targetEnds>
+          <association Id="bb7526cf-9a1f-49e7-b0ec-38f03a0fd1ad" isDerived="false" sourceEndRoleName="tárgy felvétel" targetEndRoleName="10. Targyfelvetel.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="fa6311c2-99e9-4a59-b943-f23e411bc79f" LastKnownName="10. Targyfelvetel.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c6c11fc8-4674-4cbb-99d5-7d68835a54eb" name="tárgy felvétel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a7f9f4f7-785e-41e3-95fa-4948f6a5add2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9a1e04f4-499d-4a9c-b21b-6502b65dadfe" name="10. Targyfelvetel.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="631462a9-6be1-4479-a6df-fc3b3fb18734" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ca382668-da6d-47a1-8ab1-d2ad2bc757ed" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6cae8357-7332-49ad-838d-0dddd8b3588c" name="kérvény leadás" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="09e0d716-428e-4029-8aa4-42f52550b581" />
+        <targetEnds>
+          <association Id="3caa0818-ccb8-4685-b9fe-c22c08457d03" isDerived="false" sourceEndRoleName="kérvény leadás" targetEndRoleName="9. Kervenyleadas.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="d990548c-0152-44d7-80a2-804fddd3a887" LastKnownName="9. Kervenyleadas.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1393751f-3086-4c36-a4b0-760d18fc8187" name="kérvény leadás" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2d0b16e1-905d-4627-bf03-247f606d40c6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5199cfc1-2987-447a-bd3a-8590865b99d7" name="9. Kervenyleadas.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4b00ceec-f387-4ab9-9905-6cf83caf7d64" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="42486fd1-82af-4376-a045-f310b9d4e4b4" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="f51e7bdc-c26d-4b9b-ad1c-3f145d2c1ee3">
+            <useCaseMoniker Id="445c17cb-5457-49e5-bf8a-c15e444e3a97" LastKnownName="kérvény elbírálás" />
+            <elementDefinition Id="b6e39185-77ff-4aee-bd67-b3e639553626" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="445c17cb-5457-49e5-bf8a-c15e444e3a97" name="kérvény elbírálás" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="087433d8-4930-497d-ab9c-2e8292bb2147" />
+        <targetEnds>
+          <association Id="4e59e544-c8d1-4f10-9ef8-a2b886b0b970" isDerived="false" sourceEndRoleName="kérvény elbírálás" targetEndRoleName="7. Kerveny elbiralas.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="0059c285-93df-454c-ab96-8dadec8f948f" LastKnownName="7. Kerveny elbiralas.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="525596b9-2d58-4d86-852b-08b8ded78b5c" name="kérvény elbírálás" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c307747c-c5ba-4704-aacb-37a953d4ea54" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="70da2d22-8149-4c1c-88cb-1762b711d58d" name="7. Kerveny elbiralas.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3deb25be-726f-476f-8059-4c1cc22448a2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ddb0683c-ab13-4f7d-a612-c57973e281a5" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="2a647772-72e7-4a4d-9195-558578e4ba14" name="karbantartás" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d714d467-7440-4fcc-b192-5763e62f9cc9" />
+        <targetEnds>
+          <association Id="ec2bac97-ae2e-4573-bfac-1f21a512a33d" isDerived="false" sourceEndRoleName="karbantartás" targetEndRoleName="6. Karbantartas.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="6200e3a1-7a5a-414d-af48-a4d88b5d3798" LastKnownName="6. Karbantartas.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e5d3c49d-bd2f-4ae1-a4f4-8ab364fd76f9" name="karbantartás" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e1e38250-87ca-4a67-ac5c-3ded16ca4e10" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="80095151-fc57-4c03-b579-30c380a2a786" name="6. Karbantartas.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="677d47bf-eab3-4ed8-821b-630a5aac69e7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="36f43cb0-afdd-41a4-8363-fe37d8aa5ede" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5fb38827-4c93-4bf1-b4a4-1b3529558410" name="órarend lekérés" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ce37d182-e617-411d-8882-0223e285c42d" />
+        <targetEnds>
+          <association Id="06d38ee9-532f-43e0-889f-e36b5d2ca360" isDerived="false" sourceEndRoleName="órarend lekérés" targetEndRoleName="8. Orarend.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="5eeab7da-59a5-4ce5-b866-59e4931e5d51" LastKnownName="8. Orarend.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eddb8201-22c7-4e2f-9929-7ef9a3683f42" name="órarend lekérés" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3204c3be-1ba0-4268-8803-d7d8f733c90e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="86713297-299f-416f-9960-8659f8e0486c" name="8. Orarend.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="290cf53f-a0a9-4525-a45f-6cb73146f861" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="77aee0f4-bbfc-48b7-a231-9802ad7f0339" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="21e34c48-8ae1-40c0-a2d2-ccaab08ca5cf" name="igény felvitel" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="118204ad-8bd3-459e-95c0-3f69227c1d4a" />
+        <targetEnds>
+          <association Id="d3882a47-6193-4ef7-8fa3-1eb10f4566e6" isDerived="false" sourceEndRoleName="igény felvitel" targetEndRoleName="3. Igeny felvitele.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="845871df-882c-4856-bd53-5fd7337bad64" LastKnownName="3. Igeny felvitele.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4cee140e-f710-42b6-9d0d-be50f5dac43b" name="igény felvitel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bdac999f-ea6f-4851-b085-fabff95a0972" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4a36f8c3-1579-4a08-ad07-59a1d3b7261e" name="3. Igeny felvitele.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d15216a6-0a9f-4260-9a61-a9c2a9149ce7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="fd232719-71b9-4c7f-b3ec-c8e58707ad4f" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="12b29304-cb25-4a25-956d-507a9af4bcab">
+            <useCaseMoniker Id="6b97d486-a5e5-4254-bdb9-a670c67ea306" LastKnownName="igény elbírálása" />
+            <elementDefinition Id="95bb045a-33c7-4bf8-8fe6-978c8e92d352" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6b97d486-a5e5-4254-bdb9-a670c67ea306" name="igény elbírálása" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7981c109-690f-4fb8-9dc6-758b3731e5ac" />
+        <targetEnds>
+          <association Id="48a36a5e-ff33-446f-827d-a1beeafb0df5" isDerived="false" sourceEndRoleName="igény elbírálása" targetEndRoleName="5. Igeny elbiralas.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="314769f8-9647-4732-8d67-6b263333d811" LastKnownName="5. Igeny elbiralas.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2ea1cdb8-7b74-4556-ad8a-5c7e60d2e1eb" name="igény elbírálása" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="73e670d6-8928-4f18-9635-932d8b816dac" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c256bad4-795f-4432-8387-671d262bb999" name="5. Igeny elbiralas.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="04cd943d-c6cd-4222-a549-1a767c6a5896" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="83e9d22a-62c6-48dd-90d5-8a92682dbcd7" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b9a61256-6c94-469e-b9b5-70de1308b0d7" name="igény módosítás" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="efeb2c8b-2cdc-4218-b275-c0c3027882c7" />
+        <targetEnds>
+          <association Id="98d32e2f-b57e-4dbb-82c1-e28991d7268f" isDerived="false" sourceEndRoleName="igény módosítás" targetEndRoleName="4. Igeny modositas.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="eb660743-d8c9-4ee0-a2d0-0fa29293f3d8" LastKnownName="4. Igeny modositas.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b36fe3a6-4a49-45a9-b2b1-b0c2d0838cc6" name="igény módosítás" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5fbdf28f-c950-4438-814c-bec375d240b7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b4e27d59-310a-4ffa-92f6-0fd4514f68cb" name="4. Igeny modositas.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c32acdef-d6b6-4eae-b7b1-23846e7a81e8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="19ec01be-f329-4349-b674-5eed56dbe97b" />
+          </association>
+        </targetEnds>
+        <extendedCases>
+          <extend Id="2d6cef7b-1528-44da-913b-23892c8a5cdc">
+            <useCaseMoniker Id="21e34c48-8ae1-40c0-a2d2-ccaab08ca5cf" LastKnownName="igény felvitel" />
+            <elementDefinition Id="455de1d1-c0ab-4ecb-9173-92e5a2adda39" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5c3d5cee-af13-412a-8085-302a2ca946bf" name="bejelentkezés" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fe685ea9-f86f-40dc-a392-78b5e3e04c0b" />
+        <targetEnds>
+          <association Id="c7ed33fa-9dbd-4f3b-9b93-6b3d77973813" isDerived="false" sourceEndRoleName="bejelentkezés" targetEndRoleName="12. Bejelentkezes.docx" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="744a08a8-1b02-4092-8ae6-e6279117471d" LastKnownName="12. Bejelentkezes.docx" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="099ac95a-1b2b-457e-a7b6-88542bdb00c3" name="bejelentkezés" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ed1eda84-8f22-426a-8bbc-9b9c221de2be" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="10bb1854-18d0-4be0-bb1a-ae7667468d7c" name="12. Bejelentkezes.docx" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="157539c1-bd51-4535-824e-d36851f5f154" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="accbbb27-d2f8-4953-9d26-f3b6f288d5b6" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="37573f89-4f8d-4f67-89fc-130270a18356" name="1. Szures.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\1. Szures.docx">
+        <elementDefinition Id="d82aced8-1669-4eb7-b3d3-4132f6924659" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="78c80ae8-7732-4a4c-9393-7524e9c36270" name="2. Tanulo letiltasa.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\2. Tanulo letiltasa.docx">
+        <elementDefinition Id="fb6118a4-577f-4a7b-b61c-1225e9d5790c" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="845871df-882c-4856-bd53-5fd7337bad64" name="3. Igeny felvitele.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\3. Igeny felvitele.docx">
+        <elementDefinition Id="c0e8d93b-4490-4175-b65c-1332768f6b75" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="eb660743-d8c9-4ee0-a2d0-0fa29293f3d8" name="4. Igeny modositas.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\4. Igeny modositas.docx">
+        <elementDefinition Id="6eabdcd2-1425-4ab1-9430-cfe4d8b3987a" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="314769f8-9647-4732-8d67-6b263333d811" name="5. Igeny elbiralas.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\5. Igeny elbiralas.docx">
+        <elementDefinition Id="e4385264-c29d-4c15-aa0c-e0df8e32e95c" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="6200e3a1-7a5a-414d-af48-a4d88b5d3798" name="6. Karbantartas.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\6. Karbantartas.docx">
+        <elementDefinition Id="d19cd1bd-d4ae-4b2c-86e8-ec8df3c1feab" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="0059c285-93df-454c-ab96-8dadec8f948f" name="7. Kerveny elbiralas.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\7. Kerveny elbiralas.docx">
+        <elementDefinition Id="79a9ed33-a749-4756-a3c3-41055d055dc2" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="5eeab7da-59a5-4ce5-b866-59e4931e5d51" name="8. Orarend.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\8. Orarend.docx">
+        <elementDefinition Id="c0ed7317-970d-42c1-b7c8-de20f2a6c10e" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="d990548c-0152-44d7-80a2-804fddd3a887" name="9. Kervenyleadas.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\9. Kervenyleadas.docx">
+        <elementDefinition Id="184db7a2-0319-4a2d-9d60-c23700fcaa4c" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="fa6311c2-99e9-4a59-b943-f23e411bc79f" name="10. Targyfelvetel.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\10. Targyfelvetel.docx">
+        <elementDefinition Id="3ff0efc9-cfaf-446d-b71d-394e9e338942" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="9387572d-69cd-4447-961a-b9e5e07420f8" name="11. Targyleadas.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\11. Targyleadas.docx">
+        <elementDefinition Id="e2026616-2991-46b9-828f-997b048e5823" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="744a08a8-1b02-4092-8ae6-e6279117471d" name="12. Bejelentkezes.docx" isAbstract="false" isLeaf="false" fileName="neptun_2.0_uml\12. Bejelentkezes.docx">
+        <elementDefinition Id="7cd0d844-22fc-4c3e-a728-187fea631376" />
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="82bdbc16-d618-45e3-8ba4-70be74b171f6" name="Felhasználó" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="80820b3f-5640-4a4f-be5e-5c96e05f2bdf" />
+        <targetEnds>
+          <association Id="f01598ba-7cfa-4340-995e-f43213b13969" isDerived="false" sourceEndRoleName="Felhasználó" targetEndRoleName="bejelentkezés" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5c3d5cee-af13-412a-8085-302a2ca946bf" LastKnownName="bejelentkezés" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7fbdac12-be31-48e6-bf40-a8b7d91f37a1" name="Felhasználó" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="50fe778d-d2bd-4599-a20a-681fe180fd70" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="fe94f5c3-aa75-47a8-9fab-b6e24b83728a" name="bejelentkezés" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a7f71004-35dd-4400-8a7a-14477fa46e26" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="58c52a7e-c9e8-4604-ac2c-03d43eb49f31" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="8b0e6b29-7799-4b60-b7f6-4804e1fde1b0" name="neptun_2.0_uml">
+    <elementDefinition Id="fd2f2ae6-892f-4eb1-aca4-596f48131679" />
+    <profileInstances>
+      <packageHasProfileInstances Id="9cd3061e-b054-44a8-9653-65455d13a8ff">
+        <profileInstance Id="650aceb5-77e8-4dca-8829-16055a1b9b32" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4f298408-9357-4ab6-a1a1-f81b37eb4993">
+        <profileInstance Id="e4350c94-4e4e-4add-99f1-39c9db5af56b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</useCaseModelRoot>

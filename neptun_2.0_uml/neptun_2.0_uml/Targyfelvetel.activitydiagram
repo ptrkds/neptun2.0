@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bdf31bc1-04be-40ef-97de-f298be5c972b" name="Targyfelvetel" linkedPackageId="7a78a6ba-4e26-4dbd-853b-096750a8ad4b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="147ed789-78df-4125-a161-756e9a8e766a" name="Targyfelvetel" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="eaf09670-6b73-4fb8-9790-a40756e494f4" />
+        <nodes>
+          <initialNode Id="d99ba1b4-fdc0-4497-9c06-3cd6a67326bf" name="Initial1" isLeaf="false">
+            <elementDefinition Id="d1449231-7338-4ec3-bf57-bd1539f09173" />
+            <flowNodeTargets>
+              <controlFlow Id="5a8b13fc-5238-4f7a-a4a7-bd8555c1e1a3" isLeaf="false">
+                <mergeNodeMoniker Id="732c64b1-24ef-49ea-9cf5-cc60ccb1f49a" LastKnownName="Merge1" />
+                <elementDefinition Id="1009731f-fd52-4d02-946b-c3f50d162c32" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="5f9fb845-3f89-4f18-9ff7-e15bffef6f71" name="Bejelentkezés" isLeaf="false">
+            <elementDefinition Id="0298d218-9b65-4d5e-8adb-5e9a4c16f93d" />
+            <flowNodeTargets>
+              <controlFlow Id="9e009f29-2b78-4103-a6a4-b0f7357cda98" isLeaf="false">
+                <decisionNodeMoniker Id="bbe437ac-b078-45ea-858a-17c6e5a4d599" LastKnownName="Decision2" />
+                <elementDefinition Id="fe48f2d4-8cae-411b-8171-6eedce56cdd7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="bbe437ac-b078-45ea-858a-17c6e5a4d599" name="Decision2" isLeaf="false">
+            <elementDefinition Id="f7c186e6-6a35-42a8-b075-97efd01f4281" />
+            <flowNodeTargets>
+              <controlFlow Id="aa75b66c-8c9b-4b70-a014-11079686af36" guard="hibás adatok" isLeaf="false">
+                <mergeNodeMoniker Id="732c64b1-24ef-49ea-9cf5-cc60ccb1f49a" LastKnownName="Merge1" />
+                <elementDefinition Id="d852578c-20ad-4715-902b-c5cdb3cabe0a" />
+              </controlFlow>
+              <controlFlow Id="1bdf1df3-2c8f-435f-bdcb-e9ea47c6ac8d" guard="megfelelő adatok" isLeaf="false">
+                <opaqueActionMoniker Id="646ac610-1994-4118-bd01-db95d5c0a44d" LastKnownName="Tárgyfelvétel menüpont kiválasztása" />
+                <elementDefinition Id="31e5d0f7-b22b-4682-a782-30f0eb8b37a2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode Id="732c64b1-24ef-49ea-9cf5-cc60ccb1f49a" name="Merge1" isLeaf="false">
+            <elementDefinition Id="c430e291-53e0-44be-b624-f16b3abbbd87" />
+            <flowNodeTargets>
+              <controlFlow Id="2a972610-05ca-4e33-b2e1-12716c9dabcf" isLeaf="false">
+                <opaqueActionMoniker Id="5f9fb845-3f89-4f18-9ff7-e15bffef6f71" LastKnownName="Bejelentkezés" />
+                <elementDefinition Id="988e6cd7-0480-45b5-9e8d-3c95d1f1890d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="646ac610-1994-4118-bd01-db95d5c0a44d" name="Tárgyfelvétel menüpont kiválasztása" isLeaf="false">
+            <elementDefinition Id="88ad5ace-62c7-4dbe-8100-3860dfa85dc1" />
+            <flowNodeTargets>
+              <controlFlow Id="eac01911-9da3-4131-b6a9-4b3506e710fe" isLeaf="false">
+                <mergeNodeMoniker Id="9d9c39c4-9da1-4006-8ad1-fce8b18e0a09" LastKnownName="Merge2" />
+                <elementDefinition Id="138fd3bd-296e-4424-9119-90dc11c675d1" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="87097cf1-edcf-4ac7-a382-128dab1bb1a7" name="Tárgy kiválasztása" isLeaf="false">
+            <elementDefinition Id="89db401d-ff4b-402f-9a65-cceaae896a42" />
+            <flowNodeTargets>
+              <controlFlow Id="715fb997-b781-4342-ab50-d7bdbc850426" isLeaf="false">
+                <opaqueActionMoniker Id="166a5c75-c7ac-4fff-9efd-93a4adf65903" LastKnownName="Létszámlimit ellenőrzése" />
+                <elementDefinition Id="940e4785-c5fb-45ff-89de-da8d1c5505f0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="13cd9438-3140-43e1-b1da-c2c401e98a54" name="Decision1" isLeaf="false">
+            <elementDefinition Id="fa7c02d4-a9d1-417f-9071-33e185fefc02" />
+            <flowNodeTargets>
+              <controlFlow Id="f2e721e9-a6e6-415c-8902-e8cd8825c889" guard="betelt létszám" isLeaf="false">
+                <mergeNodeMoniker Id="9d9c39c4-9da1-4006-8ad1-fce8b18e0a09" LastKnownName="Merge2" />
+                <elementDefinition Id="5629ff18-9d28-4fa7-859b-108749de09bb" />
+              </controlFlow>
+              <controlFlow Id="5b0af81f-83cc-449a-b52c-3c919a8c515a" guard="van szabad hely" isLeaf="false">
+                <opaqueActionMoniker Id="4173bca7-4dc8-4848-ba8a-76e47620566e" LastKnownName="Tiltólista ellenőrzése" />
+                <elementDefinition Id="b58a5991-6865-4603-b9c0-0777b1f77134" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode Id="9d9c39c4-9da1-4006-8ad1-fce8b18e0a09" name="Merge2" isLeaf="false">
+            <elementDefinition Id="c5f11b07-4059-430f-b48d-d250b1c9590d" />
+            <flowNodeTargets>
+              <controlFlow Id="3d3d3e6d-1c18-47ff-a764-5ebf4ad48fc1" isLeaf="false">
+                <opaqueActionMoniker Id="87097cf1-edcf-4ac7-a382-128dab1bb1a7" LastKnownName="Tárgy kiválasztása" />
+                <elementDefinition Id="bffbf8b0-69be-4a3e-a549-7bb5689f185e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <activityFinalNode Id="6ab8d989-dfef-4191-b44f-17a986ad0577" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="7ae2d35a-7a27-4c20-8032-4005f624bd55" />
+          </activityFinalNode>
+          <decisionNode Id="4bc71089-f7fe-47d0-b83f-57eee1881f15" name="Decision3" isLeaf="false">
+            <elementDefinition Id="5c5e7c38-5ba4-4f82-a826-5e7fccea6624" />
+            <flowNodeTargets>
+              <controlFlow Id="c6af76b6-8aa6-4621-80bf-c40286034a1f" guard="a tanuló szerepel a tiltólistán" isLeaf="false">
+                <mergeNodeMoniker Id="9d9c39c4-9da1-4006-8ad1-fce8b18e0a09" LastKnownName="Merge2" />
+                <elementDefinition Id="a471a12a-0434-427c-9f0c-1e109ba268d0" />
+              </controlFlow>
+              <controlFlow Id="15cac1cd-e2ab-4d92-a870-d4e334845563" guard="nem szerepel a tiltólistán" isLeaf="false">
+                <opaqueActionMoniker Id="10d124a9-be76-4865-981d-f8ae3ea65653" LastKnownName="Sikeres tárgyfelvétel" />
+                <elementDefinition Id="5ff9935d-a476-474a-b36c-60fe02451296" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="10d124a9-be76-4865-981d-f8ae3ea65653" name="Sikeres tárgyfelvétel" isLeaf="false">
+            <elementDefinition Id="29d24267-b176-439c-b149-ccdb05cfb1ee" />
+            <flowNodeTargets>
+              <controlFlow Id="62095d5b-ceef-4fa8-88a1-f3400965e639" isLeaf="false">
+                <activityFinalNodeMoniker Id="6ab8d989-dfef-4191-b44f-17a986ad0577" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="5570edf3-cc5e-4a31-8412-89c639431673" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="166a5c75-c7ac-4fff-9efd-93a4adf65903" name="Létszámlimit ellenőrzése" isLeaf="false">
+            <elementDefinition Id="c9058a58-8ec0-4da4-89f0-2839d097e716" />
+            <flowNodeTargets>
+              <controlFlow Id="f173efd1-2b87-43d8-b797-85b1dd0d538c" isLeaf="false">
+                <decisionNodeMoniker Id="13cd9438-3140-43e1-b1da-c2c401e98a54" LastKnownName="Decision1" />
+                <elementDefinition Id="d1d611cc-4ea1-402a-a243-c880f3cd65ab" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="4173bca7-4dc8-4848-ba8a-76e47620566e" name="Tiltólista ellenőrzése" isLeaf="false">
+            <elementDefinition Id="86fbcd38-6050-44a9-8688-ac6bac8bbcc9" />
+            <flowNodeTargets>
+              <controlFlow Id="235bae80-ceb3-40a0-8f07-3a19664e9488" isLeaf="false">
+                <decisionNodeMoniker Id="4bc71089-f7fe-47d0-b83f-57eee1881f15" LastKnownName="Decision3" />
+                <elementDefinition Id="f3a593a9-c276-4694-9561-09ac6d3aba13" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="7a78a6ba-4e26-4dbd-853b-096750a8ad4b" name="neptun_2.0_uml">
+    <elementDefinition Id="fd2f2ae6-892f-4eb1-aca4-596f48131679" />
+    <profileInstances>
+      <packageHasProfileInstances Id="5a585993-3020-466e-a105-be646bdb6032">
+        <profileInstance Id="7cac9445-0bbf-4d7c-a2de-b59a2a68213f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="eaa2c4be-4ca6-4773-b65f-3e7659d664ad">
+        <profileInstance Id="ceacf5f3-d4dd-4169-a1e1-654ee3980e6b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

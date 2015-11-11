@@ -1,0 +1,2138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="fd2f2ae6-892f-4eb1-aca4-596f48131679"
+  name="neptun_2.0_uml" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="0015f979-cb5b-4d88-a999-4816b547e0c9">
+      <body>Neptun2.0</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="f5a23cb7-52a7-484a-9602-a2be1375c1d7"
+        name="Tanár"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="829f2a66-ebd5-4336-aab6-03be89efa25f"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="80820b3f-5640-4a4f-be5e-5c96e05f2bdf"
+              LastKnownName="Felhasználó"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="2170a12a-40ba-4218-9cac-f11798ddca29"
+            isDerived="false"
+            sourceEndRoleName="Tanár"
+            targetEndRoleName="szűrés"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="3f7b3c8e-763c-4704-b17b-136cc9eac62c"
+              LastKnownName="szűrés"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="12d54ca9-b41b-4eda-a416-51d5d09f0783"
+                  name="Tanár"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="38740426-bbaf-4a9f-b8fe-cc265554c9cf"
+                  name="szűrés"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="49d807ec-d122-4fd9-8121-3fb3d10a8577"
+            isDerived="false"
+            sourceEndRoleName="Tanár"
+            targetEndRoleName="tanuló letiltása"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f2069d5c-c5a1-4456-b4a3-fa441ba8fd10"
+              LastKnownName="tanuló letiltása"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2ff45f1b-9fbe-4249-935c-1f2311fc9cc8"
+                  name="Tanár"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="01ffd99a-ff50-4afb-a449-43b5451a0bb6"
+                  name="tanuló letiltása"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5d7dda55-80f4-4b9a-acf0-62817a84ef71"
+            isDerived="false"
+            sourceEndRoleName="Tanár"
+            targetEndRoleName="igény felvitel"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="118204ad-8bd3-459e-95c0-3f69227c1d4a"
+              LastKnownName="igény felvitel"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7135292b-bb1f-41f1-a344-ab7bbd1f3f2b"
+                  name="Tanár"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fdc731e8-a808-4937-834e-fc79d94852eb"
+                  name="igény felvitel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="9e7120bb-4c5b-4819-9f99-9ae88afd67b4"
+        name="Rendszergazda"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="d4fabee5-3d86-490f-9da5-197b41aff1f0"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="80820b3f-5640-4a4f-be5e-5c96e05f2bdf"
+              LastKnownName="Felhasználó"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="fe651416-c6be-4a37-9fdf-ca5abb265938"
+            isDerived="false"
+            sourceEndRoleName="Rendszergazda"
+            targetEndRoleName="karbantartás"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d714d467-7440-4fcc-b192-5763e62f9cc9"
+              LastKnownName="karbantartás"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ab26e00-b5f1-4840-bc65-122525ead66a"
+                  name="Rendszergazda"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c0c1a866-83f0-42f3-8a44-5fadc778d6a8"
+                  name="karbantartás"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0d40e2f5-37b0-47fb-b118-9f8a0432d3d3"
+            isDerived="false"
+            sourceEndRoleName="Rendszergazda"
+            targetEndRoleName="igény rögzítés"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="7981c109-690f-4fb8-9dc6-758b3731e5ac"
+              LastKnownName="igény elbírálása"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="61458479-9c41-4d35-82f7-f12ff50bdfd0"
+                  name="Rendszergazda"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c3dc69de-3848-42b4-aa32-5800a5eeee2d"
+                  name="igény rögzítés"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c74b4159-21af-4f9f-9e74-aaf2732a904b"
+            isDerived="false"
+            sourceEndRoleName="Rendszergazda"
+            targetEndRoleName="kérvény elbírálás"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="087433d8-4930-497d-ab9c-2e8292bb2147"
+              LastKnownName="kérvény elbírálás"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5d203080-0779-4125-ab0f-a5163f679e1f"
+                  name="Rendszergazda"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="266dea82-c6b0-41ab-9d16-b66302cdc84a"
+                  name="kérvény elbírálás"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="79b9f749-198c-4ce2-a6f8-5bc094e94b69"
+        name="Diák"
+        isAbstract="false"
+        isLeaf="false">
+        <generalsInternal>
+          <generalization
+            Id="4b2a1cc7-4c2e-44d6-9c21-e9b49237644d"
+            isSubstitutable="false">
+            <actorMoniker
+              Id="80820b3f-5640-4a4f-be5e-5c96e05f2bdf"
+              LastKnownName="Felhasználó"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="ad7a3cae-28d2-4b67-8815-d24a9cd4347b"
+            isDerived="false"
+            sourceEndRoleName="Diák"
+            targetEndRoleName="kérvény leadás"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="09e0d716-428e-4029-8aa4-42f52550b581"
+              LastKnownName="kérvény leadás"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5253a46c-8f28-4680-a597-866ac65b5314"
+                  name="Diák"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5313267a-a3af-44bd-af53-455cbcc91eb7"
+                  name="kérvény leadás"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ea357225-7dde-4162-8540-3cdcc538d4fb"
+            isDerived="false"
+            sourceEndRoleName="Diák"
+            targetEndRoleName="böngészés"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f5be3b9d-0446-4b92-b640-a28ed20d3e8b"
+              LastKnownName="böngészés"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9b614fbf-64e5-4336-b033-2238310710f0"
+                  name="Diák"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="54933648-a75d-404d-99f0-5bce2ac937f0"
+                  name="böngészés"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="3c7a714d-3875-496d-bbbe-afbf06241ee1"
+            isDerived="false"
+            sourceEndRoleName="Diák"
+            targetEndRoleName="tárgy felvétel"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="689bdcc3-590b-462d-83c8-adc98ec9a073"
+              LastKnownName="tárgy felvétel"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3e296303-8a1d-4bbf-b7d3-a0c637153c9e"
+                  name="Diák"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="27576aa6-d50f-4ca4-990b-32cccc20cbc6"
+                  name="tárgy felvétel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="63c46314-72f5-4118-9d37-785b0af39eb4"
+            isDerived="false"
+            sourceEndRoleName="Diák"
+            targetEndRoleName="órarend lekérés"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ce37d182-e617-411d-8882-0223e285c42d"
+              LastKnownName="órarend lekérés"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fa3fb997-e003-49fa-91dc-780123af78f1"
+                  name="Diák"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1b5bd07d-cc6b-48b6-9147-f061d571c357"
+                  name="órarend lekérés"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3f7b3c8e-763c-4704-b17b-136cc9eac62c"
+        name="szűrés"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="e838fe89-ba06-4f75-9125-de0b7a639c40"
+            isDerived="false"
+            sourceEndRoleName="szűrés"
+            targetEndRoleName="1. Szures.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="d82aced8-1669-4eb7-b3d3-4132f6924659"
+              LastKnownName="1. Szures.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="126c5c85-ea02-43a8-9494-edcf9e9f8585"
+                  name="szűrés"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d51e2fdf-ee9b-4f81-88d0-d5a5b6e0b7e1"
+                  name="1. Szures.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f2069d5c-c5a1-4456-b4a3-fa441ba8fd10"
+        name="tanuló letiltása"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="995a7eee-b001-4f2e-ad44-9672dcbd63d0"
+            isDerived="false"
+            sourceEndRoleName="tanuló letiltása"
+            targetEndRoleName="2. Tanulo letiltasa.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="fb6118a4-577f-4a7b-b61c-1225e9d5790c"
+              LastKnownName="2. Tanulo letiltasa.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="87f8db55-519e-470e-af8a-902f9dad8211"
+                  name="tanuló letiltása"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c3cb6b0b-cf9d-4930-817b-f20b794908b0"
+                  name="2. Tanulo letiltasa.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ff9a8588-7900-41e8-a12a-c05be9cbed08"
+        name="UseCase1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="babf4888-2819-4455-a6b9-7dca34ff8055"
+        name="UseCase11"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a93ba655-890a-4440-adc7-583b234e5b84"
+        name="UseCase12"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a904a645-522a-407d-8922-e486f482900e"
+        name="tárgy leadás"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="76ff3db2-c5a5-4f12-ad82-46f896d43a9b"
+            isDerived="false"
+            sourceEndRoleName="tárgy leadás"
+            targetEndRoleName="11. Targyleadas.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="e2026616-2991-46b9-828f-997b048e5823"
+              LastKnownName="11. Targyleadas.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="659012b8-14c5-4c3a-847b-1ae606afe3f0"
+                  name="tárgy leadás"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0f44bbb9-dc0f-48b9-b20f-3ba95b73ca8e"
+                  name="11. Targyleadas.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <extendedCases>
+          <extend
+            Id="446235b0-a0cb-4f64-8252-1049d252c230">
+            <useCaseMoniker
+              Id="689bdcc3-590b-462d-83c8-adc98ec9a073"
+              LastKnownName="tárgy felvétel"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="689bdcc3-590b-462d-83c8-adc98ec9a073"
+        name="tárgy felvétel"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ca382668-da6d-47a1-8ab1-d2ad2bc757ed"
+            isDerived="false"
+            sourceEndRoleName="tárgy felvétel"
+            targetEndRoleName="10. Targyfelvetel.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="3ff0efc9-cfaf-446d-b71d-394e9e338942"
+              LastKnownName="10. Targyfelvetel.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a7f9f4f7-785e-41e3-95fa-4948f6a5add2"
+                  name="tárgy felvétel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="631462a9-6be1-4479-a6df-fc3b3fb18734"
+                  name="10. Targyfelvetel.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f5be3b9d-0446-4b92-b640-a28ed20d3e8b"
+        name="böngészés"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="09e0d716-428e-4029-8aa4-42f52550b581"
+        name="kérvény leadás"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="42486fd1-82af-4376-a045-f310b9d4e4b4"
+            isDerived="false"
+            sourceEndRoleName="kérvény leadás"
+            targetEndRoleName="9. Kervenyleadas.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="184db7a2-0319-4a2d-9d60-c23700fcaa4c"
+              LastKnownName="9. Kervenyleadas.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2d0b16e1-905d-4627-bf03-247f606d40c6"
+                  name="kérvény leadás"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4b00ceec-f387-4ab9-9905-6cf83caf7d64"
+                  name="9. Kervenyleadas.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="b6e39185-77ff-4aee-bd67-b3e639553626">
+            <useCaseMoniker
+              Id="087433d8-4930-497d-ab9c-2e8292bb2147"
+              LastKnownName="kérvény elbírálás"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="087433d8-4930-497d-ab9c-2e8292bb2147"
+        name="kérvény elbírálás"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="ddb0683c-ab13-4f7d-a612-c57973e281a5"
+            isDerived="false"
+            sourceEndRoleName="kérvény elbírálás"
+            targetEndRoleName="7. Kerveny elbiralas.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="79a9ed33-a749-4756-a3c3-41055d055dc2"
+              LastKnownName="7. Kerveny elbiralas.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c307747c-c5ba-4704-aacb-37a953d4ea54"
+                  name="kérvény elbírálás"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3deb25be-726f-476f-8059-4c1cc22448a2"
+                  name="7. Kerveny elbiralas.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d714d467-7440-4fcc-b192-5763e62f9cc9"
+        name="karbantartás"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="36f43cb0-afdd-41a4-8363-fe37d8aa5ede"
+            isDerived="false"
+            sourceEndRoleName="karbantartás"
+            targetEndRoleName="6. Karbantartas.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="d19cd1bd-d4ae-4b2c-86e8-ec8df3c1feab"
+              LastKnownName="6. Karbantartas.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e1e38250-87ca-4a67-ac5c-3ded16ca4e10"
+                  name="karbantartás"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="677d47bf-eab3-4ed8-821b-630a5aac69e7"
+                  name="6. Karbantartas.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ce37d182-e617-411d-8882-0223e285c42d"
+        name="órarend lekérés"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="77aee0f4-bbfc-48b7-a231-9802ad7f0339"
+            isDerived="false"
+            sourceEndRoleName="órarend lekérés"
+            targetEndRoleName="8. Orarend.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="c0ed7317-970d-42c1-b7c8-de20f2a6c10e"
+              LastKnownName="8. Orarend.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3204c3be-1ba0-4268-8803-d7d8f733c90e"
+                  name="órarend lekérés"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="290cf53f-a0a9-4525-a45f-6cb73146f861"
+                  name="8. Orarend.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="118204ad-8bd3-459e-95c0-3f69227c1d4a"
+        name="igény felvitel"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="fd232719-71b9-4c7f-b3ec-c8e58707ad4f"
+            isDerived="false"
+            sourceEndRoleName="igény felvitel"
+            targetEndRoleName="3. Igeny felvitele.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="c0e8d93b-4490-4175-b65c-1332768f6b75"
+              LastKnownName="3. Igeny felvitele.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bdac999f-ea6f-4851-b085-fabff95a0972"
+                  name="igény felvitel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d15216a6-0a9f-4260-9a61-a9c2a9149ce7"
+                  name="3. Igeny felvitele.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <additions>
+          <include
+            Id="95bb045a-33c7-4bf8-8fe6-978c8e92d352">
+            <useCaseMoniker
+              Id="7981c109-690f-4fb8-9dc6-758b3731e5ac"
+              LastKnownName="igény elbírálása"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7981c109-690f-4fb8-9dc6-758b3731e5ac"
+        name="igény elbírálása"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="83e9d22a-62c6-48dd-90d5-8a92682dbcd7"
+            isDerived="false"
+            sourceEndRoleName="igény elbírálása"
+            targetEndRoleName="5. Igeny elbiralas.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="e4385264-c29d-4c15-aa0c-e0df8e32e95c"
+              LastKnownName="5. Igeny elbiralas.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="73e670d6-8928-4f18-9635-932d8b816dac"
+                  name="igény elbírálása"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="04cd943d-c6cd-4222-a549-1a767c6a5896"
+                  name="5. Igeny elbiralas.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="efeb2c8b-2cdc-4218-b275-c0c3027882c7"
+        name="igény módosítás"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="19ec01be-f329-4349-b674-5eed56dbe97b"
+            isDerived="false"
+            sourceEndRoleName="igény módosítás"
+            targetEndRoleName="4. Igeny modositas.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="6eabdcd2-1425-4ab1-9430-cfe4d8b3987a"
+              LastKnownName="4. Igeny modositas.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5fbdf28f-c950-4438-814c-bec375d240b7"
+                  name="igény módosítás"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c32acdef-d6b6-4eae-b7b1-23846e7a81e8"
+                  name="4. Igeny modositas.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <extendedCases>
+          <extend
+            Id="455de1d1-c0ab-4ecb-9173-92e5a2adda39">
+            <useCaseMoniker
+              Id="118204ad-8bd3-459e-95c0-3f69227c1d4a"
+              LastKnownName="igény felvitel"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fe685ea9-f86f-40dc-a392-78b5e3e04c0b"
+        name="bejelentkezés"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="accbbb27-d2f8-4953-9d26-f3b6f288d5b6"
+            isDerived="false"
+            sourceEndRoleName="bejelentkezés"
+            targetEndRoleName="12. Bejelentkezes.docx"
+            isLeaf="false"
+            isAbstract="false">
+            <artifactMoniker
+              Id="7cd0d844-22fc-4c3e-a728-187fea631376"
+              LastKnownName="12. Bejelentkezes.docx"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ed1eda84-8f22-426a-8bbc-9b9c221de2be"
+                  name="bejelentkezés"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="157539c1-bd51-4535-824e-d36851f5f154"
+                  name="12. Bejelentkezes.docx"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="6d5a26b8-47ee-4bef-85c2-fa537c90ca4d"
+        name="UseCase Table.docx"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="d37e75c1-ab98-4a0c-ac06-860cf99b8ad0"
+        name="UseCase Table.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\UseCase Table.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="d82aced8-1669-4eb7-b3d3-4132f6924659"
+        name="1. Szures.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\1. Szures.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="fb6118a4-577f-4a7b-b61c-1225e9d5790c"
+        name="2. Tanulo letiltasa.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\2. Tanulo letiltasa.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="c0e8d93b-4490-4175-b65c-1332768f6b75"
+        name="3. Igeny felvitele.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\3. Igeny felvitele.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="6eabdcd2-1425-4ab1-9430-cfe4d8b3987a"
+        name="4. Igeny modositas.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\4. Igeny modositas.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="e4385264-c29d-4c15-aa0c-e0df8e32e95c"
+        name="5. Igeny elbiralas.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\5. Igeny elbiralas.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="d19cd1bd-d4ae-4b2c-86e8-ec8df3c1feab"
+        name="6. Karbantartas.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\6. Karbantartas.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="79a9ed33-a749-4756-a3c3-41055d055dc2"
+        name="7. Kerveny elbiralas.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\7. Kerveny elbiralas.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="c0ed7317-970d-42c1-b7c8-de20f2a6c10e"
+        name="8. Orarend.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\8. Orarend.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="184db7a2-0319-4a2d-9d60-c23700fcaa4c"
+        name="9. Kervenyleadas.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\9. Kervenyleadas.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="3ff0efc9-cfaf-446d-b71d-394e9e338942"
+        name="10. Targyfelvetel.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\10. Targyfelvetel.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="e2026616-2991-46b9-828f-997b048e5823"
+        name="11. Targyleadas.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\11. Targyleadas.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="4108348d-116e-4866-943d-bb70f929d755"
+        name="Felhasználó"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <artifact
+        Id="7cd0d844-22fc-4c3e-a728-187fea631376"
+        name="12. Bejelentkezes.docx"
+        isAbstract="false"
+        isLeaf="false"
+        fileName="neptun_2.0_uml\12. Bejelentkezes.docx" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="80820b3f-5640-4a4f-be5e-5c96e05f2bdf"
+        name="Felhasználó"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="58c52a7e-c9e8-4604-ac2c-03d43eb49f31"
+            isDerived="false"
+            sourceEndRoleName="Felhasználó"
+            targetEndRoleName="bejelentkezés"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="fe685ea9-f86f-40dc-a392-78b5e3e04c0b"
+              LastKnownName="bejelentkezés"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="50fe778d-d2bd-4599-a20a-681fe180fd70"
+                  name="Felhasználó"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a7f71004-35dd-4400-8a7a-14477fa46e26"
+                  name="bejelentkezés"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="fc476e1b-26f7-44a5-8273-cdb25579e366"
+        name="Subsystem1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="3023078b-7f9e-4905-a189-59b77dccfd08"
+        name="Orarend"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="aa0054be-5dc5-4593-8bc8-715e1b77cb92"
+            name="Initial1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="65a9093c-f727-460e-b1cd-c16661cb1298"
+            name="Bejelentkezés"
+            isLeaf="false" />
+          <decisionNode
+            Id="f34bb387-4ea7-464d-b04e-62c2c3b9487e"
+            name="Decision1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="eaf09670-6b73-4fb8-9790-a40756e494f4"
+        name="Targyfelvetel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="d1449231-7338-4ec3-bf57-bd1539f09173"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1009731f-fd52-4d02-946b-c3f50d162c32"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c430e291-53e0-44be-b624-f16b3abbbd87"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="0298d218-9b65-4d5e-8adb-5e9a4c16f93d"
+            name="Bejelentkezés"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fe48f2d4-8cae-411b-8171-6eedce56cdd7"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f7c186e6-6a35-42a8-b075-97efd01f4281"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="f7c186e6-6a35-42a8-b075-97efd01f4281"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d852578c-20ad-4715-902b-c5cdb3cabe0a"
+                guard="hibás adatok"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c430e291-53e0-44be-b624-f16b3abbbd87"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="31e5d0f7-b22b-4682-a782-30f0eb8b37a2"
+                guard="megfelelő adatok"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="88ad5ace-62c7-4dbe-8100-3860dfa85dc1"
+                  LastKnownName="Tárgyfelvétel menüpont kiválasztása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="c430e291-53e0-44be-b624-f16b3abbbd87"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="988e6cd7-0480-45b5-9e8d-3c95d1f1890d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0298d218-9b65-4d5e-8adb-5e9a4c16f93d"
+                  LastKnownName="Bejelentkezés"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="88ad5ace-62c7-4dbe-8100-3860dfa85dc1"
+            name="Tárgyfelvétel menüpont kiválasztása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="138fd3bd-296e-4424-9119-90dc11c675d1"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c5f11b07-4059-430f-b48d-d250b1c9590d"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="89db401d-ff4b-402f-9a65-cceaae896a42"
+            name="Tárgy kiválasztása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="940e4785-c5fb-45ff-89de-da8d1c5505f0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c9058a58-8ec0-4da4-89f0-2839d097e716"
+                  LastKnownName="Létszámlimit ellenőrzése"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="fa7c02d4-a9d1-417f-9071-33e185fefc02"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5629ff18-9d28-4fa7-859b-108749de09bb"
+                guard="betelt létszám"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c5f11b07-4059-430f-b48d-d250b1c9590d"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="b58a5991-6865-4603-b9c0-0777b1f77134"
+                guard="van szabad hely"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="86fbcd38-6050-44a9-8688-ac6bac8bbcc9"
+                  LastKnownName="Tiltólista ellenőrzése"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="c5f11b07-4059-430f-b48d-d250b1c9590d"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="bffbf8b0-69be-4a3e-a549-7bb5689f185e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="89db401d-ff4b-402f-9a65-cceaae896a42"
+                  LastKnownName="Tárgy kiválasztása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <activityFinalNode
+            Id="7ae2d35a-7a27-4c20-8032-4005f624bd55"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <decisionNode
+            Id="5c5e7c38-5ba4-4f82-a826-5e7fccea6624"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a471a12a-0434-427c-9f0c-1e109ba268d0"
+                guard="a tanuló szerepel a tiltólistán"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c5f11b07-4059-430f-b48d-d250b1c9590d"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="5ff9935d-a476-474a-b36c-60fe02451296"
+                guard="nem szerepel a tiltólistán"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="29d24267-b176-439c-b149-ccdb05cfb1ee"
+                  LastKnownName="Sikeres tárgyfelvétel"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="29d24267-b176-439c-b149-ccdb05cfb1ee"
+            name="Sikeres tárgyfelvétel"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5570edf3-cc5e-4a31-8412-89c639431673"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="7ae2d35a-7a27-4c20-8032-4005f624bd55"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c9058a58-8ec0-4da4-89f0-2839d097e716"
+            name="Létszámlimit ellenőrzése"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d1d611cc-4ea1-402a-a243-c880f3cd65ab"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="fa7c02d4-a9d1-417f-9071-33e185fefc02"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="86fbcd38-6050-44a9-8688-ac6bac8bbcc9"
+            name="Tiltólista ellenőrzése"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f3a593a9-c276-4694-9561-09ac6d3aba13"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="5c5e7c38-5ba4-4f82-a826-5e7fccea6624"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="3ed7919d-cd0c-4b52-9d5f-03c9fdc3af00"
+        name="Igeny_felvitel"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="5233ce21-f81b-4e50-b23d-1b469aa8af21"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c23f39ad-283f-4f2d-bd30-3dbea2e9412c"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="a0f1e393-39f3-40a4-8d45-90109d4834b6"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="972e1fc9-bd1b-408a-abd6-279579a6e044"
+            name="Bejelentkezés"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="21f1def8-187e-4427-8b7e-a2d6a5fd8346"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="dc2f5d37-7035-408d-89ce-588c14127525"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="dc2f5d37-7035-408d-89ce-588c14127525"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3e3c4182-3518-47b1-a16d-684835180737"
+                guard="hibás adatok"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="a0f1e393-39f3-40a4-8d45-90109d4834b6"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="e833febe-71a1-4d39-aeb0-18f538ee6881"
+                guard="megfelelő adatok"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="baf96921-75bf-4520-9119-5ddc68831b77"
+                  LastKnownName="Igény felvitele menüpont kiválasztása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="a0f1e393-39f3-40a4-8d45-90109d4834b6"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="003c223d-c7b1-4808-b14b-66c10d95346d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="972e1fc9-bd1b-408a-abd6-279579a6e044"
+                  LastKnownName="Bejelentkezés"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="baf96921-75bf-4520-9119-5ddc68831b77"
+            name="Igény felvitele menüpont kiválasztása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6dfe1069-9bac-42c6-b49a-aba27a0ee295"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="cf595cb6-dcf7-4b1a-abae-a9803eae5bb7"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="385380a7-46fe-4b49-b1bf-4e157055ad96"
+            name="Adatok megadása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="59d98499-d121-4350-94f6-7155914b0f00"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="703601e8-09f1-47b4-a865-913ae21813ab"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="703601e8-09f1-47b4-a865-913ae21813ab"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b232669a-0c22-41c1-83d1-8091c39ab74f"
+                guard="helytelen adatok"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="cf595cb6-dcf7-4b1a-abae-a9803eae5bb7"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="e4eb5c46-c6aa-4275-9a7b-2988f0e06679"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="3e701118-3fae-40f3-b0c5-6d45b7fb6e1d"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="cf595cb6-dcf7-4b1a-abae-a9803eae5bb7"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="687b4cd9-5646-4d72-9e0d-f28f7e2795f8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="385380a7-46fe-4b49-b1bf-4e157055ad96"
+                  LastKnownName="Adatok megadása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <activityFinalNode
+            Id="3e701118-3fae-40f3-b0c5-6d45b7fb6e1d"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="a3ce7f0f-77d9-4628-b246-e86d7caad090"
+        name="Tanulo_letiltasa"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="38a618ff-382f-4bbc-9b8a-ddfd91f2001c"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5d209d3b-227b-4ded-ad1b-9abb522f9352"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="ad3e3e69-73ee-44f5-a2c3-4bd698ff321e"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="b481ce52-650d-4bf1-a8bf-299f798b5e00"
+            name="Bejelentkezés"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="555cfb67-b961-4a85-b565-dd016b830130"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f2e3087a-34cd-4198-985c-c7a42d710175"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="f2e3087a-34cd-4198-985c-c7a42d710175"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b681df58-c353-49ef-9a83-952d2bdcf698"
+                guard="hibás adatok"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="ad3e3e69-73ee-44f5-a2c3-4bd698ff321e"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="e198e741-1ebf-44a6-92ee-80f8f3f74ce9"
+                guard="megfelelő adatok"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="dc1f0ef4-8602-44a8-8070-94ea8427fff7"
+                  LastKnownName="Tanuló letiltása menüpont kiválasztása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="ad3e3e69-73ee-44f5-a2c3-4bd698ff321e"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="882d4cad-45d5-4dcc-9340-022bd91cb070"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b481ce52-650d-4bf1-a8bf-299f798b5e00"
+                  LastKnownName="Bejelentkezés"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="dc1f0ef4-8602-44a8-8070-94ea8427fff7"
+            name="Tanuló letiltása menüpont kiválasztása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5befd684-58c9-4ebb-8c90-5f95273bf9bd"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="85196b01-cbdf-4bed-ba2e-1dfd37afab6a"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a4a2b1ea-dc5d-4a3f-ad30-783d32ff3aaf"
+            name="Tárgy kiválasztása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="75841dc7-123c-47b8-a8f1-f66adde596e0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="927e9787-b908-42f7-a5b8-a64b9314c45c"
+                  LastKnownName="Diák nevének megadása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="8bb2f30b-3ddc-4bbc-bc99-35d7467741a1"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e1f80df1-98b5-41ea-bd5b-6ae1ec021b72"
+                guard="helytelen adatok"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="85196b01-cbdf-4bed-ba2e-1dfd37afab6a"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="e22baf3c-c42f-4093-a2e1-c20739b85755"
+                guard="helyes adatok"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9ce14e2a-b2a3-441e-a46f-f5baacbb1b77"
+                  LastKnownName="Tanuló letiltása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="85196b01-cbdf-4bed-ba2e-1dfd37afab6a"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="350b6148-aea3-47f1-9a38-ca0a4ff392f5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a4a2b1ea-dc5d-4a3f-ad30-783d32ff3aaf"
+                  LastKnownName="Tárgy kiválasztása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <activityFinalNode
+            Id="c6402350-fda4-4152-a57e-aab85bacb82b"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="927e9787-b908-42f7-a5b8-a64b9314c45c"
+            name="Diák nevének megadása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a40a4447-4774-405f-86b9-ef1cccea4ba0"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="8bb2f30b-3ddc-4bbc-bc99-35d7467741a1"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9ce14e2a-b2a3-441e-a46f-f5baacbb1b77"
+            name="Tanuló letiltása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5e3fa140-4cf2-4255-bbdf-d77d2aa36da3"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="c6402350-fda4-4152-a57e-aab85bacb82b"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="d0b480a3-ef55-46a6-bf82-cf829f93a910"
+        name="Szures"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="8272b5be-9bd6-4570-8e10-0c5b420f207f"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="aeb0960b-1044-441b-9dcf-d02866a30b25"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="f0988b87-22bb-4a68-ba30-97920db82201"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="46a489b7-0640-40c7-a594-6333ca4e7b2b"
+            name="Bejelentkezés"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b319d63c-d5f4-4ea8-9214-ea237a3ac31c"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="0379aede-78e0-44c4-8423-f299bf6a15e0"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="0379aede-78e0-44c4-8423-f299bf6a15e0"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a05ba674-57f4-454a-87f6-d517a0a1f111"
+                guard="hibás adatok"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="f0988b87-22bb-4a68-ba30-97920db82201"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="c80f27fa-2f7c-4b2b-9fe5-d8acf77871f3"
+                guard="megfelelő adatok"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="19d6830a-1766-4420-bc8c-90a733cc055d"
+                  LastKnownName="Szűrés menüpont kiválasztása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="f0988b87-22bb-4a68-ba30-97920db82201"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="db5e51f6-e24e-425b-ae4e-645458a9f8e5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="46a489b7-0640-40c7-a594-6333ca4e7b2b"
+                  LastKnownName="Bejelentkezés"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="19d6830a-1766-4420-bc8c-90a733cc055d"
+            name="Szűrés menüpont kiválasztása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="eeba8b3a-0b30-45be-bc24-fdfc0f35e202"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="15cfc1cf-7b4b-481b-ad2f-7a0eca7167d8"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="939cbca1-c3ac-4680-8fff-25d551a43eb8"
+            name="Időpont megadása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="17812728-111e-404c-8d8b-c54a97f874e6"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="63b6231f-359e-4567-95cf-3eeddb55305c"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="63b6231f-359e-4567-95cf-3eeddb55305c"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="40719dfd-d8c5-47a0-b32d-9a89d97bfe35"
+                guard="helytelen időpont"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="15cfc1cf-7b4b-481b-ad2f-7a0eca7167d8"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="61af26ff-1b16-4329-b8b8-1ccfc34f4230"
+                guard="helyes időpont"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e9db2c07-0ca9-42e2-87d8-ec407fc83e7f"
+                  LastKnownName="Termek kilistázása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="15cfc1cf-7b4b-481b-ad2f-7a0eca7167d8"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fc88a4f8-2e92-462a-8d9b-4f4e4013315c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="939cbca1-c3ac-4680-8fff-25d551a43eb8"
+                  LastKnownName="Időpont megadása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <activityFinalNode
+            Id="7b4ccb77-f9cf-404d-9f1e-0701df3db4b4"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <opaqueAction
+            Id="e9db2c07-0ca9-42e2-87d8-ec407fc83e7f"
+            name="Termek kilistázása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="060ee153-9097-4324-a366-5485b805ef80"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b99f6ab2-071e-47c4-ba3f-345cf322ee05"
+                  LastKnownName="Terem kiválasztása"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="b99f6ab2-071e-47c4-ba3f-345cf322ee05"
+            name="Terem kiválasztása"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6f2e2b5d-8e0e-4aa4-aff6-bf0dd57acc9b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="42837e5d-5624-413f-9090-fc20914e60dd"
+                  LastKnownName="Terem adatainak megjelenítése"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="42837e5d-5624-413f-9090-fc20914e60dd"
+            name="Terem adatainak megjelenítése"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ef7c5e6e-1058-493b-8e6b-fca20b360f57"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="7b4ccb77-f9cf-404d-9f1e-0701df3db4b4"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
