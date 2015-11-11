@@ -1,0 +1,50 @@
+users:
+-user: 
+	neptun
+	name
+	type
+	pw
+
+...
+
+-user: ...
+
+---------------------------------
+
+classrooms:
+-classroom: 
+	name
+	limit 
+	lessonIDs:
+		-ID1
+		-ID2
+		...
+		
+...
+
+-classroom: ...
+
+---------------------------------
+
+lessons:
+-lesson:
+	ID
+	name
+	teacher
+	//studentNum ?
+	studentIDs: //neptuncode
+		-neptun1
+		-neptun2
+	blacklist: //banned list
+		-neptun1
+		-neptun2
+
+...
+
+-lesson: ...
+
+---------------------------------
+
+kérvény + igény....
+
+

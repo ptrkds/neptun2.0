@@ -1,0 +1,23 @@
+{
+	"users" :
+	[
+		{
+			"neptunCode" : "UKDUJP",
+			"name" : "Weisz Kristof",
+			"type" : "Student",
+			"password" : "asdasd"
+		},
+		{
+			"neptunCode" : "BATMAN",
+			"name" : "BAT MAN",
+			"type" : "God",
+			"password" : "nemmondommeg"
+		},
+		{
+			"neptunCode" : "000000",
+			"name" : "Null Reference",
+			"type" : "N/A",
+			"password" : ""
+		}
+	]
+}
