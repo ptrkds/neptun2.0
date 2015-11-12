@@ -1,5 +1,4 @@
 {
-	"testnode" : "testvalue",
 	"users" :
 	[
 		{
@@ -8,7 +7,7 @@
 			"type" : "Student",
 			"lectures" : 
 			[
-				"id", "id"
+				"id0", "id5"
 			],
 			"password" : "asdasd"
 		},
