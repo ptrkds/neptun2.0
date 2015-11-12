@@ -1,9 +1,12 @@
 #pragma once
 
+#include <list>
+#include "User.h"
+#include "rapidjson\document.h"
 
 class UserJSONHandler
 {
-	list<User> users;
+	std::list<User> users;
 public:
 	
 	UserJSONHandler();
