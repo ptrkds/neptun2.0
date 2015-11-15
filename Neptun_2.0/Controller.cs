@@ -22,33 +22,6 @@ namespace Neptun_2._0
             return true;
         }
 
-       /* public void eventHandler(CMD command)
-        {
-            switch (command.cmd)
-            {
-                case "studentblock":
-                     requestStudentBlock(); 
-                    break;
-                case "exit":
-
-                    break;
-            }
-        }*/
-        /*
-        public void eventLoop(User user)
-        {
-            userLoggedIn = user;
-
-            bool sajt = true;
-            while(sajt)
-            {
-
-
-                sajt = false;
-            }
-
-    
-        }*/
 
         public void start(User user)
         {
@@ -79,13 +52,13 @@ namespace Neptun_2._0
                 switch (cmd.cmd)
                 {
                     case "demandSubmission":
-                        requestDemandJudgement();
+                        demandJudgement();
                         break;
                     case "maintenance":
-                        requestMaintenance();
+                        maintenance();
                         break;
                     case "requestJudgement":
-                        requestRequestJudgement();
+                        requestJudgement();
                         break;
                     case "logOut":
 
@@ -97,68 +70,94 @@ namespace Neptun_2._0
         private void teacherMain()
         {
             ui = new TeacherInterface();
-            cmd = ui.MainMenu();
+
+            while (true)
+            {
+                cmd = ui.MainMenu();
+                switch (cmd.cmd)
+                {
+                    case "filter":
+                        filter();
+                        break;
+                    case "studentBlock":
+                        studentBlock();
+                        break;
+                    case "requestJudgement":
+                        requestRequestJudgement();
+                        break;
+                    case "logOut":
+
+                }
+            }
         }
 
 
-        private void requestDemandChange()
+        private bool requestDemandChange()
         {
 
         }
 
-        private void requestDemandJudgement()
+        private bool requestDemandJudgement()
         {
 
         }
 
-        private void requestDemandSubmission()
+        private bool requestDemandSubmission()
         {
 
         }
 
 
-        private void requestDeregisterSubject()
+        private bool requestDeregisterSubject()
         {
             
         }
 
-        private void requestFilter()
+        private bool requestFilter()
         {
 
         }
 
 
-        private void requestMaintenance()
+        private bool requestMaintenance()
         {
 
         }
 
-        private void requestRegisterForSubject()
+        private bool requestRegisterForSubject()
         {
 
         }
 
-        private void requestRequestJudgement()
+        private bool requestRequestJudgement()
         {
 
         }
 
-        private void requestRequestSubmission()
+        private bool requestRequestSubmission()
         {
 
         }
 
-        private int requestStudentBlock()
+        private int studentBlock()
         {
             List<String> subject_list = ;
 
             while (true) {
-                cmd = ui.selectSubject();
+                cmd = ui.selectSubject(subject_list);
 
                 if (cmd.cmd != "exit")
                 {
-                    sajt();
-                    return 1;
+                    if (studentBlock_studentSelect() == 1)
+                    {
+                        ui.sb_successful;
+                        return 1;
+                    }
+                    else if(studentBlock_studentSelect() == -1)
+                    {
+                        ui.sb_unsuccessful;
+                        return 1;
+                    }
                 }
                 else
                 {
@@ -167,7 +166,7 @@ namespace Neptun_2._0
             }
         }
 
-        private int sajt()
+        private int studentBlock_studentSelect()
         {
             while (true) {
                 List<String> student_list = ;
@@ -176,20 +175,32 @@ namespace Neptun_2._0
 
                 if (cmd.cmd != "exit")
                 {
-                    requestStudentBlock(student_list[cmd.cmd]);
-                    return 1;
+                    if (requestStudentBlock(student_list[Int32.Parse(cmd.cmd)]))
+                    {
+                        return 1; //sikerült
+                    }
+                    else
+                    {
+                        return -1; //sikertelen
+                    }     
                 }
                 else
                 {
-                    return 0;
+                    return 0; //exit code
                 }
             }
         }
 
-        private bool requestStudentBlock()
+        private bool requestStudentBlock(String student)
         {
-
-            return true;
+            //kiso eltiltja
+            if () {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void requestTimeTable()
