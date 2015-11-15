@@ -52,7 +52,7 @@ namespace Neptun_2._0
                         demandJudgement();
                         break;
                     case "maintenance":
-                        maintenance();
+                        requestMaintenance();
                         break;
                     case "requestJudgement":
                         requestJudgement();
@@ -75,7 +75,7 @@ namespace Neptun_2._0
                 switch (cmd.cmd)
                 {
                     case "filter":
-                        filter();
+                        requestFilter();
                         break;
                     case "studentBlock":
                         studentBlock();
@@ -140,12 +140,12 @@ namespace Neptun_2._0
                     int ret = requestDemandChange(cmd.data[0]);
                     if (ret == 1)
                     {
-                        ui.dc_successful();
+                        ui.demandChange_successful();
                         return true;
                     }
                     else if(ret == -1)
                     {
-                        ui.dc_unsuccessful();
+                        ui.demandChange_unsuccessful();
                         return true;
                     }
                 }
@@ -158,6 +158,8 @@ namespace Neptun_2._0
         private int requestDemandChange(String demand_id)
         {
             Demand demand = ;
+
+            cmd = ui.demandChange(demand);
 
             if(cmd.cmd != exit)
             {
@@ -255,12 +257,12 @@ namespace Neptun_2._0
                 {
                     if (requestRegisterForSubject(cmd.data[0]))
                     {
-                        ui.registerForSubject_successful();
+                        ui.regForSubject_successful();
                         return true;
                     }
                     else
                     {
-                        ui.registerForSubject_unsuccessful();
+                        ui.regForSubject_unsuccessful();
                         return false;
                     }
                 }
@@ -367,12 +369,12 @@ namespace Neptun_2._0
                 {
                     if (requestRequestJudgement(cmd.data[0]))
                     {
-                        ui.requestAccept();
+                        ui.request_accept();
                         return true;
                     }
                     else
                     {
-                        ui.requestDecline();
+                        ui.request_decline();
                         return false;
                     }
                 }
@@ -423,21 +425,21 @@ namespace Neptun_2._0
         //Student Block
         private bool studentBlock()
         {
-            List<String> subject_list = ;
+            List<String> subjects = ;
 
             while (true) {
-                cmd = ui.selectSubject(subject_list);
+                cmd = ui.selectSubject(subjects);
 
                 if (cmd.cmd != "exit")
                 {
                     int ret = studentBlock_studentSelect(cmd.data[0]);
                     if (ret == 1)
                     {
-                        ui.sb_successful;
+                        ui.studentBlock_successful;
                         return true;
                     }
                     else if(ret == -1){
-                        ui.sb_unsuccessful;
+                        ui.studentBlock_unsuccessful;
                         return true;
                     }
                     //ha ret == 0, akkor újrafut a ciklus úgyis

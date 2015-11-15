@@ -52,18 +52,7 @@ namespace Neptun_2._0
                         exit();
                         break;
                 }
-            }
-
-            
-                if (controller.requestLogin(data))
-                {
-                    controller.start(data[0]);
-                }
-                else
-                {
-                   cmd = ui.relogin();
-                }
-            
+            }            
         }
 
         void exit() {
