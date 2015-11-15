@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Neptun_2._0
 {
-    class UserXMLHandler : XmlHandler
+    class UserXmlHandler : XmlHandler
     {
        
 
@@ -47,6 +47,22 @@ namespace Neptun_2._0
                     //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
 
                     Console.WriteLine(tmp.name + " "+ tmp.type);
+
+
+                    xmlReader.ReadToFollowing("lectures");
+                    int cnt = Int32.Parse(xmlReader.GetAttribute("count"));
+                    Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
+
+                    //xmlReader.ReadToFollowing("lecture");
+                    //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
+                    
+                    while (xmlReader.Read() && xmlReader.IsStartElement())
+                    {
+                        //működő iterálás
+                        //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
+                        //xmlReader.ReadToFollowing("lecture");
+                        Console.WriteLine(xmlReader.GetAttribute("id"));
+                    }
                 }
             }
 

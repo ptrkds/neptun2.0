@@ -2,10 +2,10 @@
 	<name>Kiso</name>
 	<type>student</type>
 	<pw>fapfap</pw>
-	<subjects>
-		<subject id="VEMFK12"/>
-		<subject id="VEMFK32"/>
-		<subject id="VEMFK43"/>
-		<subject id="VEMFK99"/>
-	</subjects>
+	<lectures count= "4">
+		<lecture id="VEMFK12"/>
+		<lecture id="VEMFK32"/>
+		<lecture id="VEMFK43"/>
+		<lecture id="VEMFK99"/>
+	</lectures>
 </user>
