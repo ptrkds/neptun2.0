@@ -9,14 +9,37 @@ namespace Neptun_2._0
 {
     class XmlHandler
     {
+        public static string GetValue(ref XmlReader xmlReader, string node)
+        {
+            string str;
+            xmlReader.ReadToFollowing(node);
+            str = xmlReader.ReadElementContentAsString();
+            //Console.WriteLine(str);
+            return str;
+        }
+
         internal void Start()
         {
-            using (XmlReader reader = XmlReader.Create("UserXML.xml"))
+            using (XmlReader xmlReader = XmlReader.Create("UserXML.xml"))
             {
-                reader.ReadToFollowing("id");
-                Console.WriteLine(reader.Value.Trim());
+                /*reader.ReadToFollowing("id");
+                Console.WriteLine(reader.Value.Trim());*/
+
+                //reader.ReadElementContentAsString();
+
+                //reader.ReadElementString("id");
 
 
+                while (xmlReader.Read())
+                {
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id")=="BATMAN"))
+                    {
+                        if (xmlReader.HasAttributes)
+                            Console.WriteLine("-" + xmlReader.GetAttribute("id"));
+                    }
+                }
+
+                /*
                 while (reader.Read())
                 {
                     // Only detect start elements.
@@ -54,8 +77,9 @@ namespace Neptun_2._0
                         }
                     }
                 }
+            }*/
+                Console.ReadLine();
             }
-            Console.ReadLine();
         }
     }
 }

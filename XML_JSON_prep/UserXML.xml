@@ -1,0 +1,15 @@
+<users>
+	<user>
+		<id>UKDUJP</id>
+		<name>asd asd</name>
+		<type>student</type>
+		<pw>fapfap</pw>
+	</user>
+	
+	<user>
+		<id>BATMAN</id>
+		<name>Bruce Wayne</name>
+		<type>God</type>
+		<pw>password</pw>
+	</user>
+</users>

@@ -8,5 +8,8 @@ namespace Neptun_2._0
 {
     class User
     {
+        public String neptunCode;
+        public String name;
+        public String type;
     }
 }
