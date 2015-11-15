@@ -48,7 +48,7 @@ namespace Neptun_2._0
 
             while (true)
             {
-                cmd = ui.MainMenu();
+                cmd = ui.AdminMainMenu();
                 switch (cmd.cmd)
                 {
                     case "demandSubmission":
@@ -61,7 +61,8 @@ namespace Neptun_2._0
                         requestJudgement();
                         break;
                     case "logOut":
-
+                        //exit
+                        break;
                 }
             }
 
@@ -73,7 +74,7 @@ namespace Neptun_2._0
 
             while (true)
             {
-                cmd = ui.MainMenu();
+                cmd = ui.TeacherMainMenu();
                 switch (cmd.cmd)
                 {
                     case "filter":
@@ -82,11 +83,46 @@ namespace Neptun_2._0
                     case "studentBlock":
                         studentBlock();
                         break;
-                    case "requestJudgement":
-                        requestRequestJudgement();
+                    case "demandSubmission":
+                        demandJudgement();
+                        break;
+                    case "demandChange":
+                        demandChange();
+                        break;
+                    case "timeTable":
+                        timeTable();
                         break;
                     case "logOut":
+                        //exit
+                        break;
+                }
+            }
+        }
 
+        private void studentMain()
+        {
+            ui = new StudentInterface();
+
+            while (true)
+            {
+                cmd = ui.StudentMainMenu();
+                switch (cmd.cmd)
+                {
+                    case "timeTable":
+                        timeTable();
+                        break;
+                    case "requestSubmission":
+                        requestSubmission();
+                        break;
+                    case "registerForSubject":
+                        registerForSubject();
+                        break;
+                    case "deregisterSubject":
+                        deregisterSubject();
+                        break;
+                    case "logOut":
+                        //exit
+                        break;
                 }
             }
         }
@@ -139,6 +175,7 @@ namespace Neptun_2._0
 
         }
 
+        //Student Block
         private int studentBlock()
         {
             List<String> subject_list = ;
@@ -148,16 +185,17 @@ namespace Neptun_2._0
 
                 if (cmd.cmd != "exit")
                 {
-                    if (studentBlock_studentSelect() == 1)
+                    int ret = studentBlock_studentSelect(cmd.data[0]);
+                    if (ret == 1)
                     {
                         ui.sb_successful;
                         return 1;
                     }
-                    else if(studentBlock_studentSelect() == -1)
-                    {
+                    else if(ret == -1){
                         ui.sb_unsuccessful;
                         return 1;
                     }
+                    //ha ret == 0, akkor újrafut a ciklus úgyis
                 }
                 else
                 {
@@ -166,7 +204,7 @@ namespace Neptun_2._0
             }
         }
 
-        private int studentBlock_studentSelect()
+        private int studentBlock_studentSelect(String subject_id)
         {
             while (true) {
                 List<String> student_list = ;
@@ -175,7 +213,7 @@ namespace Neptun_2._0
 
                 if (cmd.cmd != "exit")
                 {
-                    if (requestStudentBlock(student_list[Int32.Parse(cmd.cmd)]))
+                    if (requestStudentBlock(cmd.data[0], subject_id))
                     {
                         return 1; //sikerült
                     }
@@ -191,7 +229,7 @@ namespace Neptun_2._0
             }
         }
 
-        private bool requestStudentBlock(String student)
+        private bool requestStudentBlock(String student_id, String subject_id)
         {
             //kiso eltiltja
             if () {
@@ -203,9 +241,24 @@ namespace Neptun_2._0
             }
         }
 
-        private void requestTimeTable()
-        {
 
+        //Time Table
+        private void requestStudentTimeTable()
+        {
+            List<valami structura> list = ;
+
+            cmd = ui.timeTableView(list);
+
+            //exit
+        }
+
+        private void requestTeacherTimeTable()
+        {
+            List < valami structura > list = ;
+
+            cmd = ui.timeTableView(list);
+
+            //exit
         }
 
 
