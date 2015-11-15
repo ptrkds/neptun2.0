@@ -27,10 +27,10 @@ namespace Neptun_2._0
         
         private void login()
         {
-            CMD command;
-            command = ui.startUp();
+            CMD cmd;
+            cmd = ui.startUp();
 
-            switch (cmd) {
+            switch (cmd.cmd) {
                 case "login":
                     
                     break;
@@ -39,7 +39,6 @@ namespace Neptun_2._0
                     break;
             } 
         }  
-
 
         void exit() {
         }

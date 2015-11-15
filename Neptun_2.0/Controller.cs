@@ -22,7 +22,7 @@ namespace Neptun_2._0
             return true;
         }
 
-
+        //When user logged in
         public void start(User user)
         {
             userLoggedIn = user;
@@ -42,6 +42,7 @@ namespace Neptun_2._0
             }
         }
 
+        //Mains
         private void adminMain()
         {
             ui = new AdminInterface();
@@ -128,54 +129,187 @@ namespace Neptun_2._0
         }
 
 
-        private bool requestDemandChange()
-        {
+        //Functions
 
+
+        //Demand Change
+        private bool demandChange()
+        {
+            List<String> demands = ;
+
+            while (true)
+            {
+                cmd = ui.selectDemand(demands);
+
+                if(cmd.cmd != "exit")
+                {
+                    int ret = requestDemandChange(cmd.data[0]);
+                    if (ret == 1)
+                    {
+                        ui.dc_successful();
+                        return true;
+                    }
+                    else if(ret == -1)
+                    {
+                        ui.dc_unsuccessful();
+                        return true;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        private int requestDemandChange(String demand_id)
+        {
+            Demand demand = ;
+
+            if(cmd.cmd != exit)
+            {
+                int ret = kisovisszatérése(cmd.data);
+                if(ret == 1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                return 0;
+            }
         }
 
-        private bool requestDemandJudgement()
+
+        //Demand Judgement
+        private bool demandJudgement()
         {
+            List<String> demands = ;
 
+            while (true)
+            {
+                cmd = ui.selectDemand(demands);
+                if(cmd.cmd != "exit")
+                {
+                    if (requestDemandJudgement(cmd.data[0]))
+                    {
+                        ui.demandAccept();
+                        return true;
+                    }
+                    else
+                    {
+                        ui.demandDecline();
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
+        private bool requestDemandJudgement(String demand_id)
+        {
+            //demand delete
+            if (kisofgv(demand_id))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
 
+        //Demand Submission
         private bool requestDemandSubmission()
         {
 
         }
 
 
-        private bool requestDeregisterSubject()
-        {
-            
-        }
-
-        private bool requestFilter()
-        {
-
-        }
-
-        private bool requestMaintenance()
-        {
-
-        }
-
+        //Register For Subject
         private bool requestRegisterForSubject()
         {
 
         }
 
-        private bool requestRequestJudgement()
+
+        //Deregister Subject
+        private bool requestDeregisterSubject()
+        {
+            
+        }
+
+
+        //Filter
+        private bool requestFilter()
         {
 
         }
 
+
+        //Maintenance
+        private bool requestMaintenance()
+        {
+
+        }
+
+
+        //Request Judgement
+        private bool requestJudgement()
+        {
+            List<String> requests = ;
+
+            while (true)
+            {
+                cmd = ui.selectRequest(requests);
+                if (cmd.cmd != "exit")
+                {
+                    if (requestRequestJudgement(cmd.data[0]))
+                    {
+                        ui.requestAccept();
+                        return true;
+                    }
+                    else
+                    {
+                        ui.requestDecline();
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        private bool requestRequestJudgement(String request_id)
+        {
+            //request delete
+            if (kisofgv(request_id))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        //Request Submission
         private bool requestRequestSubmission()
         {
 
         }
 
+
         //Student Block
-        private int studentBlock()
+        private bool studentBlock()
         {
             List<String> subject_list = ;
 
@@ -188,21 +322,20 @@ namespace Neptun_2._0
                     if (ret == 1)
                     {
                         ui.sb_successful;
-                        return 1;
+                        return true;
                     }
                     else if(ret == -1){
                         ui.sb_unsuccessful;
-                        return 1;
+                        return true;
                     }
                     //ha ret == 0, akkor újrafut a ciklus úgyis
                 }
                 else
                 {
-                    return 0;
+                    return false; //visszalép a main menu-be és újra fut ott a while ciklus
                 }
             }
         }
-
         private int studentBlock_studentSelect(String subject_id)
         {
             while (true) {
@@ -227,7 +360,6 @@ namespace Neptun_2._0
                 }
             }
         }
-
         private bool requestStudentBlock(String student_id, String subject_id)
         {
             //kiso eltiltja
@@ -250,7 +382,6 @@ namespace Neptun_2._0
 
             //exit
         }
-
         private void requestTeacherTimeTable()
         {
             List < valami structura > list = ;
