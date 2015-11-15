@@ -25,8 +25,7 @@ namespace Neptun_2._0
         {
             userLoggedIn = user;
 
-            //HAXX
-            switch (userLoggedIn)
+            switch (userLoggedIn.getType())
             {
                 case "admin":
                     adminMain();
@@ -127,8 +126,6 @@ namespace Neptun_2._0
         }
 
 
-        //Functions
-
 
         //Demand Change
         private bool demandChange()
@@ -194,12 +191,12 @@ namespace Neptun_2._0
                 {
                     if (requestDemandJudgement(cmd.data[0]))
                     {
-                        ui.d_accept();
+                        ui.demand_accept();
                         return true;
                     }
                     else
                     {
-                        ui.d_decline();
+                        ui.demand_decline();
                         return false;
                     }
                 }
@@ -231,12 +228,12 @@ namespace Neptun_2._0
             {
                 if (kisofgv(cmd.data))
                 {
-                    ui.ds_successful();
+                    ui.demandSubmission_successful();
                     return true;
                 }
                 else
                 {
-                    ui.ds_unsuccessful();
+                    ui.demandSubmission_unsuccessful();
                     return false;
                 }
             }
@@ -247,14 +244,47 @@ namespace Neptun_2._0
         }
 
 
-        //Register For Subject - x
-        private bool requestRegisterForSubject()
+        //Register For Subject
+        private bool registerForSubject()
         {
+            List<String> subjects = ;
 
+            while (true)
+            {
+                cmd = ui.selectSubject(subjects);
+                if (cmd.cmd != "exit")
+                {
+                    if (requestRegisterForSubject(cmd.data[0]))
+                    {
+                        ui.registerForSubject_successful();
+                        return true;
+                    }
+                    else
+                    {
+                        ui.registerForSubject_unsuccessful();
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        private bool requestRegisterForSubject(String subject_id)
+        {
+            if (kisofgv(subject_id))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
-        //Deregister Subject - x
+        //Deregister Subject
         private bool deregisterSubject()
         {
             List<String> subject_list = ;
@@ -265,9 +295,14 @@ namespace Neptun_2._0
 
                 if (cmd.cmd != "exit")
                 {
-                    if ( requestDeregisterSubject(cmd.data[0]) )
+                    if ( requestDeregisterSubject( cmd.data[0]) )
                     {
-
+                        ui.deregister_successful();
+                        return true;
+                    }
+                    else
+                    {
+                        ui.deregister_unsuccessful();
                     }
                 }
                 else
@@ -276,9 +311,16 @@ namespace Neptun_2._0
                 }
             }
         }
-        private bool requestDeregisterSubject()
+        private bool requestDeregisterSubject(String subject_id)
         {
-            
+            if (kisofgv(subject_id))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -289,10 +331,28 @@ namespace Neptun_2._0
         }
 
 
-        //Maintenance - x
+        //Maintenance
         private bool requestMaintenance()
         {
+            cmd = ui.maintenance();
 
+            if(cmd.cmd != "exit")
+            {
+                if (kisofgv())
+                {
+                    ui.maintenance_successful();
+                    return true;
+                }
+                else
+                {
+                    ui.maintenance_unsuccessful();
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -345,12 +405,12 @@ namespace Neptun_2._0
             {
                 if (kisofgv(cmd.data))
                 {
-                    ui.rs_successful();
+                    ui.requestSubmission_successful();
                     return true;
                 }
                 else
                 {
-                    ui.rs_unsuccessful();
+                    ui.requestSubmission_unsuccessful();
                     return false;
                 }
             }
