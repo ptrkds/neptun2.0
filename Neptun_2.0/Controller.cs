@@ -16,16 +16,7 @@ namespace Neptun_2._0
 
         public bool requestLogin(List<String> data)
         {
-            if (kisofgv(data) != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-            return true;
+            return checkKiso(data);
         }
 
         //When user logged in
