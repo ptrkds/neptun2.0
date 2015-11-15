@@ -9,7 +9,7 @@ namespace Neptun_2._0
 {
     class XmlHandler
     {
-        internal void start()
+        internal void Start()
         {
             using (XmlReader reader = XmlReader.Create("UserXML.xml"))
             {
