@@ -1,0 +1,7 @@
+<room id="A1">
+	<limit>150</limit>
+	<lectures>
+		<lecture id="VEMFK12"/>
+		<lecture id="VEMFK99"/>
+	</lectures>
+</room>
