@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="2f976b32-3a9c-4a89-922b-84a10f47bf2d" name="UMLClassDiagram1" linkedPackageId="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="4014549e-c30a-41d3-80c1-d94010e67d1d">
-      <profileInstance Id="64eec259-d43d-4ff0-9af6-9e4aeeaf3582" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="95bd4e1c-3570-4156-9b99-4c23dd06fde3">
-      <profileInstance Id="cf56bac5-e64f-4739-b7f2-ff27fbe7f6da" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2f976b32-3a9c-4a89-922b-84a10f47bf2d" name="UMLClassDiagram1" linkedPackageId="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="7e971e0c-2970-4309-bea5-4a91f822fb9c" name="Neptun" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -68,7 +54,7 @@
             <elementDefinition Id="361f7c11-07b6-4716-974c-c8219936ca8d" />
           </association>
           <association Id="2e99525d-0c04-4c09-a938-ae4b767e3636" isDerived="false" sourceEndRoleName="Neptun" targetEndRoleName="Request" isLeaf="false" isAbstract="false">
-            <classMoniker Id="c7e2ae60-8f47-4e2a-8c7b-354878e477a2" LastKnownName="RequestFunctions" />
+            <classMoniker Id="c7e2ae60-8f47-4e2a-8c7b-354878e477a2" LastKnownName="Controller" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="24693784-ca30-43d9-8db5-3bd5556d94ee" name="Neptun" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
@@ -135,16 +121,16 @@
               <referencedTypeMoniker Id="83f1b74b-00c7-4592-be24-cc0a68a33865" LastKnownName="Users" />
             </type_NamedElement>
           </property>
-          <property Id="2f0c2645-1b62-489a-a9d6-4115f4a89a34" name="requestFunctions" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="2f0c2645-1b62-489a-a9d6-4115f4a89a34" name="requests" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="eb34d0b4-d96e-4296-895a-fcc7c14cc4ce" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="2c00b4cf-2d91-47d4-8f66-b7c86d28bf63" LastKnownName="RequestFunctions" />
+              <referencedTypeMoniker Id="959fd623-b80c-47d1-8e06-b4126e5d4d71" LastKnownName="Requests" />
             </type_NamedElement>
           </property>
-          <property Id="86b5e282-0a0f-421b-b864-4139226e112c" name="requests" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="86b5e282-0a0f-421b-b864-4139226e112c" name="controller" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="b869968f-1a7a-4667-9c41-74b13316727c" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="9be4af41-4bf8-4ffc-b33e-b07eedece230" LastKnownName="Requests" />
+              <referencedTypeMoniker Id="e01afa1f-dad7-4015-b2fc-fb05aefe6378" LastKnownName="Controller" />
             </type_NamedElement>
           </property>
           <property Id="157f342a-460a-4c27-8928-8390c8ae7824" name="demands" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -348,7 +334,7 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="c7e2ae60-8f47-4e2a-8c7b-354878e477a2" name="RequestFunctions" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="c7e2ae60-8f47-4e2a-8c7b-354878e477a2" name="Controller" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="208f7f5f-92e7-4171-8793-b2160417d20b" />
         <ownedOperationsInternal>
           <operation Id="44667575-5a94-431b-943e-f7d161104f31" name="requestTimeTable" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -485,22 +471,36 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="2c00b4cf-2d91-47d4-8f66-b7c86d28bf63" name="RequestFunctions" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::RequestFunctions">
+      <referencedType Id="a4b0835d-4fba-4954-8e73-cb5ddf8619be" name="Demands" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Demands">
+        <elementDefinition Id="114d6238-c3c3-48f6-9baa-47b34a09f244" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e01afa1f-dad7-4015-b2fc-fb05aefe6378" name="Controller" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Controller">
         <elementDefinition Id="208f7f5f-92e7-4171-8793-b2160417d20b" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="9be4af41-4bf8-4ffc-b33e-b07eedece230" name="Requests" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Requests">
+      <referencedType Id="959fd623-b80c-47d1-8e06-b4126e5d4d71" name="Requests" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Requests">
         <elementDefinition Id="8998ea9c-8531-4529-9449-e7dd3092e2be" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="a4b0835d-4fba-4954-8e73-cb5ddf8619be" name="Demands" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Demands">
-        <elementDefinition Id="114d6238-c3c3-48f6-9baa-47b34a09f244" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
   <package Id="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" name="neptun_2.0_uml">
     <elementDefinition Id="fd2f2ae6-892f-4eb1-aca4-596f48131679" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4014549e-c30a-41d3-80c1-d94010e67d1d">
+        <profileInstance Id="64eec259-d43d-4ff0-9af6-9e4aeeaf3582" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="95bd4e1c-3570-4156-9b99-4c23dd06fde3">
+        <profileInstance Id="cf56bac5-e64f-4739-b7f2-ff27fbe7f6da" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="fd2f2ae6-892f-4eb1-aca4-596f48131679"
   name="neptun_2.0_uml" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -2194,7 +2194,7 @@
             isAbstract="false">
             <classMoniker
               Id="208f7f5f-92e7-4171-8793-b2160417d20b"
-              LastKnownName="RequestFunctions"
+              LastKnownName="Controller"
               LastKnownLocation="neptun_2.0_uml.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -2360,24 +2360,6 @@
           </property>
           <property
             Id="eb34d0b4-d96e-4296-895a-fcc7c14cc4ce"
-            name="requestFunctions"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="208f7f5f-92e7-4171-8793-b2160417d20b"
-                LastKnownName="RequestFunctions"
-                LastKnownLocation="neptun_2.0_uml.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="b869968f-1a7a-4667-9c41-74b13316727c"
             name="requests"
             isLeaf="false"
             isStatic="false"
@@ -2391,6 +2373,24 @@
               <classMoniker
                 Id="8998ea9c-8531-4529-9449-e7dd3092e2be"
                 LastKnownName="Requests"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b869968f-1a7a-4667-9c41-74b13316727c"
+            name="controller"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="208f7f5f-92e7-4171-8793-b2160417d20b"
+                LastKnownName="Controller"
                 LastKnownLocation="neptun_2.0_uml.uml" />
             </type_NamedElement>
           </property>
@@ -2764,7 +2764,7 @@
     <packageHasNamedElement>
       <class
         Id="208f7f5f-92e7-4171-8793-b2160417d20b"
-        name="RequestFunctions"
+        name="Controller"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
