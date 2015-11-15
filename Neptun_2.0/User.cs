@@ -8,8 +8,29 @@ namespace Neptun_2._0
 {
     class User
     {
-        public String neptunCode;
-        public String name;
-        public String type;
+        private String neptunCode;
+        private String name;
+        private String type;
+        private List<String> subjects;
+
+        public String getNeptunCode()
+        {
+            return neptunCode;
+        }
+
+        public String getName()
+        {
+            return name;
+        }
+
+        public String getType()
+        {
+            return type;
+        }
+
+        public List<String> getSubjects()
+        {
+            return subjects;
+        }
     }
 }
