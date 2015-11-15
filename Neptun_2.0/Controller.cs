@@ -8,8 +8,6 @@ namespace Neptun_2._0
 {
     class Controller
     {
-        //!!! VOID -> ??? !!!
-
         Interface ui;
 
         User userLoggedIn;
@@ -85,7 +83,7 @@ namespace Neptun_2._0
                         studentBlock();
                         break;
                     case "demandSubmission":
-                        demandJudgement();
+                        requestDemandSubmission();
                         break;
                     case "demandChange":
                         demandChange();
@@ -113,7 +111,7 @@ namespace Neptun_2._0
                         requestStudentTimeTable();
                         break;
                     case "requestSubmission":
-                        requestSubmission();
+                        requestRequestSubmission();
                         break;
                     case "registerForSubject":
                         registerForSubject();
@@ -196,12 +194,12 @@ namespace Neptun_2._0
                 {
                     if (requestDemandJudgement(cmd.data[0]))
                     {
-                        ui.demandAccept();
+                        ui.d_accept();
                         return true;
                     }
                     else
                     {
-                        ui.demandDecline();
+                        ui.d_decline();
                         return false;
                     }
                 }
@@ -228,32 +226,70 @@ namespace Neptun_2._0
         //Demand Submission
         private bool requestDemandSubmission()
         {
-
+            cmd = ui.demandSubmission();
+            if(cmd.cmd != "exit")
+            {
+                if (kisofgv(cmd.data))
+                {
+                    ui.ds_successful();
+                    return true;
+                }
+                else
+                {
+                    ui.ds_unsuccessful();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
-        //Register For Subject
+        //Register For Subject - x
         private bool requestRegisterForSubject()
         {
 
         }
 
 
-        //Deregister Subject
+        //Deregister Subject - x
+        private bool deregisterSubject()
+        {
+            List<String> subject_list = ;
+
+            while (true)
+            {
+                cmd = ui.selectSubject();
+
+                if (cmd.cmd != "exit")
+                {
+                    if ( requestDeregisterSubject(cmd.data[0]) )
+                    {
+
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
         private bool requestDeregisterSubject()
         {
             
         }
 
 
-        //Filter
+        //Filter - x
         private bool requestFilter()
         {
 
         }
 
 
-        //Maintenance
+        //Maintenance - x
         private bool requestMaintenance()
         {
 
@@ -304,7 +340,24 @@ namespace Neptun_2._0
         //Request Submission
         private bool requestRequestSubmission()
         {
-
+            cmd = ui.requestSubmission();
+            if (cmd.cmd != "exit")
+            {
+                if (kisofgv(cmd.data))
+                {
+                    ui.rs_successful();
+                    return true;
+                }
+                else
+                {
+                    ui.rs_unsuccessful();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
 
@@ -390,7 +443,5 @@ namespace Neptun_2._0
 
             //exit
         }
-
-
     }
 }
