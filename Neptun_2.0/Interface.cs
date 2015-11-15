@@ -12,5 +12,11 @@ namespace Neptun_2._0
     {
         CMD command;
 
+        public void Login()
+        {
+            Console.WriteLine("Hello World!");
+            Console.ReadLine();
+        }
+        
     }
 }
