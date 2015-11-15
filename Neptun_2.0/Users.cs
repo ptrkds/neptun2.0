@@ -8,7 +8,7 @@ namespace Neptun_2._0
 {
     class Users
     {
-        UserXmlHandler handler;
+        UserXmlHandler handler = new UserXmlHandler();
 
         bool checkLogin(string id, string pw)
         {
