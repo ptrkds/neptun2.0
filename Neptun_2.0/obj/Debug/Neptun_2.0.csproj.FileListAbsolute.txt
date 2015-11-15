@@ -1,0 +1,6 @@
+E:\PE\3. félév\Szofttech\Neptun 2.0 git\Neptun_2.0\bin\Debug\Neptun_2.0.exe.config
+E:\PE\3. félév\Szofttech\Neptun 2.0 git\Neptun_2.0\bin\Debug\Neptun_2.0.exe
+E:\PE\3. félév\Szofttech\Neptun 2.0 git\Neptun_2.0\bin\Debug\Neptun_2.0.pdb
+E:\PE\3. félév\Szofttech\Neptun 2.0 git\Neptun_2.0\obj\Debug\Neptun_2.0.csprojResolveAssemblyReference.cache
+E:\PE\3. félév\Szofttech\Neptun 2.0 git\Neptun_2.0\obj\Debug\Neptun_2.0.exe
+E:\PE\3. félév\Szofttech\Neptun 2.0 git\Neptun_2.0\obj\Debug\Neptun_2.0.pdb
