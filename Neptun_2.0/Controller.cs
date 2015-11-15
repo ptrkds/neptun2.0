@@ -90,7 +90,7 @@ namespace Neptun_2._0
                         demandChange();
                         break;
                     case "timeTable":
-                        timeTable();
+                        requestTeacherTimeTable();
                         break;
                     case "logOut":
                         //exit
@@ -109,7 +109,7 @@ namespace Neptun_2._0
                 switch (cmd.cmd)
                 {
                     case "timeTable":
-                        timeTable();
+                        requestStudentTimeTable();
                         break;
                     case "requestSubmission":
                         requestSubmission();
@@ -153,7 +153,6 @@ namespace Neptun_2._0
         {
 
         }
-
 
         private bool requestMaintenance()
         {
