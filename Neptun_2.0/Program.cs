@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Neptun_2._0
 {
     class Program
     {
         /*
-        static void Main(string[] args)
-        {
-            
-        }
-        */
+       //entry
+       static void Main(string[] args)
+       {
+           Neptun neptun = new Neptun();
+           neptun.Start();
+       }
+       */
     }
 }
