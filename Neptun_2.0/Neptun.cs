@@ -21,24 +21,50 @@ namespace Neptun_2._0
 
         Interface ui = new Interface();
 
+        CMD cmd;
+
         public void start(){
             login();
         }  
         
         private void login()
         {
-            CMD cmd;
-            cmd = ui.startUp();
+            cmd = ui.login();
 
-            switch (cmd.cmd) {
-                case "login":
-                    
-                    break;
-                case "exit":
-                    exit();
-                    break;
-            } 
-        }  
+            bool success = false;
+
+            while (success == false)
+            {
+                switch (cmd.cmd)
+                {
+                    case "login":
+                        success = controller.requestLogin(cmd.data);
+                        if (success)
+                        {
+                            controller.start(cmd.data[0]);
+                        }
+                        else
+                        {
+                            cmd = ui.relogin();
+                        }
+                        break;
+                    case "exit":
+                        exit();
+                        break;
+                }
+            }
+
+            
+                if (controller.requestLogin(data))
+                {
+                    controller.start(data[0]);
+                }
+                else
+                {
+                   cmd = ui.relogin();
+                }
+            
+        }
 
         void exit() {
         }

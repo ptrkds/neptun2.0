@@ -14,16 +14,24 @@ namespace Neptun_2._0
 
         CMD cmd;
 
-        public bool requestLogin()
+        public bool requestLogin(List<String> data)
         {
+            if (kisofgv(data) != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
             return true;
         }
 
         //When user logged in
-        public void start(User user)
+        public void start(String user_neptun_code)
         {
-            userLoggedIn = user;
+            userLoggedIn = kisofgv(user_neptun_code);
 
             switch (userLoggedIn.getType())
             {
