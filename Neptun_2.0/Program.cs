@@ -8,13 +8,11 @@ namespace Neptun_2._0
 {
     class Program
     {
-        /*
        //entry
        static void Main(string[] args)
        {
            Neptun neptun = new Neptun();
-           neptun.Start();
+           neptun.start();
        }
-       */
     }
 }

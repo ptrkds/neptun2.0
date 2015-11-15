@@ -9,8 +9,13 @@ namespace Neptun_2._0
 {
     class Neptun
     {
-       
 
+        Controller controller = new Controller();
 
+        public void start(){
+        }    
+
+        void exit() {
+        }
     }
 }
