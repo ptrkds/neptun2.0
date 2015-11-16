@@ -13,6 +13,14 @@ namespace Neptun_2._0
         private String type;
         public List<String> subjects;
 
+        public User(String neptunCode, String name, String type, List<String> subjects)
+        {
+            neptunCode = this.neptunCode;
+            name = this.name;
+            type = this.type;
+            subjects = this.subjects;
+        }
+
         public String getNeptunCode()
         {
             return neptunCode;

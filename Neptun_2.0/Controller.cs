@@ -18,17 +18,28 @@ namespace Neptun_2._0
 
         public bool requestLogin(List<String> data)
         {
-            return uxh.checkLogin(data[0], data[1]);
+            bool check = false;
+            try {
+                check = uxh.checkLogin(data[0], data[1]);
+            } catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return check;
         }
 
         //When user logged in
         public void start(String user_neptun_code)
         {
-            userLoggedIn = uxh.getUser(user_neptun_code);
-
+            try {
+                userLoggedIn = uxh.getUser(user_neptun_code);
+            }catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
             //ui.Sajt(userLoggedIn.name, userLoggedIn.type);
 
-            /*
+            
             switch (userLoggedIn.getType())
             {
                 case "admin":
@@ -40,9 +51,9 @@ namespace Neptun_2._0
                 case "student":
                     studentMain();
                     break;
-            }*/
+            }
         }
-        /*
+        
         //Mains
         private void adminMain()
         {
@@ -134,7 +145,15 @@ namespace Neptun_2._0
         //Demand Change
         private bool demandChange()
         {
-            List<String> demands = ;
+            List<String> demands = new List<String>();
+
+            try
+            {
+                demands = getDemands(userLoggedIn.getNeptunCode());
+            }catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
 
             while (true)
             {
