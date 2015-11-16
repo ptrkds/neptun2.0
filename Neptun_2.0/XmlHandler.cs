@@ -11,13 +11,82 @@ namespace Neptun_2._0
     {
         public static string GetValue(ref XmlReader xmlReader, string node)
         {
+            //TODO try catch
             string str;
+
             xmlReader.ReadToFollowing(node);
             str = xmlReader.ReadElementContentAsString();
-            //Console.WriteLine(str);
+            
             return str;
         }
 
+        public void SetAttribute(string filepath, string xpath, int idx, string value)
+        {
+            //TODO try catch
+            //sets value as the [idx] attribute of the given xpath
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filepath);
+            XmlNode node = doc.SelectSingleNode(xpath);
+            Console.WriteLine(node.Name);
+
+            node.Attributes[idx].Value = value;
+
+            doc.Save(filepath);
+        }
+
+        public void AppendNode(string filepath, string xpath, string node_name, string node_value)
+        {
+            //TODO try catch
+            //append node with given value
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filepath);
+            XmlNode node = doc.SelectSingleNode(xpath);
+
+            XmlElement elem = doc.CreateElement(node_name);
+            elem.InnerText = node_name;
+
+            node.AppendChild(elem);
+
+            doc.Save(filepath);
+        }
+
+        public void AppendNode(string filepath, string xpath, string node_name, string node_value, string attr_name, string attr_value)
+        {
+            //TODO try catch
+            //append node with given value and attribute
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filepath);
+            XmlNode node = doc.SelectSingleNode(xpath);
+
+            XmlElement elem = doc.CreateElement(node_name);
+            elem.InnerText = attr_value;
+            elem.IsEmpty = true;
+
+            elem.SetAttribute(attr_name, attr_value);
+            node.AppendChild(elem);
+
+            doc.Save(filepath);
+        }
+
+        public void AppendEmptyNodeWithAttr(string filepath, string xpath, string node_name, string attr_name, string attr_value)
+        {
+            //TODO try catch
+            //append an empty child node with the given attribute
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filepath);
+            XmlNode node = doc.SelectSingleNode(xpath);
+
+            XmlElement elem = doc.CreateElement(node_name);
+            elem.InnerText = attr_value;
+            elem.IsEmpty = true;
+
+            elem.SetAttribute(attr_name, attr_value);
+            node.AppendChild(elem);
+
+            doc.Save(filepath);
+        }
+
+        #region left over code
         internal void Start()
         {
             using (XmlReader xmlReader = XmlReader.Create("UserXML.xml"))
@@ -32,7 +101,7 @@ namespace Neptun_2._0
 
                 while (xmlReader.Read())
                 {
-                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id")=="BATMAN"))
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == "BATMAN"))
                     {
                         if (xmlReader.HasAttributes)
                             Console.WriteLine("-" + xmlReader.GetAttribute("id"));
@@ -81,68 +150,6 @@ namespace Neptun_2._0
                 Console.ReadLine();
             }
         }
-
-
-        public void SetAttribute(string filepath, string xpath, int idx, string value)
-        {
-            //sets value as the [idx] attribute of the given xpath
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            XmlNode node = doc.SelectSingleNode(xpath);
-            Console.WriteLine(node.Name);
-
-            node.Attributes[idx].Value = value;
-
-            doc.Save(filepath);
-        }
-
-        public void AppendNode(string filepath, string xpath, string node_name, string node_value)
-        {
-            //append node with given value
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            XmlNode node = doc.SelectSingleNode(xpath);
-
-            XmlElement elem = doc.CreateElement(node_name);
-            elem.InnerText = node_name;
-
-            node.AppendChild(elem);
-
-            doc.Save(filepath);
-        }
-
-        public void AppendNode(string filepath, string xpath, string node_name, string node_value, string attr_name, string attr_value)
-        {
-            //append node with given value and attribute
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            XmlNode node = doc.SelectSingleNode(xpath);
-
-            XmlElement elem = doc.CreateElement(node_name);
-            elem.InnerText = attr_value;
-            elem.IsEmpty = true;
-
-            elem.SetAttribute(attr_name, attr_value);
-            node.AppendChild(elem);
-
-            doc.Save(filepath);
-        }
-
-        public void AppendEmptyNodeWithAttr(string filepath, string xpath, string node_name, string attr_name, string attr_value)
-        {
-            //append an empty child node with the given attribute
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            XmlNode node = doc.SelectSingleNode(xpath);
-
-            XmlElement elem = doc.CreateElement(node_name);
-            elem.InnerText = attr_value;
-            elem.IsEmpty = true;
-
-            elem.SetAttribute(attr_name, attr_value);
-            node.AppendChild(elem);
-
-            doc.Save(filepath);
-        }
+        #endregion
     }
 }
