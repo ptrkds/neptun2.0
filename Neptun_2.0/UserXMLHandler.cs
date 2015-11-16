@@ -11,7 +11,7 @@ namespace Neptun_2._0
     {
        
 
-        public void getUser(string neptunCode)
+        public User getUser(string neptunCode)
         {
             User tmp = new User();
             XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
@@ -46,12 +46,12 @@ namespace Neptun_2._0
                     // Console.WriteLine(tmp.type);
                     //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
 
-                    Console.WriteLine(tmp.name + " "+ tmp.type);
+                    //Console.WriteLine(tmp.name + " "+ tmp.type);
 
 
                     xmlReader.ReadToFollowing("lectures");
                     int cnt = Int32.Parse(xmlReader.GetAttribute("count"));
-                    Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
+                    //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
 
                     //xmlReader.ReadToFollowing("lecture");
                     //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
@@ -61,17 +61,17 @@ namespace Neptun_2._0
                         //működő iterálás
                         //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
                         //xmlReader.ReadToFollowing("lecture");
-                        Console.WriteLine(xmlReader.GetAttribute("id"));
+                        //Console.WriteLine(xmlReader.GetAttribute("id"));
                     }
                 }
             }
 
 
-            Console.ReadLine();
+            //Console.ReadLine();
             //}
-
             // return tmp;
             xmlReader.Dispose();
+            return tmp;
         }
 
         public bool checkLogin(string neptunCode, string password)

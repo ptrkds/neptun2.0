@@ -40,6 +40,10 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
+                if(position > 2)
+                {
+                    Console.Write("\b ");
+                }
                 if(!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= '0' && input.KeyChar <= '9')) && input.Key != ConsoleKey.Backspace)
                 {
                     Console.Write("\b ");
@@ -100,7 +104,7 @@ namespace Neptun_2._0
             if (position == 3) command.cmd = "login";
             if (position == 4) command.cmd = "exit";
             command.data = new List<String>();
-            command.data.Add(neptuncode);
+            command.data.Add(neptuncode.ToUpper());
             command.data.Add(password);
             Console.Clear();
             return command;
@@ -109,6 +113,7 @@ namespace Neptun_2._0
         {
             Console.WriteLine(sajt1);
             Console.WriteLine(sajt2);
+            Console.ReadLine();
         }
     }
 }

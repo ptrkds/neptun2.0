@@ -8,22 +8,27 @@ namespace Neptun_2._0
 {
     class Controller
     {
-        Interface ui;
+        Interface ui = new Interface();
 
         User userLoggedIn;
 
         CMD cmd;
 
+        UserXmlHandler uxh = new UserXmlHandler();
+
         public bool requestLogin(List<String> data)
         {
-            return checkKiso(data);
+            return uxh.checkLogin(data[0], data[1]);
         }
 
         //When user logged in
         public void start(String user_neptun_code)
         {
-            userLoggedIn = kisofgv(user_neptun_code);
+            userLoggedIn = uxh.getUser(user_neptun_code);
 
+            //ui.Sajt(userLoggedIn.name, userLoggedIn.type);
+
+            /*
             switch (userLoggedIn.getType())
             {
                 case "admin":
@@ -35,9 +40,9 @@ namespace Neptun_2._0
                 case "student":
                     studentMain();
                     break;
-            }
+            }*/
         }
-
+        /*
         //Mains
         private void adminMain()
         {
@@ -503,6 +508,6 @@ namespace Neptun_2._0
             cmd = ui.timeTableView(list);
 
             //exit
-        }
+        }*/
     }
 }

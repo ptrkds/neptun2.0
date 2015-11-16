@@ -13,6 +13,7 @@ namespace Neptun_2._0
        {
            Neptun neptun = new Neptun();
            neptun.start();
+           return;
        }
     }
 }

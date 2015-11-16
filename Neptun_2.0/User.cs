@@ -11,7 +11,7 @@ namespace Neptun_2._0
         private String neptunCode;
         private String name;
         private String type;
-        private List<String> subjects;
+        public List<String> subjects;
 
         public String getNeptunCode()
         {

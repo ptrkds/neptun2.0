@@ -25,11 +25,12 @@ namespace Neptun_2._0
 
         public void start(){
             login();
+            return;
         }  
         
         private void login()
         {
-            cmd = ui.login();
+            cmd = ui.Login();
 
             bool success = false;
 
@@ -45,17 +46,19 @@ namespace Neptun_2._0
                         }
                         else
                         {
-                            cmd = ui.relogin();
+                            cmd = ui.Login(true);
                         }
                         break;
                     case "exit":
                         exit();
+                        success = true;
                         break;
                 }
             }            
         }
 
-        void exit() {
+        private void exit() {
+            return;
         }
     }
 }
