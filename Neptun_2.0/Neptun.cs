@@ -13,6 +13,12 @@ namespace Neptun_2._0
         public List<String> data;
     }
 
+    public struct short_subject
+    {
+        public string id;
+        public string name;
+    }
+
     class Neptun
     {
         
