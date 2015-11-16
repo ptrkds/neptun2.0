@@ -4,10 +4,10 @@
   <type>student</type>
   <pw>fapfap</pw>
   <lectures count="4">
-    <lecture id="alma" />
-    <lecture id="VEMFK32" />
-    <lecture id="VEMFK43" />
-    <lecture id="VEMFK99" />
-    <lecture id="nagyonalma" />
+    <lecture id="alma">Korszprog</lecture>
+    <lecture id="VEMFK32">Korszprog</lecture>
+    <lecture id="VEMFK43">sd</lecture>
+    <lecture id="VEMFK99">Korssazprog</lecture>
+    <lecture id="nagyonalma">Digszam</lecture>
   </lectures>
 </user>
