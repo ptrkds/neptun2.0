@@ -10,10 +10,13 @@ namespace Neptun_2._0
 
     class Interface
     {
-        CMD command;
-
-        public void Login()
+        public CMD Login(Boolean relogin=false)
         {            
+            if(relogin)
+            {
+                Console.SetCursorPosition(5, 17);
+                Console.Write("Hibás neptun kód vagy jelszó!");
+            }
             Console.SetCursorPosition(10,4);
             Console.Write("Neptun 2.0 - Bejelentkezés:");
             Console.SetCursorPosition(5, 5);
@@ -31,25 +34,36 @@ namespace Neptun_2._0
             int position = 1;
             int lengthneptun = 0;
             int lengthpassword = 0;
+            String neptuncode = "";
+            String password = "";
             ConsoleKeyInfo input;
             do
             {
                 input = Console.ReadKey();
-                if(input.KeyChar >= 'a' && input.KeyChar <= 'z' && position == 1)
+                if(!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= '0' && input.KeyChar <= '9')) && input.Key != ConsoleKey.Backspace)
+                {
+                    Console.Write("\b ");
+                }
+                if(((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= '0' && input.KeyChar <= '9')) && position == 1)
                 {
                     lengthneptun++;
+                    neptuncode += input.KeyChar;
                 }
-                if(input.Key == ConsoleKey.Backspace && position == 1)
+                if(input.Key == ConsoleKey.Backspace && lengthneptun > 0 && position == 1)
                 {
+                    neptuncode = neptuncode.Remove(neptuncode.Length-1);
                     lengthneptun--;
                     Console.Write(" ");
                 }
-                if (input.KeyChar >= 'a' && input.KeyChar <= 'z' && position == 2)
+                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= '0' && input.KeyChar <= '9')) && position == 2)
                 {
+                    Console.Write("\b*");
                     lengthpassword++;
+                    password += input.KeyChar;
                 }
-                if (input.Key == ConsoleKey.Backspace && position == 2)
+                if (input.Key == ConsoleKey.Backspace && lengthpassword > 0 && position == 2 )
                 {
+                    password = password.Remove(password.Length - 1);
                     lengthpassword--;
                     Console.Write(" ");
                 }
@@ -80,9 +94,21 @@ namespace Neptun_2._0
                     Console.Write("--------------------");
                     Console.SetCursorPosition(27, curpos);
                 }
+
             } while (input.Key != ConsoleKey.Enter || position < 3);
+            CMD command = new CMD();
+            if (position == 3) command.cmd = "login";
+            if (position == 4) command.cmd = "exit";
+            command.data = new List<String>();
+            command.data.Add(neptuncode);
+            command.data.Add(password);
             Console.Clear();
+            return command;
         }
-        
+        public void Sajt(String sajt1, String sajt2)
+        {
+            Console.WriteLine(sajt1);
+            Console.WriteLine(sajt2);
+        }
     }
 }
