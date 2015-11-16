@@ -10,8 +10,9 @@ namespace Neptun_2._0
     class InterfaceLogin
     {
         public CMD Login(Boolean relogin=false)
-        {       
+        {
             //WriteMenu
+            Console.Clear();
             Console.SetCursorPosition(10,4);
             Console.Write("Neptun 2.0 - Bejelentkezés:");
             Console.SetCursorPosition(5, 5);
