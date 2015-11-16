@@ -15,6 +15,16 @@ namespace Neptun_2._0
             return handler.checkLogin(id, pw);
         }
 
+        List<String> getSubjects(string user_id)
+        {
+            
+        }
+
+        bool deregisterSubject(string user_id, subject_id)
+        {
+
+        }
+
 
     }
 }
