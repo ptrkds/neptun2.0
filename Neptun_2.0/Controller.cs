@@ -181,7 +181,9 @@ namespace Neptun_2._0
         }
         private int requestDemandChange(String demand_id)
         {
-            Demand demand = ;
+            Demand demand = new Demand();
+
+            demand = 
 
             cmd = ui.demandChange(demand);
 
