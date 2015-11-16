@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Neptun_2._0
 {
     
-
-    class Interface
+    class InterfaceLogin
     {
         public CMD Login(Boolean relogin=false)
         {       

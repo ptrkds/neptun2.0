@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminInterface.cs" />
     <Compile Include="ClassRoomXmlHandler.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Interface.cs" />
+    <Compile Include="InterfaceLogin.cs" />
     <Compile Include="Neptun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
