@@ -8,7 +8,8 @@ namespace Neptun_2._0
 {
     class Controller
     {
-        Interface ui = new Interface();
+        private Interface ui = new Interface();
+        
 
         User userLoggedIn;
 
@@ -183,7 +184,15 @@ namespace Neptun_2._0
         {
             Demand demand = new Demand();
 
-            demand = 
+            try
+            {
+                demand =
+    }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+            }
 
             cmd = ui.demandChange(demand);
 
@@ -209,7 +218,17 @@ namespace Neptun_2._0
         //Demand Judgement
         private bool demandJudgement()
         {
-            List<String> demands = ;
+            List<String> demands = new List<string>();
+
+            try
+            {
+                demands =
+    }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+            }
 
             while (true)
             {
@@ -274,7 +293,17 @@ namespace Neptun_2._0
         //Register For Subject
         private bool registerForSubject()
         {
-            List<String> subjects = ;
+            List<String> subjects = new ;
+
+            try
+            {
+                subjects =
+    }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+            }
 
             while (true)
             {

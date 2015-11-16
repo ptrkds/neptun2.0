@@ -25,7 +25,7 @@ namespace Neptun_2._0
 
         Controller controller = new Controller();
 
-        Interface ui = new Interface();
+        private InterfaceLogin il = new InterfaceLogin();
 
         CMD cmd;
 
@@ -36,7 +36,7 @@ namespace Neptun_2._0
         
         private void login()
         {
-            cmd = ui.Login();
+            cmd = il.Login();
 
             bool success = false;
 
@@ -52,7 +52,7 @@ namespace Neptun_2._0
                         }
                         else
                         {
-                            cmd = ui.Login(true);
+                            cmd = il.Login(true);
                         }
                         break;
                     case "exit":
