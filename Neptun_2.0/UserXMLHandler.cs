@@ -9,69 +9,45 @@ namespace Neptun_2._0
 {
     class UserXmlHandler : XmlHandler
     {
-       
-
         public User getUser(string neptunCode)
         {
-            User tmp = new User();
             XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
-            //using ()
-            //{
-            //xmlReader.ReadToFollowing("pw");
-            //Console.WriteLine(xmlReader.Name + xmlReader.ReadElementContentAsString());
+            //TODO .Create() exception handling + try catch
 
-            //reader.ReadElementContentAsString();
-
-            //reader.ReadElementString("id");
-
-
-            while (xmlReader.Read())
+            string id = "";
+            string name = "";
+            string type = "";
+            List<short_subject> lectures = new List<short_subject>();
+            
+            try
             {
-                if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == neptunCode))
+                while (xmlReader.Read())
                 {
-                    // if (xmlReader.HasAttributes)
-                    //   Console.WriteLine("-" + xmlReader.GetAttribute("id"));
-                    //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
-                    tmp.name = GetValue(ref xmlReader, "name");
-                    /*xmlReader.ReadToFollowing("name");
-                    tmp.name = xmlReader.ReadElementContentAsString();
-                    Console.WriteLine("-" + tmp.name);*/
-                    //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
-
-                    tmp.type = GetValue(ref xmlReader, "type");
-
-                    //xmlReader.ReadToFollowing("type");
-                    //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
-                    //tmp.type = xmlReader.ReadElementContentAsString();
-                    // Console.WriteLine(tmp.type);
-                    //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
-
-                    //Console.WriteLine(tmp.name + " "+ tmp.type);
-
-
-                    xmlReader.ReadToFollowing("lectures");
-                    int cnt = Int32.Parse(xmlReader.GetAttribute("count"));
-                    //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
-
-                    //xmlReader.ReadToFollowing("lecture");
-                    //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
-                    
-                    while (xmlReader.Read() && xmlReader.IsStartElement())
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == neptunCode))
                     {
-                        //működő iterálás
-                        //Console.WriteLine(xmlReader.Name + xmlReader.NodeType);
-                        //xmlReader.ReadToFollowing("lecture");
-                        //Console.WriteLine(xmlReader.GetAttribute("id"));
+                        id = xmlReader.GetAttribute("id");
+                        name = GetValue(ref xmlReader, "name");
+                        type = GetValue(ref xmlReader, "type");
+
+                        xmlReader.ReadToFollowing("lectures");
+                        int cnt = Int32.Parse(xmlReader.GetAttribute("count"));
+                        
+                        while (xmlReader.Read() && xmlReader.IsStartElement())
+                        {
+                            short_subject subj = new short_subject();
+                            subj.id = xmlReader.GetAttribute("id");
+                            subj.name = xmlReader.Value;
+                            lectures.Add(subj);
+                        }
                     }
                 }
             }
-
-
-            //Console.ReadLine();
-            //}
-            // return tmp;
-            xmlReader.Dispose();
-            return tmp;
+            catch(Exception e)
+            {
+                //TODO e
+            }
+            
+            return new User(id, name, type, lectures);
         }
 
         public bool checkLogin(string neptunCode, string password)
@@ -80,10 +56,11 @@ namespace Neptun_2._0
             try
             {
                 xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
-                //check header
-                string yep = GetValue(ref xmlReader, "pw");
+                //TODO check header
+
+                string userpw = GetValue(ref xmlReader, "pw");
                 xmlReader.Dispose();
-                if (yep == password )
+                if (userpw == password )
                 {
                     return true;
                 }
@@ -96,12 +73,13 @@ namespace Neptun_2._0
             }
             catch(Exception e)
             {
-                //open error
+                //TODO e
             }
             
-            //??
+            //TODO ??
             return false;
-                  
         }
+
+        public 
     }
 }
