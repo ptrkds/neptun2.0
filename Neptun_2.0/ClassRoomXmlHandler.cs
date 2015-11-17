@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Neptun_2._0
 {
-    class ClassRoomXmlHandler
+    class ClassRoomXmlHandler : XmlHandler
     {
+
     }
 }

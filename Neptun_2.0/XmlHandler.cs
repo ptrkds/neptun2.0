@@ -73,6 +73,7 @@ namespace Neptun_2._0
             //TODO try catch
             //append an empty child node with the given attribute
             XmlDocument doc = new XmlDocument();
+
             doc.Load(filepath);
             XmlNode node = doc.SelectSingleNode(xpath);
 

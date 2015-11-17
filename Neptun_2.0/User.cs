@@ -11,9 +11,9 @@ namespace Neptun_2._0
         private String neptunCode;
         private String name;
         private String type;
-        public List<short_subject> subjects;
+        public List<string> subjects;
 
-        public User(String neptunCode, String name, String type, List<short_subject> subjects)
+        public User(String neptunCode, String name, String type, List<string> subjects)
         {
             neptunCode = this.neptunCode;
             name = this.name;
@@ -36,7 +36,7 @@ namespace Neptun_2._0
             return type;
         }
 
-        public List<short_subject> getSubjects()
+        public List<string> getSubjects()
         {
             return subjects;
         }

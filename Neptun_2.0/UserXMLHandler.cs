@@ -9,7 +9,7 @@ namespace Neptun_2._0
 {
     class UserXmlHandler : XmlHandler
     {
-        public User getUser(string neptunCode)
+        public User GetUser(string neptunCode)
         {
             XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
             //TODO .Create() exception handling + try catch
@@ -17,7 +17,7 @@ namespace Neptun_2._0
             string id = "";
             string name = "";
             string type = "";
-            List<short_subject> subjects = new List<short_subject>();
+            List<string> subjects = new List<string>();
             
             try
             {
@@ -29,7 +29,7 @@ namespace Neptun_2._0
                         name = GetValue(ref xmlReader, "name");
                         type = GetValue(ref xmlReader, "type");
 
-                        subjects = getSubjects(neptunCode);
+                        subjects = getSubjectIds(neptunCode);
                     }
                 }
             }
@@ -41,7 +41,7 @@ namespace Neptun_2._0
             return new User(id, name, type, subjects);
         }
 
-        public bool checkLogin(string neptunCode, string password)
+        public bool CheckLogin(string neptunCode, string password)
         {
             XmlReader xmlReader;
             try
@@ -71,27 +71,25 @@ namespace Neptun_2._0
             return false;
         }
 
-        public List<short_subject> getSubjects(string neptunCode)
+        public List<string> GetSubjectIds(string neptunCode)
         {
             //TODO try catch
-            List<short_subject> subjects = new List<short_subject>();
+            List<string> subjects = new List<string>();
             XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
 
             xmlReader.ReadToFollowing("lectures");
-            int cnt = Int32.Parse(xmlReader.GetAttribute("count")); //needed?
+            int cnt = Int32.Parse(xmlReader.GetAttribute("count")); //unused variable
 
             while (xmlReader.Read() && xmlReader.Name!="lectures")
             {
                 if (xmlReader.IsStartElement())
                 {
-                    short_subject subj = new short_subject();
-                    subj.id = xmlReader.GetAttribute("id");
-                    xmlReader.Read();
-                    subj.name = xmlReader.Value;
+                    string id = "";
+                    id = xmlReader.GetAttribute("id");
+                    
+                    //Console.WriteLine(subj.id + " - " + subj.name);
 
-                    Console.WriteLine(subj.id + " - " + subj.name);
-
-                    subjects.Add(subj); 
+                    subjects.Add(id); 
                 }
 
                 //xmlReader.Read();

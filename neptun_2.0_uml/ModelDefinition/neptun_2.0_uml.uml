@@ -2528,7 +2528,42 @@
         name="XMLHandler"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="a83933e3-8cbc-4c4b-ab71-c5efb845b363"
+            name="GetValue"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b459789b-ec7a-49c6-a9ae-bf5740d5bec7"
+            name="SetAttribute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fa846aa3-14a0-48fc-9768-e77495c7a86d"
+            name="AppendNode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4f3995a9-1180-4ad2-a613-d70866328fd9"
+            name="AppendEmptyNodeWithAttr"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -2617,6 +2652,32 @@
               LastKnownLocation="neptun_2.0_uml.uml" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4338c60d-fca3-4d27-a7d9-88e83839749f"
+            name="GetUser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8858dabb-e659-4ece-a0d5-0ecacc05b10d"
+            name="CheckLogin"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="03c64d9b-17a6-452a-9605-dfd8592d51b8"
+            name="GetSubjectIds"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3044,6 +3105,43 @@
               LastKnownLocation="neptun_2.0_uml.uml" />
           </generalization>
         </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d251b766-0756-4631-a19d-f47cf3ee4957"
+        name="SubjectXmlHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="df6a56be-f3cb-4a4b-92d3-31519f990c6f"
+            isSubstitutable="false">
+            <classMoniker
+              Id="5485bc6f-6ff7-464b-b727-3dc65d5fd60d"
+              LastKnownName="XMLHandler"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="9ffc7c07-6fb9-4474-98a1-cc8ee2344a61"
+            name="GetSubjectName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6f934e4f-4580-460f-893a-e8af109bebe2"
+            name="BlockStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
   </packagedElements>

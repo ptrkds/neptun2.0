@@ -12,12 +12,17 @@ namespace Neptun_2._0
 
         bool checkLogin(string id, string pw)
         {
-            return handler.checkLogin(id, pw);
+            return handler.CheckLogin(id, pw);
         }
 
         List<short_subject> getSubjects(string neptunCode)
         {
-            return handler.getSubjects(neptunCode);
+            List<string> ids = handler.GetSubjectIds(neptunCode);
+
+
+            //get subjectnames
+            List < short_subject > subj = new List<short_subject>();
+            return subj;
         }
 
         /*

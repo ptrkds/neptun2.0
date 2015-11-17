@@ -195,6 +195,20 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="b32f427d-9a23-44f8-8021-69be5024aeb9" name="XMLHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="5485bc6f-6ff7-464b-b727-3dc65d5fd60d" />
+        <ownedOperationsInternal>
+          <operation Id="a9e4d9b1-e4bd-4eef-8afa-d48af54993c3" name="GetValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a83933e3-8cbc-4c4b-ab71-c5efb845b363" />
+          </operation>
+          <operation Id="8a58c882-be3f-4c6f-a0b9-14139c1564ed" name="SetAttribute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b459789b-ec7a-49c6-a9ae-bf5740d5bec7" />
+          </operation>
+          <operation Id="00bf8653-055d-49ea-ad2a-d71fc1be220c" name="AppendNode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fa846aa3-14a0-48fc-9768-e77495c7a86d" />
+          </operation>
+          <operation Id="5d51bdb1-1087-4d76-8a11-71b8ab0c4739" name="AppendEmptyNodeWithAttr" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4f3995a9-1180-4ad2-a613-d70866328fd9" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -237,6 +251,17 @@
             <elementDefinition Id="9f343be9-9fdf-42fd-bca3-fd07c0b16e72" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="af0e8939-5350-4cfe-9534-cfc56447a9b9" name="GetUser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4338c60d-fca3-4d27-a7d9-88e83839749f" />
+          </operation>
+          <operation Id="24006871-eedb-46d5-bbb2-b91ad1566aba" name="CheckLogin" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8858dabb-e659-4ece-a0d5-0ecacc05b10d" />
+          </operation>
+          <operation Id="38a9b58e-b30d-46e1-8fd7-cbc27836c99f" name="GetSubjectIds" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="03c64d9b-17a6-452a-9605-dfd8592d51b8" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -485,6 +510,25 @@
         <elementDefinition Id="8998ea9c-8531-4529-9449-e7dd3092e2be" />
       </referencedType>
     </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bfd866b4-0006-4c6c-96e1-cadeb34e3290" name="SubjectXmlHandler" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d251b766-0756-4631-a19d-f47cf3ee4957" />
+        <generalsInternal>
+          <generalization Id="4d050bdd-cc29-4b96-8430-7a3435b4db8c" isSubstitutable="false">
+            <classMoniker Id="b32f427d-9a23-44f8-8021-69be5024aeb9" LastKnownName="XMLHandler" />
+            <elementDefinition Id="df6a56be-f3cb-4a4b-92d3-31519f990c6f" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="5658663a-1911-44e7-80c0-54ee44af41e9" name="GetSubjectName" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9ffc7c07-6fb9-4474-98a1-cc8ee2344a61" />
+          </operation>
+          <operation Id="66713b10-e908-4c2d-9958-3bff6df52d78" name="BlockStudent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6f934e4f-4580-460f-893a-e8af109bebe2" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" name="neptun_2.0_uml">
     <elementDefinition Id="fd2f2ae6-892f-4eb1-aca4-596f48131679" />
