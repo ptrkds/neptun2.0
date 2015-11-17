@@ -52,7 +52,7 @@ namespace Neptun_2._0
             {
                 while (xmlReader.Read())
                 {
-                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == neptunCode))
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == roomId))
                     {
                         id = xmlReader.GetAttribute("id");
                         limit = Int32.Parse(GetValue(ref xmlReader, "name"));
