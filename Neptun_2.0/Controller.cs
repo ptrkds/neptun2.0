@@ -183,7 +183,7 @@ namespace Neptun_2._0
             {
                 List<short_user> student_list = db.getStudents(subject_id);
 
-                cmd = tui.selectStudent();
+                cmd = tui.selectStudent(student_list);
 
                 if (cmd.cmd != "exit")
                 {
