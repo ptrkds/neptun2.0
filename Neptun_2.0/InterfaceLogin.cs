@@ -122,13 +122,7 @@ namespace Neptun_2._0
             command.data.Add(password);
             Console.Clear();
             return command;
-        }
-        
-        public void Sajt(String sajt1, String sajt2)
-        {
-            Console.WriteLine(sajt1);
-            Console.WriteLine(sajt2);
-            Console.ReadLine();
-        }
+        }        
+      
     }
 }

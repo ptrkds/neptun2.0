@@ -14,6 +14,8 @@ namespace Neptun_2._0
         private String demand = "Igények";
         private String demandSubmission = "Igény felvitele";
         private String demandChange = "Igény modosítása";
+        private int countsubject = 0;
+        private int countusers = 0;
         public CMD TeacherMainMenu()
         {
             //WriteMenu
@@ -248,11 +250,13 @@ namespace Neptun_2._0
             Console.Write("Adja meg, hogy melyik tantárgyról szeretne diákot letiltani:");
             Console.SetCursorPosition(5, 8);
             Console.Write(back + "   ");
-            SubjectUnderline(subject);
+            countsubject = subject.Count;
+            subMainUnderline(countsubject);
             for (int i = 0; i < subject.Count; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
                 Console.Write(subject[i].name + "   ");
+                
             }
             do
             {
@@ -262,19 +266,20 @@ namespace Neptun_2._0
                 if (input.Key == ConsoleKey.UpArrow)
                     position--;
                 if (position < 1)
-                    position = subject.Count + 1;
-                if (position > subject.Count + 1)
+                    position = countsubject + 1;
+                if (position > countsubject + 1)
                     position = 1;
-                SubjectUnderline(subject);
+                subMainUnderline(countsubject);
             } while (input.Key != ConsoleKey.Enter);
             CMD command = new CMD();
+            command.data = new List<string>();
             if (position == 1)
                 command.cmd = "exit";
             else
                 command.data.Add(subject[position-2].id);
             return command;
         }
-        private void SubjectUnderline(List<short_subject> subject)
+        private void subMainUnderline(int max)
         {
             Console.Write("\b\b\b   ");
             if (position == 1)
@@ -288,7 +293,7 @@ namespace Neptun_2._0
             }
             else
             {
-                if (position == 2 || position == subject.Count + 1)
+                if (position == 2 || position == max + 1)
                 {
                     for (int i = 0; i < back.Length; i++)
                     {
@@ -300,14 +305,51 @@ namespace Neptun_2._0
                 Console.Write("->");
             }
         }
-        public CMD selectStudent()
+        public CMD selectStudent(List<short_user> users)
         {
+            subMenuremove(10, countsubject);
+            position = 1;
+            Console.SetCursorPosition(3, 6);
+            Console.Write("Adja meg, hogy melyik diákot szeretné letiltani:              ");
+            countusers = users.Count;
+            subMainUnderline(countusers);            
+            for (int i = 0; i < users.Count; i++)
+            {
+                Console.SetCursorPosition(5, 10 + i);
+                Console.Write(users[i].name + "   ");                
+            }
+            do
+            {
+                input = Console.ReadKey();
+                if (input.Key == ConsoleKey.DownArrow)
+                    position++;
+                if (input.Key == ConsoleKey.UpArrow)
+                    position--;
+                if (position < 1)
+                    position = countusers + 1;
+                if (position > countusers + 1)
+                    position = 1;
+                subMainUnderline(countusers);
+            } while (input.Key != ConsoleKey.Enter);
             CMD command = new CMD();
+            command.data = new List<string>();
             if (position == 1)
                 command.cmd = "exit";
             else
-                command.data.Add(/*subject[position - 2].id*/"");
+                command.data.Add(users[position - 2].id);
             return command;
+        }       
+
+        private void subMenuremove(int where, int length)
+        {
+            for(int i=where;i<where+length;i++)
+            {
+                for (int j = 0; j < 20; j++)
+                {
+                    Console.SetCursorPosition(j * 4, i);
+                    Console.Write("    ");
+                }
+            }
         }
     }
 }
