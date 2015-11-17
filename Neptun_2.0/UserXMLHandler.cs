@@ -29,7 +29,7 @@ namespace Neptun_2._0
                         name = GetValue(ref xmlReader, "name");
                         type = GetValue(ref xmlReader, "type");
 
-                        subjects = getSubjectIds(neptunCode);
+                        subjects = GetSubjectIds(neptunCode);
                     }
                 }
             }
@@ -96,6 +96,28 @@ namespace Neptun_2._0
             }
 
             return subjects;
+        }
+
+        //TODO implement
+        public void deregister(string subj_id, string neptunCOde)
+        {
+
+        }
+
+        //TODO implement
+        bool IsValid()
+        {
+            return true;
+        }
+
+        public string GetUserName(string neptunCode)
+        {
+            string name = "";
+
+            XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
+            name = GetValue(ref xmlReader, "name");
+
+            return name;
         }
     }
 }

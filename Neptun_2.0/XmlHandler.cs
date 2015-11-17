@@ -87,6 +87,18 @@ namespace Neptun_2._0
             doc.Save(filepath);
         }
 
+        public void RemoveNodeByAttr(string filepath, string xpath)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filepath);
+
+
+            XmlNode parent = doc.SelectSingleNode(xpath).ParentNode;
+            parent.RemoveChild(doc.SelectSingleNode(xpath));
+            
+            doc.Save(filepath);
+        }
+
         #region left over code
         internal void Start()
         {
