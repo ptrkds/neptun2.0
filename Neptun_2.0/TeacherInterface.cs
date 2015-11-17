@@ -354,6 +354,8 @@ namespace Neptun_2._0
             Console.Write("A tanuló letiltása a tantárgyról sikeres volt!  ");
             Console.SetCursorPosition(3, 8);
             Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(3, 9);
+            Console.Write(new string(' ', Console.WindowWidth));
             input = Console.ReadKey();
         }
         public void studentBlock_unsuccessful()
@@ -364,6 +366,8 @@ namespace Neptun_2._0
             Console.SetCursorPosition(3, 6);
             Console.Write("A tanuló letiltása a tantárgyról sikertelen volt!");
             Console.SetCursorPosition(3, 8);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(3, 9);
             Console.Write(new string(' ', Console.WindowWidth));
             input = Console.ReadKey();
         }
@@ -421,7 +425,7 @@ namespace Neptun_2._0
                         Console.SetCursorPosition(12 + i, 9);
                         Console.Write("-");
                     }
-                    Console.SetCursorPosition(13 + back.Length, 8);
+                    Console.SetCursorPosition(13 + no.Length, 8);
                     break;
             }
         }
