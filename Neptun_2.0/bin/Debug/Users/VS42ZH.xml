@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<user id="VS42ZH">
+  <name>Patrik</name>
+  <type>teacher</type>
+  <pw>buzik</pw>
+  <lectures count="4">
+    <lecture id="sajt"/>
+    <lecture id="VEMFK32"/>
+    <lecture id="VEMFK43"/>
+    <lecture id="VEMFK99"/>
+    <lecture id="nagyonalma"/>
+  </lectures>
+</user>
