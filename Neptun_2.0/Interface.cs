@@ -9,6 +9,7 @@ namespace Neptun_2._0
     class Interface
     {
         protected int position = 1;
+        protected int cursorpos = 0;
         protected String logOut = "Kijelentkezés";
         protected ConsoleKeyInfo input;
         protected String back = "Visszalépés";

@@ -90,7 +90,7 @@ namespace Neptun_2._0
 
         public String getStartTime()
         {
-            return id;
+            return startTime;
         }
 
         public String getEndTime()

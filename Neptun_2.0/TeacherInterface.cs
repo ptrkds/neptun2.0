@@ -203,7 +203,7 @@ namespace Neptun_2._0
                     break;
             }
         }
-        public CMD timeTableView(List<string> timetable)
+        public CMD timeTableView(List<Subject> subjects)
         {
             for (int i = 0; i < 20; i++)
             {
@@ -221,7 +221,7 @@ namespace Neptun_2._0
             for(int i=8;i<20;i+=2)
             {
                 Console.SetCursorPosition(3, 2 + i);
-                Console.Write(i + ":00 - " + (i+1) + ":30");
+                Console.Write(i + ":00 - " + (i+2) + ":00");
             }
             Console.SetCursorPosition(20, 8);
             Console.Write("Hétfő");
@@ -233,6 +233,37 @@ namespace Neptun_2._0
             Console.Write("Csütörtök");
             Console.SetCursorPosition(68, 8);
             Console.Write("Péntek");
+            int pos=0;
+            string current = "";                    
+            for(int i=0; i<subjects.Count;i++)
+            {
+                switch (subjects[i].getDay())
+                {
+                    case "Hetfo":
+                        cursorpos = 20;
+                        break;
+                    case "Kedd":
+                        cursorpos = 32;
+                        break;
+                    case "Szerda":
+                        cursorpos = 44;
+                        break;
+                    case "Csutortok":
+                        cursorpos = 56;
+                        break;
+                    case "Pentek":
+                        cursorpos = 68;
+                        break;
+                }
+                
+                current = subjects[i].getStartTime().Remove(subjects[i].getStartTime().Length - 3);
+                pos = Int32.Parse(current) + 2;
+                Console.SetCursorPosition(cursorpos, pos);
+                Console.Write(subjects[i].getName());             
+
+            }
+            Console.SetCursorPosition(4 + back.Length, 6);
+
             do
             {
                 input = Console.ReadKey();
