@@ -20,7 +20,7 @@ namespace Neptun_2._0
 
         CMD cmd;
 
-        UserXmlHandler uxh = new UserXmlHandler();
+        Users uxh = new Users();
 
         public bool requestLogin(List<String> data)
         {
@@ -147,348 +147,15 @@ namespace Neptun_2._0
             }
             }
 
-            /*
-
-        //Demand Change
-        private bool demandChange()
-        {
-            List<String> demands = new List<String>();
-
-            try
-            {
-                demands = getDemands(userLoggedIn.getNeptunCode());
-            }catch(Exception e)
-            {
-                Console.WriteLine(e);
-            }
-
-            while (true)
-            {
-                cmd = tui.selectDemand(demands);
-
-                if(cmd.cmd != "exit")
-                {
-                    int ret = requestDemandChange(cmd.data[0]);
-                    if (ret == 1)
-                    {
-                        tui.demandChange_successful();
-                        return true;
-                    }
-                    else if(ret == -1)
-                    {
-                        tui.demandChange_unsuccessful();
-                        return true;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        private int requestDemandChange(String demand_id)
-        {
-            Demand demand = new Demand();
-
-            try
-            {
-                demand =
-    }
-            catch (Exception e)
-            {
-
-                Console.WriteLine(e);
-            }
-
-            cmd = tui.demandChange(demand);
-
-            if(cmd.cmd != exit)
-            {
-                int ret = kisovisszatérése(cmd.data);
-                if(ret == 1)
-                {
-                    return 1;
-                }
-                else
-                {
-                    return -1;
-                }
-            }
-            else
-            {
-                return 0;
-            }
-        }
-
-
-        //Demand Judgement
-        private bool demandJudgement()
-        {
-            List<String> demands = new List<string>();
-
-            try
-            {
-                demands =
-    }
-            catch (Exception e)
-            {
-
-                Console.WriteLine(e);
-            }
-
-            while (true)
-            {
-                cmd = aui.selectDemand(demands);
-                if(cmd.cmd != "exit")
-                {
-                    if (requestDemandJudgement(cmd.data[0]))
-                    {
-                        aui.demand_accept();
-                        return true;
-                    }
-                    else
-                    {
-                        aui.demand_decline();
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        private bool requestDemandJudgement(String demand_id)
-        {
-            //demand delete
-            if (kisofgv(demand_id))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        
-
-        //Demand Submission
-        private bool requestDemandSubmission()
-        {
-            cmd = sui.demandSubmission();
-            if(cmd.cmd != "exit")
-            {
-                if (kisofgv(cmd.data))
-                {
-                    tui.demandSubmission_successful();
-                    return true;
-                }
-                else
-                {
-                    tui.demandSubmission_unsuccessful();
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
-        //Register For Subject
-        private bool registerForSubject()
-        {
-            List<String> subjects = new ;
-
-            try
-            {
-                subjects =
-    }
-            catch (Exception e)
-            {
-
-                Console.WriteLine(e);
-            }
-
-            while (true)
-            {
-                cmd = sui.selectSubject(subjects);
-                if (cmd.cmd != "exit")
-                {
-                    if (requestRegisterForSubject(cmd.data[0]))
-                    {
-                        sui.regForSubject_successful();
-                        return true;
-                    }
-                    else
-                    {
-                        sui.regForSubject_unsuccessful();
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        private bool requestRegisterForSubject(String subject_id)
-        {
-            if (kisofgv(subject_id))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
-        //Deregister Subject
-        private bool deregisterSubject()
-        {
-            List<String> subject_list = ;
-
-            while (true)
-            {
-                cmd = sui.selectSubject();
-
-                if (cmd.cmd != "exit")
-                {
-                    if ( requestDeregisterSubject( cmd.data[0]) )
-                    {
-                        sui.deregister_successful();
-                        return true;
-                    }
-                    else
-                    {
-                        sui.deregister_unsuccessful();
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        private bool requestDeregisterSubject(String subject_id)
-        {
-            if (kisofgv(subject_id))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
-        //Filter - x
-        private bool requestFilter()
-        {
-
-        }
-
-
-        //Maintenance
-        private bool requestMaintenance()
-        {
-            cmd = aui.maintenance();
-
-            if(cmd.cmd != "exit")
-            {
-                if (kisofgv())
-                {
-                    aui.maintenance_successful();
-                    return true;
-                }
-                else
-                {
-                    aui.maintenance_unsuccessful();
-                    return true;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
-        //Request Judgement
-        private bool requestJudgement()
-        {
-            List<String> requests = ;
-
-            while (true)
-            {
-                cmd = aui.selectRequest(requests);
-                if (cmd.cmd != "exit")
-                {
-                    if (requestRequestJudgement(cmd.data[0]))
-                    {
-                        aui.request_accept();
-                        return true;
-                    }
-                    else
-                    {
-                        aui.request_decline();
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-        private bool requestRequestJudgement(String request_id)
-        {
-            //request delete
-            if (kisofgv(request_id))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-
-        //Request Submission
-        private bool requestRequestSubmission()
-        {
-            cmd = sui.requestSubmission();
-            if (cmd.cmd != "exit")
-            {
-                if (kisofgv(cmd.data))
-                {
-                    sui.requestSubmission_successful();
-                    return true;
-                }
-                else
-                {
-                    sui.requestSubmission_unsuccessful();
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-
+        //Teacher Functions
 
         //Student Block
         private bool studentBlock()
         {
             List<String> subjects = ;
 
-            while (true) {
+            while (true)
+            {
                 cmd = tui.selectSubject(subjects);
 
                 if (cmd.cmd != "exit")
@@ -496,11 +163,12 @@ namespace Neptun_2._0
                     int ret = studentBlock_studentSelect(cmd.data[0]);
                     if (ret == 1)
                     {
-                        tui.studentBlock_successful;
+                        tui.studentBlock_successful();
                         return true;
                     }
-                    else if(ret == -1){
-                        tui.studentBlock_unsuccessful;
+                    else if (ret == -1)
+                    {
+                        tui.studentBlock_unsuccessful();
                         return true;
                     }
                     //ha ret == 0, akkor újrafut a ciklus úgyis
@@ -513,7 +181,8 @@ namespace Neptun_2._0
         }
         private int studentBlock_studentSelect(String subject_id)
         {
-            while (true) {
+            while (true)
+            {
                 List<String> student_list = ;
 
                 cmd = tui.selectStudent();
@@ -527,7 +196,7 @@ namespace Neptun_2._0
                     else
                     {
                         return -1; //sikertelen
-                    }     
+                    }
                 }
                 else
                 {
@@ -538,7 +207,8 @@ namespace Neptun_2._0
         private bool requestStudentBlock(String student_id, String subject_id)
         {
             //kiso eltiltja
-            if () {
+            if ()
+            {
                 return true;
             }
             else
@@ -548,22 +218,361 @@ namespace Neptun_2._0
         }
 
 
-        //Time Table
-        private void requestStudentTimeTable()
+        /*
+
+    //Demand Change
+    private bool demandChange()
+    {
+        List<String> demands = new List<String>();
+
+        try
         {
-            List<valami structura> list = ;
-
-            cmd = sui.timeTableView(list);
-
-            //exit
+            demands = getDemands(userLoggedIn.getNeptunCode());
+        }catch(Exception e)
+        {
+            Console.WriteLine(e);
         }
-        private void requestTeacherTimeTable()
+
+        while (true)
         {
-            List < valami structura > list = ;
+            cmd = tui.selectDemand(demands);
 
-            cmd = tui.timeTableView(list);
+            if(cmd.cmd != "exit")
+            {
+                int ret = requestDemandChange(cmd.data[0]);
+                if (ret == 1)
+                {
+                    tui.demandChange_successful();
+                    return true;
+                }
+                else if(ret == -1)
+                {
+                    tui.demandChange_unsuccessful();
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    private int requestDemandChange(String demand_id)
+    {
+        Demand demand = new Demand();
 
-            //exit
-        }*/
+        try
+        {
+            demand =
+}
+        catch (Exception e)
+        {
+
+            Console.WriteLine(e);
+        }
+
+        cmd = tui.demandChange(demand);
+
+        if(cmd.cmd != exit)
+        {
+            int ret = kisovisszatérése(cmd.data);
+            if(ret == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+
+    //Demand Judgement
+    private bool demandJudgement()
+    {
+        List<String> demands = new List<string>();
+
+        try
+        {
+            demands =
+}
+        catch (Exception e)
+        {
+
+            Console.WriteLine(e);
+        }
+
+        while (true)
+        {
+            cmd = aui.selectDemand(demands);
+            if(cmd.cmd != "exit")
+            {
+                if (requestDemandJudgement(cmd.data[0]))
+                {
+                    aui.demand_accept();
+                    return true;
+                }
+                else
+                {
+                    aui.demand_decline();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    private bool requestDemandJudgement(String demand_id)
+    {
+        //demand delete
+        if (kisofgv(demand_id))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    //Demand Submission
+    private bool requestDemandSubmission()
+    {
+        cmd = sui.demandSubmission();
+        if(cmd.cmd != "exit")
+        {
+            if (kisofgv(cmd.data))
+            {
+                tui.demandSubmission_successful();
+                return true;
+            }
+            else
+            {
+                tui.demandSubmission_unsuccessful();
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    //Register For Subject
+    private bool registerForSubject()
+    {
+        List<String> subjects = new ;
+
+        try
+        {
+            subjects =
+}
+        catch (Exception e)
+        {
+
+            Console.WriteLine(e);
+        }
+
+        while (true)
+        {
+            cmd = sui.selectSubject(subjects);
+            if (cmd.cmd != "exit")
+            {
+                if (requestRegisterForSubject(cmd.data[0]))
+                {
+                    sui.regForSubject_successful();
+                    return true;
+                }
+                else
+                {
+                    sui.regForSubject_unsuccessful();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    private bool requestRegisterForSubject(String subject_id)
+    {
+        if (kisofgv(subject_id))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    //Deregister Subject
+    private bool deregisterSubject()
+    {
+        List<String> subject_list = ;
+
+        while (true)
+        {
+            cmd = sui.selectSubject();
+
+            if (cmd.cmd != "exit")
+            {
+                if ( requestDeregisterSubject( cmd.data[0]) )
+                {
+                    sui.deregister_successful();
+                    return true;
+                }
+                else
+                {
+                    sui.deregister_unsuccessful();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    private bool requestDeregisterSubject(String subject_id)
+    {
+        if (kisofgv(subject_id))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    //Filter - x
+    private bool requestFilter()
+    {
+
+    }
+
+
+    //Maintenance
+    private bool requestMaintenance()
+    {
+        cmd = aui.maintenance();
+
+        if(cmd.cmd != "exit")
+        {
+            if (kisofgv())
+            {
+                aui.maintenance_successful();
+                return true;
+            }
+            else
+            {
+                aui.maintenance_unsuccessful();
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    //Request Judgement
+    private bool requestJudgement()
+    {
+        List<String> requests = ;
+
+        while (true)
+        {
+            cmd = aui.selectRequest(requests);
+            if (cmd.cmd != "exit")
+            {
+                if (requestRequestJudgement(cmd.data[0]))
+                {
+                    aui.request_accept();
+                    return true;
+                }
+                else
+                {
+                    aui.request_decline();
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+    private bool requestRequestJudgement(String request_id)
+    {
+        //request delete
+        if (kisofgv(request_id))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+    //Request Submission
+    private bool requestRequestSubmission()
+    {
+        cmd = sui.requestSubmission();
+        if (cmd.cmd != "exit")
+        {
+            if (kisofgv(cmd.data))
+            {
+                sui.requestSubmission_successful();
+                return true;
+            }
+            else
+            {
+                sui.requestSubmission_unsuccessful();
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+
+
+
+    //Time Table
+    private void requestStudentTimeTable()
+    {
+        List<valami structura> list = ;
+
+        cmd = sui.timeTableView(list);
+
+        //exit
+    }
+    private void requestTeacherTimeTable()
+    {
+        List < valami structura > list = ;
+
+        cmd = tui.timeTableView(list);
+
+        //exit
+    }*/
     }
 }
