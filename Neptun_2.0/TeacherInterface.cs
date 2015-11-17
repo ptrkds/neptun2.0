@@ -343,6 +343,8 @@ namespace Neptun_2._0
         public void studentBlock_successful()
         {
             subMenuremove(10, countusers);
+            position = 1;
+            subMainUnderline(0);
             Console.SetCursorPosition(3, 6);
             Console.Write("A tanuló letiltása a tantárgyról sikeres volt!  ");
             input = Console.ReadKey();
@@ -350,6 +352,8 @@ namespace Neptun_2._0
         public void studentBlock_unsuccessful()
         {
             subMenuremove(10, countusers);
+            position = 1;
+            subMainUnderline(0);
             Console.SetCursorPosition(3, 6);
             Console.Write("A tanuló letiltása a tantárgyról sikertelen volt!");
             input = Console.ReadKey();
