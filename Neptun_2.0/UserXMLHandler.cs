@@ -103,9 +103,9 @@ namespace Neptun_2._0
         }
 
         //TODO implement
-        public void deregister(string subj_id, string neptunCOde)
+        public void deregister(string neptunCode, string subjId)
         {
-
+            RemoveNodeByAttr("Users/" + neptunCode + ".xml", "user/lectures/lecture[@id=\"" + subjId + "\"]");
         }
 
         //TODO implement
@@ -121,6 +121,7 @@ namespace Neptun_2._0
             XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
             name = GetValue(ref xmlReader, "name");
 
+            xmlReader.Dispose();
             return name;
         }
     }
