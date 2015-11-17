@@ -64,5 +64,19 @@ namespace Neptun_2._0
             userHandler.DeRegister(neptun_code, subj_id);
             return subjectHandler.BlockStudent(subj_id, neptun_code);
         }
+
+        public List<Subject> TimeTable(string neptun_code)
+        {
+            List<Subject> timeTable = new List<Subject>();
+
+            List<String> subj_ids = userHandler.GetSubjectIds(neptun_code);
+
+            foreach (string id in subj_ids)
+            {
+                timeTable.Add(subjectHandler.GetSubject(id));
+            }
+
+            return timeTable;
+        } 
     }
 }
