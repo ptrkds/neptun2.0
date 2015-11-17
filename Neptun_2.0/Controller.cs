@@ -20,13 +20,13 @@ namespace Neptun_2._0
 
         CMD cmd;
 
-        Users uxh = new Users();
+        Database uxh = new Database();
 
         public bool requestLogin(List<String> data)
         {
             bool check = false;
             try {
-                check = uxh.CheckLogin(data[0], data[1]);
+                check = uxh.checkLogin(data[0], data[1]);
             } catch (Exception e)
             {
                 Console.WriteLine(e);
@@ -100,7 +100,7 @@ namespace Neptun_2._0
                         //requestFilter();
                         break;
                     case "studentBlock":
-                        //studentBlock();
+                        studentBlock();
                         break;
                     case "demandSubmission":
                         //requestDemandSubmission();
@@ -152,7 +152,7 @@ namespace Neptun_2._0
         //Student Block
         private bool studentBlock()
         {
-            List<String> subjects = ;
+            List<short_subject> subjects = uxh.getSubjects(userLoggedIn.getNeptunCode());
 
             while (true)
             {
@@ -163,12 +163,12 @@ namespace Neptun_2._0
                     int ret = studentBlock_studentSelect(cmd.data[0]);
                     if (ret == 1)
                     {
-                        tui.studentBlock_successful();
+                        //tui.studentBlock_successful();
                         return true;
                     }
                     else if (ret == -1)
                     {
-                        tui.studentBlock_unsuccessful();
+                        //tui.studentBlock_unsuccessful();
                         return true;
                     }
                     //ha ret == 0, akkor újrafut a ciklus úgyis
@@ -183,7 +183,7 @@ namespace Neptun_2._0
         {
             while (true)
             {
-                List<String> student_list = ;
+                /*List<String> student_list = ;
 
                 cmd = tui.selectStudent();
 
@@ -201,10 +201,10 @@ namespace Neptun_2._0
                 else
                 {
                     return 0; //exit code
-                }
+                }*/
             }
         }
-        private bool requestStudentBlock(String student_id, String subject_id)
+        /*private bool requestStudentBlock(String student_id, String subject_id)
         {
             //kiso eltiltja
             if ()
@@ -215,7 +215,7 @@ namespace Neptun_2._0
             {
                 return false;
             }
-        }
+        }*/
 
 
         /*

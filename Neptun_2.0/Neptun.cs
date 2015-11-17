@@ -19,6 +19,12 @@ namespace Neptun_2._0
         public string name;
     }
 
+    public struct short_user
+    {
+        public string id;
+        public string name;
+    }
+
     class Neptun
     {
         

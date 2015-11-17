@@ -236,7 +236,7 @@ namespace Neptun_2._0
             CMD command = new CMD();
             return command;
         }
-        public CMD selectSublject(List<short_subject> subject)
+        public CMD selectSubject(List<short_subject> subject)
         {
             position = 1;
             for (int i = 0; i < 20; i++)

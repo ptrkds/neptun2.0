@@ -55,7 +55,7 @@
     <Compile Include="SubjectXmlHandler.cs" />
     <Compile Include="TeacherInterface.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Users.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="UserXmlHandler.cs" />
     <Compile Include="XmlHandler.cs" />
   </ItemGroup>

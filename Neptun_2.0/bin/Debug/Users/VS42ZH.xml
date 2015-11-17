@@ -4,10 +4,7 @@
   <type>teacher</type>
   <pw>buzik</pw>
   <lectures count="4">
-    <lecture id="sajt"/>
-    <lecture id="VEMFK32"/>
-    <lecture id="VEMFK43"/>
-    <lecture id="VEMFK99"/>
-    <lecture id="nagyonalma"/>
+    <lecture id="VEMFK22"/>
+    <lecture id="VEMFK12"/>
   </lectures>
 </user>
