@@ -9,6 +9,11 @@ namespace Neptun_2._0
 {
     class XmlHandler
     {
+        protected string CreateXPathWithAttr(string xpath, string attrName, string attrValue)
+        {
+            return xpath + "[@" + attrName + " =\"" + attrValue + "\"]";
+        }
+
         public static string GetValue(ref XmlReader xmlReader, string node)
         {
             //TODO try catch
@@ -97,6 +102,30 @@ namespace Neptun_2._0
             parent.RemoveChild(doc.SelectSingleNode(xpath));
             
             doc.Save(filepath);
+        }
+
+        
+
+        public List<string> GetList(ref XmlReader xmlReader, string node, string attr)
+        {
+            List<string> list = new List<string>();
+
+            while (xmlReader.Read() && xmlReader.Name != node)
+            {
+                if (xmlReader.IsStartElement())
+                {
+                    string str = "";
+                    str = xmlReader.GetAttribute(attr);
+
+                    //Console.WriteLine(subj.id + " - " + subj.name);
+
+                    list.Add(str);
+                }
+
+                //xmlReader.Read();
+            }
+
+            return list;
         }
 
         #region left over code

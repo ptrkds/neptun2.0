@@ -11,7 +11,7 @@ namespace Neptun_2._0
     {
         public User GetUser(string neptunCode)
         {
-            XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
             //TODO .Create() exception handling + try catch
 
             //TODO resolve
@@ -79,11 +79,12 @@ namespace Neptun_2._0
         {
             //TODO try catch
             List<string> subjects = new List<string>();
-            XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
 
             xmlReader.ReadToFollowing("lectures");
             int cnt = Int32.Parse(xmlReader.GetAttribute("count")); //unused variable
 
+            /*
             while (xmlReader.Read() && xmlReader.Name!="lectures")
             {
                 if (xmlReader.IsStartElement())
@@ -97,7 +98,9 @@ namespace Neptun_2._0
                 }
 
                 //xmlReader.Read();
-            }
+            }*/
+
+            subjects = GetList(ref xmlReader, "lectures", "id");
 
             return subjects;
         }
@@ -105,7 +108,7 @@ namespace Neptun_2._0
         //TODO implement
         public void deregister(string neptunCode, string subjId)
         {
-            RemoveNodeByAttr("Users/" + neptunCode + ".xml", "user/lectures/lecture[@id=\"" + subjId + "\"]");
+            RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
         }
 
         //TODO implement
@@ -118,11 +121,17 @@ namespace Neptun_2._0
         {
             string name = "";
 
-            XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
             name = GetValue(ref xmlReader, "name");
 
             xmlReader.Dispose();
             return name;
         }
+
+        private string GetXmlFileName(string id)
+        {
+            return "Users/" + id + ".xml";
+        }
+
     }
 }

@@ -15,8 +15,8 @@ namespace Neptun_2._0
 
             XmlReader xmlReader = XmlReader.Create("Lectures/" + subjId + ".xml");
             name = GetValue(ref xmlReader, "name");
-            xmlReader.Dispose();
 
+            xmlReader.Dispose();
             return name;
         }
 
@@ -25,10 +25,8 @@ namespace Neptun_2._0
             //TODO isValid() in user
             // isOnSubj()
 
-            //find and delete
-
             DeRegister(subjId, neptunCode);
-            AppendEmptyNodeWithAttr("Lectures/" + subjId + ".xml", "lecture/blacklist", "student", "id", neptunCode);
+            AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "lecture/blacklist", "student", "id", neptunCode);
 
             //xmlReader.Dispose();
             return true;
@@ -39,15 +37,37 @@ namespace Neptun_2._0
             List<string> ids = new List<string>();
 
 
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(subjId));
+            ids = GetList(ref xmlReader, "students", "id");
 
+            xmlReader.Dispose();
             return ids;
         }
 
-        public void DeRegister(string subj_id, string neptunCode)
+        public List<string> GetBlockedStudentIds(string subjId)
         {
-            //iterate while attr = neptuncode
+            List<string> ids = new List<string>();
 
-            RemoveNodeByAttr("Lectures/"+subj_id+".xml", "lecture/students/student[@id=\""+neptunCode+"\"]");
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(subjId));
+            ids = GetList(ref xmlReader, "blacklist", "id");
+
+            xmlReader.Dispose();
+            return ids;
         }
+
+        public bool DeRegister(string subj_id, string neptunCode)
+        {
+
+            //RemoveNodeByAttr(GetXmlFileName(subj_id), "lecture/students/student[@id=\""+neptunCode+"\"]");
+            RemoveNodeByAttr(GetXmlFileName(subj_id), CreateXPathWithAttr("lecture/students/student", "id", neptunCode));
+            return true;
+        }
+
+        private string GetXmlFileName(string id)
+        {
+            return "Lectures/" + id + ".xml";
+        }
+
+        
     }
 }
