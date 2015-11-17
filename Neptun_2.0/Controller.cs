@@ -222,6 +222,25 @@ namespace Neptun_2._0
         }
 
 
+        //Time Table
+        private void requestStudentTimeTable()
+        {
+            List <Subject> timeTable = db.TimeTable(userLoggedIn.getNeptunCode());
+
+            cmd = sui.timeTableView(timeTable);
+
+            //exit
+        }
+        private void requestTeacherTimeTable()
+        {
+            List<Subject> timeTable = db.TimeTable(userLoggedIn.getNeptunCode());
+
+            cmd = tui.timeTableView(timeTable);
+
+            //exit
+        }
+
+
         /*
 
     //Demand Change
@@ -559,24 +578,8 @@ namespace Neptun_2._0
 
 
 
+    */
 
 
-    //Time Table
-    private void requestStudentTimeTable()
-    {
-        List<valami structura> list = ;
-
-        cmd = sui.timeTableView(list);
-
-        //exit
-    }
-    private void requestTeacherTimeTable()
-    {
-        List < valami structura > list = ;
-
-        cmd = tui.timeTableView(list);
-
-        //exit
-    }*/
     }
 }
