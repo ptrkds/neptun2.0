@@ -4,7 +4,6 @@
   <type>student</type>
   <pw>123456</pw>
   <lectures count="4">
-    <lecture id="VEMFK12" />
     <lecture id="VEMFK22" />
   </lectures>
 </user>

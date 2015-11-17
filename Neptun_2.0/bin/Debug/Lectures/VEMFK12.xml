@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <lecture id="VEMFK12">
   <name>Korszprog</name>
-  <teacher>Botond</teacher>
+  <teacher>VS42ZH</teacher>
   <day>Hetfo</day>
   <startTime>12:00</startTime>
   <endTime>14:00</endTime>
   <students count="1">
-    <student id="VS42ZH" />
     <student id="TCFWB6" />
-    <student id="UKDUJP" />
   </students>
   <blacklist count="0">
+    <student id="UKDUJP" />
   </blacklist>
 </lecture>
