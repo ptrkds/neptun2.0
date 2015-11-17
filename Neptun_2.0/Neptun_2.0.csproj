@@ -51,7 +51,9 @@
     <Compile Include="Neptun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentInterface.cs" />
     <Compile Include="SubjectXmlHandler.cs" />
+    <Compile Include="TeacherInterface.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="UserXmlHandler.cs" />
