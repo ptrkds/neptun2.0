@@ -17,6 +17,7 @@ namespace Neptun_2._0
         public CMD TeacherMainMenu()
         {
             //WriteMenu
+            position = 1;
             Console.Clear();
             Console.SetCursorPosition(1, 2);
             Console.Write(timeTable);
@@ -122,7 +123,7 @@ namespace Neptun_2._0
 
         public CMD demandMenu()
         {
-            
+            position = 1;
             Console.SetCursorPosition(36, 4);
             Console.Write("_________________|_________________");
             Console.SetCursorPosition(36, 5);
@@ -132,7 +133,7 @@ namespace Neptun_2._0
             Console.SetCursorPosition(46, 6);
             Console.Write(demandChange);
             Console.SetCursorPosition(65, 6);
-            Console.Write(back);
+            Console.Write(back);            
             demandMenuUnderline();
             do
             {
@@ -197,6 +198,43 @@ namespace Neptun_2._0
                     Console.SetCursorPosition(66 + back.Length, 6);
                     break;
             }
+        }
+        public CMD timeTableView(List<string> timetable)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                Console.SetCursorPosition(i * 4, 4);
+                Console.Write("____");
+            }
+            Console.SetCursorPosition(3, 6);
+            Console.Write(back);
+            for (int i = 0; i < back.Length; i++)
+            {
+                Console.SetCursorPosition(3 + i, 7);
+                Console.Write("-");
+            }
+            Console.SetCursorPosition(3 + back.Length, 6);
+            for(int i=8;i<20;i+=2)
+            {
+                Console.SetCursorPosition(3, 2 + i);
+                Console.Write(i + ":00 - " + (i+1) + ":30");
+            }
+            Console.SetCursorPosition(20, 8);
+            Console.Write("Hétfő");
+            Console.SetCursorPosition(32, 8);
+            Console.Write("Kedd");
+            Console.SetCursorPosition(44, 8);
+            Console.Write("Szerda");
+            Console.SetCursorPosition(56, 8);
+            Console.Write("Csütörtök");
+            Console.SetCursorPosition(68, 8);
+            Console.Write("Péntek");
+            do
+            {
+                input = Console.ReadKey();
+            } while (input.Key != ConsoleKey.Enter);
+            CMD command = new CMD();
+            return command;
         }
     }
 }

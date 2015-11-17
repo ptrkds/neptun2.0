@@ -15,6 +15,7 @@ namespace Neptun_2._0
         public CMD StudentMainMenu()
         {
             //WriteMenu
+            position = 1;
             Console.Clear();
             Console.SetCursorPosition(1, 2);
             Console.Write(timeTable);

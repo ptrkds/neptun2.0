@@ -14,6 +14,7 @@ namespace Neptun_2._0
         public CMD AdminMainMenu()
         {
             //WriteMenu
+            position = 1;
             Console.Clear();
             Console.SetCursorPosition(1, 2);
             Console.Write(demandSubmission);
@@ -105,6 +106,7 @@ namespace Neptun_2._0
         }
         public CMD selectDemand(List<String> demands)
         {
+            position = 1;
             for (int i = 0; i < 20; i++)
             {
                 Console.SetCursorPosition(i * 4, 4);
