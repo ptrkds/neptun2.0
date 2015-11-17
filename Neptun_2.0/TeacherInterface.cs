@@ -236,5 +236,78 @@ namespace Neptun_2._0
             CMD command = new CMD();
             return command;
         }
+        public CMD selectSublject(List<short_subject> subject)
+        {
+            position = 1;
+            for (int i = 0; i < 20; i++)
+            {
+                Console.SetCursorPosition(i * 4, 4);
+                Console.Write("____");
+            }
+            Console.SetCursorPosition(3, 6);
+            Console.Write("Adja meg, hogy melyik tantárgyról szeretne diákot letiltani:");
+            Console.SetCursorPosition(5, 8);
+            Console.Write(back + "   ");
+            SubjectUnderline(subject);
+            for (int i = 0; i < subject.Count; i++)
+            {
+                Console.SetCursorPosition(5, 10 + i);
+                Console.Write(subject[i].name + "   ");
+            }
+            do
+            {
+                input = Console.ReadKey();
+                if (input.Key == ConsoleKey.DownArrow)
+                    position++;
+                if (input.Key == ConsoleKey.UpArrow)
+                    position--;
+                if (position < 1)
+                    position = subject.Count + 1;
+                if (position > subject.Count + 1)
+                    position = 1;
+                SubjectUnderline(subject);
+            } while (input.Key != ConsoleKey.Enter);
+            CMD command = new CMD();
+            if (position == 1)
+                command.cmd = "exit";
+            else
+                command.data.Add(subject[position-2].id);
+            return command;
+        }
+        private void SubjectUnderline(List<short_subject> subject)
+        {
+            Console.Write("\b\b\b   ");
+            if (position == 1)
+            {
+                for (int i = 0; i < back.Length; i++)
+                {
+                    Console.SetCursorPosition(5 + i, 9);
+                    Console.Write("-");
+                }
+                Console.SetCursorPosition(8 + back.Length, 8);
+            }
+            else
+            {
+                if (position == 2 || position == subject.Count + 1)
+                {
+                    for (int i = 0; i < back.Length; i++)
+                    {
+                        Console.SetCursorPosition(5 + i, 9);
+                        Console.Write(" ");
+                    }
+                }
+                Console.SetCursorPosition(2, 10 + position - 2);
+                Console.Write("->");
+            }
+        }
+        public CMD selectStudent()
+        {
+            CMD command = new CMD();
+            if (position == 1)
+                command.cmd = "exit";
+            else
+                command.data.Add(/*subject[position - 2].id*/"");
+            return command;
+        }
     }
 }
