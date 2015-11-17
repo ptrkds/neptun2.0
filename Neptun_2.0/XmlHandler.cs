@@ -110,7 +110,7 @@ namespace Neptun_2._0
         {
             List<string> list = new List<string>();
             xmlReader.ReadToFollowing(node);
-            while (xmlReader.Read() && xmlReader.Name != node && xmlReader.HasValue) //HasValue
+            while (xmlReader.Read() && xmlReader.Name != node && xmlReader.IsStartElement()) //HasValue
             {
                 if (xmlReader.IsStartElement())
                 {
