@@ -344,13 +344,15 @@ namespace Neptun_2._0
         {
             subMenuremove(10, countusers);
             Console.SetCursorPosition(3, 6);
-            Console.Write("A tanuló letiltása a tantárgyról sikeres volt!  ");            
+            Console.Write("A tanuló letiltása a tantárgyról sikeres volt!  ");
+            input = Console.ReadKey();
         }
         public void studentBlock_unsuccessful()
         {
             subMenuremove(10, countusers);
             Console.SetCursorPosition(3, 6);
             Console.Write("A tanuló letiltása a tantárgyról sikertelen volt!");
+            input = Console.ReadKey();
         }
 
         private void subMenuremove(int where, int length)
