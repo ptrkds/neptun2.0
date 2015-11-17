@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<room id="A1">
+<room id="A2">
 	<limit>150</limit>
 	<lectures>
-		<lecture id="VEMFK12"/>
-		<lecture id="VEMFK22"/>
+		<lecture id="VEMFK42"/>
+		<lecture id="VEMFK32"/>
 	</lectures>
 </room>

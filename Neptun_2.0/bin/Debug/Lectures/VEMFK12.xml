@@ -7,9 +7,9 @@
   <endTime>14:00</endTime>
   <students count="1">
     <student id="VS42ZH" />
-  </students>
-  <blacklist count="1">
-    <student id="ALMAFA" />
+    <student id="TCFWB6" />
     <student id="UKDUJP" />
+  </students>
+  <blacklist count="0">
   </blacklist>
 </lecture>

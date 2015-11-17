@@ -67,5 +67,45 @@ namespace Neptun_2._0
             this.students = students;
             this.blacklist = blacklist;
         }
+
+        public String getId()
+        {
+            return id;
+        }
+
+        public String getName()
+        {
+            return name;
+        }
+
+        public String getTeacher()
+        {
+            return teacher;
+        }
+
+        public String getDay()
+        {
+            return day;
+        }
+
+        public String getStartTime()
+        {
+            return id;
+        }
+
+        public String getEndTime()
+        {
+            return id;
+        }
+
+        public List<String> getStudents()
+        {
+            return students;
+        }
+
+        public List<String> getBlacklist()
+        {
+            return blacklist;
+        }
     }
 }

@@ -161,12 +161,12 @@ namespace Neptun_2._0
                     int ret = studentBlock_studentSelect(cmd.data[0]);
                     if (ret == 1)
                     {
-                        //tui.studentBlock_successful();
+                        tui.studentBlock_successful();
                         return true;
                     }
                     else if (ret == -1)
                     {
-                        //tui.studentBlock_unsuccessful();
+                        tui.studentBlock_unsuccessful();
                         return true;
                     }
                     //ha ret == 0, akkor újrafut a ciklus úgyis
@@ -187,7 +187,7 @@ namespace Neptun_2._0
 
                 if (cmd.cmd != "exit")
                 {
-                    if (requestStudentBlock(cmd.data[0], subject_id))
+                    if (requestStudentBlock(cmd.data[0], subject_id, cmd.data[1]))
                     {
                         return 1; //sikerült
                     }
@@ -202,11 +202,18 @@ namespace Neptun_2._0
                 }
             }
         }
-        private bool requestStudentBlock(String student_id, String subject_id)
+        private bool requestStudentBlock(String student_id, String subject_id, String student_name)
         {
-            if (db.BlockStudent(subject_id, student_id))
+            if (tui.areYouSure(student_name))
             {
-                return true;
+                if (db.BlockStudent(subject_id, student_id))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {

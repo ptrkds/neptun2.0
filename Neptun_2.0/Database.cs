@@ -51,21 +51,19 @@ namespace Neptun_2._0
                 short_user su = new short_user();
                 su.id = id;
                 su.name = userHandler.GetUserName(id);
+                students.Add(su);
             }
 
             return students;
         }
 
+        // TODO átírni azt, hogy mindkettő igaz legyen.
         public bool BlockStudent(string subj_id, string neptun_code)
         {
+            bool ret;
+            userHandler.DeRegister(neptun_code, subj_id);
             return subjectHandler.BlockStudent(subj_id, neptun_code);
         }
-
-        /*
-        bool deregisterSubject(string user_id, subject_id)
-        {
-
-        }*/
 
 
 
