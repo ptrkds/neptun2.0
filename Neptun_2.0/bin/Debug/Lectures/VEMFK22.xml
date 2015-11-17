@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lecture id="VEMFK22">
+  <name>Prog1</name>
+  <teacher>Heckl</teacher>
+  <day>Pentek</day>
+  <startTime>8:00</startTime>
+  <endTime>12:00</endTime>
+  <students count="2">
+    <student id="TCFWB6" />
+	<student id="UKDUJP" />
+  </students>
+  <blacklist count="0">
+  </blacklist>
+</lecture>
