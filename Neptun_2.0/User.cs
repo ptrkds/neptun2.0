@@ -44,6 +44,7 @@ namespace Neptun_2._0
 
     class Subject
     {
+        private String id;
         private String name;
         private String teacher;
         private String day;
@@ -55,8 +56,9 @@ namespace Neptun_2._0
         private List<String> blacklist;
 
 
-        public Subject(string name, string teacher, string day, string startTime, string endTime, List<string> students, List<string> blacklist)
+        public Subject(string id, string name, string teacher, string day, string startTime, string endTime, List<string> students, List<string> blacklist)
         {
+            this.id = id;
             this.name = name;
             this.teacher = teacher;
             this.day = day;
