@@ -339,7 +339,19 @@ namespace Neptun_2._0
             else
                 command.data.Add(users[position - 2].id);
             return command;
-        }       
+        }
+        public void studentBlock_successful()
+        {
+            subMenuremove(10, countusers);
+            Console.SetCursorPosition(3, 6);
+            Console.Write("A tanuló letiltása a tantárgyról sikeres volt!  ");            
+        }
+        public void studentBlock_unsuccessful()
+        {
+            subMenuremove(10, countusers);
+            Console.SetCursorPosition(3, 6);
+            Console.Write("A tanuló letiltása a tantárgyról sikertelen volt!");
+        }
 
         private void subMenuremove(int where, int length)
         {
