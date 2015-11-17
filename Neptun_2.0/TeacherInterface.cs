@@ -395,7 +395,7 @@ namespace Neptun_2._0
         {
             for (int i = 0; i < 20; i++)
             {
-                Console.SetCursorPosition(i * 4, 10);
+                Console.SetCursorPosition(i * 4, 11);
                 Console.Write("    ");
             }
             switch (position)
