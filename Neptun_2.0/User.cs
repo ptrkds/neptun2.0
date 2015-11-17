@@ -40,7 +40,30 @@ namespace Neptun_2._0
         {
             return subjects;
         }
+    }
 
-       
+    class Subject
+    {
+        private String name;
+        private String teacher;
+        private String day;
+        private String startTime;
+        private String endTime;
+
+        private List<String> students;
+
+        private List<String> blacklist;
+
+
+        public Subject(string name, string teacher, string day, string startTime, string endTime, List<string> students, List<string> blacklist)
+        {
+            this.name = name;
+            this.teacher = teacher;
+            this.day = day;
+            this.startTime = startTime;
+            this.endTime = endTime;
+            this.students = students;
+            this.blacklist = blacklist;
+        }
     }
 }
