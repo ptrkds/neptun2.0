@@ -9,6 +9,18 @@ namespace Neptun_2._0
 {
     class UserXmlHandler : XmlHandler
     {
+        #region getters
+        public string GetUserName(string neptunCode)
+        {
+            string name = "";
+
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
+            name = GetValue(ref xmlReader, "name");
+
+            xmlReader.Dispose();
+            return name;
+        }
+
         public User GetUser(string neptunCode)
         {
             XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
@@ -45,6 +57,17 @@ namespace Neptun_2._0
             return new User(id, name, type, subjects);
         }
 
+        public List<string> GetSubjectIds(string neptunCode)
+        {
+            //TODO try catch
+            List<string> subjects = new List<string>();
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
+
+            subjects = GetList(ref xmlReader, "lectures", "id");
+
+            return subjects;
+        }
+
         public bool CheckLogin(string neptunCode, string password)
         {
             XmlReader xmlReader;
@@ -55,7 +78,7 @@ namespace Neptun_2._0
 
                 string userpw = GetValue(ref xmlReader, "pw");
                 xmlReader.Dispose();
-                if (userpw == password )
+                if (userpw == password)
                 {
                     return true;
                 }
@@ -64,75 +87,44 @@ namespace Neptun_2._0
                     return false;
                 }
 
-                
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 //TODO e
             }
-            
+
             //TODO ??
             return false;
         }
+        #endregion
 
-        public List<string> GetSubjectIds(string neptunCode)
+        #region functional methods
+        //TODO implement
+        public bool Register(string neptunCode, string subjId)
         {
-            //TODO try catch
-            List<string> subjects = new List<string>();
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
-
-            //xmlReader.ReadToFollowing("lectures");
-            
-            //int cnt = Int32.Parse(xmlReader.GetAttribute("count")); //unused variable
-
-            /*
-            while (xmlReader.Read() && xmlReader.Name!="lectures")
-            {
-                if (xmlReader.IsStartElement())
-                {
-                    string id = "";
-                    id = xmlReader.GetAttribute("id");
-                    
-                    //Console.WriteLine(subj.id + " - " + subj.name);
-
-                    subjects.Add(id); 
-                }
-
-                //xmlReader.Read();
-            }*/
-
-            subjects = GetList(ref xmlReader, "lectures", "id");
-
-            return subjects;
+            //AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), )
+            return true;
         }
 
-        //TODO implement
-        public void deregister(string neptunCode, string subjId)
+        
+        public void DeRegister(string neptunCode, string subjId)
         {
             RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
         }
+        #endregion
 
+        #region helper methods
         //TODO implement
         bool IsValid()
         {
             return true;
         }
 
-        public string GetUserName(string neptunCode)
-        {
-            string name = "";
-
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
-            name = GetValue(ref xmlReader, "name");
-
-            xmlReader.Dispose();
-            return name;
-        }
-
         private string GetXmlFileName(string id)
         {
             return "Users/" + id + ".xml";
         }
-
+        #endregion
     }
 }
