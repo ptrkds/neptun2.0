@@ -55,11 +55,17 @@ namespace Neptun_2._0
             return ids;
         }
 
-        public bool DeRegister(string subj_id, string neptunCode)
+        public bool Register(string subjId, string neptunCode)
+        {
+
+            return true;
+        }
+
+        public bool DeRegister(string subjId, string neptunCode)
         {
 
             //RemoveNodeByAttr(GetXmlFileName(subj_id), "lecture/students/student[@id=\""+neptunCode+"\"]");
-            RemoveNodeByAttr(GetXmlFileName(subj_id), CreateXPathWithAttr("lecture/students/student", "id", neptunCode));
+            RemoveNodeByAttr(GetXmlFileName(subjId), CreateXPathWithAttr("lecture/students/student", "id", neptunCode));
             return true;
         }
 
