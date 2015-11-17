@@ -81,8 +81,9 @@ namespace Neptun_2._0
             List<string> subjects = new List<string>();
             XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
 
-            xmlReader.ReadToFollowing("lectures");
-            int cnt = Int32.Parse(xmlReader.GetAttribute("count")); //unused variable
+            //xmlReader.ReadToFollowing("lectures");
+            
+            //int cnt = Int32.Parse(xmlReader.GetAttribute("count")); //unused variable
 
             /*
             while (xmlReader.Read() && xmlReader.Name!="lectures")
