@@ -113,6 +113,5 @@ namespace Neptun_2._0
             return "Lectures/" + id + ".xml";
         }
         #endregion
-
     }
 }

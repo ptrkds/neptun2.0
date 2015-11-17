@@ -107,7 +107,6 @@ namespace Neptun_2._0
             return true;
         }
 
-        
         public void DeRegister(string neptunCode, string subjId)
         {
             RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");

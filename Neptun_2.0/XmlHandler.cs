@@ -21,11 +21,11 @@ namespace Neptun_2._0
             return str;
         }
 
-        public List<string> GetList(ref XmlReader xmlReader, string node, string attr)
+        public List<string> GetList(ref XmlReader xmlReader, string parentNode, string attr)
         {
             List<string> list = new List<string>();
-            xmlReader.ReadToFollowing(node);
-            while (xmlReader.Read() && xmlReader.Name != node && xmlReader.IsStartElement()) //HasValue
+            xmlReader.ReadToFollowing(parentNode);
+            while (xmlReader.Read() && xmlReader.Name != parentNode && xmlReader.IsStartElement()) //HasValue
             {
                 if (xmlReader.IsStartElement())
                 {
