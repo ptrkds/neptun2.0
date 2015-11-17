@@ -136,10 +136,11 @@ namespace Neptun_2._0
             } while (input.Key != ConsoleKey.Enter);             
             
             CMD command = new CMD();
+            command.data = new List<string>();
             if (position == 1)
                 command.cmd = "exit";
             else            
-                command.data.Add(demands[position - 1]);                            
+                command.data.Add(demands[position - 2]);                            
             return command;
         }
         private void DemandUnderline(List<String> demands)
