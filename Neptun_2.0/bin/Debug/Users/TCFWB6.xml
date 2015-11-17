@@ -4,9 +4,8 @@
   <type>admin</type>
   <pw>123456</pw>
   <lectures count="3">
-    <lecture id="sajt"/>
+    <lecture id="VEMFK12"/>
     <lecture id="VEMFK22"/>
-    <lecture id="VEMFK66"/>
-    <lecture id="nagyonalma"/>
+    <lecture id="VEMFK32"/>
   </lectures>
 </user>

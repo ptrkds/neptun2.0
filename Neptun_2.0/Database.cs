@@ -64,9 +64,5 @@ namespace Neptun_2._0
             userHandler.DeRegister(neptun_code, subj_id);
             return subjectHandler.BlockStudent(subj_id, neptun_code);
         }
-
-
-
-
     }
 }

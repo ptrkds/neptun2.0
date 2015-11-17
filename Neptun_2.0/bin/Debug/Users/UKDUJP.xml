@@ -2,10 +2,9 @@
 <user id="UKDUJP">
   <name>Kiso</name>
   <type>student</type>
-  <pw>fapfap</pw>
+  <pw>123456</pw>
   <lectures count="4">
-    <lecture id="VEMFK32" />
-    <lecture id="VEMFK43" />
-    <lecture id="VEMFK99" />
+    <lecture id="VEMFK12" />
+    <lecture id="VEMFK22" />
   </lectures>
 </user>
