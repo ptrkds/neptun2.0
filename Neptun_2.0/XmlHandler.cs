@@ -9,11 +9,7 @@ namespace Neptun_2._0
 {
     class XmlHandler
     {
-        protected string CreateXPathWithAttr(string xpath, string attrName, string attrValue)
-        {
-            return xpath + "[@" + attrName + " =\"" + attrValue + "\"]";
-        }
-
+        #region getters
         public static string GetValue(ref XmlReader xmlReader, string node)
         {
             //TODO try catch
@@ -25,6 +21,30 @@ namespace Neptun_2._0
             return str;
         }
 
+        public List<string> GetList(ref XmlReader xmlReader, string node, string attr)
+        {
+            List<string> list = new List<string>();
+            xmlReader.ReadToFollowing(node);
+            while (xmlReader.Read() && xmlReader.Name != node && xmlReader.IsStartElement()) //HasValue
+            {
+                if (xmlReader.IsStartElement())
+                {
+                    string str = "";
+                    str = xmlReader.GetAttribute(attr);
+
+                    //Console.WriteLine(subj.id + " - " + subj.name);
+
+                    list.Add(str);
+                }
+
+                //xmlReader.Read();
+            }
+
+            return list;
+        }
+        #endregion
+
+        #region setters
         public void SetAttribute(string filepath, string xpath, int idx, string value)
         {
             //TODO try catch
@@ -38,7 +58,9 @@ namespace Neptun_2._0
 
             doc.Save(filepath);
         }
+        #endregion
 
+        #region append methods
         public void AppendNode(string filepath, string xpath, string node_name, string node_value)
         {
             //TODO try catch
@@ -91,7 +113,9 @@ namespace Neptun_2._0
 
             doc.Save(filepath);
         }
+        #endregion
 
+        #region remove methods
         public void RemoveNodeByAttr(string filepath, string xpath)
         {
             XmlDocument doc = new XmlDocument();
@@ -103,30 +127,15 @@ namespace Neptun_2._0
             
             doc.Save(filepath);
         }
+        #endregion
 
+        #region helper methods
         //private string GetXmlFileName() abstract or virtual implementation
-
-        public List<string> GetList(ref XmlReader xmlReader, string node, string attr)
+        protected string CreateXPathWithAttr(string xpath, string attrName, string attrValue)
         {
-            List<string> list = new List<string>();
-            xmlReader.ReadToFollowing(node);
-            while (xmlReader.Read() && xmlReader.Name != node && xmlReader.IsStartElement()) //HasValue
-            {
-                if (xmlReader.IsStartElement())
-                {
-                    string str = "";
-                    str = xmlReader.GetAttribute(attr);
-
-                    //Console.WriteLine(subj.id + " - " + subj.name);
-
-                    list.Add(str);
-                }
-
-                //xmlReader.Read();
-            }
-
-            return list;
+            return xpath + "[@" + attrName + " =\"" + attrValue + "\"]";
         }
+        #endregion
 
         #region left over code
         internal void Start()
