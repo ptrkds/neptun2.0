@@ -352,6 +352,8 @@ namespace Neptun_2._0
             subMainUnderline(0);
             Console.SetCursorPosition(3, 6);
             Console.Write("A tanuló letiltása a tantárgyról sikeres volt!  ");
+            Console.SetCursorPosition(3, 8);
+            Console.Write(new string(' ', Console.WindowWidth));
             input = Console.ReadKey();
         }
         public void studentBlock_unsuccessful()
@@ -361,6 +363,8 @@ namespace Neptun_2._0
             subMainUnderline(0);
             Console.SetCursorPosition(3, 6);
             Console.Write("A tanuló letiltása a tantárgyról sikertelen volt!");
+            Console.SetCursorPosition(3, 8);
+            Console.Write(new string(' ', Console.WindowWidth));
             input = Console.ReadKey();
         }
         public Boolean areYouSure(string name = "")
@@ -369,6 +373,8 @@ namespace Neptun_2._0
             Console.SetCursorPosition(3, 6);
             Console.Write("Biztosan le szeretné tiltani " + name + "-t?              ");
             position = 1;
+            Console.SetCursorPosition(3, 8);
+            Console.Write(new string(' ', Console.WindowWidth));
             Console.SetCursorPosition(3, 8);
             Console.Write(yes);
             Console.SetCursorPosition(12, 8);
