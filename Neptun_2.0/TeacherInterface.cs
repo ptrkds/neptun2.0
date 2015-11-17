@@ -133,7 +133,7 @@ namespace Neptun_2._0
             Console.Write(demandChange);
             Console.SetCursorPosition(65, 6);
             Console.Write(back);
-
+            demandMenuUnderline();
             do
             {
                 input = Console.ReadKey();
@@ -145,7 +145,7 @@ namespace Neptun_2._0
                     position = 3;
                 if (position > 3)
                     position = 1;
-               // MainMenuunderline();
+                demandMenuUnderline();
             } while (input.Key != ConsoleKey.Enter);
 
             CMD command = new CMD();
@@ -162,6 +162,41 @@ namespace Neptun_2._0
                     break;
             }
             return command;
+        }
+        private void demandMenuUnderline()
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                Console.SetCursorPosition(i * 4, 7);
+                Console.Write("    ");
+            }
+            switch (position)
+            {
+                case 1:
+                    for (int i = 0; i < demandSubmission.Length; i++)
+                    {
+                        Console.SetCursorPosition(28 + i, 7);
+                        Console.Write("-");
+                    }
+                    Console.SetCursorPosition(29 + demandSubmission.Length, 6);
+                    break;
+                case 2:
+                    for (int i = 0; i < demandChange.Length; i++)
+                    {
+                        Console.SetCursorPosition(46 + i, 7);
+                        Console.Write("-");
+                    }
+                    Console.SetCursorPosition(47 + demandChange.Length, 6);
+                    break;
+                case 3:
+                    for (int i = 0; i < back.Length; i++)
+                    {
+                        Console.SetCursorPosition(65 + i, 7);
+                        Console.Write("-");
+                    }
+                    Console.SetCursorPosition(66 + back.Length, 6);
+                    break;
+            }
         }
     }
 }
