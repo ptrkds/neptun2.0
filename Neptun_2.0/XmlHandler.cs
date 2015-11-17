@@ -104,12 +104,12 @@ namespace Neptun_2._0
             doc.Save(filepath);
         }
 
-        
+        //private string GetXmlFileName() abstract or virtual implementation
 
         public List<string> GetList(ref XmlReader xmlReader, string node, string attr)
         {
             List<string> list = new List<string>();
-
+            xmlReader.ReadToFollowing(node);
             while (xmlReader.Read() && xmlReader.Name != node)
             {
                 if (xmlReader.IsStartElement())
