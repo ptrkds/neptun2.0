@@ -8,23 +8,24 @@ namespace Neptun_2._0
 {
     class Database
     {
-        UserXmlHandler handler = new UserXmlHandler();
-        SubjectXmlHandler subjhandler = new SubjectXmlHandler();
+        UserXmlHandler userHandler = new UserXmlHandler();
+        SubjectXmlHandler subjectHandler = new SubjectXmlHandler();
+
 
         public bool checkLogin(string id, string pw)
         {
-            return handler.CheckLogin(id, pw);
+            return userHandler.CheckLogin(id, pw);
         }
 
         public User GetUser(string id)
         {
-            return handler.GetUser(id);
+            return userHandler.GetUser(id);
         }
 
 
         public List<short_subject> getSubjects(string neptunCode)
         {
-            List<string> ids = handler.GetSubjectIds(neptunCode);
+            List<string> ids = userHandler.GetSubjectIds(neptunCode);
 
             //get subjectnames
             List < short_subject > subj = new List<short_subject>();
@@ -32,11 +33,32 @@ namespace Neptun_2._0
             {
                 short_subject ss = new short_subject();
                 ss.id = id;
-                ss.name = subjhandler.GetSubjectName(id);
+                ss.name = subjectHandler.GetSubjectName(id);
                 subj.Add(ss);
             }
 
             return subj;
+        }
+
+        public List<short_user> getStudents(string subj_id)
+        {
+            List < short_user > students = new List<short_user>();
+
+            List<string> ids = subjectHandler.GetStudentIds(subj_id);
+
+            foreach (string id in ids)
+            {
+                short_user su = new short_user();
+                su.id = id;
+                su.name = userHandler.GetUserName(id);
+            }
+
+            return students;
+        }
+
+        public bool BlockStudent(string subj_id, string neptun_code)
+        {
+            return subjectHandler.BlockStudent(subj_id, neptun_code);
         }
 
         /*

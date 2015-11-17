@@ -20,13 +20,13 @@ namespace Neptun_2._0
 
         CMD cmd;
 
-        Database uxh = new Database();
+        Database db = new Database();
 
         public bool requestLogin(List<String> data)
         {
             bool check = false;
             try {
-                check = uxh.checkLogin(data[0], data[1]);
+                check = db.checkLogin(data[0], data[1]);
             } catch (Exception e)
             {
                 Console.WriteLine(e);
@@ -38,13 +38,11 @@ namespace Neptun_2._0
         public void start(String user_neptun_code)
         {
             try {
-                userLoggedIn = uxh.GetUser(user_neptun_code);
+                userLoggedIn = db.GetUser(user_neptun_code);
             }catch(Exception e)
             {
                 Console.WriteLine(e);
             }
-            //ui.Sajt(userLoggedIn.name, userLoggedIn.type);
-
             
             switch (userLoggedIn.getType())
             {
@@ -152,7 +150,7 @@ namespace Neptun_2._0
         //Student Block
         private bool studentBlock()
         {
-            List<short_subject> subjects = uxh.getSubjects(userLoggedIn.getNeptunCode());
+            List<short_subject> subjects = db.getSubjects(userLoggedIn.getNeptunCode());
 
             while (true)
             {
@@ -183,7 +181,7 @@ namespace Neptun_2._0
         {
             while (true)
             {
-                /*List<String> student_list = ;
+                List<short_user> student_list = db.getStudents(subject_id);
 
                 cmd = tui.selectStudent();
 
@@ -201,13 +199,12 @@ namespace Neptun_2._0
                 else
                 {
                     return 0; //exit code
-                }*/
+                }
             }
         }
-        /*private bool requestStudentBlock(String student_id, String subject_id)
+        private bool requestStudentBlock(String student_id, String subject_id)
         {
-            //kiso eltiltja
-            if ()
+            if (db.BlockStudent(subject_id, student_id))
             {
                 return true;
             }
@@ -215,7 +212,7 @@ namespace Neptun_2._0
             {
                 return false;
             }
-        }*/
+        }
 
 
         /*
