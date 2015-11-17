@@ -317,7 +317,7 @@ namespace Neptun_2._0
             for (int i = 0; i < users.Count; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
-                Console.Write(users[i].id + "  " + users[i].name);                
+                Console.Write(users[i].id + "  " + users[i].name + "   ");                
             }
             do
             {
