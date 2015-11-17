@@ -8,8 +8,13 @@ namespace Neptun_2._0
 {
     class Controller
     {
+        //private Interface ui = new Interface();
+
         private Interface ui = new Interface();
-        
+        private InterfaceLogin uil = new InterfaceLogin();
+        private TeacherInterface tui = new TeacherInterface();
+        private StudentInterface sui = new StudentInterface();
+        private AdminInterface aui = new AdminInterface();
 
         User userLoggedIn;
 
@@ -21,7 +26,7 @@ namespace Neptun_2._0
         {
             bool check = false;
             try {
-                check = uxh.checkLogin(data[0], data[1]);
+                check = uxh.CheckLogin(data[0], data[1]);
             } catch (Exception e)
             {
                 Console.WriteLine(e);
@@ -33,7 +38,7 @@ namespace Neptun_2._0
         public void start(String user_neptun_code)
         {
             try {
-                userLoggedIn = uxh.getUser(user_neptun_code);
+                userLoggedIn = uxh.GetUser(user_neptun_code);
             }catch(Exception e)
             {
                 Console.WriteLine(e);
@@ -53,30 +58,30 @@ namespace Neptun_2._0
                     studentMain();
                     break;
             }
+            return;
         }
         
         //Mains
         private void adminMain()
         {
-            ui = new AdminInterface();
+            //ui = new AdminInterface();
 
             while (true)
             {
-                cmd = ui.AdminMainMenu();
+                cmd = aui.AdminMainMenu();
                 switch (cmd.cmd)
                 {
                     case "demandSubmission":
-                        demandJudgement();
+                        //demandJudgement();
                         break;
                     case "maintenance":
-                        requestMaintenance();
+                        //requestMaintenance();
                         break;
                     case "requestJudgement":
-                        requestJudgement();
+                        //requestJudgement();
                         break;
-                    case "logOut":
-                        //exit
-                        break;
+                    case "logout":
+                        return;
                 }
             }
 
@@ -84,64 +89,65 @@ namespace Neptun_2._0
 
         private void teacherMain()
         {
-            ui = new TeacherInterface();
+            //ui = new TeacherInterface();
 
             while (true)
             {
-                cmd = ui.TeacherMainMenu();
+                cmd = tui.TeacherMainMenu();
                 switch (cmd.cmd)
                 {
                     case "filter":
-                        requestFilter();
+                        //requestFilter();
                         break;
                     case "studentBlock":
-                        studentBlock();
+                        //studentBlock();
                         break;
                     case "demandSubmission":
-                        requestDemandSubmission();
+                        //requestDemandSubmission();
+                        break;
+                    case "demand":
+                        cmd = tui.demandMenu();
                         break;
                     case "demandChange":
-                        demandChange();
+                        //demandChange();
                         break;
                     case "timeTable":
-                        requestTeacherTimeTable();
+                        //requestTeacherTimeTable();
                         break;
-                    case "logOut":
-                        //exit
-                        break;
+                    case "logout":
+                        return;
                 }
             }
         }
 
         private void studentMain()
         {
-            ui = new StudentInterface();
+            //ui = new StudentInterface();
 
             while (true)
             {
-                cmd = ui.StudentMainMenu();
+                cmd = sui.StudentMainMenu();
                 switch (cmd.cmd)
                 {
                     case "timeTable":
-                        requestStudentTimeTable();
+                        //requestStudentTimeTable();
                         break;
                     case "requestSubmission":
-                        requestRequestSubmission();
+                        //requestRequestSubmission();
                         break;
                     case "registerForSubject":
-                        registerForSubject();
+                        //registerForSubject();
                         break;
                     case "deregisterSubject":
-                        deregisterSubject();
+                        //deregisterSubject();
                         break;
-                    case "logOut":
-                        //exit
-                        break;
+                    case "logout":
+                        return;
                 }
             }
-        }
+            }
 
-
+            /*
 
         //Demand Change
         private bool demandChange()
@@ -158,19 +164,19 @@ namespace Neptun_2._0
 
             while (true)
             {
-                cmd = ui.selectDemand(demands);
+                cmd = tui.selectDemand(demands);
 
                 if(cmd.cmd != "exit")
                 {
                     int ret = requestDemandChange(cmd.data[0]);
                     if (ret == 1)
                     {
-                        ui.demandChange_successful();
+                        tui.demandChange_successful();
                         return true;
                     }
                     else if(ret == -1)
                     {
-                        ui.demandChange_unsuccessful();
+                        tui.demandChange_unsuccessful();
                         return true;
                     }
                 }
@@ -194,7 +200,7 @@ namespace Neptun_2._0
                 Console.WriteLine(e);
             }
 
-            cmd = ui.demandChange(demand);
+            cmd = tui.demandChange(demand);
 
             if(cmd.cmd != exit)
             {
@@ -232,17 +238,17 @@ namespace Neptun_2._0
 
             while (true)
             {
-                cmd = ui.selectDemand(demands);
+                cmd = aui.selectDemand(demands);
                 if(cmd.cmd != "exit")
                 {
                     if (requestDemandJudgement(cmd.data[0]))
                     {
-                        ui.demand_accept();
+                        aui.demand_accept();
                         return true;
                     }
                     else
                     {
-                        ui.demand_decline();
+                        aui.demand_decline();
                         return false;
                     }
                 }
@@ -269,17 +275,17 @@ namespace Neptun_2._0
         //Demand Submission
         private bool requestDemandSubmission()
         {
-            cmd = ui.demandSubmission();
+            cmd = sui.demandSubmission();
             if(cmd.cmd != "exit")
             {
                 if (kisofgv(cmd.data))
                 {
-                    ui.demandSubmission_successful();
+                    tui.demandSubmission_successful();
                     return true;
                 }
                 else
                 {
-                    ui.demandSubmission_unsuccessful();
+                    tui.demandSubmission_unsuccessful();
                     return false;
                 }
             }
@@ -307,17 +313,17 @@ namespace Neptun_2._0
 
             while (true)
             {
-                cmd = ui.selectSubject(subjects);
+                cmd = sui.selectSubject(subjects);
                 if (cmd.cmd != "exit")
                 {
                     if (requestRegisterForSubject(cmd.data[0]))
                     {
-                        ui.regForSubject_successful();
+                        sui.regForSubject_successful();
                         return true;
                     }
                     else
                     {
-                        ui.regForSubject_unsuccessful();
+                        sui.regForSubject_unsuccessful();
                         return false;
                     }
                 }
@@ -347,18 +353,18 @@ namespace Neptun_2._0
 
             while (true)
             {
-                cmd = ui.selectSubject();
+                cmd = sui.selectSubject();
 
                 if (cmd.cmd != "exit")
                 {
                     if ( requestDeregisterSubject( cmd.data[0]) )
                     {
-                        ui.deregister_successful();
+                        sui.deregister_successful();
                         return true;
                     }
                     else
                     {
-                        ui.deregister_unsuccessful();
+                        sui.deregister_unsuccessful();
                     }
                 }
                 else
@@ -390,18 +396,18 @@ namespace Neptun_2._0
         //Maintenance
         private bool requestMaintenance()
         {
-            cmd = ui.maintenance();
+            cmd = aui.maintenance();
 
             if(cmd.cmd != "exit")
             {
                 if (kisofgv())
                 {
-                    ui.maintenance_successful();
+                    aui.maintenance_successful();
                     return true;
                 }
                 else
                 {
-                    ui.maintenance_unsuccessful();
+                    aui.maintenance_unsuccessful();
                     return true;
                 }
             }
@@ -419,17 +425,17 @@ namespace Neptun_2._0
 
             while (true)
             {
-                cmd = ui.selectRequest(requests);
+                cmd = aui.selectRequest(requests);
                 if (cmd.cmd != "exit")
                 {
                     if (requestRequestJudgement(cmd.data[0]))
                     {
-                        ui.request_accept();
+                        aui.request_accept();
                         return true;
                     }
                     else
                     {
-                        ui.request_decline();
+                        aui.request_decline();
                         return false;
                     }
                 }
@@ -456,17 +462,17 @@ namespace Neptun_2._0
         //Request Submission
         private bool requestRequestSubmission()
         {
-            cmd = ui.requestSubmission();
+            cmd = sui.requestSubmission();
             if (cmd.cmd != "exit")
             {
                 if (kisofgv(cmd.data))
                 {
-                    ui.requestSubmission_successful();
+                    sui.requestSubmission_successful();
                     return true;
                 }
                 else
                 {
-                    ui.requestSubmission_unsuccessful();
+                    sui.requestSubmission_unsuccessful();
                     return false;
                 }
             }
@@ -483,18 +489,18 @@ namespace Neptun_2._0
             List<String> subjects = ;
 
             while (true) {
-                cmd = ui.selectSubject(subjects);
+                cmd = tui.selectSubject(subjects);
 
                 if (cmd.cmd != "exit")
                 {
                     int ret = studentBlock_studentSelect(cmd.data[0]);
                     if (ret == 1)
                     {
-                        ui.studentBlock_successful;
+                        tui.studentBlock_successful;
                         return true;
                     }
                     else if(ret == -1){
-                        ui.studentBlock_unsuccessful;
+                        tui.studentBlock_unsuccessful;
                         return true;
                     }
                     //ha ret == 0, akkor újrafut a ciklus úgyis
@@ -510,7 +516,7 @@ namespace Neptun_2._0
             while (true) {
                 List<String> student_list = ;
 
-                cmd = ui.selectStudent();
+                cmd = tui.selectStudent();
 
                 if (cmd.cmd != "exit")
                 {
@@ -547,7 +553,7 @@ namespace Neptun_2._0
         {
             List<valami structura> list = ;
 
-            cmd = ui.timeTableView(list);
+            cmd = sui.timeTableView(list);
 
             //exit
         }
@@ -555,7 +561,7 @@ namespace Neptun_2._0
         {
             List < valami structura > list = ;
 
-            cmd = ui.timeTableView(list);
+            cmd = tui.timeTableView(list);
 
             //exit
         }*/

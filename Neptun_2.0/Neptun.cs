@@ -36,12 +36,13 @@ namespace Neptun_2._0
         
         private void login()
         {
-            cmd = il.Login();
 
             bool success = false;
+            bool error = false;
 
             while (success == false)
             {
+                cmd = il.Login(error);
                 switch (cmd.cmd)
                 {
                     case "login":
@@ -49,10 +50,11 @@ namespace Neptun_2._0
                         if (success)
                         {
                             controller.start(cmd.data[0]);
+                            success = false;
                         }
                         else
                         {
-                            cmd = il.Login(true);
+                            error = true;
                         }
                         break;
                     case "exit":
