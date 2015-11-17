@@ -14,6 +14,7 @@ namespace Neptun_2._0
         private String demand = "Igények";
         private String demandSubmission = "Igény felvitele";
         private String demandChange = "Igény modosítása";
+        private String yes = "Igen";
         private int countsubject = 0;
         private int countusers = 0;
         public CMD TeacherMainMenu()
@@ -337,7 +338,10 @@ namespace Neptun_2._0
             if (position == 1)
                 command.cmd = "exit";
             else
+            {
                 command.data.Add(users[position - 2].id);
+                command.data.Add(users[position - 2].name);
+            }
             return command;
         }
         public void studentBlock_successful()
@@ -357,6 +361,62 @@ namespace Neptun_2._0
             Console.SetCursorPosition(3, 6);
             Console.Write("A tanuló letiltása a tantárgyról sikertelen volt!");
             input = Console.ReadKey();
+        }
+        public Boolean areYouSure(string name = "")
+        {
+            subMenuremove(10, countusers);
+            Console.SetCursorPosition(3, 6);
+            Console.Write("Biztosan le szeretné tiltani " + name + "-t?              ");
+            position = 1;
+            Console.SetCursorPosition(3, 10);
+            Console.Write(yes);
+            Console.SetCursorPosition(12, 10);
+            Console.Write(back);
+            areYouSureUnderline();
+            do
+            {
+                input = Console.ReadKey();
+                if (input.Key == ConsoleKey.RightArrow)
+                    position++;
+                if (input.Key == ConsoleKey.LeftArrow)
+                    position--;
+                if (position < 1)
+                    position = 2;
+                if (position > 2)
+                    position = 1;
+                areYouSureUnderline();
+            } while (input.Key != ConsoleKey.Enter);
+            if (position == 1)
+                return true;
+            else
+                return false;
+        }
+        private void areYouSureUnderline()
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                Console.SetCursorPosition(i * 4, 10);
+                Console.Write("    ");
+            }
+            switch (position)
+            {
+                case 1:
+                    for (int i = 0; i < yes.Length; i++)
+                    {
+                        Console.SetCursorPosition(3 + i, 11);
+                        Console.Write("-");
+                    }
+                    Console.SetCursorPosition(4 + yes.Length, 10);
+                    break;
+                case 2:
+                    for (int i = 0; i < back.Length; i++)
+                    {
+                        Console.SetCursorPosition(12 + i, 11);
+                        Console.Write("-");
+                    }
+                    Console.SetCursorPosition(13 + back.Length, 10);
+                    break;
+            }
         }
 
         private void subMenuremove(int where, int length)
