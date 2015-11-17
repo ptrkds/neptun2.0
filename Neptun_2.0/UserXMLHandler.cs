@@ -14,6 +14,10 @@ namespace Neptun_2._0
             XmlReader xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
             //TODO .Create() exception handling + try catch
 
+            //TODO resolve
+            xmlReader.Read();
+            xmlReader.Read();
+
             string id = "";
             string name = "";
             string type = "";
