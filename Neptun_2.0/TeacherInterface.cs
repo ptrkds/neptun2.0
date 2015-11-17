@@ -240,6 +240,7 @@ namespace Neptun_2._0
         }
         public CMD selectSubject(List<short_subject> subject)
         {
+            subMenuremove(10, countusers);
             position = 1;
             for (int i = 0; i < 20; i++)
             {
@@ -316,7 +317,7 @@ namespace Neptun_2._0
             for (int i = 0; i < users.Count; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
-                Console.Write(users[i].name + "   ");                
+                Console.Write(users[i].id + "  " + users[i].name);                
             }
             do
             {
