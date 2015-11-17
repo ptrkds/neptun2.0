@@ -110,7 +110,7 @@ namespace Neptun_2._0
                         //demandChange();
                         break;
                     case "timeTable":
-                        //requestTeacherTimeTable();
+                        requestTeacherTimeTable();
                         break;
                     case "logout":
                         return;
@@ -223,14 +223,14 @@ namespace Neptun_2._0
 
 
         //Time Table
-        private void requestStudentTimeTable()
+      /*  private void requestStudentTimeTable()
         {
             List <Subject> timeTable = db.TimeTable(userLoggedIn.getNeptunCode());
 
             cmd = sui.timeTableView(timeTable);
 
             //exit
-        }
+        }*/
         private void requestTeacherTimeTable()
         {
             List<Subject> timeTable = db.TimeTable(userLoggedIn.getNeptunCode());
