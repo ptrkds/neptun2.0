@@ -137,20 +137,22 @@ namespace Neptun_2._0
         public string teacherId;
         public string roomId;
         public string subjectId;
+        public string subjectName;
+        public string day;
         public string startTime;
         public string endTime;
-        public string comment;
 
-        public Demand(string demandId, string state, string teacherId, string roomId, string subjectId, string startTime, string endTime, string comment)
+        public Demand(string demandId, string state, string teacherId, string roomId, string subjectId, string subjectName, string day, string startTime, string endTime)
         {
             this.demandId = demandId;
             this.state = state;
             this.teacherId = teacherId;
             this.roomId = roomId;
             this.subjectId = subjectId;
+            this.subjectName = subjectName;
+            this.day = day;
             this.startTime = startTime;
             this.endTime = endTime;
-            this.comment = comment;
         }
     }
 
