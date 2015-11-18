@@ -121,9 +121,11 @@ namespace Neptun_2._0
             return true;
         }
 
-        public void DeRegister(string neptunCode, string subjId)
+        public bool DeRegister(string neptunCode, string subjId)
         {
-            RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
+            //RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
+            RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/lectures/lecture", "id", subjId));
+            return true;
         }
         #endregion
 

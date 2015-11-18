@@ -44,13 +44,18 @@ namespace Neptun_2._0
             return list;
         }
 
-        public string[] GetAllIds(string directory)
+        public List<string> GetAllIds(string directory)
         {
-            string[] pdfFiles = Directory.GetFiles(directory, "*.xml")
-                                    .Select(path => Path.GetFileName(path))
-                                    .ToArray();
+            //string[] pdfFiles = Directory.GetFiles(directory, "*.xml").Select(path => Path.GetFileName(path)).ToArray();
 
-            return pdfFiles;
+            string[] pdfFiles = Directory.GetFiles(directory, "*.xml").Select(path => Path.GetFileName(path)).ToArray(); //doesnt excludes ".xml".... -.-"
+            List<string> pdfFileNames = new List<string>();
+            foreach (string str in pdfFiles)
+            {
+                pdfFileNames.Add(str.Remove(str.Length - 4)); //TODO resolve HAX
+            }
+
+            return pdfFileNames;
         }
         #endregion
 

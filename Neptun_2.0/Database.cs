@@ -108,7 +108,7 @@ namespace Neptun_2._0
 
         public List<Demand> getAllDemand()
         {
-            String[] ids = demandHandler.GetAllIds("Demands/");
+            List<string> ids = demandHandler.GetAllIds("Demands/");
 
             List<Demand> demands = new List<Demand>();
 
@@ -137,7 +137,7 @@ namespace Neptun_2._0
         {
             List<ClassRoom> rooms = new List<ClassRoom>();
 
-            String[] ids = demandHandler.GetAllIds("ClassRooms/");
+            List<string> ids = demandHandler.GetAllIds("ClassRooms/");
 
             foreach (string id in ids)
             {
@@ -155,7 +155,7 @@ namespace Neptun_2._0
 
         public List<short_subject> getAllSubject()
         {
-            String[] ids = subjectHandler.GetAllIds("Lectures/");
+            List<string> ids = subjectHandler.GetAllIds("Lectures/");
 
             List<short_subject> subjects = new List<short_subject>();
 
@@ -190,7 +190,7 @@ namespace Neptun_2._0
 
             HashSet<busy_time> set = new HashSet<busy_time>();
 
-            String[] ids = roomHandler.GetAllIds("ClassRooms/");
+            List<string> ids = roomHandler.GetAllIds("ClassRooms/");
 
             foreach (string id in ids)
             {
@@ -229,7 +229,7 @@ namespace Neptun_2._0
 
         public List<Request> getAllRequest()
         {
-            String[] ids = requestHandler.GetAllIds("Requests/");
+            List<string> ids = requestHandler.GetAllIds("Requests/");
 
             List<Request> requests = new List<Request>();
 
