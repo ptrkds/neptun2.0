@@ -513,7 +513,7 @@ namespace Neptun_2._0
 
             if (cmd.cmd != "exit")
             {
-                List<String> classes = db.getClasses(cmd.data[0], cmd.data[1]);
+                List<ClassRoom> classes = db.getClasses(cmd.data[0], cmd.data[1]);
                 cmd = tui.selectClass(classes);
                 if (cmd.cmd != "exit")
                 {

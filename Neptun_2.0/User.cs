@@ -133,6 +133,16 @@ namespace Neptun_2._0
         {
             return id;
         }
+
+        public int getLimit()
+        {
+            return limit;
+        }
+
+        public List<String> getSubjectIds()
+        {
+            return subjectIds;
+        }
     }
 
     public class Demand

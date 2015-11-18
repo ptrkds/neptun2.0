@@ -25,6 +25,12 @@ namespace Neptun_2._0
         public string name;
     }
 
+    public struct busy_time
+    {
+        public string startTime;
+        public string endTime;
+    }
+
     class Neptun
     {
         

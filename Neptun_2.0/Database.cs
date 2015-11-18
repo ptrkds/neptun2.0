@@ -12,6 +12,7 @@ namespace Neptun_2._0
         SubjectXmlHandler subjectHandler = new SubjectXmlHandler();
         DemandXmlHandler demandHandler = new DemandXmlHandler();
         ClassRoomXmlHandler roomHandler = new ClassRoomXmlHandler();
+        RequestXmlHandler requestHandler = new RequestXmlHandler();
 
         public bool checkLogin(string id, string pw)
         {
@@ -120,7 +121,7 @@ namespace Neptun_2._0
             return demands;
         }
 
-        public bool demandJudgement(String demand_id, String neptun_code Boolean state)
+        public bool demandJudgement(String demand_id, String neptun_code, Boolean state)
         {
             Demand newDemand = demandHandler.GetDemand(demand_id);
 
@@ -178,6 +179,77 @@ namespace Neptun_2._0
             return userHandler.DeRegister(neptun_code, subject_id);
         }
 
+        public List<ClassRoom> getFreeClasses(String startTime, String endTime)
+        {
+            List<ClassRoom> classes = new List<ClassRoom>();
 
+            busy_time time = new busy_time();
+            time.startTime = startTime;
+            time.endTime = endTime;
+
+            HashSet<busy_time> set = new HashSet<busy_time>();
+
+            String[] ids = roomHandler.GetAllIds("ClassRooms/");
+
+            foreach (string id in ids)
+            {
+                ClassRoom room = roomHandler.GetClassRoom(id);
+
+                List<String> subj_ids = roomHandler.GetLectureIds(id);
+
+                foreach (string subjId in subj_ids)
+                {
+                    busy_time busyTime = new busy_time();
+                    Subject subj = subjectHandler.GetSubject(subjId);
+                    busyTime.startTime = subj.getStartTime();
+                    busyTime.endTime = subj.getEndTime();
+
+                    set.Add(busyTime);
+                }
+                if (!set.Contains(time))
+                {
+                    classes.Add(room);
+                }
+            }
+
+            return classes;
+        }
+
+        public bool maintenance()
+        {
+            return true;
+        }
+
+        public bool requestSubmission(Request newRequest)
+        {
+            return requestHandler.CreateRequest(newRequest);
+            
+        }
+
+        public List<Request> getAllRequest()
+        {
+            String[] ids = requestHandler.GetAllIds("Requests/");
+
+            List<Request> requests = new List<Request>();
+
+            foreach (string id in ids)
+            {
+                Request newRequest = requestHandler.GetRequest(id);
+                requests.Add(newRequest);
+            }
+
+            return requests;
+        }
+
+        public bool requestJudgement(String request_id, String neptun_code, Boolean state)
+        {
+            Request newRequest = requestHandler.GetRequest(request_id);
+
+            bool userNewRequest = userHandler.Register(neptun_code, newRequest.id);
+
+            //TODO
+            bool newSubject = subjectHandler
+
+        }
     }
 }
