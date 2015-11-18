@@ -46,8 +46,8 @@ namespace Neptun_2._0
                         name = GetValue(ref xmlReader, "name");
                         type = GetValue(ref xmlReader, "type");
 
-                        subjects = GetList(ref xmlReader, "subjects", "id");
-                        subjects = GetList(ref xmlReader, "documents", "id");
+                        subjects = GetList(ref xmlReader, "lectures", "id");
+                        documents = GetList(ref xmlReader, "documents", "id");
                     }
                 }
             }
@@ -57,6 +57,7 @@ namespace Neptun_2._0
             }
             
             return new User(id, name, type, subjects, documents);
+            
         }
 
         public List<string> GetSubjectIds(string neptunCode)

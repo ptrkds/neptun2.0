@@ -12,15 +12,15 @@ namespace Neptun_2._0
         private String name;
         private String type;
         public List<string> subjects;
-        public List<string> document; 
+        public List<string> documents; 
 
-        public User(String neptunCode, String name, String type, List<string> subjects, List<string> document )
+        public User(String neptunCode, String name, String type, List<string> subjects, List<string> documents )
         {
             this.neptunCode = neptunCode;
             this.name = name;
             this.type = type;
             this.subjects = subjects;
-            this.document = document;
+            this.documents = documents;
         }
 
         public String getNeptunCode()
@@ -45,7 +45,7 @@ namespace Neptun_2._0
 
         public List<string> getDocuments()
         {
-            return subjects;
+            return documents;
         }
     }
 

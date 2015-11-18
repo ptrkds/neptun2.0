@@ -81,7 +81,9 @@ namespace Neptun_2._0
 
         public List<Demand> getDemands(String neptun_code)
         {
-            
+            List<Demand> asd = new List<Demand>();
+
+            return asd;
         }
     }
 }
