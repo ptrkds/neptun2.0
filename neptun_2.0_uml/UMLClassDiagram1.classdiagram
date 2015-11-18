@@ -563,6 +563,113 @@
             <elementDefinition Id="66bdf3bd-1099-4616-8a16-30469ae636a6" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="c47d4af9-a4fe-4dca-80f8-2df8d4dabd74" name="demandSubmission" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5db04746-04bb-4f41-9f47-e0e600372b40" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5c72f2ec-208b-4d1b-915f-347813bb1625" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="03f033f5-d507-48ac-9a6d-cd33bfb4082e" name="requestMaintenance" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a5127cd3-8191-4eb9-aaa4-53cdb699fc4a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5c72f2ec-208b-4d1b-915f-347813bb1625" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="d614490a-8601-4cfb-9e5b-89dad5d79c08" name="requestJudgement" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e8ac38d4-5570-4fe3-aae4-993acb6159ef" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5c72f2ec-208b-4d1b-915f-347813bb1625" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="49228bc5-3f58-4303-98d3-f114ff121abf" name="countdemand" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8110081e-6066-4d86-8992-473f4036b775" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a1a6f94e-f3d1-4663-b2d5-0d2824e88b47" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+          <property Id="d428e348-1b68-4bdb-bbf9-d99d7e04f6fe" name="countjudgement" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b3758624-f94e-4c9f-81c4-1be12ca106c5" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a1a6f94e-f3d1-4663-b2d5-0d2824e88b47" LastKnownName="Integer" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="a23bbdbb-bc44-490d-adf1-ba394479abc9" name="AdminMainMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="959dbd6c-af4e-4421-bed0-edb2bdf6440a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2bc18147-1ce1-4cbf-aa61-fae276163dae" direction="Return" isUnique="false">
+                  <elementDefinition Id="96013f88-0f29-473f-8a15-0936da3742ca" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b520b536-6ac9-4e8d-a8ee-d9784d0187ad" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4d0449c7-65c4-45d4-af62-9e07f08d295f" name="MainMenuunderline" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5a403764-a807-4e7e-9c7a-eb693519a068" />
+          </operation>
+          <operation Id="8a5d1fe1-7b7c-462d-869d-8499c11405aa" name="selectDemand" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e47a1d9c-b61a-4144-b16a-afe42ed8774b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e4788db5-a36c-44d7-96be-d10899732cc3" name="List&lt;String&gt; demands" direction="In" isUnique="false">
+                  <elementDefinition Id="edef62a0-f246-4d28-86d0-3ed636f3c8cd" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0db6e665-19a7-4759-9c46-55e43fad004a" direction="Return" isUnique="false">
+                  <elementDefinition Id="14ec26e6-fc2b-43aa-bbb3-f9c05c9e2f90" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b520b536-6ac9-4e8d-a8ee-d9784d0187ad" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c2032dca-5edc-4474-b3c4-f91c902330fd" name="DemandorJudgementUnderline" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="302f4df4-202c-4812-9f61-7db14eaa5036" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="67f0a029-9111-43fd-8275-edcf6a234a3c" name="Integer max" direction="In" isUnique="false">
+                  <elementDefinition Id="70ea32af-6f7b-4dea-a284-e1ac129ea21c" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bbc66bfe-0a3c-4634-9a7c-2f7a75cd139a" name="requestMaintenanceMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c5285272-00db-4565-b5d9-894c7bebf951" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="167fa254-eb20-4abc-83a8-b9ca8ff6cf09" direction="Return" isUnique="false">
+                  <elementDefinition Id="b7850d4b-8342-491d-976f-c319d9988893" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b520b536-6ac9-4e8d-a8ee-d9784d0187ad" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="602ed55d-68ee-49ab-a84f-e442f26f8ff0" name="requestUnderline" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="21732e60-d3c2-409c-adcb-7b68425f2537" />
+          </operation>
+          <operation Id="7e180abf-1084-4c26-9714-08fc961bcda5" name="requestJudgementMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7422b119-57d1-4127-ae93-3f884e96dd74" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="aeb310bd-6497-4bb9-a8a8-ae7f58a937fb" direction="Return" isUnique="false">
+                  <elementDefinition Id="75a64663-7190-4146-b8ac-333929f7c766" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b520b536-6ac9-4e8d-a8ee-d9784d0187ad" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -592,6 +699,123 @@
             <elementDefinition Id="10c21986-ddb0-4d40-8c98-0c5e74f5ecfb" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="e148e56e-f788-4f04-9c5e-4e207ce5eff5" name="deregisterSubject" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="869a0c6c-bdb8-405e-866f-17374b3de034" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="14621b34-9e5c-46fe-8893-f2e17cbc81bc" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="7d6b2c5e-deff-4915-88fa-cf23471f01e8" name="registerForSubject" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3aec07a1-5cb1-4daa-8ab8-40d2ded3e344" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="14621b34-9e5c-46fe-8893-f2e17cbc81bc" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="9593ac65-fccb-42ab-b0fe-2605839b6fb3" name="requestSubmission" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4ff15b55-5a8e-4aca-acb4-ebc8fa0af177" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="14621b34-9e5c-46fe-8893-f2e17cbc81bc" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+          <property Id="2b4d4e83-b278-4758-a25d-a5057ddc02f6" name="timeTable" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8b656b29-6ccb-4c7a-8f74-56dcb01daee4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="14621b34-9e5c-46fe-8893-f2e17cbc81bc" LastKnownName="String" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ea9e5cbf-270f-4d08-b172-95589dd64ef0" name="CMD requestSubmissionMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="63f255b9-154f-407a-87d0-994152242d36" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="41ab304d-be5b-4541-b2d0-78ae53085abf" direction="Return" isUnique="false">
+                  <elementDefinition Id="058007fd-967f-468c-baf3-8838030c5c28" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="68559cb5-b9c4-491f-bbb0-05428dfa6f4e" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="99452777-f373-4505-895e-5a44e9bba39f" name="deregisterSubjectMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="11251081-be19-47b9-845c-b6320cdaa3b0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="52e848e6-63a8-4e45-bf03-2af9fd387435" name="List&lt;Subject&gt; subjects" direction="In" isUnique="false">
+                  <elementDefinition Id="5f124a16-77f2-42e2-82aa-8d068e0fe6a8" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f720f927-438c-4206-bcf7-4b08c34502f5" direction="Return" isUnique="false">
+                  <elementDefinition Id="34308d3d-7d00-4bcd-bc97-4fc0aee911b2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="68559cb5-b9c4-491f-bbb0-05428dfa6f4e" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="187ddf54-25f8-4c82-9d84-adf037fad23a" name="registerForSubjectMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ee90650e-cd31-423b-b8d5-01e215553235" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ca2c4c16-32a9-42ed-917c-aeb4962d0a80" name="List&lt;Subject&gt; subjects" direction="In" isUnique="false">
+                  <elementDefinition Id="6e9b74eb-e5c3-4f85-a66d-7f28c50ad6b5" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4c39ac36-3bf1-48fe-bce5-a10f54a02da9" direction="Return" isUnique="false">
+                  <elementDefinition Id="4196df6c-fa5d-41ff-963a-c4ec0261d0e2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="68559cb5-b9c4-491f-bbb0-05428dfa6f4e" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e89c95a6-6c81-44e3-9fd0-2e6a4a21cfe1" name="StudentMainMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9eebf0ef-0faa-4ddd-987a-6d07e19b6ed1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b53da5da-6ea9-476e-b839-686a7919442e" direction="Return" isUnique="false">
+                  <elementDefinition Id="ed02dd19-d6b6-4c1c-a6fb-3fbb4339d714" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="68559cb5-b9c4-491f-bbb0-05428dfa6f4e" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e5f24424-292c-494e-a018-cb9845873987" name="timeTableView" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c0a6d1fb-a1dd-4c44-bc04-0b43591e4e63" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3e4fc97e-47c6-4419-b9ba-f3bada27d747" name="List&lt;Subject&gt; subjects" direction="In" isUnique="false">
+                  <elementDefinition Id="fd07418c-f002-4d36-b08a-fb451cea6bd8" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="01b1e9e0-ce85-41b8-8c2f-4134405fcc33" direction="Return" isUnique="false">
+                  <elementDefinition Id="7949b9f5-d4b6-46e9-ab64-d965ffc88001" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="68559cb5-b9c4-491f-bbb0-05428dfa6f4e" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="67cf1a8e-6802-4155-a646-7b4b0786973a" name="MainMenuunderline" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="94a54801-82db-4889-89a4-7a74fc83a7c3" />
+          </operation>
+          <operation Id="e95a6cd2-5f1f-40d0-9a68-315e697ce1d0" name="requestUnderline" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2baa32df-357b-408f-bdb9-cb8440e4aec0" />
+          </operation>
+          <operation Id="cb1daadf-c9ef-4ea7-bab7-22489f25439d" name="subjectUnderline" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="276e33b1-2603-4d54-9120-40f81e817c3c" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -821,6 +1045,61 @@
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
+          </operation>
+          <operation Id="2ca60045-6fa3-4c01-81f9-9fb1566f02c6" name="demandSubmissionMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a255a2dc-5f5b-4b2f-92b5-37dbb1662e1b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cb1f2ce2-d082-49a8-a4aa-781f3c95a36e" direction="Return" isUnique="false">
+                  <elementDefinition Id="cab836e7-9770-46ab-8061-58e9dfda192f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b520b536-6ac9-4e8d-a8ee-d9784d0187ad" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e3efb941-ba54-45d4-8fd6-8f49f2aa87e7" name="demandUnderline" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dee92f21-0159-46a3-bf31-97fddd7e9a4d" />
+          </operation>
+          <operation Id="7d853e53-40d2-4dce-9379-602191a20db5" name="demandChangeMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a182f29f-9b48-4f57-8151-5f6ad7e27b68" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="52509a24-10ca-45b1-8783-1568a5b99059" name="string old_demand" direction="In" isUnique="false">
+                  <elementDefinition Id="bcc47475-9d4e-409b-a5f4-58d515ece589" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="484ff648-1e58-4a6a-97e2-db413ac37976" direction="Return" isUnique="false">
+                  <elementDefinition Id="a0279315-92f5-4d1c-9d34-5c5e93af335d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b520b536-6ac9-4e8d-a8ee-d9784d0187ad" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2c780b37-e65a-454d-83a6-9d59a0dcb61b" name="filterMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="84b002a5-5f17-4202-bba0-f448f468b8fc" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="14c9ffc5-4d5c-438c-8376-35853d6e3d00" name="List&lt;Subject&gt; subjects" direction="In" isUnique="false">
+                  <elementDefinition Id="4b8bc298-812b-4c72-8060-82229285a329" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="74c13791-455a-49b5-9cf5-0fac2340be33" direction="Return" isUnique="false">
+                  <elementDefinition Id="3f0cab91-c12b-415d-9175-1fe7480d4072" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b520b536-6ac9-4e8d-a8ee-d9784d0187ad" LastKnownName="CMD" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="baa40368-d303-4968-b702-9744269b6a99" name="filterUnderline" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1c044bdc-38b7-46e3-bc64-3d5f323d06f3" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -1880,6 +2159,16 @@
     <packageHasNamedElement>
       <referencedType Id="8e7f4397-3052-4b1a-822c-0fdba4ecfe03" name="Subject" isAbstract="false" isLeaf="false" cachedFullName="Subject">
         <elementDefinition Id="e399bbc6-9d33-401b-909d-e5fc8976002a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="14621b34-9e5c-46fe-8893-f2e17cbc81bc" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="68559cb5-b9c4-491f-bbb0-05428dfa6f4e" name="CMD" isAbstract="false" isLeaf="false" cachedFullName="CMD">
+        <elementDefinition Id="84c74a87-a057-4153-a3d3-8c2603c90058" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

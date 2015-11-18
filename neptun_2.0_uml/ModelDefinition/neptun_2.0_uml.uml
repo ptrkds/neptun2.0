@@ -3216,6 +3216,245 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="5db04746-04bb-4f41-9f47-e0e600372b40"
+            name="demandSubmission"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a5127cd3-8191-4eb9-aaa4-53cdb699fc4a"
+            name="requestMaintenance"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e8ac38d4-5570-4fe3-aae4-993acb6159ef"
+            name="requestJudgement"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8110081e-6066-4d86-8992-473f4036b775"
+            name="countdemand"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b3758624-f94e-4c9f-81c4-1be12ca106c5"
+            name="countjudgement"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="959dbd6c-af4e-4421-bed0-edb2bdf6440a"
+            name="AdminMainMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="96013f88-0f29-473f-8a15-0936da3742ca"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5a403764-a807-4e7e-9c7a-eb693519a068"
+            name="MainMenuunderline"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e47a1d9c-b61a-4144-b16a-afe42ed8774b"
+            name="selectDemand"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="edef62a0-f246-4d28-86d0-3ed636f3c8cd"
+                  name="List&lt;String&gt; demands"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="14ec26e6-fc2b-43aa-bbb3-f9c05c9e2f90"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="302f4df4-202c-4812-9f61-7db14eaa5036"
+            name="DemandorJudgementUnderline"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="70ea32af-6f7b-4dea-a284-e1ac129ea21c"
+                  name="Integer max"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c5285272-00db-4565-b5d9-894c7bebf951"
+            name="requestMaintenanceMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b7850d4b-8342-491d-976f-c319d9988893"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="21732e60-d3c2-409c-adcb-7b68425f2537"
+            name="requestUnderline"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7422b119-57d1-4127-ae93-3f884e96dd74"
+            name="requestJudgementMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="75a64663-7190-4146-b8ac-333929f7c766"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3276,6 +3515,254 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="869a0c6c-bdb8-405e-866f-17374b3de034"
+            name="deregisterSubject"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3aec07a1-5cb1-4daa-8ab8-40d2ded3e344"
+            name="registerForSubject"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4ff15b55-5a8e-4aca-acb4-ebc8fa0af177"
+            name="requestSubmission"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8b656b29-6ccb-4c7a-8f74-56dcb01daee4"
+            name="timeTable"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="63f255b9-154f-407a-87d0-994152242d36"
+            name="CMD requestSubmissionMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="058007fd-967f-468c-baf3-8838030c5c28"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="11251081-be19-47b9-845c-b6320cdaa3b0"
+            name="deregisterSubjectMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5f124a16-77f2-42e2-82aa-8d068e0fe6a8"
+                  name="List&lt;Subject&gt; subjects"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="34308d3d-7d00-4bcd-bc97-4fc0aee911b2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ee90650e-cd31-423b-b8d5-01e215553235"
+            name="registerForSubjectMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6e9b74eb-e5c3-4f85-a66d-7f28c50ad6b5"
+                  name="List&lt;Subject&gt; subjects"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4196df6c-fa5d-41ff-963a-c4ec0261d0e2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9eebf0ef-0faa-4ddd-987a-6d07e19b6ed1"
+            name="StudentMainMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ed02dd19-d6b6-4c1c-a6fb-3fbb4339d714"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c0a6d1fb-a1dd-4c44-bc04-0b43591e4e63"
+            name="timeTableView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fd07418c-f002-4d36-b08a-fb451cea6bd8"
+                  name="List&lt;Subject&gt; subjects"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7949b9f5-d4b6-46e9-ab64-d965ffc88001"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="94a54801-82db-4889-89a4-7a74fc83a7c3"
+            name="MainMenuunderline"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2baa32df-357b-408f-bdb9-cb8440e4aec0"
+            name="requestUnderline"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="276e33b1-2603-4d54-9120-40f81e817c3c"
+            name="subjectUnderline"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3789,6 +4276,110 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="a255a2dc-5f5b-4b2f-92b5-37dbb1662e1b"
+            name="demandSubmissionMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cab836e7-9770-46ab-8061-58e9dfda192f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="dee92f21-0159-46a3-bf31-97fddd7e9a4d"
+            name="demandUnderline"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a182f29f-9b48-4f57-8151-5f6ad7e27b68"
+            name="demandChangeMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bcc47475-9d4e-409b-a5f4-58d515ece589"
+                  name="string old_demand"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a0279315-92f5-4d1c-9d34-5c5e93af335d"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="84b002a5-5f17-4202-bba0-f448f468b8fc"
+            name="filterMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4b8bc298-812b-4c72-8060-82229285a329"
+                  name="List&lt;Subject&gt; subjects"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3f0cab91-c12b-415d-9175-1fe7480d4072"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1c044bdc-38b7-46e3-bc64-3d5f323d06f3"
+            name="filterUnderline"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
