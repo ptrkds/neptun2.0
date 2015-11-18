@@ -52,6 +52,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\StudentInterface.cs" />
+    <Compile Include="XmlHandlers\DemandXmlHandler.cs" />
     <Compile Include="XmlHandlers\SubjectXmlHandler.cs" />
     <Compile Include="Interfaces\TeacherInterface.cs" />
     <Compile Include="User.cs" />
