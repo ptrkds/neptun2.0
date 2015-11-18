@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <user id="TCFWB6">
   <name>Andris</name>
   <type>admin</type>
   <pw>123456</pw>
   <lectures count="3">
-    <lecture id="VEMFK12"/>
-    <lecture id="VEMFK22"/>
-    <lecture id="VEMFK32"/>
+    <lecture id="VEMFK22" />
+    <lecture id="VEMFK32" />
   </lectures>
+  <document>
+  </document>
 </user>
