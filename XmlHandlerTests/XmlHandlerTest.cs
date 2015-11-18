@@ -10,12 +10,13 @@ namespace XmlHandlerTest
     [TestClass]
     public class XmlHandlerTest
     {
+        public string dir = "TestXmls";
+
         [TestMethod]
-        public void GetList()
+        public void Get2ndList()
         {
-            string dir = "Lectures";
             string file = "VEMFK12.xml";
-            string node = "blacklist";
+            string node = "students";
             string attr = "id";
 
             XmlHandler handler = new XmlHandler();
@@ -23,10 +24,28 @@ namespace XmlHandlerTest
             XmlReader xmlReader = XmlReader.Create(dir+"/"+file);
             List<string> result = handler.GetList(ref xmlReader, node, attr);
 
-            foreach (string str in result)
-            {
-                Console.WriteLine(str);
-            }
+            xmlReader.Dispose();
+            Console.WriteLine(ObjectDumper.Dump(result));
+        }
+
+        [TestMethod]
+        public void GetEmptyList()
+        {
+            
+            string file = "EmptyList.xml";
+            string node = "lectures";
+            string attr = "id";
+
+            XmlHandler handler = new XmlHandler();
+
+            XmlReader xmlReader = XmlReader.Create(dir + "/" + file);
+            List<string> empty = new List<string>();
+            List<string> result = handler.GetList(ref xmlReader, node, attr);
+
+            Console.WriteLine(ObjectDumper.Dump(result));
+            Assert.IsTrue(result.Count == 0);
+         
+            xmlReader.Dispose();
         }
 
         [TestMethod]
@@ -37,11 +56,7 @@ namespace XmlHandlerTest
 
             string[] result = handler.GetAllIds("Lectures");
 
-            foreach(string str in result)
-            {
-                Console.WriteLine(str);
-            }
-
+            Console.WriteLine(ObjectDumper.Dump(result));
         }
     }
 }
