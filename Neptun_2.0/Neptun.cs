@@ -29,7 +29,7 @@ namespace Neptun_2._0
     {
         
 
-        Controller controller = new Controller();
+        private Controller controller = new Controller();
 
         private InterfaceLogin il = new InterfaceLogin();
 

@@ -93,27 +93,5 @@ namespace Neptun_2._0
 
     }
 
-    public class Demand
-    {
-        public string demandId;
-        public string state;
-        public string teacherId;
-        public string roomId;
-        public string subjectId;
-        public string startTime;
-        public string endTime;
-        public string comment;
-
-        public Demand(string demandId, string state, string teacherId, string roomId, string subjectId, string startTime, string endTime, string comment)
-        {
-            this.demandId = demandId;
-            this.state = state;
-            this.teacherId = teacherId;
-            this.roomId = roomId;
-            this.subjectId = subjectId;
-            this.startTime = startTime;
-            this.endTime = endTime;
-            this.comment = comment;
-        }
-    }
+    
 }

@@ -460,7 +460,6 @@ namespace Neptun_2._0
                     break;
             }
         }
-
         private void subMenuremove(int where, int length)
         {
             for(int i=where;i<where+length;i++)

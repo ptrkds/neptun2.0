@@ -12,13 +12,15 @@ namespace Neptun_2._0
         private String name;
         private String type;
         public List<string> subjects;
+        public List<string> document; 
 
-        public User(String neptunCode, String name, String type, List<string> subjects)
+        public User(String neptunCode, String name, String type, List<string> subjects, List<string> document )
         {
             this.neptunCode = neptunCode;
             this.name = name;
             this.type = type;
             this.subjects = subjects;
+            this.document = document;
         }
 
         public String getNeptunCode()
@@ -37,6 +39,11 @@ namespace Neptun_2._0
         }
 
         public List<string> getSubjects()
+        {
+            return subjects;
+        }
+
+        public List<string> getDocuments()
         {
             return subjects;
         }
@@ -120,6 +127,30 @@ namespace Neptun_2._0
             this.id = id;
             this.limit = limit;
             this.subjectIds = subjectIds;
+        }
+    }
+
+    public class Demand
+    {
+        public string demandId;
+        public string state;
+        public string teacherId;
+        public string roomId;
+        public string subjectId;
+        public string startTime;
+        public string endTime;
+        public string comment;
+
+        public Demand(string demandId, string state, string teacherId, string roomId, string subjectId, string startTime, string endTime, string comment)
+        {
+            this.demandId = demandId;
+            this.state = state;
+            this.teacherId = teacherId;
+            this.roomId = roomId;
+            this.subjectId = subjectId;
+            this.startTime = startTime;
+            this.endTime = endTime;
+            this.comment = comment;
         }
     }
 

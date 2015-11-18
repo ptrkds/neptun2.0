@@ -35,10 +35,10 @@ namespace Neptun_2._0
         }
 
         //When user logged in
-        public void start(String user_neptun_code)
+        public void start(String neptun_code)
         {
             try {
-                userLoggedIn = db.GetUser(user_neptun_code);
+                userLoggedIn = db.GetUser(neptun_code);
             }catch(Exception e)
             {
                 Console.WriteLine(e);
@@ -241,45 +241,45 @@ namespace Neptun_2._0
         }
 
 
-        /*
+        
 
-    //Demand Change
-    private bool demandChange()
-    {
-        List<String> demands = new List<String>();
-
-        try
+        //Demand Change
+        private bool demandChange()
         {
-            demands = getDemands(userLoggedIn.getNeptunCode());
-        }catch(Exception e)
-        {
-            Console.WriteLine(e);
-        }
+            List<String> demands = new List<String>();
 
-        while (true)
-        {
-            cmd = tui.selectDemand(demands);
-
-            if(cmd.cmd != "exit")
+            try
             {
-                int ret = requestDemandChange(cmd.data[0]);
-                if (ret == 1)
+                demands = getDemands(userLoggedIn.getNeptunCode());
+            }catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            while (true)
+            {
+                cmd = tui.selectDemand(demands);
+
+                if(cmd.cmd != "exit")
                 {
-                    tui.demandChange_successful();
-                    return true;
+                    int ret = requestDemandChange(cmd.data[0]);
+                    if (ret == 1)
+                    {
+                        tui.demandChange_successful();
+                        return true;
+                    }
+                    else if(ret == -1)
+                    {
+                        tui.demandChange_unsuccessful();
+                        return true;
+                    }
                 }
-                else if(ret == -1)
+                else
                 {
-                    tui.demandChange_unsuccessful();
-                    return true;
+                    return false;
                 }
             }
-            else
-            {
-                return false;
-            }
         }
-    }
     private int requestDemandChange(String demand_id)
     {
         Demand demand = new Demand();
@@ -287,7 +287,7 @@ namespace Neptun_2._0
         try
         {
             demand =
-}
+        }
         catch (Exception e)
         {
 
@@ -367,9 +367,9 @@ namespace Neptun_2._0
 
 
     //Demand Submission
-    private bool requestDemandSubmission()
+    private bool requestDemandSubmission(String selected_class = "")
     {
-        cmd = sui.demandSubmission();
+        cmd = sui.demandSubmission(selected_class);
         if(cmd.cmd != "exit")
         {
             if (kisofgv(cmd.data))
@@ -478,15 +478,36 @@ namespace Neptun_2._0
             return false;
         }
     }
+    
 
+        //Filter - x
+        private bool requestFilter()
+        {
+        cmd = tui.selectFilterTime();
 
-    //Filter - x
-    private bool requestFilter()
-    {
+        if (cmd.cmd != "exit")
+        {
+            List<String> classes = db.getClasses(cmd.data[0], cmd.data[1]);
+            cmd = tui.selectClass(classes);
+            if (cmd.cmd != "exit")
+            {
+                requestDemandSubmission(cmd.data[0]);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+
 
     }
 
-
+        
     //Maintenance
     private bool requestMaintenance()
     {

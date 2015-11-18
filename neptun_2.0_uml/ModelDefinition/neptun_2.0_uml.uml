@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="fd2f2ae6-892f-4eb1-aca4-596f48131679"
   name="neptun_2.0_uml" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -2067,318 +2067,11 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <targetEnds>
-          <association
-            Id="d351b225-16cc-4bdb-b944-09cf9ff5b8a3"
-            isDerived="false"
-            sourceEndRoleName="Neptun"
-            targetEndRoleName="Felhasznalok"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="90cbd197-6fe6-4c68-9270-ab4e0146bcd2"
-              LastKnownName="Users"
-              LastKnownLocation="neptun_2.0_uml.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="1a410e89-89af-4fe4-b938-7daca5407b32"
-                  name="Neptun"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="5548a487-0557-4526-bd54-678d6d3d8ccb"
-                  name="Felhasznalok"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="48d6e2b7-dcc3-479a-b9ac-da6dabd5760d"
-            isDerived="false"
-            sourceEndRoleName="Neptun"
-            targetEndRoleName="Termek"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="495c0efc-caf0-4023-be5d-985d17c89a3c"
-              LastKnownName="ClassRooms"
-              LastKnownLocation="neptun_2.0_uml.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="69e7ce04-266e-4ef6-b70d-a3ad1940926b"
-                  name="Neptun"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="d5888a77-4ba5-4c77-9f7d-dc51ce81ac7a"
-                  name="Termek"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="361f7c11-07b6-4716-974c-c8219936ca8d"
-            isDerived="false"
-            sourceEndRoleName="Neptun"
-            targetEndRoleName="UserInterface"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="371cfe23-2289-4f03-98b9-19b27686dc23"
-              LastKnownName="UserInterface"
-              LastKnownLocation="neptun_2.0_uml.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e64080f0-0f83-4813-a41c-6f128c9ece44"
-                  name="Neptun"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="3e767453-ae96-42b0-a683-794bc48c73fd"
-                  name="UserInterface"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="de67ae9e-5122-4a50-8fe1-228cb24056aa"
-            isDerived="false"
-            sourceEndRoleName="Neptun"
-            targetEndRoleName="Request"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="208f7f5f-92e7-4171-8793-b2160417d20b"
-              LastKnownName="Controller"
-              LastKnownLocation="neptun_2.0_uml.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="4ad941a0-8e67-45a9-a7a2-8aa44383163e"
-                  name="Neptun"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="3b3bf74e-8046-47a4-ac63-195b2f279358"
-                  name="Request"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="6ce6800d-f2ce-417e-bf3e-86de821cc46f"
-            isDerived="false"
-            sourceEndRoleName="Neptun"
-            targetEndRoleName="Demands"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="114d6238-c3c3-48f6-9baa-47b34a09f244"
-              LastKnownName="Demands"
-              LastKnownLocation="neptun_2.0_uml.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="39c7a69e-8744-4ada-a444-338eece8ac3f"
-                  name="Neptun"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="8c4c702d-961c-4c8b-a6d0-2f777d336e2c"
-                  name="Demands"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="6632bbc2-bb09-40e1-91a1-aefc78e1303e"
-            isDerived="false"
-            sourceEndRoleName="Neptun"
-            targetEndRoleName="Requests"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="8998ea9c-8531-4529-9449-e7dd3092e2be"
-              LastKnownName="Requests"
-              LastKnownLocation="neptun_2.0_uml.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="a02bb940-c40a-4766-81dc-e6093cca39c9"
-                  name="Neptun"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="28609317-85c2-40cf-8752-45a016116e3a"
-                  name="Requests"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="b6e27b20-3623-431a-bde3-066292f8b9f7"
-            name="UI"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="371cfe23-2289-4f03-98b9-19b27686dc23"
-                LastKnownName="UserInterface"
-                LastKnownLocation="neptun_2.0_uml.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="b5ff4328-d5c4-4668-8e67-69baf2336041"
-            name="classRooms"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="495c0efc-caf0-4023-be5d-985d17c89a3c"
-                LastKnownName="ClassRooms"
-                LastKnownLocation="neptun_2.0_uml.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="e99e16ec-4bd1-40ee-b73f-6bb61efc9c98"
-            name="users"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="90cbd197-6fe6-4c68-9270-ab4e0146bcd2"
-                LastKnownName="Users"
-                LastKnownLocation="neptun_2.0_uml.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="eb34d0b4-d96e-4296-895a-fcc7c14cc4ce"
-            name="requests"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="8998ea9c-8531-4529-9449-e7dd3092e2be"
-                LastKnownName="Requests"
-                LastKnownLocation="neptun_2.0_uml.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="b869968f-1a7a-4667-9c41-74b13316727c"
+            Id="19475ee6-34ff-4a0e-b80a-2ca60cd0db4e"
             name="controller"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2395,8 +2088,9 @@
             </type_NamedElement>
           </property>
           <property
-            Id="1ff57832-2ebd-45fa-9959-1dd397a332bb"
-            name="demands"
+            Id="1580ab41-a5bb-4f9f-96d7-eaef4d6a2b65"
+            name="il"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -2407,11 +2101,23 @@
             isComposite="false">
             <type_NamedElement>
               <classMoniker
-                Id="114d6238-c3c3-48f6-9baa-47b34a09f244"
-                LastKnownName="Demands"
+                Id="2f2e6750-d88d-46f1-bd1a-0d3aa8a2101a"
+                LastKnownName="InterfaceLogin"
                 LastKnownLocation="neptun_2.0_uml.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="faa35346-dc2e-4796-a6e6-bfe79b76ab2e"
+            name="cmd"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -2425,6 +2131,16 @@
           <operation
             Id="3397a029-aec3-445d-8ec2-341ae24600a9"
             name="exit"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cc10b861-f688-4866-be20-49c066e7eecc"
+            name="login"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -2568,7 +2284,7 @@
     <packageHasNamedElement>
       <class
         Id="90cbd197-6fe6-4c68-9270-ab4e0146bcd2"
-        name="Users"
+        name="User"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -2683,20 +2399,107 @@
     <packageHasNamedElement>
       <class
         Id="371cfe23-2289-4f03-98b9-19b27686dc23"
-        name="UserInterface"
+        name="Interface"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
-        <ownedOperationsInternal>
-          <operation
-            Id="fe251f2a-e4ec-41c0-9a93-8078a9a357c9"
-            name="login"
+        <ownedAttributesInternal>
+          <property
+            Id="0029dbe5-44a3-43b6-a052-808ffaeb760f"
+            name="position"
+            visibility="Protected"
             isLeaf="false"
             isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f2a50f1d-59fa-4d61-8a58-70019cb1961d"
+            name="cursorpos"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="75ab277f-62d3-48f6-946c-3c6855336c8d"
+            name="logOut"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3ee3d06e-4bf3-484d-8bae-dfb190e0eea2"
+            name="input"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b9c98738-3d38-4865-9805-0e31caa49d54"
+                LastKnownName="ConsoleKeyInfo"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="fb3c2ef3-ab18-478d-bb5c-1d148856fbc6"
+            name="back"
+            visibility="Protected"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -2712,10 +2515,51 @@
             isSubstitutable="false">
             <classMoniker
               Id="371cfe23-2289-4f03-98b9-19b27686dc23"
-              LastKnownName="UserInterface"
+              LastKnownName="Interface"
               LastKnownLocation="neptun_2.0_uml.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="66bdf3bd-1099-4616-8a16-30469ae636a6"
+            isDerived="false"
+            sourceEndRoleName="AdminInterface"
+            targetEndRoleName="Controller"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="208f7f5f-92e7-4171-8793-b2160417d20b"
+              LastKnownName="Controller"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bef0286d-9756-4c27-bd9c-040d74cdd2e1"
+                  name="AdminInterface"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9046e889-fa97-4319-b0d8-37c30c19d806"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -2731,10 +2575,51 @@
             isSubstitutable="false">
             <classMoniker
               Id="371cfe23-2289-4f03-98b9-19b27686dc23"
-              LastKnownName="UserInterface"
+              LastKnownName="Interface"
               LastKnownLocation="neptun_2.0_uml.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="10c21986-ddb0-4d40-8c98-0c5e74f5ecfb"
+            isDerived="false"
+            sourceEndRoleName="StudentInterface"
+            targetEndRoleName="Controller"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="208f7f5f-92e7-4171-8793-b2160417d20b"
+              LastKnownName="Controller"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="418cbbfb-166f-4e8f-bcee-dc1ad79e0d6c"
+                  name="StudentInterface"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="95442911-d6c5-47cc-aa73-c12ff2228055"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -2750,75 +2635,504 @@
             isSubstitutable="false">
             <classMoniker
               Id="371cfe23-2289-4f03-98b9-19b27686dc23"
-              LastKnownName="UserInterface"
+              LastKnownName="Interface"
               LastKnownLocation="neptun_2.0_uml.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="33722912-fb22-4f2c-a6c0-bfbd119a3e64"
+            isDerived="false"
+            sourceEndRoleName="TeacherInterface"
+            targetEndRoleName="Controller"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="208f7f5f-92e7-4171-8793-b2160417d20b"
+              LastKnownName="Controller"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="df9d1b05-7405-4bad-b202-4d3c850effa7"
+                  name="TeacherInterface"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ea651ea1-24ed-40dc-8e1f-80243d0aa4c0"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="65782381-73d3-4d70-9a20-eea00ed1f543"
+            name="timeTable"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="459eb89a-c8c8-4d4e-a74c-89af78be4d45"
+            name="filter"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9d62b340-9cb8-4ea0-b861-38fdabb0a914"
+            name="studentBlock"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="ad951e19-d7e7-4384-8672-02935ea561c7"
+            name="demand"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="be393c68-4dd6-4511-b766-6f5889f11349"
+            name="demandSubmission"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="4d2a9bef-f1a9-4073-9f22-9757e737d68b"
+            name="demandChange"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="88740621-3e10-4bc5-95b2-97598c92f0ac"
+            name="yes"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b4df5999-bb14-439e-be16-9d46a49d07be"
+            name="no"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="a468ebeb-4fe2-4690-aadd-37067db2008a"
+            name="countsubject"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="d99a05f1-7042-4952-8e25-d564450169c3"
+            name="countusers"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                LastKnownName="Integer"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="9080a70c-6f25-4ae2-b5ab-f8f396ba4093"
-            name="start"
+            Id="7069dffa-1497-4d2a-a1b4-998a0baf55d2"
+            name="TeacherMainMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="86795204-45f3-4529-892b-5848f08bbc9a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="43d8805b-7cb1-46f0-83e5-15422b3fb0ef"
+            name="MainMenuunderline"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="f8c5ee67-9f5d-47ac-be22-c6352b8a611d"
-            name="mainMenu"
+            Id="ef949c0e-7440-4676-8198-89b5f1cc1e53"
+            name="demandMenu"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="02f852e5-0c10-4775-8514-8dc25013d0df"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="90540b5d-b03c-4f2a-9cdb-93d28325089c"
+            name="demandMenuUnderline"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="9fb189ec-2dfb-4ab0-b14a-d1aeda1aa801"
-            name="filter"
+            Id="33be3f93-4b24-4b3c-aa46-e7f6e99208bf"
+            name="timeTableView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c8d311e4-7a37-44f0-80cd-b5306631e610"
+                  name="List&lt;Subject&gt; subjects"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1b102f76-56b2-4d31-ac9c-d840b3f797fb"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a07909a6-9864-4391-a572-12f16204e3b5"
+            name="selectSubject"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="05b58197-282f-4cd7-80ed-c5f863876610"
+                  name="List&lt;short_subject&gt; subject"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b1ee4b29-0672-4afa-a28c-bdbb56552bf3"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ef227eea-55b3-4f62-8cf6-679bb150a115"
+            name="subMainUnderline"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="40db64cd-def2-4f0c-9b19-1ed1814ff529"
+                  name="Integer max"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="776e8ce3-aaa1-4676-aae8-2180d122b52d"
+            name="selectStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8a2a0716-5a1f-4f5b-86fe-2220fceea384"
+                  name="List&lt;short_user&gt; users"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ea454b6a-cc68-49e5-86da-6cbe8fd4e1ca"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ed17f9fe-9457-48a7-9be8-a85fab056a93"
+            name="studentBlock_successful"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="69472406-db65-4aca-9671-b53771285fb9"
-            name="studentBlock"
+            Id="b2ab6411-559e-420e-997c-58f1c53b4351"
+            name="studentBlock_unsuccessful"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="94e0d161-5c7e-4c07-bee0-c444001b3208"
-            name="demand"
+            Id="65a1cd74-eb5a-4934-a8d1-f71299f40adb"
+            name="areYouSure"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ac422a3a-b991-47fa-9d09-8492477ceefa"
+                  name="String name"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7b6699ee-9e2f-40b2-9da6-ab081d766812"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="91b714b5-b526-4f42-b7fa-19a69be1d732"
+            name="areYouSureUnderline"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="f555ca44-d22f-4cbd-939d-2c2ecbd93eb7"
-            name="demandJudgement"
+            Id="4cee287f-5d04-4686-9f23-1c3ec097c58c"
+            name="subMenuremove"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="e2b50d18-9d0b-4ebd-be58-32d48149ae4e"
-            name="demandChange"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="c09be120-1889-4662-9624-32ad728c916c"
-            name="timeTable"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="484fbd93-ba5a-4176-8ab7-6ba9c263570a"
+                  name="int where"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4e1bebfb-9f82-4098-8652-e44cbd9bd1cb"
+                  name="int length"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -2829,10 +3143,199 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="125f90b6-6b36-4e37-91b3-c53e22c31a0c"
+            isDerived="false"
+            sourceEndRoleName="Controller"
+            targetEndRoleName="Neptun"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="22f3ce5e-4d20-4f41-9c33-9b4021c510cc"
+              LastKnownName="Neptun"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d7bd534e-52d4-4144-85c0-945dbd2689e4"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f715e24b-8337-4be8-b152-0d070752197d"
+                  name="Neptun"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="e5a9a41b-c6cd-4e88-b141-c3b53ceffee9"
+            name="aui"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="56e234bb-e4e7-44df-a485-d8fcab75f28b"
+                LastKnownName="AdminInterface"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6807d905-eea1-4245-8843-380d785080d5"
+            name="cmd"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="df16e0c3-c005-4fe7-a520-dc3b68e20a0a"
+            name="db"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="62ed4a7e-45f2-497d-a541-56dee40851ff"
+                LastKnownName="Database"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="91bbf371-e2b3-4827-a5ba-99d2e5dd4d85"
+            name="sui"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="df4d7e3b-8dac-44d1-b88f-21a6503bf0d2"
+                LastKnownName="StudentInterface"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="156810e1-328a-40d7-a8fd-2142c3836914"
+            name="tui"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="42a9a435-0eba-4925-92c4-7157f96058e9"
+                LastKnownName="TeacherInterface"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="1340deab-8d3b-4d03-ac15-4d94dbfb8eed"
+            name="ui"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="371cfe23-2289-4f03-98b9-19b27686dc23"
+                LastKnownName="Interface"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="5125d36b-41c8-4a95-b563-28083449d7b3"
+            name="uil"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="2f2e6750-d88d-46f1-bd1a-0d3aa8a2101a"
+                LastKnownName="InterfaceLogin"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="2488c45e-3a7e-4f46-aa6a-408412cc1b84"
+            name="userLoggedIn"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="90cbd197-6fe6-4c68-9270-ab4e0146bcd2"
+                LastKnownName="User"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="3574c11f-e25c-40a1-bc4f-2ffe7a95a326"
-            name="requestTimeTable"
+            name="requestStudentTimeTable"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -2841,19 +3344,73 @@
           <operation
             Id="db071863-ed15-4cf4-ad20-eca2b9867081"
             name="requestStudentBlock"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ce520efc-4c45-4223-a2ee-e0c58e800ee8"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5a281716-6089-4cc4-af7d-8f2df686c182"
+                  name="String student_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="43900448-3abf-4138-8884-a942a21bf0e3"
+                  name="String subject_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6d8dd182-6ff1-4d8e-81ab-f41c730f6d79"
+                  name="String student_name"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="10e2ef52-b3f9-40a7-a16f-8f404aa9dddd"
             name="requestMaintenance"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f336ac3c-6026-449a-8998-359bd9de781e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="8c08d2db-0965-4178-8f60-8ee24392a00c"
             name="requestLogin"
@@ -2861,71 +3418,473 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5bad9b1a-1eac-44fa-a60f-7c7eec39fb37"
+                  name="List&lt;String&gt; data"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d2342821-d2ee-4783-beb6-aafe9b125afb"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="48b2a2e3-61a1-41d5-9a4f-4e9e67ded260"
             name="requestFilter"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="54568d24-8372-468f-b719-54d4cdba3e38"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="d6c03b07-67a2-4a7c-8faf-de309661e41d"
             name="requestDemandJudgement"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e4cc465e-6149-4109-80be-df225b54d69c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="0015eddb-3d39-4067-b890-e8f1ea63dcf9"
             name="requestDemandSubmission"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d1d5482e-e5fc-4145-9d5a-69b2624847df"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="a7272854-db77-47a4-99bb-51a8584a8fae"
             name="requestDemandChange"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b7353c08-2cbd-41e3-bdbf-8ce7cf682230"
+                  name="String demand_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="e0a1da39-6b3d-4649-963c-ef801773b426"
             name="requestRequestSubmission"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="75112534-1532-4ab7-900e-eb0f2a4557af"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="fb18f027-d666-434c-8cdd-a6df64ff5fc2"
             name="requestRequestJudgement"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="47d6a397-73f6-49d2-92b2-ae92dae17ca5"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0ef6d4d9-6ffc-462a-a26f-daf5b80710b6"
+                  name="String request_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="53b7076f-a4e8-4a68-a463-0712bd9bd40f"
             name="requestRegisterForSubject"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5b7e07a9-c765-4c71-882e-0208ebd6cd2c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ffcb3687-ee68-44e4-bb8f-935344e967c6"
+                  name="String subject_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="40e68d8a-19ed-43d1-a36e-bede4b696fde"
+            name="requestDeregisterSubject"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="12c03816-501c-4024-80f8-f6f9d35f7971"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d1cdc68c-b1d9-4c86-ab0d-a1a98d1d014e"
+                  name="String subject_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8c16aa88-2a5f-4119-8702-3c30d565730c"
+            name="start"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="de38067f-26a0-4985-97b7-99bfaabff8e7"
+                  name="String neptun_code"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5a6a1771-4cb0-4454-b987-61af0883f879"
+            name="adminMain"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="40e68d8a-19ed-43d1-a36e-bede4b696fde"
-            name="requestDeregisterSubject"
+            Id="314b0fbc-a513-443c-9de9-b5b0f5493904"
+            name="teacherMain"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="1f2e1168-82b4-48ea-92d1-b46d60110dc8"
+            name="studentMain"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="7d951bcc-9b06-43bd-8efc-e6e995b35ad6"
+            name="studentBlock"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7331660c-f063-4213-bad2-b19ca8d1dfeb"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="febd0ce0-d9b0-42e7-8705-58d6761e77de"
+            name="studentBlock_student_Select"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c0a05d00-0493-4342-9f3f-6cd27f8694b3"
+                  name="String subject_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f69edf3f-1487-4bb0-891e-b3f045e95af8"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="01e65b33-b676-439a-88e6-0c44fa94967e"
+            name="requestTeacherTimeTable"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c324dc59-c426-492a-9949-6a86d4807969"
+            name="deamndChange"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1677e402-0752-4bd7-9d86-10f318daf715"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c050c08d-d6ee-4d68-ba7d-87e00d17eed0"
+            name="demandJudgement"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1426d7be-4866-41db-a6a5-bca00ba53afe"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1bf1df6d-c4c0-4c9d-af26-8f4b37a30bec"
+            name="registerForSubject"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9b05b4fd-ee3b-4174-a885-21c5c945183b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ef5ce067-b0eb-4ed5-9fc6-25036b91255c"
+            name="deregisterSubject"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="77fb4123-e6f1-4dec-a6d2-52194949be20"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ae169d90-03ec-45b5-96ed-598e9c20e4de"
+            name="requestJudgement"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="14a81d03-63cc-4d26-9278-e1cf2e98a889"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -3658,6 +4617,411 @@
       <executionEvent
         Id="db9f438e-e72b-4cf4-bacf-46dfbe876761"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2f2e6750-d88d-46f1-bd1a-0d3aa8a2101a"
+        name="InterfaceLogin"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="412dde54-c81a-4092-9100-300beab988ec"
+            isDerived="false"
+            sourceEndRoleName="InterfaceLogin"
+            targetEndRoleName="Controller"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="208f7f5f-92e7-4171-8793-b2160417d20b"
+              LastKnownName="Controller"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9fbd4803-3a20-4cba-a3ad-b243e5243449"
+                  name="InterfaceLogin"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e49f8108-aa37-447a-a5d4-a8bcfa3f97ec"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="5b8edf9b-a041-45d4-829a-1698f19a76cf"
+            name="Login"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="75525c3a-71bb-4bf3-83bd-ef551d39d9dc"
+                  name="Boolean relogin"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cc8530bb-cdc1-4e3b-9abf-954fe90da6c3"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+                      LastKnownName="CMD"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="b3b30822-a368-457a-80b8-5493c791074c"
+        name="Enumeration1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="62ed4a7e-45f2-497d-a541-56dee40851ff"
+        name="Database"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="fc63d6b5-fd70-457b-9abc-edf58357ea34"
+            isDerived="false"
+            sourceEndRoleName="Database"
+            targetEndRoleName="Controller"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="208f7f5f-92e7-4171-8793-b2160417d20b"
+              LastKnownName="Controller"
+              LastKnownLocation="neptun_2.0_uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b6e4db81-7ec8-4da5-a093-4dd8ede2623d"
+                  name="Database"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="cb7389cc-331b-4f56-8c69-c890e47caf61"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="41acb755-4647-495b-839e-766d7674f480"
+            name="userHandler"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="e6c41fee-bd35-4aee-a467-cec6502989c3"
+                LastKnownName="UserXmlHandler"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="16d44151-5e2f-4c36-ae51-d889a4357803"
+            name="subjectHandler"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="d251b766-0756-4631-a19d-f47cf3ee4957"
+                LastKnownName="SubjectXmlHandler"
+                LastKnownLocation="neptun_2.0_uml.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0736a79d-7bb8-4d5f-8b97-07030d964472"
+            name="checkLogin"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="41ed3b6e-4b5a-422e-b5d3-2890cc1e1c4a"
+                  name="String id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1370bd3-5461-4e8a-a79d-88d0a00a6b35"
+                  name="String pw"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9e918c8b-169d-4668-9db9-6ce4a83c86c2"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="fd544225-1704-488f-a346-220a53e7d986"
+            name="GetUser"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="57551c6d-297f-4729-9112-a0713f42c28d"
+                  name="String id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="78af7319-02f2-4929-895f-cc1e53c22f67"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="90cbd197-6fe6-4c68-9270-ab4e0146bcd2"
+                      LastKnownName="User"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="47778d7a-93ae-4f09-b853-8e2382a8f2a2"
+            name="getSubjects"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="aaecb06b-2903-4ce3-8d12-6c188c344c28"
+                  name="String neptunCode"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ade12bf6-a090-4bf4-8662-7f21384b51de"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="70501856-0edb-453d-af9f-6fc706883563"
+                      LastKnownName="List&lt;short_user&gt;"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e7980946-f089-423e-a5ae-6c1f5fff6635"
+            name="getStrudents"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ecc805ea-e255-4631-882d-f414cb5d0b99"
+                  name="string subj_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="16b9b9b3-4a3c-485d-ac66-50691e9d240b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="70501856-0edb-453d-af9f-6fc706883563"
+                      LastKnownName="List&lt;short_user&gt;"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d9c8fdf9-e71d-4d63-ba46-74eaff02fa2b"
+            name="BlockStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="acafa4f9-932e-41b3-b3bf-1cac91e45c78"
+                  name="String subj_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f9a9c608-7717-4880-872d-69db45e8b3ea"
+                  name="String neptun_code"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bc85cc8b-84c7-4dd0-aa54-42963fffd43d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="70fc0771-11a5-4b92-b85b-321fcb57c045"
+            name="TimeTable"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dd729dad-eeb2-4b52-ac2a-10efd358d593"
+                  name="String neptun_code"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="17db6d27-84e2-4120-aeb5-5951463e7105"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="dd37ea4a-7fd4-44bf-96f9-7d4032e2440d"
+                      LastKnownName="List&lt;subject&gt;"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="cf760482-fe8b-4a25-838f-e803051bf49f"
+        name="int" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="70501856-0edb-453d-af9f-6fc706883563"
+        name="List&lt;short_user&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="dd37ea4a-7fd4-44bf-96f9-7d4032e2440d"
+        name="List&lt;subject&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b9c98738-3d38-4865-9805-0e31caa49d54"
+        name="ConsoleKeyInfo" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="84c74a87-a057-4153-a3d3-8c2603c90058"
+        name="CMD" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

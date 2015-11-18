@@ -77,6 +77,11 @@ namespace Neptun_2._0
             }
 
             return timeTable;
-        } 
+        }
+
+        public List<Demand> getDemands(String neptun_code)
+        {
+            
+        }
     }
 }
