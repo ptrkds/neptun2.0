@@ -121,7 +121,7 @@ namespace Neptun_2._0
             return demands;
         }
 
-        public bool demandJudgement(String demand_id, String neptun_code, Boolean state)
+        /*public bool demandJudgement(String demand_id, String neptun_code, Boolean state)
         {
             Demand newDemand = demandHandler.GetDemand(demand_id);
 
@@ -131,6 +131,7 @@ namespace Neptun_2._0
             bool newSubject = subjectHandler
 
         }
+        */
 
         public List<ClassRoom> getAllRoom()
         {
@@ -241,7 +242,7 @@ namespace Neptun_2._0
             return requests;
         }
 
-        public bool requestJudgement(String request_id, String neptun_code, Boolean state)
+        /*public bool requestJudgement(String request_id, String neptun_code, Boolean state)
         {
             Request newRequest = requestHandler.GetRequest(request_id);
 
@@ -251,5 +252,6 @@ namespace Neptun_2._0
             bool newSubject = subjectHandler
 
         }
+        */
     }
 }

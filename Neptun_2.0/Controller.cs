@@ -246,7 +246,7 @@ namespace Neptun_2._0
 
 
 
-
+        /*
         //Demand Change
         private bool demandChange()
         {
@@ -321,8 +321,8 @@ namespace Neptun_2._0
                 return 0;
             }
         }
-
-
+        */
+        /*
         //Demand Judgement
         private bool demandJudgement()
         {
@@ -379,8 +379,8 @@ namespace Neptun_2._0
                 return false;
             }
         }
-
-
+        */
+        /*
         //Demand Submission
         private bool requestDemandSubmission(String selected_class = "")
         {
@@ -411,8 +411,8 @@ namespace Neptun_2._0
                 return false;
             }
         }
-
-
+        */
+        /*
         //Register For Subject
         private bool registerForSubject()
         {
@@ -461,8 +461,8 @@ namespace Neptun_2._0
                 return false;
             }
         }
-
-
+        */
+        /*
         //Deregister Subject
         private bool deregisterSubject()
         {
@@ -504,8 +504,8 @@ namespace Neptun_2._0
                 return false;
             }
         }
-
-
+        */
+        /*
         //Filter - x
         private bool requestFilter()
         {
@@ -532,8 +532,8 @@ namespace Neptun_2._0
 
 
         }
-
-
+        */
+        /*
         //Maintenance
         private bool requestMaintenance()
         {
@@ -557,8 +557,8 @@ namespace Neptun_2._0
                 return false;
             }
         }
-
-
+        */
+        /*
         //Request Judgement
         private bool requestJudgement()
         {
@@ -597,9 +597,9 @@ namespace Neptun_2._0
             {
                 return false;
             }
-        }
+        }*/
 
-
+        /*
         //Request Submission
         private bool requestRequestSubmission()
         {
@@ -621,6 +621,6 @@ namespace Neptun_2._0
             {
                 return false;
             }
-        }
+        }*/
     }
 }
