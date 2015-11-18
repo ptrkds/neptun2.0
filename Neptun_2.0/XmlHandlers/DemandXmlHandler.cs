@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
+﻿using System.Xml;
 
 namespace Neptun_2._0
 {
@@ -20,9 +15,10 @@ namespace Neptun_2._0
             string teacherId = "";
             string roomId = "";
             string subjectId = "";
+            string subjectName = "";
+            string day = "";
             string startTime = "";
             string endTime = "";
-            string comment = "";
 
             XmlReader xmlReader = XmlReader.Create(GetXmlFileName(demand_Id));
 
@@ -32,23 +28,23 @@ namespace Neptun_2._0
                 if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "demand") && (xmlReader.GetAttribute("id") == demand_Id))
                 {
                     demandId = xmlReader.GetAttribute("id");
-                    teacherId = GetValue(ref xmlReader, "teacherId");
                     state = GetValue(ref xmlReader, "state");
+                    teacherId = GetValue(ref xmlReader, "teacherId");
                     roomId = GetValue(ref xmlReader, "roomId");
                     subjectId = GetValue(ref xmlReader, "subjectId");
+                    subjectName = GetValue(ref xmlReader, "subjectName");
+                    day = GetValue(ref xmlReader, "day");
                     startTime = GetValue(ref xmlReader, "startTime");
                     endTime = GetValue(ref xmlReader, "endTime");
-                    comment = GetValue(ref xmlReader, "comment");
                 }
             }
 
-
-            return new Demand(demandId, state, teacherId, roomId, subjectId, startTime, endTime, comment);
+            return new Demand(demandId, state, teacherId, roomId, subjectId, subjectName, day, startTime, endTime);
         }
 
         #endregion
 
-        //TODO implement
+        #region functional methods
         public bool CreateDemand(Demand demand)
         {
             XmlWriterSettings settings = new XmlWriterSettings();
@@ -57,23 +53,21 @@ namespace Neptun_2._0
 
             using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(demand.demandId), settings))
             {
-
                 writer.WriteStartDocument();
                 writer.WriteStartElement("demand");
                 writer.WriteAttributeString("id", demand.demandId);
-
-                writer.WriteElementString("teacherId", demand.teacherId);
                 writer.WriteElementString("state", demand.state);
+                writer.WriteElementString("teacherId", demand.teacherId);
                 writer.WriteElementString("roomId", demand.roomId);
                 writer.WriteElementString("subjectId", demand.subjectId);
+                writer.WriteElementString("subjectName", demand.subjectName);
+                writer.WriteElementString("day", demand.day);
                 writer.WriteElementString("startTime", demand.startTime);
                 writer.WriteElementString("endTime", demand.endTime);
-                writer.WriteElementString("comment", demand.comment);
 
                 writer.WriteEndElement();
                 writer.WriteEndDocument();
             }
-
 
             return true;
         }
@@ -85,13 +79,29 @@ namespace Neptun_2._0
             return true;
         }
 
+        public bool JudgeDemand(string demandId, bool judge)
+        {   
+            string judgestr;
+            if (judge)
+            {
+                judgestr = "accepted";
+            }
+            else
+            {
+                judgestr = "declined";
+            }
+
+            SetAttribute(GetXmlFileName(demandId), "/demandId/state", 0, judgestr);
+
+            return true;
+        }
+        #endregion
+
+        #region helper method
         private string GetXmlFileName(string demandId)
         {
             return "Demands/" + demandId + ".xml";
         }
-
-
-    }
-
-    
+        #endregion
+    }  
 }

@@ -117,7 +117,7 @@ namespace Neptun_2._0
         //TODO implement
         public bool Register(string neptunCode, string subjId)
         {
-            //AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), )
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/lectures/", "lecture", "id", subjId);
             return true;
         }
 
