@@ -34,7 +34,8 @@ namespace Neptun_2._0
             string name = "";
             string type = "";
             List<string> subjects = new List<string>();
-            
+            List<string> documents = new List<string>();
+
             try
             {
                 while (xmlReader.Read())
@@ -45,7 +46,8 @@ namespace Neptun_2._0
                         name = GetValue(ref xmlReader, "name");
                         type = GetValue(ref xmlReader, "type");
 
-                        subjects = GetSubjectIds(neptunCode);
+                        subjects = GetList(ref xmlReader, "subjects", "id");
+                        subjects = GetList(ref xmlReader, "documents", "id");
                     }
                 }
             }
@@ -54,7 +56,7 @@ namespace Neptun_2._0
                 //TODO e
             }
             
-            return new User(id, name, type, subjects);
+            return new User(id, name, type, subjects, documents);
         }
 
         public List<string> GetSubjectIds(string neptunCode)
@@ -66,6 +68,17 @@ namespace Neptun_2._0
             subjects = GetList(ref xmlReader, "lectures", "id");
 
             return subjects;
+        }
+
+        public List<string> GetDemandIds(string neptunCode)
+        {
+            //TODO try catch
+            List<string> demands = new List<string>();
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
+
+            demands = GetList(ref xmlReader, "demands", "id");
+
+            return demands;
         }
 
         public bool CheckLogin(string neptunCode, string password)
