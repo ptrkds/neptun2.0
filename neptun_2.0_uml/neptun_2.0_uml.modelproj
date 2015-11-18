@@ -58,6 +58,13 @@
     <Content Include="9. Kervenyleadas.docx">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Login.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Login.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Login.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Neptun2.0.usecasediagram">
       <SubType>Content</SubType>
     </Content>

@@ -122,4 +122,18 @@ namespace Neptun_2._0
             this.subjectIds = subjectIds;
         }
     }
+
+    class Request
+    {
+        private String id;
+        private String owner;
+        private String text;
+
+        public Request(string id, string owner, string text)
+        {
+            this.id = id;
+            this.owner = owner;
+            this.text = text;
+        }
+    }
 }
