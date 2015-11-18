@@ -104,15 +104,21 @@ namespace Neptun_2._0
                     case "studentBlock":
                         studentBlock();
                         break;
-                    case "demandSubmission":
-                        //requestDemandSubmission();
-                        break;
+                    
                     case "demand":
                         cmd = tui.demandMenu();
-                        break;
-                    case "demandChange":
-                        //demandChange();
-                        break;
+                        switch (cmd.cmd)
+                        {
+                            case "demandSubmission":
+                                requestDemandSubmission();
+                                break;
+                            case "demandChange":
+                                //demandChange();
+                                break;
+                            case "logout":
+                                break;
+                        }
+                        break;                    
                     case "timeTable":
                         requestTeacherTimeTable();
                         break;
@@ -380,13 +386,13 @@ namespace Neptun_2._0
             }
         }
         */
-        /*
+        
         //Demand Submission
         private bool requestDemandSubmission(String selected_class = "")
         {
             List<ClassRoom> rooms = db.getAllRoom();
 
-            cmd = tui.demandSubmission(rooms, selected_class);
+            cmd = tui.demandSubmissionMenu(rooms, selected_class);
 
             
             if (cmd.cmd != "exit")
@@ -397,12 +403,12 @@ namespace Neptun_2._0
 
                 if (db.demandSubmission(newDemand))
                 {
-                    tui.demandSubmission_successful();
+                  //  tui.demandSubmission_successful();
                     return true;
                 }
                 else
                 {
-                    tui.demandSubmission_unsuccessful();
+                  //  tui.demandSubmission_unsuccessful();
                     return false;
                 }
             }
@@ -411,7 +417,7 @@ namespace Neptun_2._0
                 return false;
             }
         }
-        */
+        
         /*
         //Register For Subject
         private bool registerForSubject()

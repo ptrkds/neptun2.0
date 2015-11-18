@@ -204,7 +204,7 @@ namespace Neptun_2._0
                     break;
             }
         }
-        public CMD demandSubmissionMenu(List<String> rooms, string selected_room)
+        public CMD demandSubmissionMenu(List<ClassRoom> rooms, string selected_room)
         {
             if (selected_room == "")
             {
@@ -223,7 +223,7 @@ namespace Neptun_2._0
                 for (int i = 0; i < countrooms; i++)
                 {
                     Console.SetCursorPosition(5, 15 + i);
-                    Console.Write(rooms[i] + "   ");
+                    Console.Write(rooms[i].getId() + "   ");
 
                 }
                 do
@@ -247,7 +247,7 @@ namespace Neptun_2._0
                 if (position == 1)
                     command.cmd = "exit";
                 else
-                    command.data.Add(rooms[position - 2]);
+                    command.data.Add(rooms[position - 2].getId());
             }
             else
                 command.data.Add(selected_room);
