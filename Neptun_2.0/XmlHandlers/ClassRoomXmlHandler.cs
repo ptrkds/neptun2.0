@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,15 +12,13 @@ namespace Neptun_2._0
     {
         #region getters
 
-        //get all
-
         public List<string> GetLectureIds(string roomId)
         {
             List<string> ids = new List<string>();
             XmlReader xmlReader = XmlReader.Create(GetXmlFileName(roomId));
 
             ids = GetList(ref xmlReader, "lectures", "id");
-            
+
             return ids;
         }
 
