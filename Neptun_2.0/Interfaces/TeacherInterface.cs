@@ -213,7 +213,7 @@ namespace Neptun_2._0
         {
 
         }
-        public CMD demandChangeMenu(string old_demand)
+        public CMD demandChangeMenu(List<String> demands)
         {
             CMD command = new CMD();
             return command;
@@ -258,8 +258,8 @@ namespace Neptun_2._0
             Console.SetCursorPosition(68, 8);
             Console.Write("Péntek");
             int pos=0;
-            string current = "";                    
-            for(int i=0; i<subjects.Count;i++)
+            string current = "";
+            for (int i = 0; i < subjects.Count; i++)
             {
                 switch (subjects[i].getDay())
                 {
@@ -279,11 +279,29 @@ namespace Neptun_2._0
                         cursorpos = 68;
                         break;
                 }
-                
+
                 current = subjects[i].getStartTime().Remove(subjects[i].getStartTime().Length - 3);
-                pos = Int32.Parse(current) + 2;
-                Console.SetCursorPosition(cursorpos, pos);
-                Console.Write(subjects[i].getName());             
+                pos = Int32.Parse(current) + 2;                
+                if (subjects[i].getName().Length < 11)
+                {
+                    Console.SetCursorPosition(cursorpos, pos);
+                    Console.Write(subjects[i].getName());
+                }
+                else if(subjects[i].getName().Length < 21)
+                {
+                    Console.SetCursorPosition(cursorpos, pos);
+                    Console.Write(subjects[i].getName().Remove(10));
+                    Console.SetCursorPosition(cursorpos, pos+1);
+                    Console.Write(subjects[i].getName().Remove(0, 10));
+                }
+                else
+                {
+                    Console.SetCursorPosition(cursorpos, pos);
+                    Console.Write(subjects[i].getName().Remove(10));
+                    Console.SetCursorPosition(cursorpos, pos + 1);
+                    Console.Write(subjects[i].getName().Remove(0, 10).Remove(10));
+                }
+                               
 
             }
             Console.SetCursorPosition(4 + back.Length, 6);
