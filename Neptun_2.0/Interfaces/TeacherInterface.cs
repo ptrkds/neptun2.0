@@ -18,6 +18,7 @@ namespace Neptun_2._0
         private String no = "Nem";
         private int countsubject = 0;
         private int countusers = 0;
+        private int countrooms = 0;
         public CMD TeacherMainMenu()
         {
             //WriteMenu
@@ -203,14 +204,191 @@ namespace Neptun_2._0
                     break;
             }
         }
-        public CMD demandSubmissionMenu()
+        public CMD demandSubmissionMenu(List<String> rooms, string selected_room)
         {
+            if (selected_room == "")
+            {
+                position = 1;
+                for (int i = 0; i < 20; i++)
+                {
+                    Console.SetCursorPosition(i * 4, 9);
+                    Console.Write("____");
+                }
+                Console.SetCursorPosition(3, 11);
+                Console.Write("Adja meg, hogy melyik termet szeretné igényelni egy új tantárgy felvitelére:");
+                Console.SetCursorPosition(5, 13);
+                Console.Write(back);
+                countrooms = rooms.Count;
+                subMainUnderline(countrooms, 4);
+                for (int i = 0; i < countrooms; i++)
+                {
+                    Console.SetCursorPosition(5, 15 + i);
+                    Console.Write(rooms[i] + "   ");
+
+                }
+                do
+                {
+                    input = Console.ReadKey();
+                    if (input.Key == ConsoleKey.DownArrow)
+                        position++;
+                    if (input.Key == ConsoleKey.UpArrow)
+                        position--;
+                    if (position < 1)
+                        position = countrooms + 1;
+                    if (position > countrooms + 1)
+                        position = 1;
+                    subMainUnderline(countrooms, 4);
+                } while (input.Key != ConsoleKey.Enter);
+            }
             CMD command = new CMD();
+            command.data = new List<string>();
+            if (selected_room == "")
+            {
+                if (position == 1)
+                    command.cmd = "exit";
+                else
+                    command.data.Add(rooms[position - 2]);
+            }
+            else
+                command.data.Add(selected_room);
+
+            subMenuremove(15, countrooms);
+            position = 1;
+            Console.SetCursorPosition(5, 15);
+            Console.Write("Tantárgy ID-je:");
+            Console.SetCursorPosition(5, 17);
+            Console.Write("Tantárgy neve:");
+            Console.SetCursorPosition(5, 19);
+            Console.Write("Melyik napon legyen (számot írjon: 1 - Hétfő ... 5 - Péntek):");
+            Console.SetCursorPosition(5, 21);
+            Console.Write("Mikor kezdődjön (Csak 8, 10, 12, ... ,18 számokat írjon be, amelyik órában akarja):");
+            Console.SetCursorPosition(5, 23);
+            Console.Write("Mivel minden óra 2 órás, a Neptun 2.0 magától generálja az óra végét.");
+            String subjectID = "";
+            String subjectName = "";
+            String day = "";
+            String start = "";
+            int lengthID = 0;
+            int lengthName = 0;
+            int lengthDay = 0;
+            int lengthStart = 0;
+            demandUnderline(lengthID, lengthName, lengthDay, lengthStart);
+            do
+            {
+                input = Console.ReadKey();
+                if (position == 2)
+                {
+                    Console.Write("\b ");
+                }
+                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9')) && input.Key != ConsoleKey.Backspace)
+                {
+                    Console.Write("\b ");
+                }
+                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9')))
+                {
+                    switch (position)
+                    {
+                        case 2:
+                            lengthID++;
+                            subjectID += input.KeyChar;
+                            break;
+                        case 3:
+                            lengthName++;
+                            subjectName += input.KeyChar;
+                            break;
+                        case 4:
+                            lengthDay++;
+                            day += input.KeyChar;
+                            break;
+                        case 5:
+                            lengthStart++;
+                            start += input.KeyChar;
+                            break;
+                    }
+                }
+                if (input.Key == ConsoleKey.Backspace)
+                {
+                    switch (position)
+                    {
+                        case 2:
+                            if (lengthID > 0)
+                            {
+                                subjectID = subjectID.Remove(subjectID.Length - 1);
+                                lengthID--;
+                                Console.Write(" ");
+                            }                            
+                            break;
+                        case 3:
+                            if (lengthName > 0)
+                            {
+                                subjectName = subjectName.Remove(subjectName.Length - 1);
+                                lengthName--;
+                                Console.Write(" ");
+                            }
+                            break;
+                        case 4:
+                            if (lengthDay > 0)
+                            {
+                                day = day.Remove(day.Length - 1);
+                                lengthDay--;
+                                Console.Write(" ");
+                            }
+                            break;
+                        case 5:
+                            if (lengthStart > 0)
+                            {
+                                start = start.Remove(start.Length - 1);
+                                lengthStart--;
+                                Console.Write(" ");
+                            }
+                            break;
+                    } 
+                }
+                if (input.Key == ConsoleKey.DownArrow)
+                    position++;
+                if (input.Key == ConsoleKey.UpArrow)
+                    position--;                
+                if (position < 1)
+                    position = 5;
+                if (position > 5)
+                    position = 1;
+                demandUnderline(lengthID, lengthName, lengthDay, lengthStart);        
+            } while (input.Key != ConsoleKey.Enter);
+
             return command;
         }
 
-        private void demandUnderline()
+        private void demandUnderline(int ID, int name, int day, int start)
         {
+            if (position == 1)
+            {
+                for (int i = 0; i < back.Length; i++)
+                {
+                    Console.SetCursorPosition(5 + i, 14);
+                    Console.Write("-");
+                }
+                Console.SetCursorPosition(8 + back.Length, 13);
+            }
+            if (position != 1)
+            {
+                Console.SetCursorPosition(5, 14);
+                Console.Write(new string(' ', Console.WindowWidth));                
+            } 
+            switch(position)
+            {
+                case 2:
+                    Console.SetCursorPosition(23+ID, 15);
+                    break;
+                case 3:
+                    Console.SetCursorPosition(23 + name, 17);
+                    break;
+                case 4:
+                    Console.SetCursorPosition(65 + day, 19);
+                    break;
+                case 5:
+                    Console.SetCursorPosition(55 + start, 21);
+                    break;
+            }           
 
         }
         public CMD demandChangeMenu(List<String> demands)
@@ -327,7 +505,7 @@ namespace Neptun_2._0
             Console.SetCursorPosition(5, 8);
             Console.Write(back + "   ");
             countsubject = subject.Count;
-            subMainUnderline(countsubject);
+            subMainUnderline(countsubject,0);
             for (int i = 0; i < subject.Count; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
@@ -345,7 +523,7 @@ namespace Neptun_2._0
                     position = countsubject + 1;
                 if (position > countsubject + 1)
                     position = 1;
-                subMainUnderline(countsubject);
+                subMainUnderline(countsubject, 0);
             } while (input.Key != ConsoleKey.Enter);
             CMD command = new CMD();
             command.data = new List<string>();
@@ -355,17 +533,17 @@ namespace Neptun_2._0
                 command.data.Add(subject[position-2].id);
             return command;
         }
-        private void subMainUnderline(int max)
+        private void subMainUnderline(int max, int offset)
         {
             Console.Write("\b\b\b   ");
             if (position == 1)
             {
                 for (int i = 0; i < back.Length; i++)
                 {
-                    Console.SetCursorPosition(5 + i, 9);
+                    Console.SetCursorPosition(5 + i, 9+offset);
                     Console.Write("-");
                 }
-                Console.SetCursorPosition(8 + back.Length, 8);
+                Console.SetCursorPosition(8 + back.Length, 8+offset);
             }
             else
             {
@@ -373,11 +551,11 @@ namespace Neptun_2._0
                 {
                     for (int i = 0; i < back.Length; i++)
                     {
-                        Console.SetCursorPosition(5 + i, 9);
+                        Console.SetCursorPosition(5 + i, 9+offset);
                         Console.Write(" ");
                     }
                 }
-                Console.SetCursorPosition(2, 10 + position - 2);
+                Console.SetCursorPosition(2, 10 + position - 2+offset);
                 Console.Write("->");
             }
         }
@@ -388,7 +566,7 @@ namespace Neptun_2._0
             Console.SetCursorPosition(3, 6);
             Console.Write("Adja meg, hogy melyik diákot szeretné letiltani:              ");
             countusers = users.Count;
-            subMainUnderline(countusers);            
+            subMainUnderline(countusers,0);            
             for (int i = 0; i < users.Count; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
@@ -405,7 +583,7 @@ namespace Neptun_2._0
                     position = countusers + 1;
                 if (position > countusers + 1)
                     position = 1;
-                subMainUnderline(countusers);
+                subMainUnderline(countusers,0);
             } while (input.Key != ConsoleKey.Enter);
             CMD command = new CMD();
             command.data = new List<string>();
@@ -422,7 +600,7 @@ namespace Neptun_2._0
         {
             subMenuremove(10, countusers);
             position = 1;
-            subMainUnderline(0);
+            subMainUnderline(0,0);
             Console.SetCursorPosition(3, 6);
             Console.Write("A tanuló letiltása a tantárgyról sikeres volt!  ");
             Console.SetCursorPosition(3, 8);
@@ -435,7 +613,7 @@ namespace Neptun_2._0
         {
             subMenuremove(10, countusers);
             position = 1;
-            subMainUnderline(0);
+            subMainUnderline(0,0);
             Console.SetCursorPosition(3, 6);
             Console.Write("A tanuló letiltása a tantárgyról sikertelen volt!");
             Console.SetCursorPosition(3, 8);
@@ -516,3 +694,4 @@ namespace Neptun_2._0
         
     }
 }
+

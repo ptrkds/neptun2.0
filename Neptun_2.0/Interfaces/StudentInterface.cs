@@ -173,8 +173,25 @@ namespace Neptun_2._0
 
                 current = subjects[i].getStartTime().Remove(subjects[i].getStartTime().Length - 3);
                 pos = Int32.Parse(current) + 2;
-                Console.SetCursorPosition(cursorpos, pos);
-                Console.Write(subjects[i].getName());
+                if (subjects[i].getName().Length < 11)
+                {
+                    Console.SetCursorPosition(cursorpos, pos);
+                    Console.Write(subjects[i].getName());
+                }
+                else if (subjects[i].getName().Length < 21)
+                {
+                    Console.SetCursorPosition(cursorpos, pos);
+                    Console.Write(subjects[i].getName().Remove(10));
+                    Console.SetCursorPosition(cursorpos, pos + 1);
+                    Console.Write(subjects[i].getName().Remove(0, 10));
+                }
+                else
+                {
+                    Console.SetCursorPosition(cursorpos, pos);
+                    Console.Write(subjects[i].getName().Remove(10));
+                    Console.SetCursorPosition(cursorpos, pos + 1);
+                    Console.Write(subjects[i].getName().Remove(0, 10).Remove(10));
+                }
 
             }
             Console.SetCursorPosition(4 + back.Length, 6);
