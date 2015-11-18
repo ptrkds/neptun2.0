@@ -1066,16 +1066,16 @@
             <elementDefinition Id="a182f29f-9b48-4f57-8151-5f6ad7e27b68" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="52509a24-10ca-45b1-8783-1568a5b99059" name="string old_demand" direction="In" isUnique="false">
-                  <elementDefinition Id="bcc47475-9d4e-409b-a5f4-58d515ece589" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
                 <parameter Id="484ff648-1e58-4a6a-97e2-db413ac37976" direction="Return" isUnique="false">
                   <elementDefinition Id="a0279315-92f5-4d1c-9d34-5c5e93af335d" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="b520b536-6ac9-4e8d-a8ee-d9784d0187ad" LastKnownName="CMD" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a101cb97-710d-4372-a2fa-7e93b2005be9" name="List&lt;String&gt; demands" direction="In" isUnique="false">
+                  <elementDefinition Id="46ef67b0-a6a2-426f-90af-2eabbb446cbf" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>

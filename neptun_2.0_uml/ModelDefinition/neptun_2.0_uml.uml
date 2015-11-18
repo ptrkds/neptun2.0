@@ -4320,13 +4320,6 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="bcc47475-9d4e-409b-a5f4-58d515ece589"
-                  name="string old_demand"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
                   Id="a0279315-92f5-4d1c-9d34-5c5e93af335d"
                   direction="Return"
                   isUnique="false">
@@ -4337,6 +4330,13 @@
                       LastKnownLocation="neptun_2.0_uml.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="46ef67b0-a6a2-426f-90af-2eabbb446cbf"
+                  name="List&lt;String&gt; demands"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
