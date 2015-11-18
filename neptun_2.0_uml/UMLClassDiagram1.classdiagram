@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="2f976b32-3a9c-4a89-922b-84a10f47bf2d" name="UMLClassDiagram1" linkedPackageId="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2f976b32-3a9c-4a89-922b-84a10f47bf2d" name="UMLClassDiagram1" linkedPackageId="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="7e971e0c-2970-4309-bea5-4a91f822fb9c" name="Neptun" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -145,6 +145,52 @@
                   <elementDefinition Id="78fdadc1-5c0f-40d8-a147-504fbda94f44" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="eb90356c-e2e1-44fb-a6f6-efb0df353fcd" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="da32c776-d8c9-4872-b95b-532a8141c205" name="Register" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8a384a35-aa1d-4c78-98bb-b4490604a83a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fbfd4697-72e9-4c0a-860c-55921080c635" name="string roomId" direction="In" isUnique="false">
+                  <elementDefinition Id="35f9bb5b-b8ce-441f-859e-7455d35efee4" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="95ceca04-6944-467c-bba3-b2900eed415f" name="string subjId" direction="In" isUnique="false">
+                  <elementDefinition Id="25d58b83-14af-48cd-b1d3-c18f3e67f787" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fe7f7c84-d61a-4813-a866-09a384f5198e" direction="Return" isUnique="false">
+                  <elementDefinition Id="6f127932-41e8-480c-a39e-aa5eebb2aa87" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f1d22887-1700-43e7-89b4-a86547fc761e" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="97b3d037-6e9a-41d8-bfc9-86388017ceae" name="DeRegister" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="39e9d73e-17ef-4dbf-95a4-5bdb8af90dba" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ca141cc4-cb4e-4fc2-8f29-7276490b41a9" name="string roomId" direction="In" isUnique="false">
+                  <elementDefinition Id="67ff0ede-a995-40c2-b33c-714abd8f2dba" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e5c96e20-ec43-468d-a549-171305111903" name="string subjId" direction="In" isUnique="false">
+                  <elementDefinition Id="5cfd9188-24b2-4fc9-9a3d-1b996668cfda" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="589c7fc4-caec-4888-91c1-3c7f6cbf5109" direction="Return" isUnique="false">
+                  <elementDefinition Id="b35a93fd-04f9-47d4-8410-ef27ed820dba" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f1d22887-1700-43e7-89b4-a86547fc761e" LastKnownName="bool" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
