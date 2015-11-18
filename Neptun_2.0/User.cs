@@ -127,12 +127,14 @@ namespace Neptun_2._0
     {
         private String id;
         private String owner;
+		private String subject;
         private String text;
 
-        public Request(string id, string owner, string text)
+        public Request(string id, string subject, string owner, string text)
         {
             this.id = id;
             this.owner = owner;
+			this.subject = subject;
             this.text = text;
         }
     }
