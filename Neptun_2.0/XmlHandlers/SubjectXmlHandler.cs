@@ -88,6 +88,9 @@ namespace Neptun_2._0
         #endregion
 
         #region functional methods
+
+        //TODO register()
+
         public bool DeRegister(string subjId, string neptunCode)
         {
             //RemoveNodeByAttr(GetXmlFileName(subj_id), "lecture/students/student[@id=\""+neptunCode+"\"]");
