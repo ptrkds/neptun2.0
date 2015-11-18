@@ -72,6 +72,20 @@
       <SubType>Content</SubType>
       <DependentUpon>Neptun2.0.usecasediagram</DependentUpon>
     </Content>
+    <Content Include="RequestTeacherTimeTable.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RequestTeacherTimeTable.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>RequestTeacherTimeTable.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="StudentBlock.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="StudentBlock.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>StudentBlock.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Szures.activitydiagram">
       <SubType>Content</SubType>
     </Content>
