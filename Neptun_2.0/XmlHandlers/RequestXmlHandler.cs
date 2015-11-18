@@ -13,6 +13,7 @@ namespace Neptun_2._0
         public Request GetRequest(string request_Id)
         {
             string requestId = "";
+            string state = "";
             string ownerId = "";
             string subject = "";
             string text = "";
@@ -25,13 +26,14 @@ namespace Neptun_2._0
                 if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "request") && (xmlReader.GetAttribute("id") == request_Id))
                 {
                     requestId = xmlReader.GetAttribute("id");
+                    state = GetValue(ref xmlReader, "state");
                     ownerId = GetValue(ref xmlReader, "owner");
                     subject = GetValue(ref xmlReader, "subject");
                     text = GetValue(ref xmlReader, "text");
                 }
             }
 
-            return new Request(requestId, ownerId, subject, text);
+            return new Request(requestId,state, ownerId, subject, text);
         }
 
         #endregion
