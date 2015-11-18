@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lecture id="">
+  <name></name>
+  <teacher></teacher>
+  <day></day>
+  <startTime></startTime>
+  <endTime></endTime>
+  <students count="">
+    <student id="" />
+    <student id="" />
+  </students>
+  <blacklist count="">
+    <student id="" />
+    <student id="" />
+  </blacklist>
+</lecture>

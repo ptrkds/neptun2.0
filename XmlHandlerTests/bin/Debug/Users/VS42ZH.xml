@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<user id="VS42ZH">
+  <name>Patrik</name>
+  <type>teacher</type>
+  <pw>123456</pw>
+  <lectures count="4">
+    <lecture id="VEMFK12"/>
+    <lecture id="VEMFK42"/>
+  </lectures>
+</user>
