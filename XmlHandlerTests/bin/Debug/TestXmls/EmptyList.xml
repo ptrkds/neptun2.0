@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<user id="BATMAN">
+  <name>Batman</name>
+  <type>admin</type>
+  <pw>123456</pw>
+  <lectures count="4">
+  </lectures>
+</user>
