@@ -126,7 +126,7 @@ namespace Neptun_2._0
 
             bool userNewDemand = userHandler.Register(neptun_code, newDemand.subjectId);
 
-
+            //TODO
             bool newSubject = subjectHandler
 
         }
@@ -150,5 +150,34 @@ namespace Neptun_2._0
         {
             return demandHandler.CreateDemand(newDemand);
         }
+
+        public List<short_subject> getAllSubject()
+        {
+            String[] ids = subjectHandler.GetAllIds("Lectures/");
+
+            List<short_subject> subjects = new List<short_subject>();
+
+            foreach (string id in ids)
+            {
+                short_subject newSubject = new short_subject();
+                newSubject.id = id;
+                newSubject.name = subjectHandler.GetSubjectName(id);
+                subjects.Add(newSubject);
+            }
+
+            return subjects;
+        }
+
+        public bool registerForSubject(String neptun_code, String subject_id)
+        {
+            return userHandler.Register(neptun_code, subject_id);
+        }
+
+        public bool deregisterSubject(String neptun_code, String subject_id)
+        {
+            return userHandler.DeRegister(neptun_code, subject_id);
+        }
+
+
     }
 }

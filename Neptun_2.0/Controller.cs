@@ -365,7 +365,7 @@ namespace Neptun_2._0
             cmd = aui.judgeDemand();
             if (cmd.cmd != "exit")
             {
-                if (db.demandJudgement(demand_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.data[0])) )
+                if (db.demandJudgement(demand_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.data[0])))
                 {
                     return true;
                 }
@@ -373,6 +373,10 @@ namespace Neptun_2._0
                 {
                     return false;
                 }
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -382,7 +386,7 @@ namespace Neptun_2._0
         {
             List<ClassRoom> rooms = db.getAllRoom();
 
-            cmd = sui.demandSubmission(rooms, selected_class);
+            cmd = tui.demandSubmission(rooms, selected_class);
 
             
             if (cmd.cmd != "exit")
@@ -412,12 +416,12 @@ namespace Neptun_2._0
         //Register For Subject
         private bool registerForSubject()
         {
-            List<String> subjects = new ;
+            List<short_subject> subjects = new List<short_subject>();
 
             try
             {
-                subjects =
-    }
+                subjects = db.getAllSubject();
+            }
             catch (Exception e)
             {
 
@@ -448,7 +452,7 @@ namespace Neptun_2._0
         }
         private bool requestRegisterForSubject(String subject_id)
         {
-            if (kisofgv(subject_id))
+            if (db.registerForSubject(userLoggedIn.getNeptunCode(), subject_id))
             {
                 return true;
             }
@@ -462,11 +466,14 @@ namespace Neptun_2._0
         //Deregister Subject
         private bool deregisterSubject()
         {
-            List<String> subject_list = ;
+            List<short_subject> subjects = db.getSubjects(userLoggedIn.getNeptunCode());
+
+
+
 
             while (true)
             {
-                cmd = sui.selectSubject();
+                cmd = sui.selectSubject(subjects);
 
                 if (cmd.cmd != "exit")
                 {
@@ -488,7 +495,7 @@ namespace Neptun_2._0
         }
         private bool requestDeregisterSubject(String subject_id)
         {
-            if (kisofgv(subject_id))
+            if (db.deregisterSubject(userLoggedIn.getNeptunCode(), subject_id))
             {
                 return true;
             }
