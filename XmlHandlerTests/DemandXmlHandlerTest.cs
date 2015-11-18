@@ -10,13 +10,10 @@ namespace XmlHandlerTests
     [TestClass]
     public class DemandXmlHandlerTest
     {
-        
-
         [TestMethod]
         public void GetDemandTest()
         {
             DemandXmlHandler handler = new DemandXmlHandler();
-
             Demand demand = handler.GetDemand("ASDF1234");
 
             dumpDemand(demand);
