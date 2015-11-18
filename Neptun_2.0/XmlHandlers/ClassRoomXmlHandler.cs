@@ -69,6 +69,14 @@ namespace Neptun_2._0
         }
         #endregion
 
+        #region functional methods
+        public bool RegisterSubject(string roomId, string subjId)
+        {
+            AppendEmptyNodeWithAttr(GetXmlFileName(roomId), "/room/lectures/", "lecture", "id", subjId);
+            return true;
+        }
+        #endregion
+
         #region helper methods
         private string GetXmlFileName(string id)
         {
