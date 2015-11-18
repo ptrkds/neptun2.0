@@ -54,9 +54,9 @@ namespace XmlHandlerTest
             XmlHandler handler = new XmlHandler();
 
 
-            string[] result = handler.GetAllIds("Lectures");
+            List<string> results = handler.GetAllIds("Lectures");
 
-            Console.WriteLine(ObjectDumper.Dump(result));
+            Console.WriteLine(ObjectDumper.Dump(results));
         }
     }
 }
