@@ -330,7 +330,7 @@ namespace Neptun_2._0
 
             try
             {
-                demands = 
+                demands = db.getAllDemand();
             }
             catch (Exception e)
             {
@@ -362,14 +362,17 @@ namespace Neptun_2._0
         }
         private bool requestDemandJudgement(String demand_id)
         {
-            //demand delete
-            if (kisofgv(demand_id))
+            cmd = aui.judgeDemand();
+            if (cmd.cmd != "exit")
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                if (db.demandJudgement(demand_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.data[0])) )
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
 
@@ -377,10 +380,18 @@ namespace Neptun_2._0
         //Demand Submission
         private bool requestDemandSubmission(String selected_class = "")
         {
-            cmd = sui.demandSubmission(selected_class);
+            List<ClassRoom> rooms = db.getAllRoom();
+
+            cmd = sui.demandSubmission(rooms, selected_class);
+
+            
             if (cmd.cmd != "exit")
             {
-                if (kisofgv(cmd.data))
+
+                Demand newDemand = new Demand(cmd.data[1], null, userLoggedIn.getNeptunCode(),
+                   cmd.data[0], cmd.data[1], cmd.data[2], cmd.data[3], cmd.data[4], cmd.data[5]);
+
+                if (db.demandSubmission(newDemand))
                 {
                     tui.demandSubmission_successful();
                     return true;

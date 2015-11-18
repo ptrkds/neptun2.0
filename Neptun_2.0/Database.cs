@@ -120,12 +120,18 @@ namespace Neptun_2._0
             return demands;
         }
 
-        public bool demandJudgement(String demand_id)
+        public bool demandJudgement(String demand_id, String neptun_code Boolean state)
         {
-            
+            Demand newDemand = demandHandler.GetDemand(demand_id);
+
+            bool userNewDemand = userHandler.Register(neptun_code, newDemand.subjectId);
+
+
+            bool newSubject = subjectHandler
+
         }
 
-        public List<ClassRoom> getRooms()
+        public List<ClassRoom> getAllRoom()
         {
             List<ClassRoom> rooms = new List<ClassRoom>();
 
@@ -133,11 +139,16 @@ namespace Neptun_2._0
 
             foreach (string id in ids)
             {
-                Demand newDemand = demandHandler.GetDemand(id);
+                ClassRoom newRoom = roomHandler.GetClassRoom(id);
                 rooms.Add(newRoom);
             }
 
             return rooms;
+        }
+
+        public bool demandSubmission(Demand newDemand)
+        {
+            return demandHandler.CreateDemand(newDemand);
         }
     }
 }
