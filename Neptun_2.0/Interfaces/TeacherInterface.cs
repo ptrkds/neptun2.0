@@ -203,6 +203,30 @@ namespace Neptun_2._0
                     break;
             }
         }
+        public CMD demandSubmissionMenu()
+        {
+            CMD command = new CMD();
+            return command;
+        }
+
+        private void demandUnderline()
+        {
+
+        }
+        public CMD demandChangeMenu(string old_demand)
+        {
+            CMD command = new CMD();
+            return command;
+        }
+        public CMD filterMenu(List<Subject> subjects)
+        {
+            CMD command = new CMD();
+            return command;
+        }
+        public void filterUnderline()
+        {
+
+        }
         public CMD timeTableView(List<Subject> subjects)
         {
             for (int i = 0; i < 20; i++)
@@ -471,5 +495,6 @@ namespace Neptun_2._0
                 }
             }
         }
+        
     }
 }

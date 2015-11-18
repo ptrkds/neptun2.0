@@ -11,6 +11,8 @@ namespace Neptun_2._0
         private String demandSubmission = "Igény elbírálása";
         private String requestMaintenance = "Karbantartás";
         private String requestJudgement = "Kérvény elbírálása";
+        private int countdemand = 0;
+        private int countjudgement = 0;
         public CMD AdminMainMenu()
         {
             //WriteMenu
@@ -116,8 +118,9 @@ namespace Neptun_2._0
             Console.Write("Válassza ki, melyik igényt akarja elbírálni:");
             Console.SetCursorPosition(5, 8);
             Console.Write(back + "   ");
-            DemandUnderline(demands);
-            for (int i = 0; i < demands.Count; i++)
+            countdemand = demands.Count;
+            DemandorJudgementUnderline(countdemand);
+            for (int i = 0; i < countdemand; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
                 Console.Write(demands[i] + "   ");
@@ -131,10 +134,10 @@ namespace Neptun_2._0
                 if (input.Key == ConsoleKey.UpArrow)
                     position--;
                 if (position < 1)
-                    position = demands.Count + 1;
-                if (position > demands.Count+1)
+                    position = countdemand + 1;
+                if (position > countdemand +1)
                     position = 1;
-                DemandUnderline(demands);
+                DemandorJudgementUnderline(countdemand);
             } while (input.Key != ConsoleKey.Enter);             
             
             CMD command = new CMD();
@@ -145,7 +148,7 @@ namespace Neptun_2._0
                 command.data.Add(demands[position - 2]);                            
             return command;
         }
-        private void DemandUnderline(List<String> demands)
+        private void DemandorJudgementUnderline(int max)
         {
             Console.Write("\b\b\b   ");
             if (position == 1)
@@ -159,7 +162,7 @@ namespace Neptun_2._0
             }
             else
             {                
-                if (position == 2 || position == demands.Count + 1)
+                if (position == 2 || position == max + 1)
                 {
                     for (int i = 0; i < back.Length; i++)
                     {
@@ -170,6 +173,20 @@ namespace Neptun_2._0
                 Console.SetCursorPosition(2, 10+position-2);
                 Console.Write("->");                
             }
+        }
+        public CMD requestMaintenanceMenu()
+        {
+            CMD command = new CMD();
+            return command;
+        }
+        private void requestUnderline()
+        {
+
+        }
+        public CMD requestJudgementMenu()
+        {
+            CMD command = new CMD();
+            return command;
         }
     }
 }

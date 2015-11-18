@@ -118,5 +118,96 @@ namespace Neptun_2._0
                     break;
             }
         }
+        public CMD timeTableView(List<Subject> subjects)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                Console.SetCursorPosition(i * 4, 4);
+                Console.Write("____");
+            }
+            Console.SetCursorPosition(3, 6);
+            Console.Write(back);
+            for (int i = 0; i < back.Length; i++)
+            {
+                Console.SetCursorPosition(3 + i, 7);
+                Console.Write("-");
+            }
+            Console.SetCursorPosition(3 + back.Length, 6);
+            for (int i = 8; i < 20; i += 2)
+            {
+                Console.SetCursorPosition(3, 2 + i);
+                Console.Write(i + ":00 - " + (i + 2) + ":00");
+            }
+            Console.SetCursorPosition(20, 8);
+            Console.Write("Hétfő");
+            Console.SetCursorPosition(32, 8);
+            Console.Write("Kedd");
+            Console.SetCursorPosition(44, 8);
+            Console.Write("Szerda");
+            Console.SetCursorPosition(56, 8);
+            Console.Write("Csütörtök");
+            Console.SetCursorPosition(68, 8);
+            Console.Write("Péntek");
+            int pos = 0;
+            string current = "";
+            for (int i = 0; i < subjects.Count; i++)
+            {
+                switch (subjects[i].getDay())
+                {
+                    case "Hetfo":
+                        cursorpos = 20;
+                        break;
+                    case "Kedd":
+                        cursorpos = 32;
+                        break;
+                    case "Szerda":
+                        cursorpos = 44;
+                        break;
+                    case "Csutortok":
+                        cursorpos = 56;
+                        break;
+                    case "Pentek":
+                        cursorpos = 68;
+                        break;
+                }
+
+                current = subjects[i].getStartTime().Remove(subjects[i].getStartTime().Length - 3);
+                pos = Int32.Parse(current) + 2;
+                Console.SetCursorPosition(cursorpos, pos);
+                Console.Write(subjects[i].getName());
+
+            }
+            Console.SetCursorPosition(4 + back.Length, 6);
+
+            do
+            {
+                input = Console.ReadKey();
+            } while (input.Key != ConsoleKey.Enter);
+            CMD command = new CMD();
+            return command;
+        }
+        public CMD requestSubmissionMenu()
+        {
+            CMD command = new CMD();
+            return command;
+        }
+        private void requestUnderline()
+        {
+
+        }
+        public CMD registerForSubjectMenu(List<Subject> subjects)
+        {
+            CMD command = new CMD();
+            return command;
+        }
+        private void subjectUnderline()
+        {
+
+        }
+        public CMD deregisterSubjectMenu(List<Subject> subjects)
+        {
+            CMD command = new CMD();
+            return command;
+        }
     }
 }
