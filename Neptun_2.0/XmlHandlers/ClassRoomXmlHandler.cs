@@ -67,6 +67,13 @@ namespace Neptun_2._0
 
             return new ClassRoom(id, limit, subjectIds);
         }
+
+        public bool IsOpen(string roomId, string startTime, string endTime)
+        {
+
+
+            return true;
+        }
         #endregion
 
         #region functional methods
@@ -75,6 +82,7 @@ namespace Neptun_2._0
             AppendEmptyNodeWithAttr(GetXmlFileName(roomId), "/room/lectures/", "lecture", "id", subjId);
             return true;
         }
+       
         #endregion
 
         #region helper methods
