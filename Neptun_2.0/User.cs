@@ -128,6 +128,11 @@ namespace Neptun_2._0
             this.limit = limit;
             this.subjectIds = subjectIds;
         }
+
+        public String getId()
+        {
+            return id;
+        }
     }
 
     public class Demand
