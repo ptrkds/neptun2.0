@@ -10,7 +10,8 @@ namespace Neptun_2._0
     {
         UserXmlHandler userHandler = new UserXmlHandler();
         SubjectXmlHandler subjectHandler = new SubjectXmlHandler();
-
+        DemandXmlHandler demandHandler = new DemandXmlHandler();
+        ClassRoomXmlHandler roomHandler = new ClassRoomXmlHandler();
 
         public bool checkLogin(string id, string pw)
         {
@@ -81,9 +82,62 @@ namespace Neptun_2._0
 
         public List<Demand> getDemands(String neptun_code)
         {
-            List<Demand> asd = new List<Demand>();
+            List<Demand> demands = new List<Demand>();
 
-            return asd;
+            List<String> ids = userHandler.GetDemandIds(neptun_code);
+
+            foreach (string id in ids)
+            {
+                Demand newDemand = demandHandler.GetDemand(id);
+                demands.Add(newDemand);
+            }
+
+            return demands;
+        }
+
+        public Demand getDemand(String demand_id)
+        {
+            return demandHandler.GetDemand(demand_id);
+        }
+
+        public bool demandChange(Demand newDemand)
+        {
+            return demandHandler.ChangeDemand(newDemand);
+        }
+
+        public List<Demand> getAllDemand()
+        {
+            String[] ids = demandHandler.GetAllIds("Demands/");
+
+            List<Demand> demands = new List<Demand>();
+
+            foreach (string id in ids)
+            {
+                Demand newDemand = demandHandler.GetDemand(id);
+                demands.Add(newDemand);
+            }
+
+            return demands;
+        }
+
+        public bool demandJudgement(String demand_id)
+        {
+            
+        }
+
+        public List<ClassRoom> getRooms()
+        {
+            List<ClassRoom> rooms = new List<ClassRoom>();
+
+            String[] ids = demandHandler.GetAllIds("ClassRooms/");
+
+            foreach (string id in ids)
+            {
+                Demand newDemand = demandHandler.GetDemand(id);
+                rooms.Add(newRoom);
+            }
+
+            return rooms;
         }
     }
 }

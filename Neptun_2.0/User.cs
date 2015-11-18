@@ -159,13 +159,15 @@ namespace Neptun_2._0
     class Request
     {
         private String id;
+        private String state;
         private String owner;
 		private String subject;
         private String text;
 
-        public Request(string id, string subject, string owner, string text)
+        public Request(string id, string state, string subject, string owner, string text)
         {
             this.id = id;
+            this.state = state;
             this.owner = owner;
 			this.subject = subject;
             this.text = text;

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2f976b32-3a9c-4a89-922b-84a10f47bf2d" name="UMLClassDiagram1" linkedPackageId="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="2f976b32-3a9c-4a89-922b-84a10f47bf2d" name="UMLClassDiagram1" linkedPackageId="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="7e971e0c-2970-4309-bea5-4a91f822fb9c" name="Neptun" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -1496,14 +1496,14 @@
           <operation Id="e587542f-f956-4ba4-9489-285580394c2a" name="requestTeacherTimeTable" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="01e65b33-b676-439a-88e6-0c44fa94967e" />
           </operation>
-          <operation Id="037113da-0f12-4789-9edd-98f37b52ec24" name="deamndChange" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="037113da-0f12-4789-9edd-98f37b52ec24" name="deamandChange" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="c324dc59-c426-492a-9949-6a86d4807969" />
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="6ef8f262-31f9-460e-810d-6987c699622a" direction="Return" isUnique="false">
                   <elementDefinition Id="1677e402-0752-4bd7-9d86-10f318daf715" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="b3ca4c7b-90d6-41c5-9989-f67b831b5d7d" LastKnownName="Boolean" />
+                    <referencedTypeMoniker Id="8821bf49-d0f0-43e2-9696-f501fb0dc9a2" LastKnownName="Integer" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2131,6 +2131,12 @@
               <referencedTypeMoniker Id="523d51a6-2821-4afb-a8f1-f4df890c39e8" LastKnownName="SubjectXmlHandler" />
             </type_NamedElement>
           </property>
+          <property Id="0fce96b7-ba06-483c-898f-0f004d195c37" name="demandHandler" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b4575883-a424-49fc-8ad6-960c1eb17853" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="264a6449-71c9-46bf-94f8-364ff858733e" LastKnownName="DemandXmlHandler" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="c4df1bb0-e02c-41f7-ab0b-7079766babdd" name="checkLogin" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -2246,6 +2252,73 @@
                   <elementDefinition Id="17db6d27-84e2-4120-aeb5-5951463e7105" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="1a16d937-ccd5-4613-8640-8ec159e8b9d4" LastKnownName="List&lt;subject&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c94e0a67-f689-47c6-b0f2-a77a31f78ba5" name="getDemands" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0db729a7-bf94-4925-b0a4-26ad863bce2c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8999b48a-f4db-4839-9291-ca66eda13349" name="string neptun_code" direction="In" isUnique="false">
+                  <elementDefinition Id="60914711-30ff-4c25-8b15-23a6de9bbfaf" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a3631d59-fad1-44be-9a5c-fe83f7db1fe3" direction="Return" isUnique="false">
+                  <elementDefinition Id="216bd56a-7141-4deb-968a-ffd573645e79" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5378e8c6-7a22-4862-8d7f-b7cbcd2c52a8" LastKnownName="List&lt;Demand&gt;" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="857fb911-2a0e-423e-bfbe-3882701248d7" name="getDemand" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="86790f8e-8800-4bd8-99b8-e030c9b57c1a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="06249a42-760d-48cc-8723-ca9dc3cbef1b" name="String demand_id" direction="In" isUnique="false">
+                  <elementDefinition Id="b2f169ac-6715-4d9b-8638-d826b49f7574" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c9c7ed5e-6c18-4413-9daf-c8089c4ed0c6" direction="Return" isUnique="false">
+                  <elementDefinition Id="0c9aa948-49cb-4a73-b7d4-63be1fba4ef2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e8691d52-9b89-4ecb-a78f-30bc8402b696" LastKnownName="Demand" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b77468ef-dde0-4d3e-95a2-27dcc85ea3dd" name="demandChange" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b6f5ee3a-722e-484c-9118-4aab7ab1de99" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4a40cbb5-ad51-4d09-b113-8867b5ef6c08" name="Demand newDemand" direction="In" isUnique="false">
+                  <elementDefinition Id="0813b848-82f5-4a3d-9c13-509f6375a486" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="081f4fb2-8cb9-4789-9a63-72dadb3d9339" direction="Return" isUnique="false">
+                  <elementDefinition Id="5b2a24f5-4674-437a-9f03-c97a17991831" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b3ca4c7b-90d6-41c5-9989-f67b831b5d7d" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e42d5845-1f5f-4b2e-b9c8-dad43568dfe4" name="getAllDemand" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="002cbb10-bc53-4126-9075-83cae4833fe5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d1d9b7a0-a95e-43a9-b6db-660828c27c7b" direction="Return" isUnique="false">
+                  <elementDefinition Id="a2e408f0-9ad7-4189-93fb-0fe6718e1c0c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5378e8c6-7a22-4862-8d7f-b7cbcd2c52a8" LastKnownName="List&lt;Demand&gt;" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2462,6 +2535,26 @@
     <packageHasNamedElement>
       <referencedType Id="f459aaa0-65b5-4e60-9174-b018c5a33a17" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
         <elementDefinition Id="466b70f3-0255-4a45-bb89-187d799b2a73" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8821bf49-d0f0-43e2-9696-f501fb0dc9a2" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b80dcbc2-74e2-491b-8e91-9847bbf2c801" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="264a6449-71c9-46bf-94f8-364ff858733e" name="DemandXmlHandler" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::DemandXmlHandler">
+        <elementDefinition Id="c54b0674-f609-4c9a-abb6-3a0668aa3c72" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5378e8c6-7a22-4862-8d7f-b7cbcd2c52a8" name="List&lt;Demand&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Demand&gt;">
+        <elementDefinition Id="138b0440-9749-4ed9-b133-98a1b0ce904e" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

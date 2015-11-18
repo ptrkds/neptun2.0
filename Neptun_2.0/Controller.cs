@@ -25,9 +25,11 @@ namespace Neptun_2._0
         public bool requestLogin(List<String> data)
         {
             bool check = false;
-            try {
+            try
+            {
                 check = db.checkLogin(data[0], data[1]);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
@@ -37,13 +39,15 @@ namespace Neptun_2._0
         //When user logged in
         public void start(String neptun_code)
         {
-            try {
+            try
+            {
                 userLoggedIn = db.GetUser(neptun_code);
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
-            
+
             switch (userLoggedIn.getType())
             {
                 case "admin":
@@ -58,7 +62,7 @@ namespace Neptun_2._0
             }
             return;
         }
-        
+
         //Mains
         private void adminMain()
         {
@@ -143,7 +147,7 @@ namespace Neptun_2._0
                         return;
                 }
             }
-            }
+        }
 
         //Teacher Functions
 
@@ -223,35 +227,36 @@ namespace Neptun_2._0
 
 
         //Time Table
-      /*  private void requestStudentTimeTable()
+        private void requestStudentTimeTable()
         {
-            List <Subject> timeTable = db.TimeTable(userLoggedIn.getNeptunCode());
+            List<Subject> timeTable = db.TimeTable(userLoggedIn.getNeptunCode());
 
             cmd = sui.timeTableView(timeTable);
 
-            //exit
-        }*/
+            return;
+        }
         private void requestTeacherTimeTable()
         {
             List<Subject> timeTable = db.TimeTable(userLoggedIn.getNeptunCode());
 
             cmd = tui.timeTableView(timeTable);
 
-            //exit
+            return;
         }
 
 
-        
-        /*
+
+
         //Demand Change
         private bool demandChange()
         {
-            List<String> demands = new List<String>();
+            List<Demand> demands = new List<Demand>();
 
             try
             {
-                demands = getDemands(userLoggedIn.getNeptunCode());
-            }catch(Exception e)
+                demands = db.getDemands(userLoggedIn.getNeptunCode());
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
@@ -260,7 +265,7 @@ namespace Neptun_2._0
             {
                 cmd = tui.selectDemand(demands);
 
-                if(cmd.cmd != "exit")
+                if (cmd.cmd != "exit")
                 {
                     int ret = requestDemandChange(cmd.data[0]);
                     if (ret == 1)
@@ -268,7 +273,7 @@ namespace Neptun_2._0
                         tui.demandChange_successful();
                         return true;
                     }
-                    else if(ret == -1)
+                    else if (ret == -1)
                     {
                         tui.demandChange_unsuccessful();
                         return true;
@@ -280,144 +285,109 @@ namespace Neptun_2._0
                 }
             }
         }
-    private int requestDemandChange(String demand_id)
-    {
-        Demand demand = new Demand();
-
-        try
+        private int requestDemandChange(String demand_id)
         {
-            demand =
-        }
-        catch (Exception e)
-        {
+            
 
-            Console.WriteLine(e);
-        }
-
-        cmd = tui.demandChange(demand);
-
-        if(cmd.cmd != exit)
-        {
-            int ret = kisovisszatérése(cmd.data);
-            if(ret == 1)
+            try
             {
-                return 1;
+                Demand demand = db.getDemand(demand_id);
             }
-            else
+            catch (Exception e)
             {
-                return -1;
+
+                Console.WriteLine(e);
             }
-        }
-        else
-        {
-            return 0;
-        }
-    }
 
+            cmd = tui.demandChange(demand);
 
-    //Demand Judgement
-    private bool demandJudgement()
-    {
-        List<String> demands = new List<string>();
-
-        try
-        {
-            demands =
-}
-        catch (Exception e)
-        {
-
-            Console.WriteLine(e);
-        }
-
-        while (true)
-        {
-            cmd = aui.selectDemand(demands);
-            if(cmd.cmd != "exit")
+            if (cmd.cmd != "exit")
             {
-                if (requestDemandJudgement(cmd.data[0]))
+                Demand newDemand = new Demand(cmd.data[1], null, userLoggedIn.getNeptunCode(), 
+                    cmd.data[0], cmd.data[1], cmd.data[2], cmd.data[3], cmd.data[4], cmd.data[5]);
+                
+                bool ret = db.demandChange(newDemand);
+                if (ret)
                 {
-                    aui.demand_accept();
-                    return true;
+                    return 1;
                 }
                 else
                 {
-                    aui.demand_decline();
-                    return false;
+                    return -1;
                 }
             }
             else
             {
-                return false;
+                return 0;
             }
         }
-    }
-    private bool requestDemandJudgement(String demand_id)
-    {
-        //demand delete
-        if (kisofgv(demand_id))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 
 
-    //Demand Submission
-    private bool requestDemandSubmission(String selected_class = "")
-    {
-        cmd = sui.demandSubmission(selected_class);
-        if(cmd.cmd != "exit")
+        //Demand Judgement
+        private bool demandJudgement()
         {
-            if (kisofgv(cmd.data))
+            List<Demand> demands = new List<Demand>();
+
+            try
             {
-                tui.demandSubmission_successful();
+                demands = 
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+            }
+
+            while (true)
+            {
+                cmd = aui.selectDemand(demands);
+                if (cmd.cmd != "exit")
+                {
+                    if (requestDemandJudgement(cmd.data[0]))
+                    {
+                        aui.demand_accept();
+                        return true;
+                    }
+                    else
+                    {
+                        aui.demand_decline();
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        private bool requestDemandJudgement(String demand_id)
+        {
+            //demand delete
+            if (kisofgv(demand_id))
+            {
                 return true;
             }
             else
             {
-                tui.demandSubmission_unsuccessful();
                 return false;
             }
         }
-        else
+
+
+        //Demand Submission
+        private bool requestDemandSubmission(String selected_class = "")
         {
-            return false;
-        }
-    }
-
-
-    //Register For Subject
-    private bool registerForSubject()
-    {
-        List<String> subjects = new ;
-
-        try
-        {
-            subjects =
-}
-        catch (Exception e)
-        {
-
-            Console.WriteLine(e);
-        }
-
-        while (true)
-        {
-            cmd = sui.selectSubject(subjects);
+            cmd = sui.demandSubmission(selected_class);
             if (cmd.cmd != "exit")
             {
-                if (requestRegisterForSubject(cmd.data[0]))
+                if (kisofgv(cmd.data))
                 {
-                    sui.regForSubject_successful();
+                    tui.demandSubmission_successful();
                     return true;
                 }
                 else
                 {
-                    sui.regForSubject_unsuccessful();
+                    tui.demandSubmission_unsuccessful();
                     return false;
                 }
             }
@@ -426,72 +396,183 @@ namespace Neptun_2._0
                 return false;
             }
         }
-    }
-    private bool requestRegisterForSubject(String subject_id)
-    {
-        if (kisofgv(subject_id))
+
+
+        //Register For Subject
+        private bool registerForSubject()
         {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+            List<String> subjects = new ;
 
-
-    //Deregister Subject
-    private bool deregisterSubject()
-    {
-        List<String> subject_list = ;
-
-        while (true)
-        {
-            cmd = sui.selectSubject();
-
-            if (cmd.cmd != "exit")
+            try
             {
-                if ( requestDeregisterSubject( cmd.data[0]) )
+                subjects =
+    }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e);
+            }
+
+            while (true)
+            {
+                cmd = sui.selectSubject(subjects);
+                if (cmd.cmd != "exit")
                 {
-                    sui.deregister_successful();
-                    return true;
+                    if (requestRegisterForSubject(cmd.data[0]))
+                    {
+                        sui.regForSubject_successful();
+                        return true;
+                    }
+                    else
+                    {
+                        sui.regForSubject_unsuccessful();
+                        return false;
+                    }
                 }
                 else
                 {
-                    sui.deregister_unsuccessful();
+                    return false;
                 }
+            }
+        }
+        private bool requestRegisterForSubject(String subject_id)
+        {
+            if (kisofgv(subject_id))
+            {
+                return true;
             }
             else
             {
                 return false;
             }
         }
-    }
-    private bool requestDeregisterSubject(String subject_id)
-    {
-        if (kisofgv(subject_id))
+
+
+        //Deregister Subject
+        private bool deregisterSubject()
         {
-            return true;
+            List<String> subject_list = ;
+
+            while (true)
+            {
+                cmd = sui.selectSubject();
+
+                if (cmd.cmd != "exit")
+                {
+                    if (requestDeregisterSubject(cmd.data[0]))
+                    {
+                        sui.deregister_successful();
+                        return true;
+                    }
+                    else
+                    {
+                        sui.deregister_unsuccessful();
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
-        else
+        private bool requestDeregisterSubject(String subject_id)
         {
-            return false;
+            if (kisofgv(subject_id))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-    }
-    
+
 
         //Filter - x
         private bool requestFilter()
         {
-        cmd = tui.selectFilterTime();
+            cmd = tui.selectFilterTime();
 
-        if (cmd.cmd != "exit")
-        {
-            List<String> classes = db.getClasses(cmd.data[0], cmd.data[1]);
-            cmd = tui.selectClass(classes);
             if (cmd.cmd != "exit")
             {
-                requestDemandSubmission(cmd.data[0]);
+                List<String> classes = db.getClasses(cmd.data[0], cmd.data[1]);
+                cmd = tui.selectClass(classes);
+                if (cmd.cmd != "exit")
+                {
+                    requestDemandSubmission(cmd.data[0]);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+
+
+        //Maintenance
+        private bool requestMaintenance()
+        {
+            cmd = aui.maintenance();
+
+            if (cmd.cmd != "exit")
+            {
+                if (kisofgv())
+                {
+                    aui.maintenance_successful();
+                    return true;
+                }
+                else
+                {
+                    aui.maintenance_unsuccessful();
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        //Request Judgement
+        private bool requestJudgement()
+        {
+            List<String> requests = ;
+
+            while (true)
+            {
+                cmd = aui.selectRequest(requests);
+                if (cmd.cmd != "exit")
+                {
+                    if (requestRequestJudgement(cmd.data[0]))
+                    {
+                        aui.request_accept();
+                        return true;
+                    }
+                    else
+                    {
+                        aui.request_decline();
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        private bool requestRequestJudgement(String request_id)
+        {
+            //request delete
+            if (kisofgv(request_id))
+            {
                 return true;
             }
             else
@@ -499,58 +580,22 @@ namespace Neptun_2._0
                 return false;
             }
         }
-        else
+
+
+        //Request Submission
+        private bool requestRequestSubmission()
         {
-            return false;
-        }
-
-
-    }
-
-        
-    //Maintenance
-    private bool requestMaintenance()
-    {
-        cmd = aui.maintenance();
-
-        if(cmd.cmd != "exit")
-        {
-            if (kisofgv())
-            {
-                aui.maintenance_successful();
-                return true;
-            }
-            else
-            {
-                aui.maintenance_unsuccessful();
-                return true;
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-
-    //Request Judgement
-    private bool requestJudgement()
-    {
-        List<String> requests = ;
-
-        while (true)
-        {
-            cmd = aui.selectRequest(requests);
+            cmd = sui.requestSubmission();
             if (cmd.cmd != "exit")
             {
-                if (requestRequestJudgement(cmd.data[0]))
+                if (kisofgv(cmd.data))
                 {
-                    aui.request_accept();
+                    sui.requestSubmission_successful();
                     return true;
                 }
                 else
                 {
-                    aui.request_decline();
+                    sui.requestSubmission_unsuccessful();
                     return false;
                 }
             }
@@ -559,48 +604,5 @@ namespace Neptun_2._0
                 return false;
             }
         }
-    }
-    private bool requestRequestJudgement(String request_id)
-    {
-        //request delete
-        if (kisofgv(request_id))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-
-    //Request Submission
-    private bool requestRequestSubmission()
-    {
-        cmd = sui.requestSubmission();
-        if (cmd.cmd != "exit")
-        {
-            if (kisofgv(cmd.data))
-            {
-                sui.requestSubmission_successful();
-                return true;
-            }
-            else
-            {
-                sui.requestSubmission_unsuccessful();
-                return false;
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-
-
-    */
-
-
     }
 }
