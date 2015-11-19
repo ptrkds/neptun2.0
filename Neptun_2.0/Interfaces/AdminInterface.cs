@@ -106,7 +106,7 @@ namespace Neptun_2._0
                     break;
             }
         }
-        public CMD selectDemand(List<String> demands)
+        public CMD selectDemand(List<Demand> demands)
         {
             position = 1;
             for (int i = 0; i < 20; i++)
@@ -123,7 +123,7 @@ namespace Neptun_2._0
             for (int i = 0; i < countdemand; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
-                Console.Write(demands[i] + "   ");
+                Console.Write(demands[i].getTeacherId() + "   " + demands[i].getSubjectName() + "   " + demands[i].getRoomId() + "  " + demands[i].getDay()+ "  " + demands[i].getStartTime() + "  " + demands[i].getEndTime() + "   ");
             }
 
             do
@@ -145,7 +145,7 @@ namespace Neptun_2._0
             if (position == 1)
                 command.cmd = "exit";
             else            
-                command.data.Add(demands[position - 2]);                            
+                command.data.Add(demands[position - 2].getDemandId());                            
             return command;
         }
         private void DemandorJudgementUnderline(int max)

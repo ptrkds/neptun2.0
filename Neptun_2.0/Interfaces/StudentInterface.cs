@@ -12,6 +12,7 @@ namespace Neptun_2._0
         private String requestSubmission = "Kérvény leadás";
         private String registerForSubject = "Tárgy felvétel";
         private String deregisterSubject = "Tárgy leadás";
+        private int countsubject = 0;
         public CMD StudentMainMenu()
         {
             //WriteMenu
@@ -52,7 +53,7 @@ namespace Neptun_2._0
                     command.cmd = "timeTable";
                     break;
                 case 2:
-                    command.cmd = "requestSubmissione";
+                    command.cmd = "requestSubmission";
                     break;
                 case 3:
                     command.cmd = "registerForSubject";
@@ -205,26 +206,249 @@ namespace Neptun_2._0
         }
         public CMD requestSubmissionMenu()
         {
-            CMD command = new CMD();
-            return command;
-        }
-        private void requestUnderline()
-        {
+            position = 1;
+            Console.SetCursorPosition(1, 6);
+            Console.Write("Adja meg a felvinni kívánt kérvény támáját, és kifejtését!");
+            Console.SetCursorPosition(2, 8);
+            Console.Write(back + "   ");
+            Console.SetCursorPosition(2, 10);
+            Console.Write(application + "   ");
+            Console.SetCursorPosition(2, 12);
+            Console.Write("Az kérvény témája:   ");
+            Console.SetCursorPosition(2, 14);
+            Console.Write("A kérvény kifejtése: (üssön entert, ha a sor végére ér!):    ");
+            String thema = "";
+            String text = "";
+            int lengthThema = 0;
+            int lengthText = 0;
+            int rowText = 1;
+            List<int> rowslength = new List<int>();            
+            requestUnderline(lengthThema, lengthText, rowText);
+            do
+            {
+                input = Console.ReadKey();
+                if (position < 3)
+                {
+                    Console.Write("\b ");
+                }
+                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.')) && input.Key != ConsoleKey.Backspace)
+                {
+                    Console.Write("\b ");
+                }
+                if ((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.'))
+                {
+                    switch (position)
+                    {
+                        case 3:
+                            lengthThema++;
+                            thema += input.KeyChar;
+                            break;
+                        case 4:
+                            lengthText++;
+                            text += input.KeyChar;
+                            break;
+                    }
+                }
+                if(position == 4 && input.Key == ConsoleKey.Enter)
+                {
+                    rowslength.Add(lengthText);                    
+                    text += " ";
+                    lengthText = 0;
+                    rowText++;
+                }
+                if(lengthText == 0 && rowText-1 > 0 && input.Key == ConsoleKey.Backspace && position == 4)
+                {
+                    rowText--;                    
+                    lengthText = rowslength[rowText-1] + 1;               
+                }
 
-        }
-        public CMD registerForSubjectMenu(List<Subject> subjects)
-        {
+                if (input.Key == ConsoleKey.Backspace)
+                {
+                    switch (position)
+                    {
+                        case 3:
+                            if (lengthThema > 0)
+                            {
+                                thema = thema.Remove(thema.Length - 1);
+                                lengthThema--;
+                                Console.Write(" ");
+                            }
+                            break;
+                        case 4:
+                            if (lengthText > 0)
+                            {
+                                text = text.Remove(text.Length - 1);
+                                lengthText--;
+                                Console.Write(" ");
+                            }
+                            break;
+                    }
+                }
+                if (input.Key == ConsoleKey.DownArrow)
+                    position++;
+                if (input.Key == ConsoleKey.UpArrow)
+                    position--;
+                if (position < 1)
+                    position = 4;
+                if (position > 4)
+                    position = 1;
+                requestUnderline(lengthThema, lengthText, rowText);
+            } while (input.Key != ConsoleKey.Enter || position > 2);
             CMD command = new CMD();
+            command.data = new List<string>();
+            if (position == 1)
+                command.cmd = "exit";
+            else
+            {
+                command.data.Add(thema);
+                command.data.Add(text);
+            }            
             return command;
         }
-        private void subjectUnderline()
+        private void requestUnderline(int lengthThema, int lengthText, int rowText)
         {
+            if (position != 1)
+            {
+                Console.SetCursorPosition(2, 9);
+                Console.Write(new string(' ', Console.WindowWidth));
+            }
+            if (position != 2)
+            {
 
+                Console.SetCursorPosition(2, 11);
+                Console.Write(new string(' ', Console.WindowWidth));
+            }
+            if (position == 1)
+            {
+                for (int i = 0; i < back.Length; i++)
+                {
+                    Console.SetCursorPosition(2 + i, 9);
+                    Console.Write("-");
+                }
+                Console.SetCursorPosition(4 + back.Length, 8);
+            }
+            if (position == 2)
+            {
+                for (int i = 0; i < application.Length; i++)
+                {
+                    Console.SetCursorPosition(2 + i, 11);
+                    Console.Write("-");
+                }
+                Console.SetCursorPosition(4 + application.Length, 10);
+            }
+            switch (position)
+            {
+                case 3:
+                    Console.SetCursorPosition(22 + lengthThema, 12);
+                    break;
+                case 4:
+                    Console.SetCursorPosition(3 + lengthText, 14+rowText);
+                    break;
+            }
         }
-        public CMD deregisterSubjectMenu(List<Subject> subjects)
+        public CMD selectSubject(List<short_subject> subjects)
         {
             CMD command = new CMD();
+            command.data = new List<string>();
+            command = registerOrDeregiseterSubject(subjects, true);
             return command;
         }
+        public void regForSubject_successful()
+        {
+            subMenuremove(6, countsubject+2);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("A tárgy felvétele sikeres volt!");
+            input = Console.ReadKey();
+        }
+        public void regForSubject_unsuccessful()
+        {
+            subMenuremove(6, countsubject + 2);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("A tárgy felvétele sikertelen volt!");
+            input = Console.ReadKey();
+        }
+        public void deregister_successful()
+        {
+            subMenuremove(6, countsubject + 2);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("A tárgy leadása sikeres volt!");
+            input = Console.ReadKey();
+        }
+        public void deregister_unsuccessful()
+        {
+            subMenuremove(6, countsubject + 2);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("A tárgy leadása sikertelen volt!");
+            input = Console.ReadKey();
+        }
+
+        private CMD registerOrDeregiseterSubject(List<short_subject> subjects, Boolean register)
+        {
+            position = 1;
+            for (int i = 0; i < 20; i++)
+            {
+                Console.SetCursorPosition(i * 4, 4);
+                Console.Write("____");
+            }
+            Console.SetCursorPosition(3, 6);
+            if(register)
+                Console.Write("Adja meg, hogy melyik tantárgyat szeretné felvenni:");
+            else
+                Console.Write("Adja meg, hogy melyik tantárgyról szeretne leiratkozni:");
+            Console.SetCursorPosition(5, 8);
+            Console.Write(back + "   ");
+            countsubject = subjects.Count;
+            subMainUnderline(countsubject, 0);
+            for (int i = 0; i < subjects.Count; i++)
+            {
+                Console.SetCursorPosition(5, 10 + i);
+                Console.Write(subjects[i].id + "   " + subjects[i].name + "   ");
+
+            }
+            Console.SetCursorPosition(8 + back.Length, 8);
+            do
+            {
+                input = Console.ReadKey();
+                if (input.Key == ConsoleKey.DownArrow)
+                    position++;
+                if (input.Key == ConsoleKey.UpArrow)
+                    position--;
+                if (position < 1)
+                    position = countsubject + 1;
+                if (position > countsubject + 1)
+                    position = 1;
+                subMainUnderline(countsubject, 0);
+            } while (input.Key != ConsoleKey.Enter);
+            CMD command = new CMD();
+            command.data = new List<string>();
+            if (position == 1)
+                command.cmd = "exit";
+            else
+            {
+                command.data.Add(subjects[position - 2].id);
+            }
+            return command;
+        }
+
+        public CMD deregisterSubjectMenu(List<short_subject> subjects)
+        {
+            CMD command = new CMD();
+            command.data = new List<string>();
+            command = registerOrDeregiseterSubject(subjects, false);
+            return command;
+        }
+        public Boolean areYouSure(string name = "")
+        {
+            subMenuremove(10, countsubject);
+            Console.SetCursorPosition(3, 6);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.Write("Biztosan le szeretnéd adni a/az " + name + " tanrágyat?");
+            subAreYouSure();
+            if (position == 1)
+                return true;
+            else
+                return false;
+        }
+
     }
 }

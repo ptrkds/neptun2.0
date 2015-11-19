@@ -13,10 +13,7 @@ namespace Neptun_2._0
         private String studentBlock = "Tanuló letiltása";
         private String demand = "Igények";
         private String demandSubmission = "Igény felvitele";
-        private String demandChange = "Igény modosítása";
-        private String yes = "Igen";
-        private String no = "Nem";
-        private String application = "Felvitel";
+        private String demandChange = "Igény modosítása";   
         private String filtering = "Szűrés";
         private int countsubject = 0;
         private int countusers = 0;
@@ -207,7 +204,7 @@ namespace Neptun_2._0
                     break;
             }
         }
-        public CMD demandSubmissionMenu(List<ClassRoom> rooms, string selected_room)
+        public CMD demandSubmissionMenu(List<ClassRoom> rooms, string selected_room="", string defstart="", string defend="")
         {
             if (selected_room == "")
             {
@@ -256,8 +253,8 @@ namespace Neptun_2._0
             String subjectID = "";
             String subjectName = "";
             String day = "";
-            String start = "";
-            String end = "";
+            String start = defstart;
+            String end = defend;
             if (command.cmd != "exit")
             {
                 List<String> list;
@@ -959,32 +956,7 @@ namespace Neptun_2._0
                 command.data.Add(subject[position-2].id);
             return command;
         }
-        private void subMainUnderline(int max, int offset)
-        {
-            Console.Write("\b\b\b   ");
-            if (position == 1)
-            {
-                for (int i = 0; i < back.Length; i++)
-                {
-                    Console.SetCursorPosition(5 + i, 9+offset);
-                    Console.Write("-");
-                }
-                Console.SetCursorPosition(8 + back.Length, 8+offset);
-            }
-            else
-            {
-                if (position == 2 || position == max + 1)
-                {
-                    for (int i = 0; i < back.Length; i++)
-                    {
-                        Console.SetCursorPosition(5 + i, 9+offset);
-                        Console.Write(" ");
-                    }
-                }
-                Console.SetCursorPosition(2, 10 + position - 2+offset);
-                Console.Write("->");
-            }
-        }
+        
         public CMD selectStudent(List<short_user> users)
         {
             subMenuremove(10, countsubject);
@@ -1052,71 +1024,14 @@ namespace Neptun_2._0
         {
             subMenuremove(10, countusers);
             Console.SetCursorPosition(3, 6);
-            Console.Write("Biztosan le szeretné tiltani " + name + "-t?              ");
-            position = 1;
-            Console.SetCursorPosition(3, 8);
             Console.Write(new string(' ', Console.WindowWidth));
-            Console.SetCursorPosition(3, 8);
-            Console.Write(yes);
-            Console.SetCursorPosition(12, 8);
-            Console.Write(no);
-            areYouSureUnderline();
-            do
-            {
-                input = Console.ReadKey();
-                if (input.Key == ConsoleKey.RightArrow)
-                    position++;
-                if (input.Key == ConsoleKey.LeftArrow)
-                    position--;
-                if (position < 1)
-                    position = 2;
-                if (position > 2)
-                    position = 1;
-                areYouSureUnderline();
-            } while (input.Key != ConsoleKey.Enter);
+            Console.Write("Biztosan le szeretné tiltani " + name + "-t?");
+            subAreYouSure();
             if (position == 1)
                 return true;
             else
                 return false;
-        }
-        private void areYouSureUnderline()
-        {
-            for (int i = 0; i < 20; i++)
-            {
-                Console.SetCursorPosition(i * 4, 9);
-                Console.Write("    ");
-            }
-            switch (position)
-            {
-                case 1:
-                    for (int i = 0; i < yes.Length; i++)
-                    {
-                        Console.SetCursorPosition(3 + i, 9);
-                        Console.Write("-");
-                    }
-                    Console.SetCursorPosition(4 + yes.Length, 8);
-                    break;
-                case 2:
-                    for (int i = 0; i < no.Length; i++)
-                    {
-                        Console.SetCursorPosition(12 + i, 9);
-                        Console.Write("-");
-                    }
-                    Console.SetCursorPosition(13 + no.Length, 8);
-                    break;
-            }
-        }
-        private void subMenuremove(int where, int length)
-        {
-            for(int i=where;i<where+length;i++)
-            {
-                for (int j = 0; j < 20; j++)
-                {
-                    Console.SetCursorPosition(j * 4, i);
-                    Console.Write("    ");
-                }
-            }
-        }
+        }              
         
     }
 }
