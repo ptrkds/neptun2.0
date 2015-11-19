@@ -380,11 +380,11 @@ namespace Neptun_2._0
         */
         
         //Demand Submission
-        private bool requestDemandSubmission(String selected_class = "")
+        private bool requestDemandSubmission(String selected_class = "", String startTime = "", String endTime="")
         {
             List<ClassRoom> rooms = db.getAllRoom();
 
-            cmd = tui.demandSubmissionMenu(rooms, selected_class);
+            cmd = tui.demandSubmissionMenu(rooms, selected_class, startTime, endTime);
 
             
             if (cmd.cmd != "exit")
@@ -512,10 +512,10 @@ namespace Neptun_2._0
             if (cmd.cmd != "exit")
             {
                 List<ClassRoom> classes = db.getClasses(cmd.data[0], cmd.data[1]);
-                cmd = tui.selectClass(classes);
-                if (cmd.cmd != "exit")
+                cmd2 = tui.selectClass(classes);
+                if (cmd2.cmd2 != "exit")
                 {
-                    requestDemandSubmission(cmd.data[0]);
+                    requestDemandSubmission(cmd2.data[0], cmd.data[0], cmd.data[1]);
                     return true;
                 }
                 else
