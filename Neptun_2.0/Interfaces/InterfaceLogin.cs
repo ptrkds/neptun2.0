@@ -15,8 +15,8 @@ namespace Neptun_2._0
             Console.Clear();
             Console.SetCursorPosition(10,4);
             Console.Write("Neptun 2.0 - Bejelentkezés:");
-            Console.SetCursorPosition(5, 5);
-            Console.Write("(a nyilakkal tud navigálni, neptun kód és jelszó is csak kis betű lehet)");
+            Console.SetCursorPosition(10, 5);
+            Console.Write("(a nyilakkal tud navigálni)");
             Console.SetCursorPosition(5, 8);
             Console.Write("Neptun kód:");
             Console.SetCursorPosition(5, 10);
@@ -50,11 +50,11 @@ namespace Neptun_2._0
                 {
                     Console.Write("\b ");
                 }
-                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= '0' && input.KeyChar <= '9')) && input.Key != ConsoleKey.Backspace)
+                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && input.Key != ConsoleKey.Backspace)
                 {
                     Console.Write("\b ");
                 }
-                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= '0' && input.KeyChar <= '9')) && position == 1)
+                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && position == 1)
                 {
                     lengthneptun++;
                     neptuncode += input.KeyChar;
@@ -65,7 +65,7 @@ namespace Neptun_2._0
                     lengthneptun--;
                     Console.Write(" ");
                 }
-                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= '0' && input.KeyChar <= '9')) && position == 2)
+                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && position == 2)
                 {
                     Console.Write("\b*");
                     lengthpassword++;
