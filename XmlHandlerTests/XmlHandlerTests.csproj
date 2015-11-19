@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="DemandXmlHandlerTest.cs" />
     <Compile Include="ObjectDumper.cs" />
+    <Compile Include="ClassRoomXmlHandlerTest.cs" />
     <Compile Include="UserXmlHandlerTest.cs" />
     <Compile Include="XmlHandlerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
