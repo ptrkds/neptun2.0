@@ -28,9 +28,19 @@ namespace Neptun_2._0
             return neptunCode;
         }
 
+        public void setNeptunCode(String _neptunCode)
+        {
+            neptunCode = _neptunCode;
+        }
+
         public String getName()
         {
             return name;
+        }
+
+        public void setName(String _name)
+        {
+            name = _name;
         }
 
         public String getType()
@@ -38,183 +48,29 @@ namespace Neptun_2._0
             return type;
         }
 
+        public void setType(String _type)
+        {
+            type = _type;
+        }
+
         public List<string> getSubjects()
         {
             return subjects;
+        }
+
+        public void setSubjects(List<String> _subjects)
+        {
+            subjects = _subjects;
         }
 
         public List<string> getDocuments()
         {
             return documents;
         }
-    }
 
-    class Subject
-    {
-        private String id;
-        private String name;
-        private String teacher;
-        private String day;
-        private String startTime;
-        private String endTime;
-
-        private List<String> students;
-
-        private List<String> blacklist;
-
-
-        public Subject(string id, string name, string teacher, string day, string startTime, string endTime, List<string> students, List<string> blacklist)
+        public void setDocuments(List<String> _documents)
         {
-            this.id = id;
-            this.name = name;
-            this.teacher = teacher;
-            this.day = day;
-            this.startTime = startTime;
-            this.endTime = endTime;
-            this.students = students;
-            this.blacklist = blacklist;
-        }
-
-        public String getId()
-        {
-            return id;
-        }
-
-        public String getName()
-        {
-            return name;
-        }
-
-        public String getTeacher()
-        {
-            return teacher;
-        }
-
-        public String getDay()
-        {
-            return day;
-        }
-
-        public String getStartTime()
-        {
-            return startTime;
-        }
-
-        public String getEndTime()
-        {
-            return id;
-        }
-
-        public List<String> getStudents()
-        {
-            return students;
-        }
-
-        public List<String> getBlacklist()
-        {
-            return blacklist;
-        }
-    }
-
-    class ClassRoom
-    {
-        private String id;
-        private int limit;
-        private List<string> subjectIds;
-
-        public ClassRoom(String id, int limit, List<string> subjectIds)
-        {
-            this.id = id;
-            this.limit = limit;
-            this.subjectIds = subjectIds;
-        }
-
-        public String getId()
-        {
-            return id;
-        }
-
-        public int getLimit()
-        {
-            return limit;
-        }
-
-        public List<String> getSubjectIds()
-        {
-            return subjectIds;
-        }
-    }
-
-    public class Demand
-    {
-        public string demandId;
-        public string state;
-        public string teacherId;
-        public string roomId;
-        public string subjectId;
-        public string subjectName;
-        public string day;
-        public string startTime;
-        public string endTime;
-
-        public Demand(string demandId, string state, string teacherId, string roomId, string subjectId, string subjectName, string day, string startTime, string endTime)
-        {
-            this.demandId = demandId;
-            this.state = state;
-            this.teacherId = teacherId;
-            this.roomId = roomId;
-            this.subjectId = subjectId;
-            this.subjectName = subjectName;
-            this.day = day;
-            this.startTime = startTime;
-            this.endTime = endTime;
-        }
-
-        public String getDemandId()
-        {
-            return demandId;
-        }
-        public String getSubjectId()
-        {
-            return subjectId;
-        }
-        public String getRoomId()
-        {
-            return roomId;
-        }
-        public String getStartTime()
-        {
-            return startTime;
-        }
-        public String getEndTime()
-        {
-            return endTime;
-        }
-        public String getDay()
-        {
-            return day;
-        }
-        public String getSubjectName()
-        {
-            return subjectName;
-        }
-    }
-
-    class Request
-    {
-        public String id;
-        public String state;
-        public String owner;
-        public String subject;
-        public String text;
-
-        public Request(string id, string state, string subject, string owner, string text)
-        {
-            this.id = id;
-            this.state = state;
-            this.owner = owner;
-			this.subject = subject;
-            this.text = text;
+            documents = _documents;
         }
     }
 }

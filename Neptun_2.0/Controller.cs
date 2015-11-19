@@ -15,15 +15,18 @@ namespace Neptun_2._0
         private TeacherInterface tui = new TeacherInterface();
         private StudentInterface sui = new StudentInterface();
         private AdminInterface aui = new AdminInterface();
+        
 
         User userLoggedIn;
 
         CMD cmd;
 
-        Database db = new Database();
+        private Database db;
 
-        public bool requestLogin(List<String> data)
+        public bool requestLogin(List<String> data, Database database)
         {
+            db = database;
+
             bool check = false;
             try
             {
