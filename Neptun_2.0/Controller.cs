@@ -113,7 +113,7 @@ namespace Neptun_2._0
                                 requestDemandSubmission();
                                 break;
                             case "demandChange":
-                                //demandChange();
+                                demandChange();
                                 break;
                             case "logout":
                                 break;
@@ -252,7 +252,7 @@ namespace Neptun_2._0
 
 
 
-        /*
+        
         //Demand Change
         private bool demandChange()
         {
@@ -269,21 +269,21 @@ namespace Neptun_2._0
 
             while (true)
             {
-                cmd = tui.selectDemand(demands);
+                cmd = tui.demandChangeMenu(demands);
 
                 if (cmd.cmd != "exit")
                 {
-                    int ret = requestDemandChange(cmd.data[0]);
-                    if (ret == 1)
-                    {
-                        tui.demandChange_successful();
-                        return true;
-                    }
-                    else if (ret == -1)
-                    {
-                        tui.demandChange_unsuccessful();
-                        return true;
-                    }
+                    /*  int ret = requestDemandChange(cmd.data[0]);
+                      if (ret == 1)
+                      {
+                      //    tui.demandChange_successful();
+                          return true;
+                      }
+                      else if (ret == -1)
+                      {
+                      //    tui.demandChange_unsuccessful();
+                          return true;
+                      }*/                    
                 }
                 else
                 {
@@ -291,6 +291,7 @@ namespace Neptun_2._0
                 }
             }
         }
+        /*
         private int requestDemandChange(String demand_id)
         {
             
