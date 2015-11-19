@@ -78,7 +78,6 @@ namespace Neptun_2._0
             XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
 
             documents = GetList(ref xmlReader, "documents", "id");
-
             return documents;
         }
 
