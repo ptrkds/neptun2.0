@@ -7,6 +7,20 @@ namespace XmlHandlerTests
     [TestClass]
     public class UserXmlHandlerTest
     {
+
+        [TestMethod]
+        public void GetStudentTest()
+        {
+            UserXmlHandler handler = new UserXmlHandler();
+            Student student = handler.GetStudent("Users/Students/", "UKDUJP");
+
+            Console.WriteLine(ObjectDumper.Dump(student));
+        }
+
+
+
+
+        /*
         public string dir = "Users";
         [TestMethod]
         public void GetUser()
@@ -17,9 +31,9 @@ namespace XmlHandlerTests
             Console.WriteLine(user.getNeptunCode());
             Console.WriteLine(user.getName());
             Console.WriteLine(user.getType());
-           /*
-            Console.WriteLine(ObjectDumper.Dump(user));
-            Console.WriteLine(ObjectDumper.Dump(user));*/
+           
+            //Console.WriteLine(ObjectDumper.Dump(user));
+            //Console.WriteLine(ObjectDumper.Dump(user));
 
             foreach(string str in user.getSubjects())
             {
@@ -31,6 +45,6 @@ namespace XmlHandlerTests
                 Console.WriteLine(str);
             }
 
-        }
+        }*/
     }
 }
