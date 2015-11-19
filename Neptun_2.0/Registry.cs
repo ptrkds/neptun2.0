@@ -16,7 +16,7 @@ namespace Neptun_2._0
         private List<Request> requests;
         private List<ClassRoom> classRooms;
 
-        Registry(List<Admin> _admins, List<Student> _students, List<Teacher> _teachers, List<Subject> _subjects,
+        public Registry(List<Admin> _admins, List<Student> _students, List<Teacher> _teachers, List<Subject> _subjects,
             List<Demand> _demands, List<Request> _requests, List<ClassRoom> _classRooms)
         {
             this.admins = _admins;
