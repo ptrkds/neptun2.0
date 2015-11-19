@@ -11,7 +11,7 @@ namespace Neptun_2._0
         private List<string> subjects;
         private List<String> demands;
 
-        public Teacher(String neptunCode, String name, String type, String pw, List<string> subjects, List<String> _subjects, List<String> _demands)
+        public Teacher(String neptunCode, String name, String type, String pw, List<String> _subjects, List<String> _demands)
             : base(neptunCode, name, type, pw)
         {
             this.demands = _demands;

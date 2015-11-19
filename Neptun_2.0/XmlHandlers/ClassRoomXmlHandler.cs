@@ -12,9 +12,9 @@ namespace Neptun_2._0
     {
 
         #region rework
-        public ClassRoom GetClassRoom(string roomId)
+        public ClassRoom GetClassRoom(string dir, string roomId)
         {
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(roomId));
+            XmlReader xmlReader = XmlReader.Create(dir + roomId + ".xml");
             //TODO .Create() exception handling + try catch
 
             //TODO resolve
