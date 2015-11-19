@@ -297,7 +297,7 @@ namespace Neptun_2._0
             Demand demand = db.getDemand(demand_id); ;
 
 
-            cmd = tui.demandChange(demand, db.getAllRoom());
+            cmd = tui.demandChangeSubMenu(demand, db.getAllRoom());
 
             if (cmd.cmd != "exit")
             {
