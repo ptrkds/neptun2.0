@@ -382,7 +382,42 @@ namespace Neptun_2._0
                 command.cmd = "exit";
             else
                 command.data.Add(rooms[position - 2].getId());
-
+            String day = "";
+            switch(demand.getDay())
+            {
+                case "Hetfo":
+                    day = "1";
+                    break;
+                case "Kedd":
+                    day = "2";
+                    break;
+                case "Szerda":
+                    day = "3";
+                    break;
+                case "Csutortok":
+                    day = "4";
+                    break;
+                case "Pentek":
+                    day = "5";
+                    break;
+            }
+            String subjectID = "";
+            String subjectName = "";            
+            String start = "";
+            String end = "";
+            if (command.cmd != "exit")
+            {
+                List<String> list;
+                list = new List<string>();
+                list = demandSubMenu(demand.getSubjectId(), demand.getSubjectName(), day, demand.getStartTime().Remove(demand.getStartTime().Length - 3), demand.getEndTime().Remove(demand.getEndTime().Length - 3));
+                subjectID = list[0];
+                subjectName = list[1];
+                day = list[2];
+                start = list[3];
+                end = list[4];
+            }
+            
+            
             return command;
         }
 
@@ -399,20 +434,20 @@ namespace Neptun_2._0
             Console.SetCursorPosition(2, 15);
             Console.Write(application + "   ");
             Console.SetCursorPosition(2, 17);
-            Console.Write("Tantárgy ID-je:");
+            Console.Write("Tantárgy ID-je:   " + subjectID);
             Console.SetCursorPosition(2, 19);
-            Console.Write("Tantárgy neve:");
+            Console.Write("Tantárgy neve:    " + subjectName);
             Console.SetCursorPosition(2, 21);
-            Console.Write("Melyik napon legyen (számot írjon: 1 - Hétfő ... 5 - Péntek):");
+            Console.Write("Melyik napon legyen (számot írjon: 1 - Hétfő ... 5 - Péntek): " + day);
             Console.SetCursorPosition(2, 23);
-            Console.Write("Mikor kezdődjön (Csak 8, 10,...,18 számokat írjon be, Pl: 8->8:00):");
+            Console.Write("Mikor kezdődjön (Csak 8, 10,...,18 számokat írjon be, Pl: 8->8:00): " + start);
             Console.SetCursorPosition(2, 24);
-            Console.Write("Óra vége (Rendszerben 2 órásak az órák. Pl: kezdés: 8 -> vége: 10):");
-            int lengthID = 0;
-            int lengthName = 0;
-            int lengthDay = 0;
-            int lengthStart = 0;
-            int lengthEnd = 0;
+            Console.Write("Óra vége (Rendszerben 2 órásak az órák. Pl: kezdés: 8 -> vége: 10): " + end);
+            int lengthID = subjectID.Length;
+            int lengthName = subjectName.Length;
+            int lengthDay = day.Length;
+            int lengthStart = start.Length;
+            int lengthEnd = end.Length;
             demandUnderline(lengthID, lengthName, lengthDay, lengthStart, lengthEnd);
             do
             {
@@ -421,11 +456,11 @@ namespace Neptun_2._0
                 {
                     Console.Write("\b ");
                 }
-                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9')) && input.Key != ConsoleKey.Backspace)
+                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && input.Key != ConsoleKey.Backspace)
                 {
                     Console.Write("\b ");
                 }
-                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9')))
+                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)))
                 {
                     switch (position)
                     {
@@ -568,11 +603,7 @@ namespace Neptun_2._0
             }           
 
         }
-        public CMD demandChangeMenu(List<String> demands)
-        {
-            CMD command = new CMD();
-            return command;
-        }
+       
         public CMD filterMenu(List<Subject> subjects)
         {
             CMD command = new CMD();
