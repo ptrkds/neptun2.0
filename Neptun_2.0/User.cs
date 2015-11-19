@@ -6,71 +6,35 @@ using System.Threading.Tasks;
 
 namespace Neptun_2._0
 {
-    class User
+    abstract class User
     {
-        private String neptunCode;
-        private String name;
-        private String type;
-        public List<string> subjects;
-        public List<string> documents; 
+        protected String neptunCode;
+        protected String name;
+        protected String type;
+        protected List<string> subjects;
 
-        public User(String neptunCode, String name, String type, List<string> subjects, List<string> documents )
+        protected User(String neptunCode, String name, String type, List<string> subjects)
         {
             this.neptunCode = neptunCode;
             this.name = name;
             this.type = type;
             this.subjects = subjects;
-            this.documents = documents;
         }
 
-        public String getNeptunCode()
-        {
-            return neptunCode;
-        }
+        abstract public String getNeptunCode();
 
-        public void setNeptunCode(String _neptunCode)
-        {
-            neptunCode = _neptunCode;
-        }
+        abstract public void setNeptunCode(String _neptunCode);
 
-        public String getName()
-        {
-            return name;
-        }
+        abstract public String getName();
 
-        public void setName(String _name)
-        {
-            name = _name;
-        }
+        abstract public void setName(String _name);
 
-        public String getType()
-        {
-            return type;
-        }
+        abstract public String getType();
 
-        public void setType(String _type)
-        {
-            type = _type;
-        }
+        abstract public void setType(String _type);
 
-        public List<string> getSubjects()
-        {
-            return subjects;
-        }
+        abstract public List<string> getSubjects();
 
-        public void setSubjects(List<String> _subjects)
-        {
-            subjects = _subjects;
-        }
-
-        public List<string> getDocuments()
-        {
-            return documents;
-        }
-
-        public void setDocuments(List<String> _documents)
-        {
-            documents = _documents;
-        }
+        abstract public void setSubjects(List<String> _subjects);
     }
 }

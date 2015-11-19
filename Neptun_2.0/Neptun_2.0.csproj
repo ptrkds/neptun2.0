@@ -43,7 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
+    <Compile Include="ClassRoom.cs" />
+    <Compile Include="Demand.cs" />
     <Compile Include="Interfaces\AdminInterface.cs" />
+    <Compile Include="Registry.cs" />
+    <Compile Include="Request.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="Subject.cs" />
+    <Compile Include="Teacher.cs" />
     <Compile Include="XmlHandlers\ClassRoomXmlHandler.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Interfaces\Interface.cs" />
