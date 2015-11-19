@@ -71,15 +71,15 @@ namespace Neptun_2._0
             return subjects;
         }
 
-        public List<string> GetDemandIds(string neptunCode)
+        public List<string> GetDocumentIds(string neptunCode)
         {
             //TODO try catch
-            List<string> demands = new List<string>();
+            List<string> documents = new List<string>();
             XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
 
-            demands = GetList(ref xmlReader, "demands", "id");
+            documents = GetList(ref xmlReader, "documents", "id");
 
-            return demands;
+            return documents;
         }
 
         public bool CheckLogin(string neptunCode, string password)
