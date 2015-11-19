@@ -334,11 +334,55 @@ namespace Neptun_2._0
                     position = 1;
                 subMainUnderline(countdemands, 5);
             } while (input.Key != ConsoleKey.Enter);
-
-            
             CMD command = new CMD();
+            command.data = new List<string>();
             if (position == 1)
                 command.cmd = "exit";
+            int demandNumb = position - 2;
+            command.data.Add(demandNumb.ToString());
+            return command;
+        }
+        public CMD demandChangeSubMenu(Demand demand, List<ClassRoom> rooms)
+        { 
+            
+            position = 1;
+            subMenuremove(15, countdemands);
+            for (int i = 0; i < 20; i++)
+            {
+                Console.SetCursorPosition(i * 4, 9);
+                Console.Write("____");
+            }
+            Console.SetCursorPosition(1, 11);
+            Console.Write("Adja meg, melyik termet szeretné igényelni a/az " + demand.getRoomId() + " helyett:");
+            Console.SetCursorPosition(5, 13);
+            Console.Write(back + "   ");
+            countrooms = rooms.Count;
+            for (int i = 0; i < countrooms; i++)
+            {
+                Console.SetCursorPosition(5, 15 + i);
+                Console.Write(rooms[i].getId() + "   ");
+            }
+            subMainUnderline(countrooms, 5);
+            do
+            {
+                input = Console.ReadKey();
+                if (input.Key == ConsoleKey.DownArrow)
+                    position++;
+                if (input.Key == ConsoleKey.UpArrow)
+                    position--;
+                if (position < 1)
+                    position = countrooms + 1;
+                if (position > countrooms + 1)
+                    position = 1;
+                subMainUnderline(countrooms, 5);
+            } while (input.Key != ConsoleKey.Enter);
+            CMD command = new CMD();
+            command.data = new List<string>();            
+            if (position == 1)
+                command.cmd = "exit";
+            else
+                command.data.Add(rooms[position - 2].getId());
+
             return command;
         }
 
