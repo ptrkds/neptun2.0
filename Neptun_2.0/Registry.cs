@@ -28,6 +28,118 @@ namespace Neptun_2._0
             this.classRooms = _classRooms;
         }
 
+        public void AddAdmin(Admin _new)
+        {
+            admins.Add(_new);
+        }
+
+        public void RemoveAdmin(String id)
+        {
+            for(int i = 0; i < admins.Count; i++)
+            {
+                if (admins[i].getNeptunCode() == id)
+                {
+                    admins.RemoveAt(i);
+                }
+            }
+        }
+
+        public void AddStudent(Student _new)
+        {
+            students.Add(_new);
+        }
+
+        public void RemoveStudent(String id)
+        {
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (students[i].getNeptunCode() == id)
+                {
+                    students.RemoveAt(i);
+                }
+            }
+        }
+
+        public void AddTeacher(Teacher _new)
+        {
+            teachers.Add(_new);
+        }
+
+        public void RemoveTeacher(String id)
+        {
+            for (int i = 0; i < teachers.Count; i++)
+            {
+                if (teachers[i].getNeptunCode() == id)
+                {
+                    teachers.RemoveAt(i);
+                }
+            }
+        }
+
+        public void AddSubject(Subject _new)
+        {
+            subjects.Add(_new);
+        }
+
+        public void RemoveSubject(String id)
+        {
+            for (int i = 0; i < subjects.Count; i++)
+            {
+                if (subjects[i].getId() == id)
+                {
+                    subjects.RemoveAt(i);
+                }
+            }
+        }
+
+        public void AddDemand(Demand _new)
+        {
+            demands.Add(_new);
+        }
+
+        public void RemoveDemand(String id)
+        {
+            for (int i = 0; i < demands.Count; i++)
+            {
+                if (demands[i].getDemandId() == id)
+                {
+                    demands.RemoveAt(i);
+                }
+            }
+        }
+
+        public void AddRequest(Request _new)
+        {
+            requests.Add(_new);
+        }
+
+        public void RemoveRequest(String id)
+        {
+            for (int i = 0; i < requests.Count; i++)
+            {
+                if (requests[i].getId() == id)
+                {
+                    requests.RemoveAt(i);
+                }
+            }
+        }
+
+        public void AddClassRoom(ClassRoom _new)
+        {
+            classRooms.Add(_new);
+        }
+
+        public void RemoveClassRoom(String id)
+        {
+            for (int i = 0; i < classRooms.Count; i++)
+            {
+                if (classRooms[i].getId() == id)
+                {
+                    classRooms.RemoveAt(i);
+                }
+            }
+        }
+
         public List<Admin> getAdmins()
         {
             return admins;
