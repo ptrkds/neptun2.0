@@ -33,7 +33,7 @@ namespace Neptun_2._0
 
     class Neptun
     {
-        
+        private Registry registry = new Registry();
 
         private Controller controller = new Controller();
 
@@ -58,7 +58,7 @@ namespace Neptun_2._0
                 switch (cmd.cmd)
                 {
                     case "login":
-                        success = controller.requestLogin(cmd.data);
+                        success = controller.requestLogin(cmd.data, registry);
                         if (success)
                         {
                             controller.start(cmd.data[0]);

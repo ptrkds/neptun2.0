@@ -21,11 +21,13 @@ namespace Neptun_2._0
 
         CMD cmd;
 
-        private Database db;
+        private Registry registry;
 
-        public bool requestLogin(List<String> data, Database database)
+        public bool requestLogin(List<String> data, Registry _registry)
         {
-            db = database;
+            registry = _registry;
+
+            User user;
 
             bool check = false;
             try
@@ -44,7 +46,7 @@ namespace Neptun_2._0
         {
             try
             {
-                userLoggedIn = db.GetUser(neptun_code);
+                userLoggedIn = registry.GetUser(neptun_code);
             }
             catch (Exception e)
             {
@@ -297,10 +299,10 @@ namespace Neptun_2._0
         
         private int requestDemandChange(String demand_id)
         {
-            Demand demand = db.getDemand(demand_id); ;
+            Demand demand = registry.getDemand(demand_id); ;
 
 
-            cmd = tui.demandChangeSubMenu(demand, db.getAllRoom());
+            cmd = tui.demandChangeSubMenu(demand, registry.getClassRooms());
 
             if (cmd.cmd != "exit")
             {
@@ -323,7 +325,7 @@ namespace Neptun_2._0
             }
         }
         
-        /*
+        
         //Demand Judgement
         private bool demandJudgement()
         {
@@ -331,7 +333,7 @@ namespace Neptun_2._0
 
             try
             {
-                demands = db.getAllDemand();
+                demands = registry.getDemands();
             }
             catch (Exception e)
             {
@@ -380,12 +382,12 @@ namespace Neptun_2._0
                 return false;
             }
         }
-        */
+        
         
         //Demand Submission
         private bool requestDemandSubmission(String selected_class = "", String startTime = "", String endTime="")
         {
-            List<ClassRoom> rooms = db.getAllRoom();
+            List<ClassRoom> rooms = registry.getClassRooms();
 
             cmd = tui.demandSubmissionMenu(rooms, selected_class, startTime, endTime);
 
@@ -413,7 +415,7 @@ namespace Neptun_2._0
             }
         }
         
-        /*
+        
         //Register For Subject
         private bool registerForSubject()
         {
@@ -421,7 +423,7 @@ namespace Neptun_2._0
 
             try
             {
-                subjects = db.getAllSubject();
+                subjects = registry.getSubjects();
             }
             catch (Exception e)
             {
@@ -462,8 +464,8 @@ namespace Neptun_2._0
                 return false;
             }
         }
-        */
-        /*
+        
+        
         //Deregister Subject
         private bool deregisterSubject()
         {
@@ -505,8 +507,8 @@ namespace Neptun_2._0
                 return false;
             }
         }
-        */
-        /*
+        
+        
         //Filter - x
         private bool requestFilter()
         {
@@ -533,8 +535,8 @@ namespace Neptun_2._0
 
 
         }
-        */
-        /*
+        
+        
         //Maintenance
         private bool requestMaintenance()
         {
@@ -558,12 +560,12 @@ namespace Neptun_2._0
                 return false;
             }
         }
-        */
-        /*
+        
+        
         //Request Judgement
         private bool requestJudgement()
         {
-            List<String> requests = ;
+            List<String> requests = registry.getRequests();
 
             while (true)
             {
@@ -598,9 +600,9 @@ namespace Neptun_2._0
             {
                 return false;
             }
-        }*/
+        }
 
-        /*
+        
         //Request Submission
         private bool requestRequestSubmission()
         {
@@ -622,6 +624,6 @@ namespace Neptun_2._0
             {
                 return false;
             }
-        }*/
+        }
     }
 }
