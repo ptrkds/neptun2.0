@@ -85,7 +85,7 @@ namespace Neptun_2._0
         {
             List<Demand> demands = new List<Demand>();
 
-            List<String> ids = userHandler.GetDemandIds(neptun_code);
+            List<String> ids = userHandler.GetDocumentIds(neptun_code);
 
             foreach (string id in ids)
             {
@@ -148,9 +148,9 @@ namespace Neptun_2._0
             return rooms;
         }
 
-        public bool demandSubmission(Demand newDemand)
+        public bool demandSubmission(Demand newDemand, String neptun_code)
         {
-            //bool demandAdded = userHandler.
+            bool demandAdded = userHandler.AppendDocument(neptun_code, newDemand.getDemandId());
             return demandHandler.CreateDemand(newDemand);
         }
 

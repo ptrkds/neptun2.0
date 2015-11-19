@@ -169,6 +169,11 @@ namespace Neptun_2._0
             this.startTime = startTime;
             this.endTime = endTime;
         }
+
+        public String getDemandId()
+        {
+            return demandId;
+        }
         public String getSubjectId()
         {
             return subjectId;
