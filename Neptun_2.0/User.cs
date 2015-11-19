@@ -173,6 +173,22 @@ namespace Neptun_2._0
         {
             return subjectId;
         }
+        public String getRoomId()
+        {
+            return roomId;
+        }
+        public String getStartTime()
+        {
+            return startTime;
+        }
+        public String getEndTime()
+        {
+            return endTime;
+        }
+        public String getDay()
+        {
+            return day;
+        }
         public String getSubjectName()
         {
             return subjectName;
