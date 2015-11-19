@@ -17,6 +17,7 @@ namespace Neptun_2._0
         private String yes = "Igen";
         private String no = "Nem";
         private String application = "Felvitel";
+        private String filtering = "Szűrés";
         private int countsubject = 0;
         private int countusers = 0;
         private int countrooms = 0;
@@ -296,9 +297,7 @@ namespace Neptun_2._0
                 command.data.Add(subjectDay);
                 command.data.Add(start+":00");
                 command.data.Add(end+":00");
-            }  
-            
-
+            }   
             return command;
         }
 
@@ -416,8 +415,35 @@ namespace Neptun_2._0
                 start = list[3];
                 end = list[4];
             }
-            
-            
+            String subjectDay = "";
+            switch (day)
+            {
+                case "1":
+                    subjectDay = "Hetfo";
+                    break;
+                case "2":
+                    subjectDay = "Kedd";
+                    break;
+                case "3":
+                    subjectDay = "Szerda";
+                    break;
+                case "4":
+                    subjectDay = "Csutortok";
+                    break;
+                case "5":
+                    subjectDay = "Pentek";
+                    break;
+            }
+            if (position == 1)
+                command.cmd = "exit";
+            else
+            {
+                command.data.Add(subjectID);
+                command.data.Add(subjectName);
+                command.data.Add(subjectDay);
+                command.data.Add(start + ":00");
+                command.data.Add(end + ":00");
+            }
             return command;
         }
 
@@ -552,6 +578,35 @@ namespace Neptun_2._0
             return list;
         }
 
+        public void demandSubmission_successful()
+        {
+            subMenuremove(11,13);            
+            Console.SetCursorPosition(3, 11);
+            Console.Write("Az igény felvitele sikeres volt!");            
+            input = Console.ReadKey();
+        }
+        public void demandSubmission_unsuccessful()
+        {
+            subMenuremove(11, 13);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("Az igény felvitele sikertelen volt!");
+            input = Console.ReadKey();
+        }
+        public void demandChange_successful()
+        {
+            subMenuremove(11, 13);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("Az igény módosítása sikeres volt!");
+            input = Console.ReadKey();
+        }
+        public void demandChange_unsuccessful()
+        {
+            subMenuremove(11, 13);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("Az igény módosítása sikertelen volt!");
+            input = Console.ReadKey();
+        }
+
         private void demandUnderline(int ID, int name, int day, int start, int end)
         {
             if (position != 1)
@@ -604,14 +659,177 @@ namespace Neptun_2._0
 
         }
        
-        public CMD filterMenu(List<Subject> subjects)
+        public CMD selectFilterTime()
         {
+            position = 1;
+            for (int i = 0; i < 20; i++)
+            {
+                Console.SetCursorPosition(i * 4, 4);
+                Console.Write("____");
+            }
+            Console.SetCursorPosition(3, 6);            
+            Console.Write("Adja meg, milyen időpont szerint szeretne szűri termekre:");
+            Console.SetCursorPosition(2, 8);
+            Console.Write(back + "   ");
+            Console.SetCursorPosition(2, 10);
+            Console.Write(filtering + "   ");                       
+            Console.SetCursorPosition(2, 12);            
+            Console.Write("Mikor kezdődjön (Csak 8, 10,...,18 számokat írjon be, Pl: 8->8:00): ");
+            Console.SetCursorPosition(2, 14);
+            Console.Write("Óra vége (Rendszerben 2 órásak az órák. Pl: kezdés: 8 -> vége: 10): ");
+
+            String start = "";
+            String end = "";
+            int lengthStart = 0;
+            int lengthEnd = 0;
+            selectFilterUnderline(lengthStart, lengthEnd);
+            do
+            {
+                input = Console.ReadKey();
+                if (position < 3)
+                {
+                    Console.Write("\b ");
+                }
+                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && input.Key != ConsoleKey.Backspace)
+                {
+                    Console.Write("\b ");
+                }
+                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)))
+                {
+                    switch (position)
+                    {
+                        case 3:
+                            lengthStart++;
+                            start += input.KeyChar;
+                            break;
+                        case 4:
+                            lengthEnd++;
+                            end += input.KeyChar;
+                            break;
+                    }
+                }
+                if (input.Key == ConsoleKey.Backspace)
+                {
+                    switch (position)
+                    {
+                        case 3:
+                            if (lengthStart > 0)
+                            {
+                                start = start.Remove(start.Length - 1);
+                                lengthStart--;
+                                Console.Write(" ");
+                            }
+                            break;
+                        case 4:
+                            if (lengthEnd > 0)
+                            {
+                                end = end.Remove(end.Length - 1);
+                                lengthEnd--;
+                                Console.Write(" ");
+                            }
+                            break;
+                    }
+                }
+                if (input.Key == ConsoleKey.DownArrow)
+                    position++;
+                if (input.Key == ConsoleKey.UpArrow)
+                    position--;
+                if (position < 1)
+                    position = 4;
+                if (position > 4)
+                    position = 1;
+                selectFilterUnderline(lengthStart, lengthEnd);
+            } while (input.Key != ConsoleKey.Enter || position > 2) ;      
             CMD command = new CMD();
+            command.data = new List<string>();
+            if(position == 1)
+            {
+                command.cmd = "exit";
+            }
+            else
+            {
+                command.data.Add(start + ":00");
+                command.data.Add(end + ":00");
+            }
             return command;
         }
-        public void filterUnderline()
-        {
 
+        public CMD filterSelectClass(List<ClassRoom> rooms)
+        {
+            position = 1;
+            subMenuremove(6, 12);
+            Console.SetCursorPosition(1, 6);
+            Console.Write("Adja meg, hogy melyik termet szeretné választani, amit lefoglalhat:");
+            Console.SetCursorPosition(5, 8);
+            Console.Write(back + "   ");
+            countrooms = rooms.Count;
+            for (int i = 0; i < countrooms; i++)
+            {
+                Console.SetCursorPosition(5, 15 + i);
+                Console.Write(rooms[i].getId() + "   ");
+            }
+            subMainUnderline(countrooms, 0);
+            do
+            {
+                input = Console.ReadKey();
+                if (input.Key == ConsoleKey.DownArrow)
+                    position++;
+                if (input.Key == ConsoleKey.UpArrow)
+                    position--;
+                if (position < 1)
+                    position = countrooms + 1;
+                if (position > countrooms + 1)
+                    position = 1;
+                subMainUnderline(countrooms, 0);
+            } while (input.Key != ConsoleKey.Enter);    
+            CMD command = new CMD();
+            command.data = new List<string>();
+            if (position == 1)
+                    command.cmd = "exit";
+                else
+            command.data.Add(rooms[position - 2].getId());
+            return command;
+        }
+        private void selectFilterUnderline(int start, int end)
+        {
+            if (position != 1)
+            {
+                Console.SetCursorPosition(2, 9);
+                Console.Write(new string(' ', Console.WindowWidth));
+            }
+            if (position != 2)
+            {
+
+                Console.SetCursorPosition(2, 11);
+                Console.Write(new string(' ', Console.WindowWidth));
+            }
+            if (position == 1)
+            {
+                for (int i = 0; i < back.Length; i++)
+                {
+                    Console.SetCursorPosition(2 + i, 9);
+                    Console.Write("-");
+                }
+                Console.SetCursorPosition(4 + back.Length, 8);
+            }
+            if (position == 2)
+            {
+                for (int i = 0; i < filtering.Length; i++)
+                {
+                    Console.SetCursorPosition(2 + i, 11);
+                    Console.Write("-");
+                }
+                Console.SetCursorPosition(4 + filtering.Length, 10);
+            }
+            switch (position)
+            {                
+                case 3:
+                    Console.SetCursorPosition(70 + start, 12);
+                    break;
+                case 4:
+                    Console.SetCursorPosition(70 + end, 14);
+                    break;
+            }
         }
         public CMD timeTableView(List<Subject> subjects)
         {
@@ -902,4 +1120,3 @@ namespace Neptun_2._0
         
     }
 }
-
