@@ -150,6 +150,7 @@ namespace Neptun_2._0
 
         public bool demandSubmission(Demand newDemand)
         {
+            //bool demandAdded = userHandler.
             return demandHandler.CreateDemand(newDemand);
         }
 

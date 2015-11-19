@@ -273,7 +273,7 @@ namespace Neptun_2._0
 
                 if (cmd.cmd != "exit")
                 {
-                    /*  int ret = requestDemandChange(cmd.data[0]);
+                      int ret = requestDemandChange(cmd.data[0]);
                       if (ret == 1)
                       {
                       //    tui.demandChange_successful();
@@ -283,7 +283,7 @@ namespace Neptun_2._0
                       {
                       //    tui.demandChange_unsuccessful();
                           return true;
-                      }*/                    
+                      }                  
                 }
                 else
                 {
@@ -291,22 +291,13 @@ namespace Neptun_2._0
                 }
             }
         }
-        /*
+        
         private int requestDemandChange(String demand_id)
         {
-            
+            Demand demand = db.getDemand(demand_id); ;
 
-            try
-            {
-                Demand demand = db.getDemand(demand_id);
-            }
-            catch (Exception e)
-            {
 
-                Console.WriteLine(e);
-            }
-
-            cmd = tui.demandChange(demand);
+            cmd = tui.demandChange(demand, db.getAllRoom());
 
             if (cmd.cmd != "exit")
             {
@@ -328,7 +319,7 @@ namespace Neptun_2._0
                 return 0;
             }
         }
-        */
+        
         /*
         //Demand Judgement
         private bool demandJudgement()
@@ -399,7 +390,7 @@ namespace Neptun_2._0
             if (cmd.cmd != "exit")
             {
 
-                Demand newDemand = new Demand(cmd.data[1], null, userLoggedIn.getNeptunCode(),
+                Demand newDemand = new Demand(cmd.data[1], "null", userLoggedIn.getNeptunCode(),
                    cmd.data[0], cmd.data[1], cmd.data[2], cmd.data[3], cmd.data[4], cmd.data[5]);
 
                 if (db.demandSubmission(newDemand))
