@@ -333,10 +333,12 @@ namespace Neptun_2._0
                 if (position > countdemands + 1)
                     position = 1;
                 subMainUnderline(countdemands, 5);
-            } while (input.Key != ConsoleKey.Enter);        
+            } while (input.Key != ConsoleKey.Enter);
 
-
-        CMD command = new CMD();
+            
+            CMD command = new CMD();
+            if (position == 1)
+                command.cmd = "exit";
             return command;
         }
 
