@@ -210,13 +210,14 @@ namespace Neptun_2._0
             {
                 Console.SetCursorPosition(3, 8);
                 Console.Write(rooms[0].getId());
+                int asd = rooms[0].getLimit();
                 position = 1;
                 for (int i = 0; i < 20; i++)
                 {
                     Console.SetCursorPosition(i * 4, 9);
                     Console.Write("____");
                 }
-                Console.SetCursorPosition(3, 11);
+                Console.SetCursorPosition(1, 11);
                 Console.Write("Adja meg, hogy melyik termet szeretné igényelni egy új tantárgy felvitelére:");
                 Console.SetCursorPosition(5, 13);
                 Console.Write(back);
@@ -252,24 +253,28 @@ namespace Neptun_2._0
             }
             else
                 command.data.Add(selected_room);
+            String subjectID = "";
+            String subjectName = "";
+            String day = "";
+            String start = "";
             if (command.cmd != "exit")
             {
                 subMenuremove(15, countrooms);
                 position = 1;
-                Console.SetCursorPosition(5, 15);
+                Console.SetCursorPosition(1, 11);
+                Console.Write("Adja meg, a tárgy ID-jét, nevét, és hogy melyik nap mikor kezdődjön!        ");
+                Console.SetCursorPosition(2, 13);
+                Console.Write(back + "   ");
+                Console.SetCursorPosition(2, 15);
                 Console.Write("Tantárgy ID-je:");
-                Console.SetCursorPosition(5, 17);
+                Console.SetCursorPosition(2, 17);
                 Console.Write("Tantárgy neve:");
-                Console.SetCursorPosition(5, 19);
+                Console.SetCursorPosition(2, 19);
                 Console.Write("Melyik napon legyen (számot írjon: 1 - Hétfő ... 5 - Péntek):");
-                Console.SetCursorPosition(5, 21);
-                Console.Write("Mikor kezdődjön (Csak 8, 10, 12, ... ,18 számokat írjon be, amelyik órában akarja):");
-                Console.SetCursorPosition(5, 23);
-                Console.Write("Mivel minden óra 2 órás, a Neptun 2.0 magától generálja az óra végét.");
-                String subjectID = "";
-                String subjectName = "";
-                String day = "";
-                String start = "";
+                Console.SetCursorPosition(2, 21);
+                Console.Write("Mikor kezdődjön (Csak 8, 10,...,18 számokat írjon be, pl: 8->8:00):");
+                Console.SetCursorPosition(2, 23);
+                Console.Write("Mivel minden óra 2 órás, a Neptun 2.0 magától generálja az óra végét.");                
                 int lengthID = 0;
                 int lengthName = 0;
                 int lengthDay = 0;
@@ -278,7 +283,7 @@ namespace Neptun_2._0
                 do
                 {
                     input = Console.ReadKey();
-                    if (position == 2)
+                    if (position == 1)
                     {
                         Console.Write("\b ");
                     }
@@ -357,6 +362,36 @@ namespace Neptun_2._0
                     demandUnderline(lengthID, lengthName, lengthDay, lengthStart);
                 } while (input.Key != ConsoleKey.Enter);
             }
+            String subjectDay="";
+            switch(day)
+            {
+                case "1":
+                    subjectDay = "Hetfo";
+                    break;
+                case "2":
+                    subjectDay = "Kedd";
+                    break;
+                case "3":
+                    subjectDay = "Szerda";
+                    break;
+                case "4":
+                    subjectDay = "Csutortok";
+                    break;
+                case "5":
+                    subjectDay = "Pentek";
+                    break;
+            }
+            if(position==1)                
+                    command.cmd = "exit";
+            else
+            {
+                command.data.Add(subjectID);
+                command.data.Add(subjectName);
+                command.data.Add(subjectDay);
+                command.data.Add(start+":00");
+            //    command.data.Add((Int32.Parse(start)).ToString + ":00");
+            }  
+            
 
             return command;
         }
@@ -367,29 +402,29 @@ namespace Neptun_2._0
             {
                 for (int i = 0; i < back.Length; i++)
                 {
-                    Console.SetCursorPosition(5 + i, 14);
+                    Console.SetCursorPosition(2 + i, 14);
                     Console.Write("-");
                 }
-                Console.SetCursorPosition(8 + back.Length, 13);
+                Console.SetCursorPosition(4 + back.Length, 13);
             }
             if (position != 1)
             {
-                Console.SetCursorPosition(5, 14);
+                Console.SetCursorPosition(2, 14);
                 Console.Write(new string(' ', Console.WindowWidth));                
             } 
             switch(position)
             {
                 case 2:
-                    Console.SetCursorPosition(23+ID, 15);
+                    Console.SetCursorPosition(20+ID, 15);
                     break;
                 case 3:
-                    Console.SetCursorPosition(23 + name, 17);
+                    Console.SetCursorPosition(20 + name, 17);
                     break;
                 case 4:
-                    Console.SetCursorPosition(65 + day, 19);
+                    Console.SetCursorPosition(64 + day, 19);
                     break;
                 case 5:
-                    Console.SetCursorPosition(55 + start, 21);
+                    Console.SetCursorPosition(70 + start, 21);
                     break;
             }           
 
