@@ -127,6 +127,12 @@ namespace Neptun_2._0
             RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/lectures/lecture", "id", subjId));
             return true;
         }
+
+        public bool AppendDocument(string neptunCode, string docId)
+        {
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/documents/", "document", "id", docId);
+            return true;
+        }
         #endregion
 
         #region helper methods
