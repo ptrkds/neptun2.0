@@ -8,12 +8,12 @@ namespace Neptun_2._0
 {
     class Student : User
     {
-        private List<String> documents;
+        private List<String> requests;
 
-        public Student(String neptunCode, String name, String type, List<string> subjects, List<String> _documents)
-            : base(neptunCode, name, type, subjects)
+        public Student(String neptunCode, String name, String type, String pw, List<string> subjects, List<String> _requests)
+            : base(neptunCode, name, type, pw, subjects)
         {
-            this.documents = _documents;
+            this.requests = _requests;
         }
 
         public override String getNeptunCode()
@@ -46,6 +46,16 @@ namespace Neptun_2._0
             type = _type;
         }
 
+        public override String getPw()
+        {
+            return pw;
+        }
+
+        public override void setPw(String _pw)
+        {
+            pw = _pw;
+        }
+
         public override List<String> getSubjects()
         {
             return subjects;
@@ -56,14 +66,14 @@ namespace Neptun_2._0
             subjects = _subjects;
         }
 
-        public List<String> getDocuments()
+        public List<String> getRequests()
         {
-            return documents;
+            return requests;
         }
 
-        public void setDocuments(List<String> _documents)
+        public void setRequests(List<String> _requests)
         {
-            documents = _documents;
+            requests = _requests;
         }
     }
 }

@@ -11,9 +11,10 @@ namespace Neptun_2._0
         protected String neptunCode;
         protected String name;
         protected String type;
+        protected String pw;
         protected List<string> subjects;
 
-        protected User(String neptunCode, String name, String type, List<string> subjects)
+        protected User(String neptunCode, String name, String type, String pw, List<string> subjects)
         {
             this.neptunCode = neptunCode;
             this.name = name;
@@ -32,6 +33,10 @@ namespace Neptun_2._0
         abstract public String getType();
 
         abstract public void setType(String _type);
+
+        abstract public String getPw();
+
+        public abstract void setPw(String _pw);
 
         abstract public List<string> getSubjects();
 

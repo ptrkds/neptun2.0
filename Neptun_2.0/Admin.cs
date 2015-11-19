@@ -10,8 +10,8 @@ namespace Neptun_2._0
     {
         private List<String> documents;
 
-        public Admin(String neptunCode, String name, String type, List<string> subjects)
-            : base(neptunCode, name, type, subjects)
+        public Admin(String neptunCode, String name, String type, String pw, List<string> subjects)
+            : base(neptunCode, name, type, pw, subjects)
         {
         }
 
@@ -43,6 +43,16 @@ namespace Neptun_2._0
         public override void setType(String _type)
         {
             type = _type;
+        }
+
+        public override String getPw()
+        {
+            return pw;
+        }
+
+        public override void setPw(String _pw)
+        {
+            pw = _pw;
         }
 
         public override List<String> getSubjects()
