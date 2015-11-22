@@ -11,8 +11,6 @@ namespace XmlHandlerTests
     public class DemandXmlHandlerTest
     {
 
-
-        /*
         [TestMethod]
         public void GetDemandTest()
         {
@@ -42,6 +40,6 @@ namespace XmlHandlerTests
 
             //handler.CreateDemand(handler.GetDemand("ASDF1234"));
         }
-        */
+        
     }
 }

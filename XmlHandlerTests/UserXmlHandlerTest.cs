@@ -10,21 +10,17 @@ namespace XmlHandlerTests
 
         [TestMethod]
         public void GetStudentTest()
-        {
+        {/*
             UserXmlHandler handler = new UserXmlHandler();
             Student student = handler.GetStudent("Users/Students/", "UKDUJP");
 
-            Console.WriteLine(ObjectDumper.Dump(student));
+            Console.WriteLine(ObjectDumper.Dump(student));*/
         }
-
-
-
-
-        /*
+        
         public string dir = "Users";
         [TestMethod]
         public void GetUser()
-        {
+        {/*
             UserXmlHandler handler = new UserXmlHandler();
             User user = handler.GetUser("VS42ZH");
 
@@ -44,7 +40,7 @@ namespace XmlHandlerTests
             {
                 Console.WriteLine(str);
             }
-
-        }*/
+            */
+        }
     }
 }

@@ -8,9 +8,6 @@ namespace XmlHandlerTests
     public class ClassRoomXmlHandlerTest
     {
 
-
-
-        /*
         [TestMethod]
         public void GetClassRoom()
         {
@@ -19,6 +16,6 @@ namespace XmlHandlerTests
             ClassRoom room = handler.GetClassRoom("A1");
 
             Console.WriteLine(ObjectDumper.Dump(room));
-        }*/
+        }
     }
 }

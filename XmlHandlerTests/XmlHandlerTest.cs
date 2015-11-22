@@ -11,7 +11,7 @@ namespace XmlHandlerTest
     public class XmlHandlerTest
     {
         public string dir = "TestXmls";
-        /*
+        
         [TestMethod]
         public void Get2ndList()
         {
@@ -58,6 +58,6 @@ namespace XmlHandlerTest
 
             Console.WriteLine(ObjectDumper.Dump(results));
         }
-        */
+        
     }
 }
