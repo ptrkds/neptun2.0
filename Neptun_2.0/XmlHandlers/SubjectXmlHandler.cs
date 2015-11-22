@@ -9,58 +9,6 @@ namespace Neptun_2._0
 {
     class SubjectXmlHandler : XmlHandler
     {
-        #region rework
-        public Subject GetSubject(string dir, string subjId)
-        {
-            XmlReader xmlReader = XmlReader.Create(dir + subjId + ".xml");
-            xmlReader.Read();
-            xmlReader.Read();
-
-            string id = "";
-            string name = "";
-            string teacher = "";
-            string day = "";
-            string startTime = "";
-            string endTime = "";
-            List<string> studentIds = new List<string>();
-            List<string> blockedStudentIds = new List<string>();
-
-            try
-            {
-                while (xmlReader.Read()) //loop needed?
-                {
-                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "lecture") && (xmlReader.GetAttribute("id") == subjId))
-                    {
-                        id = xmlReader.GetAttribute("id");
-                        name = GetValue(ref xmlReader, "name");
-                        teacher = GetValue(ref xmlReader, "teacher");
-                        day = GetValue(ref xmlReader, "day");
-                        startTime = GetValue(ref xmlReader, "startTime");
-                        endTime = GetValue(ref xmlReader, "endTime");
-
-                        studentIds = GetList(ref xmlReader, "students", "id");
-
-                        blockedStudentIds = GetList(ref xmlReader, "blacklist", "id");
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                //TODO e
-            }
-
-            return new Subject(id, name, teacher, day, startTime, endTime, studentIds, blockedStudentIds);
-        }
-
-        void Save(Subject subject)
-        {
-
-        }
-
-        #endregion
-
-
-        #region old_version
         #region getters
         public string GetSubjectName(string subjId)
          {
@@ -169,6 +117,6 @@ namespace Neptun_2._0
         return "Lectures/" + id + ".xml";
     }
         #endregion
-        #endregion
+      
     }
 }

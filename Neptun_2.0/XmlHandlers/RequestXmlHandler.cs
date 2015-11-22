@@ -9,9 +9,9 @@ namespace Neptun_2._0
 {
     class RequestXmlHandler : XmlHandler
     {
-        #region rework
+        #region getters
 
-        public Request GetRequest(string dir, string request_Id)
+        public Request GetRequest(string request_Id)
         {
             string requestId = "";
             string state = "";
@@ -19,7 +19,7 @@ namespace Neptun_2._0
             string subject = "";
             string text = "";
 
-            XmlReader xmlReader = XmlReader.Create(dir + request_Id + ".xml");
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(request_Id));
 
             while (xmlReader.Read())
             {
@@ -36,17 +36,7 @@ namespace Neptun_2._0
             return new Request(requestId, state, ownerId, subject, text);
         }
 
-        void Save(Request request)
-        {
-
-        }
-
-        #endregion
-
-        #region old_version
-        #region getters
-        
-        public Request GetRequest(string request_Id)
+       /* public Request GetRequest(string request_Id)
         {
             string requestId = "";
             string state = "";
@@ -70,7 +60,7 @@ namespace Neptun_2._0
             }
 
             return new Request(requestId,state, ownerId, subject, text);
-        }
+        }*/
         
         #endregion
 
@@ -82,13 +72,13 @@ namespace Neptun_2._0
         settings.Indent = true;
         settings.IndentChars = "\t";
 
-        using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(request.id), settings))
+        using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(request.getId()), settings))
         {
             writer.WriteStartDocument();
             writer.WriteStartElement("request");
-            writer.WriteAttributeString("id", request.id);
-            writer.WriteElementString("owner", request.owner);
-            writer.WriteElementString("text", request.text);
+            writer.WriteAttributeString("id", request.getId());
+            writer.WriteElementString("owner", request.getOwner());
+            writer.WriteElementString("text", request.getText());
 
             writer.WriteEndElement();
             writer.WriteEndDocument();
@@ -125,6 +115,6 @@ namespace Neptun_2._0
     }
     
         #endregion
-        #endregion
+       
     }
 }

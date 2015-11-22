@@ -6,12 +6,10 @@ namespace Neptun_2._0
 {
     class UserXmlHandler : XmlHandler
     {
-        
-
         #region getters
-        public Student GetStudent(string dir, string neptunCode)
+        public Student GetStudent(string neptunCode)
         {
-            XmlReader xmlReader = XmlReader.Create(dir + neptunCode + ".xml");
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
             //TODO .Create() exception handling + try catch
 
             //TODO resolve Hax
@@ -48,9 +46,9 @@ namespace Neptun_2._0
             return new Student(id, name, type, pw, subjects, requests);
         }
 
-        public Teacher GetTeacher(string dir, string neptunCode)
+        public Teacher GetTeacher(string neptunCode)
         {
-            XmlReader xmlReader = XmlReader.Create(dir + neptunCode + ".xml");
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode);
             //TODO .Create() exception handling + try catch
 
             //TODO resolve Hax
@@ -87,9 +85,9 @@ namespace Neptun_2._0
             return new Teacher(id, name, type, pw, subjects, demands);
         }
 
-        public Admin GetAdmin(string dir, string neptunCode)
+        public Admin GetAdmin(string neptunCode)
         {
-            XmlReader xmlReader = XmlReader.Create(dir + neptunCode + ".xml");
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
             //TODO .Create() exception handling + try catch
 
             //TODO resolve Hax

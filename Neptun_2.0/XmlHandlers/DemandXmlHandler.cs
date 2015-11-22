@@ -8,7 +8,7 @@ namespace Neptun_2._0
     {
        
 
-        public Demand GetDemand(string dir, string demand_Id)
+       /* public Demand GetDemand(string dir, string demand_Id)
         {
             string demandId = "";
             string state = "";
@@ -40,9 +40,7 @@ namespace Neptun_2._0
             }
 
             return new Demand(demandId, state, teacherId, roomId, subjectId, subjectName, day, startTime, endTime);
-        }
-
-        
+        }*/
 
        
         #region getters
