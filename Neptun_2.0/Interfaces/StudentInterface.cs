@@ -305,6 +305,20 @@ namespace Neptun_2._0
             }            
             return command;
         }
+        public void requestSubmission_successful()
+        {
+            subMenuremove(6, countsubject + 2);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("A kérvény leadása sikeres volt!");
+            input = Console.ReadKey();
+        }
+        public void requestSubmission_unsuccessful()
+        {
+            subMenuremove(6, countsubject + 2);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("A kérvény leadása sikertelen volt!");
+            input = Console.ReadKey();
+        }
         private void requestUnderline(int lengthThema, int lengthText, int rowText)
         {
             if (position != 1)

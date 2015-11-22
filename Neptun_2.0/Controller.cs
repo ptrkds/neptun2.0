@@ -88,7 +88,7 @@ namespace Neptun_2._0
                     case "demandSubmission":
                         //demandJudgement();
                         break;
-                    case "maintenance":
+                    case "requestMaintenance":
                         requestMaintenance();
                         break;
                     case "requestJudgement":
@@ -521,7 +521,7 @@ namespace Neptun_2._0
             if (cmd.cmd != "exit")
             {
                 List<ClassRoom> classes = db.getFreeClasses(cmd.data[0], cmd.data[1]);
-                CMD cmd2 = tui.selectClass(classes);
+                CMD cmd2 = tui.filterSelectClass(classes);
                 if (cmd2.cmd != "exit")
                 {
                     requestDemandSubmission(cmd2.data[0], cmd.data[0], cmd.data[1]);
@@ -544,11 +544,11 @@ namespace Neptun_2._0
         //Maintenance
         private bool requestMaintenance()
         {
-            cmd = aui.maintenance();
+            cmd = aui.requestMaintenanceMenu();
 
             if (cmd.cmd != "exit")
             {
-                if (kisofgv())
+                if (db.maintenance())
                 {
                     aui.maintenance_successful();
                     return true;
@@ -569,7 +569,7 @@ namespace Neptun_2._0
         //Request Judgement
         private bool requestJudgement()
         {
-            List<String> requests = registry.getRequests();
+            List<Request> requests = db.getAllRequest();
 
             while (true)
             {
@@ -595,8 +595,9 @@ namespace Neptun_2._0
         }
         private bool requestRequestJudgement(String request_id)
         {
+            cmd = aui.judgeRequest(db.getRequest(request_id));
             //request delete
-            if (kisofgv(request_id))
+            if (db.requestJudgement(request_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.data[0])))
             {
                 return true;
             }
@@ -610,10 +611,15 @@ namespace Neptun_2._0
         //Request Submission
         private bool requestRequestSubmission()
         {
-            cmd = sui.requestSubmission();
+            cmd = sui.requestSubmissionMenu();
             if (cmd.cmd != "exit")
             {
-                if (kisofgv(cmd.data))
+                String time = DateTime.Now.ToString("MM-dd-yy-hh-mm-ss");
+                Request newRequest = new Request(userLoggedIn.getNeptunCode()+time, "null", userLoggedIn.getNeptunCode(),
+                   cmd.data[0], cmd.data[1]);
+
+
+                if (db.requestSubmission(newRequest, userLoggedIn.getNeptunCode()))
                 {
                     sui.requestSubmission_successful();
                     return true;

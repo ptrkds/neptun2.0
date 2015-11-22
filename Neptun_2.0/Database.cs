@@ -100,7 +100,7 @@ namespace Neptun_2._0
         {
             List<Demand> demands = new List<Demand>();
 
-            List<String> ids = userHandler.GetDocumentIds(neptun_code);
+            List<String> ids = userHandler.GetDemandIds(neptun_code);
 
             foreach (string id in ids)
             {
@@ -165,8 +165,9 @@ namespace Neptun_2._0
 
         public bool demandSubmission(Demand newDemand, String neptun_code)
         {
-            bool demandAdded = userHandler.AppendDocument(neptun_code, newDemand.getDemandId());
-            return demandHandler.CreateDemand(newDemand);
+            bool user = userHandler.AppendDemand(neptun_code, newDemand.getDemandId());
+            bool demand = demandHandler.CreateDemand(newDemand);
+            return user && demand;
         }
 
         public List<short_subject> getAllSubject()
@@ -188,7 +189,10 @@ namespace Neptun_2._0
 
         public bool registerForSubject(String neptun_code, String subject_id)
         {
-            return userHandler.Register(neptun_code, subject_id);
+            bool user = userHandler.Register(neptun_code, subject_id);
+            bool subject = subjectHandler.Register(subject_id, neptun_code);
+
+            return user && subject;
         }
 
         public bool deregisterSubject(String neptun_code, String subject_id)
@@ -237,10 +241,12 @@ namespace Neptun_2._0
             return true;
         }
 
-        public bool requestSubmission(Request newRequest)
+        public bool requestSubmission(Request newRequest, String neptun_code)
         {
-            return requestHandler.CreateRequest(newRequest);
-            
+            bool user = userHandler.AppendRequest(neptun_code, newRequest.getId());
+            bool request = requestHandler.CreateRequest(newRequest);
+            return user && request;
+
         }
 
         public List<Request> getAllRequest()
@@ -258,16 +264,26 @@ namespace Neptun_2._0
             return requests;
         }
 
-        /*public bool requestJudgement(String request_id, String neptun_code, Boolean state)
+
+
+        public bool requestJudgement(String request_id, String neptun_code, Boolean state)
         {
             Request newRequest = requestHandler.GetRequest(request_id);
 
-            bool userNewRequest = userHandler.Register(neptun_code, newRequest.id);
+            bool userNewRequest = userHandler.Register(neptun_code, newRequest.getId());
 
             //TODO
-            bool newSubject = subjectHandler
+            //bool newSubject = subjectHandler
 
+
+            return true;
         }
-        */
+        
+
+        public Request getRequest(String request_id)
+        {
+            return requestHandler.GetRequest(request_id);
+        }
+
     }
 }
