@@ -48,7 +48,7 @@ namespace Neptun_2._0
 
         public Teacher GetTeacher(string neptunCode)
         {
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode);
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
             //TODO .Create() exception handling + try catch
 
             //TODO resolve Hax
@@ -324,8 +324,7 @@ namespace Neptun_2._0
                 //TODO e
             }
 
-            //TODO ??
-            return false;
+            return null;
         }
         #endregion
 
