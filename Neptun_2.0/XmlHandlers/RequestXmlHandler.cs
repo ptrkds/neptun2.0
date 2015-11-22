@@ -45,7 +45,7 @@ namespace Neptun_2._0
 
         #region old_version
         #region getters
-        /*
+        
         public Request GetRequest(string request_Id)
         {
             string requestId = "";
@@ -71,11 +71,11 @@ namespace Neptun_2._0
 
             return new Request(requestId,state, ownerId, subject, text);
         }
-        */
+        
         #endregion
 
         #region functional methods
-        /*
+        
     public bool CreateRequest(Request request)
     {
         XmlWriterSettings settings = new XmlWriterSettings();
@@ -114,16 +114,16 @@ namespace Neptun_2._0
 
         return true;
     }
-    */
+    
         #endregion
 
         #region help method
-        /*
+        
     private string GetXmlFileName(string requestId)
     {
         return "Requests/" + requestId + ".xml";
     }
-    */
+    
         #endregion
         #endregion
     }

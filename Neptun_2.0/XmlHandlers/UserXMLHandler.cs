@@ -6,7 +6,7 @@ namespace Neptun_2._0
 {
     class UserXmlHandler : XmlHandler
     {
-        #region reworked
+        
 
         #region getters
         public Student GetStudent(string dir, string neptunCode)
@@ -87,7 +87,7 @@ namespace Neptun_2._0
             return new Teacher(id, name, type, pw, subjects, demands);
         }
 
-        public Admin GetDemand(string dir, string neptunCode)
+        public Admin GetAdmin(string dir, string neptunCode)
         {
             XmlReader xmlReader = XmlReader.Create(dir + neptunCode + ".xml");
             //TODO .Create() exception handling + try catch
@@ -125,7 +125,7 @@ namespace Neptun_2._0
 
         #region savers
 
-
+        /*
         void SaveStudent(Student student)
         {
             XmlWriterSettings settings = new XmlWriterSettings();
@@ -220,13 +220,9 @@ namespace Neptun_2._0
                 writer.WriteEndDocument();
             }
         }
-
+        */
         #endregion
 
-        #endregion
-
-        #region old_version
-        /*
         #region getters
         public string GetUserName(string neptunCode)
         {
@@ -239,7 +235,7 @@ namespace Neptun_2._0
             return name;
         }
 
-        public User GetUser(string neptunCode)
+       /* public User GetUser(string neptunCode)
         {
             XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
             //TODO .Create() exception handling + try catch
@@ -276,7 +272,7 @@ namespace Neptun_2._0
 
             return new User(id, name, type, subjects, documents);
 
-        }
+        }*/
 
         public List<string> GetSubjectIds(string neptunCode)
         {
@@ -289,6 +285,8 @@ namespace Neptun_2._0
             return subjects;
         }
 
+
+        //DOCUMENT helyett demand vagy request
         public List<string> GetDocumentIds(string neptunCode)
         {
             //TODO try catch
@@ -299,7 +297,7 @@ namespace Neptun_2._0
             return documents;
         }
 
-        public bool CheckLogin(string neptunCode, string password)
+        public string CheckLogin(string neptunCode, string password)
         {
             XmlReader xmlReader;
             try
@@ -308,14 +306,17 @@ namespace Neptun_2._0
                 //TODO check header
 
                 string userpw = GetValue(ref xmlReader, "pw");
+                string userType = GetValue(ref xmlReader, "type");
+
                 xmlReader.Dispose();
+
                 if (userpw == password)
                 {
-                    return true;
+                    return userType;
                 }
                 else
                 {
-                    return false;
+                    return null;
                 }
 
 
@@ -359,11 +360,11 @@ namespace Neptun_2._0
             return true;
         }
 
-        private string GetXmlFileName(string dir, string id)
+        private string GetXmlFileName(string id)
         {
-            return dir + id + ".xml";
+            return "Users/" + id + ".xml";
         }
-        #endregion*/
         #endregion
+       
     }
 }

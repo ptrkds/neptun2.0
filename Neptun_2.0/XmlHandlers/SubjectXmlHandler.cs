@@ -62,7 +62,7 @@ namespace Neptun_2._0
 
         #region old_version
         #region getters
-        /* public string GetSubjectName(string subjId)
+        public string GetSubjectName(string subjId)
          {
              string name = "";
 
@@ -136,11 +136,11 @@ namespace Neptun_2._0
              }
 
              return new Subject(id, name, teacher, day, startTime, endTime, studentIds, blockedStudentIds);
-         }*/
+         }
         #endregion
 
         #region functional methods
-        /*
+        
                 //TODO register()
 
                 public bool DeRegister(string subjId, string neptunCode)
@@ -159,15 +159,15 @@ namespace Neptun_2._0
                     AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "lecture/blacklist", "student", "id", neptunCode);
 
                     return true;
-                }*/
+                }
         #endregion
 
         #region helper methods
-        /*
+        
     private string GetXmlFileName(string id)
     {
         return "Lectures/" + id + ".xml";
-    }*/
+    }
         #endregion
         #endregion
     }

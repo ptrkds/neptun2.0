@@ -143,7 +143,7 @@ namespace Neptun_2._0
         #endregion
 
         #region helper methods
-        //private string GetXmlFileName() abstract or virtual implementation
+        //private string GetXmlFileName() { } //abstract or virtual implementation
         protected string CreateXPathWithAttr(string xpath, string attrName, string attrValue)
         {
             return xpath + "[@" + attrName + " =\"" + attrValue + "\"]";
