@@ -268,17 +268,27 @@ namespace Neptun_2._0
 
         public bool requestJudgement(String request_id, String neptun_code, Boolean state)
         {
-            Request newRequest = requestHandler.GetRequest(request_id);
-
-            bool userNewRequest = userHandler.Register(neptun_code, newRequest.getId());
-
-            //TODO
-            //bool newSubject = subjectHandler
-
-
-            return true;
+            return requestHandler.JudgeRequest(request_id, state);
         }
-        
+
+        public bool demandJudgement(String demand_id, String neptun_code, Boolean state)
+        {
+            bool subject = true;
+            if (state)
+            {
+                Demand newDemand = demandHandler.GetDemand(demand_id);
+
+                Subject newSubject = new Subject(newDemand.getSubjectId(), newDemand.getSubjectName(), newDemand.getTeacherId(),
+                        newDemand.getDay(), newDemand.getStartTime(), newDemand.getEndTime(), 
+                        new List<string>(), new List<string>());
+
+                subject = subjectHandler.CreateSubject(newSubject);
+            }
+
+            bool demand = demandHandler.JudgeDemand(demand_id, state);
+
+            return demand && subject;
+        }
 
         public Request getRequest(String request_id)
         {

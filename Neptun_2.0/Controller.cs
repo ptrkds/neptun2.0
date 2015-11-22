@@ -86,7 +86,7 @@ namespace Neptun_2._0
                 switch (cmd.cmd)
                 {
                     case "demandSubmission":
-                        //demandJudgement();
+                        demandJudgement();
                         break;
                     case "requestMaintenance":
                         requestMaintenance();
@@ -111,7 +111,7 @@ namespace Neptun_2._0
                 switch (cmd.cmd)
                 {
                     case "filter":
-                        //requestFilter();
+                        requestFilter();
                         break;
                     case "studentBlock":
                         studentBlock();
@@ -333,7 +333,7 @@ namespace Neptun_2._0
         }
         
         
-       /* //Demand Judgement
+        //Demand Judgement
         private bool demandJudgement()
         {
             List<Demand> demands = new List<Demand>();
@@ -375,7 +375,7 @@ namespace Neptun_2._0
             cmd = aui.judgeDemand();
             if (cmd.cmd != "exit")
             {
-                if (db.demandJudgement(demand_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.data[0])))
+                if (db.demandJudgement(demand_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.cmd)))
                 {
                     return true;
                 }
@@ -388,7 +388,7 @@ namespace Neptun_2._0
             {
                 return false;
             }
-        }*/
+        }
         
         
         //Demand Submission
