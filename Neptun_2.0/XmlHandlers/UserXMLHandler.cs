@@ -119,7 +119,166 @@ namespace Neptun_2._0
 
             return new Admin(id, name, type, pw);
         }
+
+        public string GetUserName(string neptunCode)
+        {
+            string name = "";
+
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
+            name = GetValue(ref xmlReader, "name");
+
+            xmlReader.Dispose();
+            return name;
+        }
+
+        public List<string> GetSubjectIds(string neptunCode)
+        {
+            //TODO try catch
+            List<string> subjects = new List<string>();
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
+
+            subjects = GetList(ref xmlReader, "lectures", "id");
+
+            return subjects;
+        }
+
+        public List<string> GetRequestIds(string neptunCode)
+        {
+            //TODO try catch
+            List<string> documents = new List<string>();
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
+
+            documents = GetList(ref xmlReader, "requests", "id");
+            return documents;
+        }
+
+        public List<string> GetDemandIds(string neptunCode)
+        {
+            //TODO try catch
+            List<string> documents = new List<string>();
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
+
+            documents = GetList(ref xmlReader, "demands", "id");
+            return documents;
+        }
+
+        public string CheckLogin(string neptunCode, string password)
+        {
+            XmlReader xmlReader;
+            try
+            {
+                xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
+                //TODO check header
+
+                string userpw = GetValue(ref xmlReader, "pw");
+                string userType = GetValue(ref xmlReader, "type");
+
+                xmlReader.Dispose();
+
+                if (userpw == password)
+                {
+                    return userType;
+                }
+                else
+                {
+                    return null;
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                //TODO e
+            }
+
+            return null;
+        }
         #endregion
+
+        #region functional methods
+        
+        public bool Register(string neptunCode, string subjId)
+        {
+            //TODO implement
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/lectures/", "lecture", "id", subjId);
+            return true;
+        }
+
+        public bool DeRegister(string neptunCode, string subjId)
+        {
+            //RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
+            RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/lectures/lecture", "id", subjId));
+            return true;
+        }
+
+        public bool AppendDemand(string neptunCode, string docId)
+        {
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/demands/", "demand", "id", docId);
+            return true;
+        }
+
+        public bool AppendRequest(string neptunCode, string docId)
+        {
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/requests/", "request", "id", docId);
+            return true;
+        }
+
+        #endregion
+
+        #region helper methods
+        
+        bool IsValid()
+        {
+            //TODO implement
+            return true;
+        }
+
+        private string GetXmlFileName(string id)
+        {
+            return "Users/" + id + ".xml";
+        }
+        #endregion
+
+
+
+        /* public User GetUser(string neptunCode)
+        {
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
+            //TODO .Create() exception handling + try catch
+
+            //TODO resolve
+            xmlReader.Read();
+            xmlReader.Read();
+
+            string id = "";
+            string name = "";
+            string type = "";
+            List<string> subjects = new List<string>();
+            List<string> documents = new List<string>();
+
+            try
+            {
+                while (xmlReader.Read())
+                {
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == neptunCode))
+                    {
+                        id = xmlReader.GetAttribute("id");
+                        name = GetValue(ref xmlReader, "name");
+                        type = GetValue(ref xmlReader, "type");
+
+                        subjects = GetList(ref xmlReader, "lectures", "id");
+                        documents = GetList(ref xmlReader, "documents", "id");
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                //TODO e
+            }
+
+            return new User(id, name, type, subjects, documents);
+
+        }*/
 
         #region savers
 
@@ -220,148 +379,5 @@ namespace Neptun_2._0
         }
         */
         #endregion
-
-        #region getters
-        public string GetUserName(string neptunCode)
-        {
-            string name = "";
-
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
-            name = GetValue(ref xmlReader, "name");
-
-            xmlReader.Dispose();
-            return name;
-        }
-
-       /* public User GetUser(string neptunCode)
-        {
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
-            //TODO .Create() exception handling + try catch
-
-            //TODO resolve
-            xmlReader.Read();
-            xmlReader.Read();
-
-            string id = "";
-            string name = "";
-            string type = "";
-            List<string> subjects = new List<string>();
-            List<string> documents = new List<string>();
-
-            try
-            {
-                while (xmlReader.Read())
-                {
-                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == neptunCode))
-                    {
-                        id = xmlReader.GetAttribute("id");
-                        name = GetValue(ref xmlReader, "name");
-                        type = GetValue(ref xmlReader, "type");
-
-                        subjects = GetList(ref xmlReader, "lectures", "id");
-                        documents = GetList(ref xmlReader, "documents", "id");
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                //TODO e
-            }
-
-            return new User(id, name, type, subjects, documents);
-
-        }*/
-
-        public List<string> GetSubjectIds(string neptunCode)
-        {
-            //TODO try catch
-            List<string> subjects = new List<string>();
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
-
-            subjects = GetList(ref xmlReader, "lectures", "id");
-
-            return subjects;
-        }
-
-
-        //DOCUMENT helyett demand vagy request
-        public List<string> GetDocumentIds(string neptunCode)
-        {
-            //TODO try catch
-            List<string> documents = new List<string>();
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
-
-            documents = GetList(ref xmlReader, "documents", "id");
-            return documents;
-        }
-
-        public string CheckLogin(string neptunCode, string password)
-        {
-            XmlReader xmlReader;
-            try
-            {
-                xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
-                //TODO check header
-
-                string userpw = GetValue(ref xmlReader, "pw");
-                string userType = GetValue(ref xmlReader, "type");
-
-                xmlReader.Dispose();
-
-                if (userpw == password)
-                {
-                    return userType;
-                }
-                else
-                {
-                    return null;
-                }
-
-
-            }
-            catch (Exception e)
-            {
-                //TODO e
-            }
-
-            return null;
-        }
-        #endregion
-
-        #region functional methods
-        //TODO implement
-        public bool Register(string neptunCode, string subjId)
-        {
-            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/lectures/", "lecture", "id", subjId);
-            return true;
-        }
-
-        public bool DeRegister(string neptunCode, string subjId)
-        {
-            //RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
-            RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/lectures/lecture", "id", subjId));
-            return true;
-        }
-
-        public bool AppendDocument(string neptunCode, string docId)
-        {
-            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/documents/", "document", "id", docId);
-            return true;
-        }
-        #endregion
-
-        #region helper methods
-        //TODO implement
-        bool IsValid()
-        {
-            return true;
-        }
-
-        private string GetXmlFileName(string id)
-        {
-            return "Users/" + id + ".xml";
-        }
-        #endregion
-       
     }
 }

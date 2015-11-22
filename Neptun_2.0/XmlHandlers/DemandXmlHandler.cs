@@ -6,43 +6,6 @@ namespace Neptun_2._0
 
     class DemandXmlHandler : XmlHandler
     {
-       
-
-       /* public Demand GetDemand(string dir, string demand_Id)
-        {
-            string demandId = "";
-            string state = "";
-            string teacherId = "";
-            string roomId = "";
-            string subjectId = "";
-            string subjectName = "";
-            string day = "";
-            string startTime = "";
-            string endTime = "";
-
-            XmlReader xmlReader = XmlReader.Create(dir + demandId + ".xml");
-
-
-            while (xmlReader.Read())
-            {
-                if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "demand") && (xmlReader.GetAttribute("id") == demand_Id))
-                {
-                    demandId = xmlReader.GetAttribute("id");
-                    state = GetValue(ref xmlReader, "state");
-                    teacherId = GetValue(ref xmlReader, "teacherId");
-                    roomId = GetValue(ref xmlReader, "roomId");
-                    subjectId = GetValue(ref xmlReader, "subjectId");
-                    subjectName = GetValue(ref xmlReader, "subjectName");
-                    day = GetValue(ref xmlReader, "day");
-                    startTime = GetValue(ref xmlReader, "startTime");
-                    endTime = GetValue(ref xmlReader, "endTime");
-                }
-            }
-
-            return new Demand(demandId, state, teacherId, roomId, subjectId, subjectName, day, startTime, endTime);
-        }*/
-
-       
         #region getters
         
         public Demand GetDemand(string demand_Id)
@@ -142,8 +105,43 @@ namespace Neptun_2._0
     {
         return "Demands/" + demandId + ".xml";
     }
-    
+
         #endregion
-      
-    }  
+
+
+
+        /* public Demand GetDemand(string dir, string demand_Id)
+       {
+           string demandId = "";
+           string state = "";
+           string teacherId = "";
+           string roomId = "";
+           string subjectId = "";
+           string subjectName = "";
+           string day = "";
+           string startTime = "";
+           string endTime = "";
+
+           XmlReader xmlReader = XmlReader.Create(dir + demandId + ".xml");
+
+
+           while (xmlReader.Read())
+           {
+               if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "demand") && (xmlReader.GetAttribute("id") == demand_Id))
+               {
+                   demandId = xmlReader.GetAttribute("id");
+                   state = GetValue(ref xmlReader, "state");
+                   teacherId = GetValue(ref xmlReader, "teacherId");
+                   roomId = GetValue(ref xmlReader, "roomId");
+                   subjectId = GetValue(ref xmlReader, "subjectId");
+                   subjectName = GetValue(ref xmlReader, "subjectName");
+                   day = GetValue(ref xmlReader, "day");
+                   startTime = GetValue(ref xmlReader, "startTime");
+                   endTime = GetValue(ref xmlReader, "endTime");
+               }
+           }
+
+           return new Demand(demandId, state, teacherId, roomId, subjectId, subjectName, day, startTime, endTime);
+       }*/
+    }
 }
