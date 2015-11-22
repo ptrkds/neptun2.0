@@ -65,7 +65,7 @@ namespace Neptun_2._0
             XmlDocument doc = new XmlDocument();
             doc.Load(filepath);
             XmlNode node = doc.SelectSingleNode(xpath);
-            Console.WriteLine(node.Name);
+            //Console.WriteLine(node.Name);
 
             node.Attributes[idx].Value = value;
 
