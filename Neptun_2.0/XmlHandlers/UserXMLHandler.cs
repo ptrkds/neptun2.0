@@ -27,7 +27,7 @@ namespace Neptun_2._0
             {
                 while (xmlReader.Read())
                 {
-                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "student") && (xmlReader.GetAttribute("id") == neptunCode))
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == neptunCode))
                     {
                         id = xmlReader.GetAttribute("id");
                         name = GetValue(ref xmlReader, "name");
@@ -66,7 +66,7 @@ namespace Neptun_2._0
             {
                 while (xmlReader.Read())
                 {
-                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "teacher") && (xmlReader.GetAttribute("id") == neptunCode))
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == neptunCode))
                     {
                         id = xmlReader.GetAttribute("id");
                         name = GetValue(ref xmlReader, "name");
@@ -103,7 +103,7 @@ namespace Neptun_2._0
             {
                 while (xmlReader.Read())
                 {
-                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "admin") && (xmlReader.GetAttribute("id") == neptunCode))
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "user") && (xmlReader.GetAttribute("id") == neptunCode))
                     {
                         id = xmlReader.GetAttribute("id");
                         name = GetValue(ref xmlReader, "name");
