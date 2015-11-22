@@ -8,11 +8,11 @@ namespace Neptun_2._0
 {
     class Request
     {
-        public String id;
-        public String state;
-        public String owner;
-        public String subject;
-        public String text;
+        private String id;
+        private String state;
+        private String owner;
+        private String subject;
+        private String text;
 
         public Request(string id, string state, string subject, string owner, string text)
         {
