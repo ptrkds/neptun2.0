@@ -43,15 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
-    <Compile Include="ClassRoom.cs" />
-    <Compile Include="Demand.cs" />
+    <Compile Include="Structure\Admin.cs" />
+    <Compile Include="Structure\ClassRoom.cs" />
+    <Compile Include="Structure\Demand.cs" />
     <Compile Include="Interfaces\AdminInterface.cs" />
     <Compile Include="Registry.cs" />
-    <Compile Include="Request.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Subject.cs" />
-    <Compile Include="Teacher.cs" />
+    <Compile Include="Structure\Request.cs" />
+    <Compile Include="Structure\Student.cs" />
+    <Compile Include="Structure\Subject.cs" />
+    <Compile Include="Structure\Teacher.cs" />
     <Compile Include="XmlHandlers\ClassRoomXmlHandler.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Interfaces\Interface.cs" />
@@ -64,7 +64,7 @@
     <Compile Include="XmlHandlers\RequestXmlHandler.cs" />
     <Compile Include="XmlHandlers\SubjectXmlHandler.cs" />
     <Compile Include="Interfaces\TeacherInterface.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Structure\User.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="XmlHandlers\UserXmlHandler.cs" />
     <Compile Include="XmlHandlers\XmlHandler.cs" />
