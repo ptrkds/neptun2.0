@@ -100,7 +100,7 @@ namespace Neptun_2._0
             judgestr = "declined";
         }
 
-        SetAttribute(GetXmlFileName(requestId), "/request/state", 0, judgestr);
+        SetValue(GetXmlFileName(requestId), "/request/state", judgestr);
 
         return true;
     }

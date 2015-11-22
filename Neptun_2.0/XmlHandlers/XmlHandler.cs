@@ -66,8 +66,21 @@ namespace Neptun_2._0
             doc.Load(filepath);
             XmlNode node = doc.SelectSingleNode(xpath);
             //Console.WriteLine(node.Name);
-
+            
             node.Attributes[idx].Value = value;
+
+            doc.Save(filepath);
+        }
+
+        public void SetValue(string filepath, string xpath, string value)
+        {
+            //TODO try catch
+            //sets value as the [idx] attribute of the given xpath
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filepath);
+            XmlNode node = doc.SelectSingleNode(xpath);
+
+            node.InnerText = value;
 
             doc.Save(filepath);
         }
