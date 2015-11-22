@@ -88,7 +88,46 @@ namespace Neptun_2._0
         #endregion
 
         #region functional methods
+        public bool CreateSubject(Subject subject)
+        {
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = "\t";
 
+            using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(subject.getId()), settings))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("lecture");
+                writer.WriteAttributeString("id", subject.getId());
+
+                writer.WriteElementString("name", subject.getName());
+                writer.WriteElementString("teacherId", subject.getTeacher());
+                writer.WriteElementString("day", subject.getDay());
+                writer.WriteElementString("startTime", subject.getStartTime());
+                writer.WriteElementString("endTime", subject.getEndTime());
+                writer.WriteStartElement("students");
+                foreach(string student in subject.getStudents())
+                {
+                    writer.WriteElementString("student", string.Empty);
+                    writer.WriteAttributeString("id", student);
+                }
+                writer.WriteEndElement();
+                writer.WriteStartElement("blacklist");
+
+                foreach (string student in subject.getBlacklist())
+                {
+                    writer.WriteElementString("student", string.Empty);
+                    writer.WriteAttributeString("id", student);
+
+                }
+                writer.WriteEndElement();
+
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+            }
+
+            return true;
+        }
 
         public bool Register(string subjId, string neptunCode)
         {

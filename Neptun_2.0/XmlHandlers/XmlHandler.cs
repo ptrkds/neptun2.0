@@ -140,6 +140,8 @@ namespace Neptun_2._0
             
             doc.Save(filepath);
         }
+
+        //MAINTENACNE diák deregister, tárgyak törlése
         #endregion
 
         #region helper methods
