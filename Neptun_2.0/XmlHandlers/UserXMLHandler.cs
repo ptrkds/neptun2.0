@@ -170,8 +170,9 @@ namespace Neptun_2._0
                 xmlReader = XmlReader.Create("Users/" + neptunCode + ".xml");
                 //TODO check header
 
-                string userpw = GetValue(ref xmlReader, "pw");
                 string userType = GetValue(ref xmlReader, "type");
+                string userpw = GetValue(ref xmlReader, "pw");
+                
 
                 xmlReader.Dispose();
 
