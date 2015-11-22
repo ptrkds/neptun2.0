@@ -14,14 +14,29 @@ namespace Neptun_2._0
         ClassRoomXmlHandler roomHandler = new ClassRoomXmlHandler();
         RequestXmlHandler requestHandler = new RequestXmlHandler();
 
-        public bool checkLogin(string id, string pw)
+        public String checkLogin(string id, string pw)
         {
             return userHandler.CheckLogin(id, pw);
         }
 
-        public User GetUser(string id)
+        /*public User GetUser(string id)
         {
             return userHandler.GetUser(id);
+        }*/
+
+        public Teacher GetTeacher(string id)
+        {
+            return userHandler.GetTeacher(id);
+        }
+
+        public Student GetStudent(string id)
+        {
+            return userHandler.GetStudent(id);
+        }
+
+        public Admin GetAdmin(string id)
+        {
+            return userHandler.GetAdmin(id);
         }
 
 

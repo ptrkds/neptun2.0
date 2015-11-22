@@ -33,8 +33,6 @@ namespace Neptun_2._0
 
     class Neptun
     {
-        private Registry registry = new Registry();
-
         private Controller controller = new Controller();
 
         private InterfaceLogin il = new InterfaceLogin();
@@ -49,20 +47,20 @@ namespace Neptun_2._0
         private void login()
         {
 
-            bool success = false;
+            String success = null;
             bool error = false;
 
-            while (success == false)
+            while (success == null)
             {
                 cmd = il.Login(error);
                 switch (cmd.cmd)
                 {
                     case "login":
-                        success = controller.requestLogin(cmd.data, registry);
-                        if (success)
+                        success = controller.requestLogin(cmd.data);
+                        if (success != null)
                         {
-                            controller.start(cmd.data[0]);
-                            success = false;
+                            controller.start(cmd.data[0], success);
+                            success = null;
                         }
                         else
                         {
@@ -71,8 +69,8 @@ namespace Neptun_2._0
                         break;
                     case "exit":
                         exit();
-                        success = true;
-                        break;
+                        //success = "exit";
+                        return;
                 }
             }            
         }

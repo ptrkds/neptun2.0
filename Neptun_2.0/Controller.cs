@@ -21,15 +21,11 @@ namespace Neptun_2._0
 
         CMD cmd;
 
-        private Registry registry;
+        private Database db = new Database();
 
-        public bool requestLogin(List<String> data, Registry _registry)
+        public String requestLogin(List<String> data)
         {
-            registry = _registry;
-
-            User user;
-
-            bool check = false;
+            String check = null;
             try
             {
                 check = db.checkLogin(data[0], data[1]);
@@ -42,18 +38,29 @@ namespace Neptun_2._0
         }
 
         //When user logged in
-        public void start(String neptun_code)
+        public void start(String neptun_code, String type)
         {
             try
             {
-                userLoggedIn = registry.GetUser(neptun_code);
+                switch (type)
+                {
+                    case "admin":
+                        userLoggedIn = db.GetAdmin(neptun_code);
+                        break;
+                    case "teacher":
+                        userLoggedIn = db.GetTeacher(neptun_code);
+                        break;
+                    case "student":
+                        userLoggedIn = db.GetStudent(neptun_code);
+                        break;
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
 
-            switch (userLoggedIn.getType())
+            switch (type)
             {
                 case "admin":
                     adminMain();
@@ -82,10 +89,10 @@ namespace Neptun_2._0
                         //demandJudgement();
                         break;
                     case "maintenance":
-                        //requestMaintenance();
+                        requestMaintenance();
                         break;
                     case "requestJudgement":
-                        //requestJudgement();
+                        requestJudgement();
                         break;
                     case "logout":
                         return;
@@ -143,16 +150,16 @@ namespace Neptun_2._0
                 switch (cmd.cmd)
                 {
                     case "timeTable":
-                        //requestStudentTimeTable();
+                        requestStudentTimeTable();
                         break;
                     case "requestSubmission":
-                        //requestRequestSubmission();
+                        requestRequestSubmission();
                         break;
                     case "registerForSubject":
-                        //registerForSubject();
+                        registerForSubject();
                         break;
                     case "deregisterSubject":
-                        //deregisterSubject();
+                        deregisterSubject();
                         break;
                     case "logout":
                         return;
@@ -281,12 +288,12 @@ namespace Neptun_2._0
                       int ret = requestDemandChange(cmd.data[0]);
                       if (ret == 1)
                       {
-                      //    tui.demandChange_successful();
+                          tui.demandChange_successful();
                           return true;
                       }
                       else if (ret == -1)
                       {
-                      //    tui.demandChange_unsuccessful();
+                          tui.demandChange_unsuccessful();
                           return true;
                       }                  
                 }
@@ -299,10 +306,10 @@ namespace Neptun_2._0
         
         private int requestDemandChange(String demand_id)
         {
-            Demand demand = registry.getDemand(demand_id); ;
+            Demand demand = db.getDemand(demand_id); ;
 
 
-            cmd = tui.demandChangeSubMenu(demand, registry.getClassRooms());
+            cmd = tui.demandChangeSubMenu(demand, db.getAllRoom());
 
             if (cmd.cmd != "exit")
             {
@@ -326,14 +333,14 @@ namespace Neptun_2._0
         }
         
         
-        //Demand Judgement
+       /* //Demand Judgement
         private bool demandJudgement()
         {
             List<Demand> demands = new List<Demand>();
 
             try
             {
-                demands = registry.getDemands();
+                demands = db.getAllDemand();
             }
             catch (Exception e)
             {
@@ -381,13 +388,13 @@ namespace Neptun_2._0
             {
                 return false;
             }
-        }
+        }*/
         
         
         //Demand Submission
         private bool requestDemandSubmission(String selected_class = "", String startTime = "", String endTime="")
         {
-            List<ClassRoom> rooms = registry.getClassRooms();
+            List<ClassRoom> rooms = db.getAllRoom();
 
             cmd = tui.demandSubmissionMenu(rooms, selected_class, startTime, endTime);
 
@@ -400,12 +407,12 @@ namespace Neptun_2._0
 
                 if (db.demandSubmission(newDemand, userLoggedIn.getNeptunCode()))
                 {
-                  //  tui.demandSubmission_successful();
+                    tui.demandSubmission_successful();
                     return true;
                 }
                 else
                 {
-                  //  tui.demandSubmission_unsuccessful();
+                    tui.demandSubmission_unsuccessful();
                     return false;
                 }
             }
@@ -423,7 +430,7 @@ namespace Neptun_2._0
 
             try
             {
-                subjects = registry.getSubjects();
+                subjects = db.getAllSubject();
             }
             catch (Exception e)
             {
@@ -471,9 +478,6 @@ namespace Neptun_2._0
         {
             List<short_subject> subjects = db.getSubjects(userLoggedIn.getNeptunCode());
 
-
-
-
             while (true)
             {
                 cmd = sui.selectSubject(subjects);
@@ -516,9 +520,9 @@ namespace Neptun_2._0
 
             if (cmd.cmd != "exit")
             {
-                List<ClassRoom> classes = db.getClasses(cmd.data[0], cmd.data[1]);
-                cmd2 = tui.selectClass(classes);
-                if (cmd2.cmd2 != "exit")
+                List<ClassRoom> classes = db.getFreeClasses(cmd.data[0], cmd.data[1]);
+                CMD cmd2 = tui.selectClass(classes);
+                if (cmd2.cmd != "exit")
                 {
                     requestDemandSubmission(cmd2.data[0], cmd.data[0], cmd.data[1]);
                     return true;
