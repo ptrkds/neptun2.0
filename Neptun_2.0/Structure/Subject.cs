@@ -11,6 +11,7 @@ namespace Neptun_2._0
         private String id;
         private String name;
         private String teacher;
+        private String classRoom;
         private String day;
         private String startTime;
         private String endTime;
@@ -20,11 +21,12 @@ namespace Neptun_2._0
         private List<String> blacklist;
 
 
-        public Subject(string id, string name, string teacher, string day, string startTime, string endTime, List<string> students, List<string> blacklist)
+        public Subject(string id, string name, string teacher, string classRoom, string day, string startTime, string endTime, List<string> students, List<string> blacklist)
         {
             this.id = id;
             this.name = name;
             this.teacher = teacher;
+            this.classRoom = classRoom;
             this.day = day;
             this.startTime = startTime;
             this.endTime = endTime;
@@ -40,6 +42,16 @@ namespace Neptun_2._0
         public void setId(String _id)
         {
             id = _id;
+        }
+
+        public String getClassRoom()
+        {
+            return classRoom;
+        }
+
+        public void setClassRoom(string _classRoom)
+        {
+            classRoom = _classRoom;
         }
 
         public String getName()

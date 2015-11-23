@@ -77,9 +77,9 @@ namespace Neptun_2._0
         // TODO átírni azt, hogy mindkettő igaz legyen.
         public bool BlockStudent(string subj_id, string neptun_code)
         {
-            bool ret;
-            userHandler.DeRegister(neptun_code, subj_id);
-            return subjectHandler.BlockStudent(subj_id, neptun_code);
+            bool user = userHandler.DeRegister(neptun_code, subj_id);
+            bool subject = subjectHandler.BlockStudent(subj_id, neptun_code);
+            return user && subject;
         }
 
         public List<Subject> TimeTable(string neptun_code)
@@ -189,6 +189,22 @@ namespace Neptun_2._0
 
         public bool registerForSubject(String neptun_code, String subject_id)
         {
+            List<String> blacklist = subjectHandler.GetBlockedStudentIds(subject_id);
+
+            bool blocked = false;
+
+            foreach (string s in blacklist)
+            {
+                if (s == neptun_code)
+                {
+                    blocked = true;
+                }
+            }
+
+            int students = subjectHandler.GetStudentIds(subject_id).Count;
+
+            //if(subjectHandler)
+
             bool user = userHandler.Register(neptun_code, subject_id);
             bool subject = subjectHandler.Register(subject_id, neptun_code);
 
@@ -264,8 +280,6 @@ namespace Neptun_2._0
             return requests;
         }
 
-
-
         public bool requestJudgement(String request_id, String neptun_code, Boolean state)
         {
             return requestHandler.JudgeRequest(request_id, state);
@@ -279,7 +293,7 @@ namespace Neptun_2._0
                 Demand newDemand = demandHandler.GetDemand(demand_id);
 
                 Subject newSubject = new Subject(newDemand.getSubjectId(), newDemand.getSubjectName(), newDemand.getOwner(),
-                        newDemand.getDay(), newDemand.getStartTime(), newDemand.getEndTime(), 
+                        newDemand.getRoomId(), newDemand.getDay(), newDemand.getStartTime(), newDemand.getEndTime(), 
                         new List<string>(), new List<string>());
 
                 subject = subjectHandler.CreateSubject(newSubject);
