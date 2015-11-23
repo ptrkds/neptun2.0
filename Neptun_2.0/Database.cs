@@ -74,7 +74,6 @@ namespace Neptun_2._0
             return students;
         }
 
-        // TODO átírni azt, hogy mindkettő igaz legyen.
         public bool BlockStudent(string subj_id, string neptun_code)
         {
             bool user = userHandler.DeRegister(neptun_code, subj_id);
@@ -136,18 +135,6 @@ namespace Neptun_2._0
             return demands;
         }
 
-        /*public bool demandJudgement(String demand_id, String neptun_code, Boolean state)
-        {
-            Demand newDemand = demandHandler.GetDemand(demand_id);
-
-            bool userNewDemand = userHandler.Register(neptun_code, newDemand.subjectId);
-
-            //TODO
-            bool newSubject = subjectHandler
-
-        }
-        */
-
         public List<ClassRoom> getAllRoom()
         {
             List<ClassRoom> rooms = new List<ClassRoom>();
@@ -203,11 +190,14 @@ namespace Neptun_2._0
 
             int students = subjectHandler.GetStudentIds(subject_id).Count;
 
-            //if(subjectHandler)
-
-            bool user = userHandler.Register(neptun_code, subject_id);
-            bool subject = subjectHandler.Register(subject_id, neptun_code);
-
+            //TODO classRoom limit
+            bool user = false;
+            bool subject = false;
+            if (!blocked)
+            {
+                user = userHandler.Register(neptun_code, subject_id);
+                subject = subjectHandler.Register(subject_id, neptun_code);
+            }
             return user && subject;
         }
 
@@ -308,6 +298,5 @@ namespace Neptun_2._0
         {
             return requestHandler.GetRequest(request_id);
         }
-
     }
 }
