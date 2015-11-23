@@ -52,16 +52,16 @@ namespace Neptun_2._0
         settings.Indent = true;
         settings.IndentChars = "\t";
 
-        using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(demand.getDemandId()), settings))
+        using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(demand.getId()), settings))
         {
             writer.WriteStartDocument();
             writer.WriteStartElement("demand");
-            writer.WriteAttributeString("id", demand.getDemandId());
+            writer.WriteAttributeString("id", demand.getId());
             writer.WriteElementString("state", demand.getState());
-            writer.WriteElementString("teacherId", demand.getTeacherId());
+            writer.WriteElementString("teacherId", demand.getOwner());
             writer.WriteElementString("roomId", demand.getRoomId());
             writer.WriteElementString("subjectId", demand.getSubjectId());
-            writer.WriteElementString("subjectName", demand.getDemandId());
+            writer.WriteElementString("subjectName", demand.getSubjectName());
             writer.WriteElementString("day", demand.getDay());
             writer.WriteElementString("startTime", demand.getStartTime());
             writer.WriteElementString("endTime", demand.getEndTime());
