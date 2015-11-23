@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="66700a0c-e386-4d85-98b5-1aca9733b3cf" name="Szures" linkedPackageId="b22fce34-2bb9-489d-93c2-5cf8b5649da5" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="66700a0c-e386-4d85-98b5-1aca9733b3cf" name="Szures" linkedPackageId="b22fce34-2bb9-489d-93c2-5cf8b5649da5" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="fb6f3f0c-d315-471c-bbee-3fcf66d2c52f" name="Szures" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -85,9 +85,6 @@
               </controlFlow>
             </flowNodeTargets>
           </mergeNode>
-          <activityFinalNode Id="76879475-9b44-4fb7-87ff-808bb8bd7bd6" name="ActivityFinal1" isLeaf="false">
-            <elementDefinition Id="7b4ccb77-f9cf-404d-9f1e-0701df3db4b4" />
-          </activityFinalNode>
           <decisionNode Id="f49ad50b-d86f-4e8a-ad16-a273fa74c6bf" name="Decision3" isLeaf="false">
             <elementDefinition Id="c9b012d4-59e2-4be5-88f9-de6dea891a7a" />
             <flowNodeTargets>
@@ -95,9 +92,13 @@
                 <mergeNodeMoniker Id="578315b9-8355-4f54-9d27-d461f23e4738" LastKnownName="Merge2" />
                 <elementDefinition Id="682d2594-cf80-42ab-84fb-f6657d4c0400" />
               </controlFlow>
-              <controlFlow Id="8e89c5b6-eb45-402c-b972-da68900cf87e" isLeaf="false">
-                <activityFinalNodeMoniker Id="76879475-9b44-4fb7-87ff-808bb8bd7bd6" LastKnownName="ActivityFinal1" />
-                <elementDefinition Id="c2ab101c-fb76-48d3-82d4-5878026be108" />
+              <controlFlow Id="9df0e0c8-1491-4c34-9811-f93b2aa96815" guard="igény leadás indítása" isLeaf="false">
+                <opaqueActionMoniker Id="7b02dfa6-cea0-4ee8-8a70-c5e6ea5e2b85" LastKnownName="Igény kitöltése" />
+                <elementDefinition Id="06c78c2c-8416-47b4-a57e-bebbecf2dde1" />
+              </controlFlow>
+              <controlFlow Id="dacd9253-8ca3-4169-8155-649b85215727" guard="visszalépés" isLeaf="false">
+                <opaqueActionMoniker Id="ab2c04b1-1bf8-4c29-9749-2305eec90a6b" LastKnownName="Főmenübe lépés" />
+                <elementDefinition Id="a6b46ff4-bc3c-4fc6-a8b2-a4776fc3a330" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -110,6 +111,27 @@
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
+          <opaqueAction Id="7b02dfa6-cea0-4ee8-8a70-c5e6ea5e2b85" name="Igény kitöltése" isLeaf="false">
+            <elementDefinition Id="aee11069-3c90-4406-875d-cbb7b4a9023c" />
+            <flowNodeTargets>
+              <controlFlow Id="a1c335d8-d665-4a89-bc3e-175e5676a23f" isLeaf="false">
+                <activityFinalNodeMoniker Id="a505fbce-5b1c-4789-807c-4a455dad72d6" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="57a53ec5-8326-439e-8d42-74f739a2e5bd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ab2c04b1-1bf8-4c29-9749-2305eec90a6b" name="Főmenübe lépés" isLeaf="false">
+            <elementDefinition Id="90aadc2e-cf1f-4532-894d-c4aaac0fac39" />
+            <flowNodeTargets>
+              <controlFlow Id="51a12c50-53cf-4e73-b232-b51dd53f1239" isLeaf="false">
+                <activityFinalNodeMoniker Id="a505fbce-5b1c-4789-807c-4a455dad72d6" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="f5139a5b-8803-4309-a1e5-381a96ce491e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="a505fbce-5b1c-4789-807c-4a455dad72d6" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="0bc308c0-1009-4f1c-bb46-fda3935e9688" />
+          </activityFinalNode>
         </nodes>
       </activity>
     </activityRootModelHasActivity>

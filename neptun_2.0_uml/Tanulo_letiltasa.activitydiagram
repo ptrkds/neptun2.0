@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7f57aafb-511d-4d50-a4fa-8cfb12c277b2" name="Tanulo_letiltasa" linkedPackageId="0bb4d958-2d0d-49f9-8160-df81c41f15a4" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="7f57aafb-511d-4d50-a4fa-8cfb12c277b2" name="Tanulo_letiltasa" linkedPackageId="0bb4d958-2d0d-49f9-8160-df81c41f15a4" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="9c62755f-de0e-4ac2-bd67-86835c14e4fb" name="Tanulo_letiltasa" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -48,9 +48,9 @@
           <opaqueAction Id="ca741fe1-119f-4e0e-91e0-95236678b6b5" name="Tanuló letiltása menüpont kiválasztása" isLeaf="false">
             <elementDefinition Id="dc1f0ef4-8602-44a8-8070-94ea8427fff7" />
             <flowNodeTargets>
-              <controlFlow Id="0e773682-1842-4fe3-a6dd-133392793080" isLeaf="false">
-                <mergeNodeMoniker Id="015bb3d3-9873-47ab-8084-194374dd4c57" LastKnownName="Merge2" />
-                <elementDefinition Id="5befd684-58c9-4ebb-8c90-5f95273bf9bd" />
+              <controlFlow Id="b57565dc-d81e-49bf-be69-1710fbd40fef" isLeaf="false">
+                <opaqueActionMoniker Id="c79b087d-1196-4a80-a9b1-7124b774beb5" LastKnownName="Tárgy kiválasztása" />
+                <elementDefinition Id="c96e64c3-ceff-4f45-ae3e-648219de243c" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
@@ -58,42 +58,29 @@
             <elementDefinition Id="a4a2b1ea-dc5d-4a3f-ad30-783d32ff3aaf" />
             <flowNodeTargets>
               <controlFlow Id="3707b2ff-d1ea-4496-918e-335c0d00ba19" isLeaf="false">
-                <opaqueActionMoniker Id="aae0be7e-396a-4d33-a95f-7eca00bcc825" LastKnownName="Diák nevének megadása" />
+                <opaqueActionMoniker Id="aae0be7e-396a-4d33-a95f-7eca00bcc825" LastKnownName="Diák kiválasztása" />
                 <elementDefinition Id="75841dc7-123c-47b8-a8f1-f66adde596e0" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <decisionNode Id="74956950-ab2e-4d0c-8557-0716b15c0b4f" name="Decision1" isLeaf="false">
-            <elementDefinition Id="8bb2f30b-3ddc-4bbc-bc99-35d7467741a1" />
-            <flowNodeTargets>
-              <controlFlow Id="c2e3e97e-86b1-475c-8133-8237a57fd495" guard="helytelen adatok" isLeaf="false">
-                <mergeNodeMoniker Id="015bb3d3-9873-47ab-8084-194374dd4c57" LastKnownName="Merge2" />
-                <elementDefinition Id="e1f80df1-98b5-41ea-bd5b-6ae1ec021b72" />
-              </controlFlow>
-              <controlFlow Id="9197db6a-0381-4b94-ac3d-f88dbf22b478" isLeaf="false">
-                <activityFinalNodeMoniker Id="b4f67326-a4dc-41ab-af5b-cb9827b5a029" LastKnownName="ActivityFinal1" />
-                <elementDefinition Id="ad1317bc-dc2c-47ae-8887-8f9045bf2202" />
-              </controlFlow>
-            </flowNodeTargets>
-          </decisionNode>
-          <mergeNode Id="015bb3d3-9873-47ab-8084-194374dd4c57" name="Merge2" isLeaf="false">
-            <elementDefinition Id="85196b01-cbdf-4bed-ba2e-1dfd37afab6a" />
-            <flowNodeTargets>
-              <controlFlow Id="5f1c1401-a728-4a65-8d00-8460d1760896" isLeaf="false">
-                <opaqueActionMoniker Id="c79b087d-1196-4a80-a9b1-7124b774beb5" LastKnownName="Tárgy kiválasztása" />
-                <elementDefinition Id="350b6148-aea3-47f1-9a38-ca0a4ff392f5" />
-              </controlFlow>
-            </flowNodeTargets>
-          </mergeNode>
           <activityFinalNode Id="b4f67326-a4dc-41ab-af5b-cb9827b5a029" name="ActivityFinal1" isLeaf="false">
             <elementDefinition Id="c6402350-fda4-4152-a57e-aab85bacb82b" />
           </activityFinalNode>
-          <opaqueAction Id="aae0be7e-396a-4d33-a95f-7eca00bcc825" name="Diák nevének megadása" isLeaf="false">
+          <opaqueAction Id="aae0be7e-396a-4d33-a95f-7eca00bcc825" name="Diák kiválasztása" isLeaf="false">
             <elementDefinition Id="927e9787-b908-42f7-a5b8-a64b9314c45c" />
             <flowNodeTargets>
-              <controlFlow Id="b101d3dc-4650-4537-a28f-a4b8a3f1ae37" isLeaf="false">
-                <decisionNodeMoniker Id="74956950-ab2e-4d0c-8557-0716b15c0b4f" LastKnownName="Decision1" />
-                <elementDefinition Id="a40a4447-4774-405f-86b9-ef1cccea4ba0" />
+              <controlFlow Id="ed12976a-a3d5-4207-997b-03c3c78f5151" isLeaf="false">
+                <opaqueActionMoniker Id="4e2750f2-f79d-4a6d-94b8-99a93a85a852" LastKnownName="Tanuló letiltásra kerül" />
+                <elementDefinition Id="883038ff-f72f-4a7e-a17b-2d76c2ae25c7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="4e2750f2-f79d-4a6d-94b8-99a93a85a852" name="Tanuló letiltásra kerül" isLeaf="false">
+            <elementDefinition Id="ca3a2cf9-3d04-4cf4-b551-903535f207d1" />
+            <flowNodeTargets>
+              <controlFlow Id="ce077148-2e45-4bf4-aba4-e9e04c70f2ce" isLeaf="false">
+                <activityFinalNodeMoniker Id="b4f67326-a4dc-41ab-af5b-cb9827b5a029" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="8c074190-b5a6-41ab-92c9-3e1314cd923d" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>

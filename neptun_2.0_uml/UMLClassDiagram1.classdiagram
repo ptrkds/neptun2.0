@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2f976b32-3a9c-4a89-922b-84a10f47bf2d" name="UMLClassDiagram1" linkedPackageId="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="2f976b32-3a9c-4a89-922b-84a10f47bf2d" name="UMLClassDiagram1" linkedPackageId="c17b685b-9210-43b0-b1e5-1ca1f0e51be0" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="7e971e0c-2970-4309-bea5-4a91f822fb9c" name="Neptun" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -2213,13 +2213,13 @@
                 <parameter Id="3cf8c938-2570-4094-a3c0-6753b287b768" direction="Return">
                   <elementDefinition Id="9e918c8b-169d-4668-9db9-6ce4a83c86c2" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="c659f1fc-e626-4dd4-a02d-a7df73afea77" LastKnownName="Boolean" />
+                    <referencedTypeMoniker Id="3cb9d7c1-697d-4c26-9a1e-9198ad1ede51" LastKnownName="String" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="f2cbd483-5822-4048-9169-62cf792941c2" name="GetUser" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="f2cbd483-5822-4048-9169-62cf792941c2" name="GetAdmin" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="fd544225-1704-488f-a346-220a53e7d986" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -2231,7 +2231,7 @@
                 <parameter Id="09ed013f-fe97-4fe9-8c14-e0ba360f8897" direction="Return" isUnique="false">
                   <elementDefinition Id="78af7319-02f2-4929-895f-cc1e53c22f67" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="b33d0581-1520-409f-bdd0-7c428f88581f" LastKnownName="User" />
+                    <referencedTypeMoniker Id="ded96c60-0fb9-476d-9cfb-70ab50a50f24" LastKnownName="Admin" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2308,7 +2308,7 @@
                 <parameter Id="5e99f619-6d66-412b-a629-d4d40df65b56" direction="Return" isUnique="false">
                   <elementDefinition Id="17db6d27-84e2-4120-aeb5-5951463e7105" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="1a16d937-ccd5-4613-8640-8ec159e8b9d4" LastKnownName="List&lt;subject&gt;" />
+                    <referencedTypeMoniker Id="dcb753e9-1ece-4fa2-a84b-2a98e0593fe3" LastKnownName="List&lt;Subject&gt;" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2522,7 +2522,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="db346d5a-c802-420e-86c6-a635f6229cff" name="requesSubmission" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="db346d5a-c802-420e-86c6-a635f6229cff" name="requestSubmission" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="da32d739-2aa8-4409-b097-24fc8f9db415" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -2576,6 +2576,73 @@
                   <elementDefinition Id="dd527a28-b871-49ee-9e7f-02b034ae5a1b" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="b3ca4c7b-90d6-41c5-9989-f67b831b5d7d" LastKnownName="Boolean" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="07ae3684-e9e7-4f6c-8044-1ab954010d60" name="GetTeacher" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b6b67562-b61c-4a8e-a1e3-de30cea42124" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7493e70c-4423-48d4-80f7-1eb6c924810a" name="string id" direction="In" isUnique="false">
+                  <elementDefinition Id="0af64cbd-5d16-4cd7-8b7e-7ee99a2bcf9b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="26e9cc6a-6457-461f-9e73-03a5d936ae66" direction="Return" isUnique="false">
+                  <elementDefinition Id="af7765aa-922d-464e-a47b-b18ab3017ef7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="342bad1b-d4ba-4b76-b0cf-bc1a051316af" LastKnownName="Teacher" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a02b1d4b-8293-4541-ac0a-4a2861dae8a4" name="GetStudent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="841a3dc8-0dec-46bd-9bb5-2872381ce64b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ffeb830e-9e3e-4565-980b-2768cee4b5fc" name="string id" direction="In" isUnique="false">
+                  <elementDefinition Id="e7f975a3-a8e8-4f74-9396-4656c7e9247e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="36930595-e850-44df-b672-0cc94f648ff9" direction="Return" isUnique="false">
+                  <elementDefinition Id="bb6456c6-b0a5-4918-874f-5cdca15f7741" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4c4b4d35-720a-4f14-a156-6393a2d73035" LastKnownName="Student" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4d753f6e-d808-45cc-888d-62b7ec6c884c" name="maintenance" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="211326ac-c2bc-4d6d-85c1-86ee67e3f067" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="86ef9107-72bd-422c-8bd4-76d9e6a543bc" direction="Return" isUnique="false">
+                  <elementDefinition Id="b6ecac87-9770-4fc0-b4bc-b64adae2c1ea" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="f1d22887-1700-43e7-89b4-a86547fc761e" LastKnownName="bool" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="366d98ee-0336-4b5d-a073-b5e931df6951" name="getRequest" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0b8f8f5e-148a-43b4-8355-cd04234ecd30" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a8518704-078f-4113-b8f5-99e19f3afec7" name="String request_id" direction="In" isUnique="false">
+                  <elementDefinition Id="9bcf3a61-7e59-47cb-8991-cf6048c1db45" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fb28491a-77f7-453f-9400-25d5a60e5993" direction="Return" isUnique="false">
+                  <elementDefinition Id="790b1146-ad76-4b71-8256-75ff2a46c004" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="a55f1cec-41ef-4d88-883f-da1cfb52d1fb" LastKnownName="Request" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2650,11 +2717,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="c659f1fc-e626-4dd4-a02d-a7df73afea77" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
-        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="7db711bf-b95f-4b18-9521-b50ff58857b2" name="List&lt;short_user&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;short_user&gt;">
         <elementDefinition Id="70501856-0edb-453d-af9f-6fc706883563" />
       </referencedType>
@@ -2662,11 +2724,6 @@
     <packageHasNamedElement>
       <referencedType Id="4b84a4bd-ee21-493c-b586-9c1b814017c8" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="1a16d937-ccd5-4613-8640-8ec159e8b9d4" name="List&lt;subject&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;subject&gt;">
-        <elementDefinition Id="dd37ea4a-7fd4-44bf-96f9-7d4032e2440d" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -3678,6 +3735,36 @@
     <packageHasNamedElement>
       <referencedType Id="469f1fd1-e34e-4a1c-b774-f64cc6c50b11" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
         <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ded96c60-0fb9-476d-9cfb-70ab50a50f24" name="Admin" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Admin">
+        <elementDefinition Id="197208e9-0277-4ae3-a5e6-eeffd0cd3817" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="342bad1b-d4ba-4b76-b0cf-bc1a051316af" name="Teacher" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Teacher">
+        <elementDefinition Id="af3414d7-1977-4dee-ae65-f5c56bfb5aed" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4c4b4d35-720a-4f14-a156-6393a2d73035" name="Student" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Student">
+        <elementDefinition Id="9508a319-ff31-434d-a1b8-1776496a238e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3cb9d7c1-697d-4c26-9a1e-9198ad1ede51" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="dcb753e9-1ece-4fa2-a84b-2a98e0593fe3" name="List&lt;Subject&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Subject&gt;">
+        <elementDefinition Id="f401601e-f12c-4e81-bcdc-957534c2f58e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a55f1cec-41ef-4d88-883f-da1cfb52d1fb" name="Request" isAbstract="false" isLeaf="false" cachedFullName="neptun_2.0_uml::Request">
+        <elementDefinition Id="587f9cae-f49c-41c1-9155-572c23019141" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

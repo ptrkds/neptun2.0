@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="fd2f2ae6-892f-4eb1-aca4-596f48131679"
   name="neptun_2.0_uml" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1480,11 +1480,11 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="5fdaa553-752a-48a0-8ac0-9e9a5a873b6c"
+                Id="b7254d2a-a76a-4611-8900-13f66bab3f59"
                 isLeaf="false">
                 <decisionNodeMoniker
-                  Id="fa7c02d4-a9d1-417f-9071-33e185fefc02"
-                  LastKnownName="Decision1"
+                  Id="bf8bba63-ab1b-48ef-8033-208ea106b1c4"
+                  LastKnownName="Decision3"
                   LastKnownLocation="neptun_2.0_uml.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1496,7 +1496,7 @@
             <flowNodeTargets>
               <controlFlow
                 Id="af8dd33d-9339-492b-aa80-0a9a4e08b597"
-                guard="tiltólista vagy létszámlimit"
+                guard="megtelt létszám"
                 isLeaf="false">
                 <mergeNodeMoniker
                   Id="c5f11b07-4059-430f-b48d-d250b1c9590d"
@@ -1504,11 +1504,12 @@
                   LastKnownLocation="neptun_2.0_uml.uml" />
               </controlFlow>
               <controlFlow
-                Id="c198d5d9-68a9-45b0-a11b-554529736bd3"
+                Id="252a2fad-437e-48a7-a8c5-2d956c85a981"
+                guard="nincs elérve a maximum létszám"
                 isLeaf="false">
-                <activityFinalNodeMoniker
-                  Id="7ae2d35a-7a27-4c20-8032-4005f624bd55"
-                  LastKnownName="ActivityFinal1"
+                <opaqueActionMoniker
+                  Id="26bc9871-7351-4c73-af11-d6e45d213b27"
+                  LastKnownName="Tárgy felvétele"
                   LastKnownLocation="neptun_2.0_uml.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1532,6 +1533,46 @@
             Id="7ae2d35a-7a27-4c20-8032-4005f624bd55"
             name="ActivityFinal1"
             isLeaf="false" />
+          <decisionNode
+            Id="bf8bba63-ab1b-48ef-8033-208ea106b1c4"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7063be19-3eba-43ee-b6ff-852eeb3d732f"
+                guard="nincs tiltólistán a diák"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="fa7c02d4-a9d1-417f-9071-33e185fefc02"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="16e11bad-bf36-40e4-a538-f1bc2f20d631"
+                guard="tiltólistán van a diák"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="c5f11b07-4059-430f-b48d-d250b1c9590d"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="26bc9871-7351-4c73-af11-d6e45d213b27"
+            name="Tárgy felvétele"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0ec111b8-82ee-415e-a6a9-c0e326476cfb"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="7ae2d35a-7a27-4c20-8032-4005f624bd55"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
         </nodes>
       </activity>
     </packageHasNamedElement>
@@ -1779,11 +1820,11 @@
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="5befd684-58c9-4ebb-8c90-5f95273bf9bd"
+                Id="c96e64c3-ceff-4f45-ae3e-648219de243c"
                 isLeaf="false">
-                <mergeNodeMoniker
-                  Id="85196b01-cbdf-4bed-ba2e-1dfd37afab6a"
-                  LastKnownName="Merge2"
+                <opaqueActionMoniker
+                  Id="a4a2b1ea-dc5d-4a3f-ad30-783d32ff3aaf"
+                  LastKnownName="Tárgy kiválasztása"
                   LastKnownLocation="neptun_2.0_uml.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -1798,65 +1839,41 @@
                 isLeaf="false">
                 <opaqueActionMoniker
                   Id="927e9787-b908-42f7-a5b8-a64b9314c45c"
-                  LastKnownName="Diák nevének megadása"
+                  LastKnownName="Diák kiválasztása"
                   LastKnownLocation="neptun_2.0_uml.uml" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
-          <decisionNode
-            Id="8bb2f30b-3ddc-4bbc-bc99-35d7467741a1"
-            name="Decision1"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="e1f80df1-98b5-41ea-bd5b-6ae1ec021b72"
-                guard="helytelen adatok"
-                isLeaf="false">
-                <mergeNodeMoniker
-                  Id="85196b01-cbdf-4bed-ba2e-1dfd37afab6a"
-                  LastKnownName="Merge2"
-                  LastKnownLocation="neptun_2.0_uml.uml" />
-              </controlFlow>
-              <controlFlow
-                Id="ad1317bc-dc2c-47ae-8887-8f9045bf2202"
-                isLeaf="false">
-                <activityFinalNodeMoniker
-                  Id="c6402350-fda4-4152-a57e-aab85bacb82b"
-                  LastKnownName="ActivityFinal1"
-                  LastKnownLocation="neptun_2.0_uml.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </decisionNode>
-          <mergeNode
-            Id="85196b01-cbdf-4bed-ba2e-1dfd37afab6a"
-            name="Merge2"
-            isLeaf="false">
-            <flowNodeTargets>
-              <controlFlow
-                Id="350b6148-aea3-47f1-9a38-ca0a4ff392f5"
-                isLeaf="false">
-                <opaqueActionMoniker
-                  Id="a4a2b1ea-dc5d-4a3f-ad30-783d32ff3aaf"
-                  LastKnownName="Tárgy kiválasztása"
-                  LastKnownLocation="neptun_2.0_uml.uml" />
-              </controlFlow>
-            </flowNodeTargets>
-          </mergeNode>
           <activityFinalNode
             Id="c6402350-fda4-4152-a57e-aab85bacb82b"
             name="ActivityFinal1"
             isLeaf="false" />
           <opaqueAction
             Id="927e9787-b908-42f7-a5b8-a64b9314c45c"
-            name="Diák nevének megadása"
+            name="Diák kiválasztása"
             isLeaf="false">
             <flowNodeTargets>
               <controlFlow
-                Id="a40a4447-4774-405f-86b9-ef1cccea4ba0"
+                Id="883038ff-f72f-4a7e-a17b-2d76c2ae25c7"
                 isLeaf="false">
-                <decisionNodeMoniker
-                  Id="8bb2f30b-3ddc-4bbc-bc99-35d7467741a1"
-                  LastKnownName="Decision1"
+                <opaqueActionMoniker
+                  Id="ca3a2cf9-3d04-4cf4-b551-903535f207d1"
+                  LastKnownName="Tanuló letiltásra kerül"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="ca3a2cf9-3d04-4cf4-b551-903535f207d1"
+            name="Tanuló letiltásra kerül"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8c074190-b5a6-41ab-92c9-3e1314cd923d"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="c6402350-fda4-4152-a57e-aab85bacb82b"
+                  LastKnownName="ActivityFinal1"
                   LastKnownLocation="neptun_2.0_uml.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -2014,10 +2031,6 @@
               </controlFlow>
             </flowNodeTargets>
           </mergeNode>
-          <activityFinalNode
-            Id="7b4ccb77-f9cf-404d-9f1e-0701df3db4b4"
-            name="ActivityFinal1"
-            isLeaf="false" />
           <decisionNode
             Id="c9b012d4-59e2-4be5-88f9-de6dea891a7a"
             name="Decision3"
@@ -2033,11 +2046,21 @@
                   LastKnownLocation="neptun_2.0_uml.uml" />
               </controlFlow>
               <controlFlow
-                Id="c2ab101c-fb76-48d3-82d4-5878026be108"
+                Id="06c78c2c-8416-47b4-a57e-bebbecf2dde1"
+                guard="igény leadás indítása"
                 isLeaf="false">
-                <activityFinalNodeMoniker
-                  Id="7b4ccb77-f9cf-404d-9f1e-0701df3db4b4"
-                  LastKnownName="ActivityFinal1"
+                <opaqueActionMoniker
+                  Id="aee11069-3c90-4406-875d-cbb7b4a9023c"
+                  LastKnownName="Igény kitöltése"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="a6b46ff4-bc3c-4fc6-a8b2-a4776fc3a330"
+                guard="visszalépés"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="90aadc2e-cf1f-4532-894d-c4aaac0fac39"
+                  LastKnownName="Főmenübe lépés"
                   LastKnownLocation="neptun_2.0_uml.uml" />
               </controlFlow>
             </flowNodeTargets>
@@ -2057,6 +2080,40 @@
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
+          <opaqueAction
+            Id="aee11069-3c90-4406-875d-cbb7b4a9023c"
+            name="Igény kitöltése"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="57a53ec5-8326-439e-8d42-74f739a2e5bd"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="0bc308c0-1009-4f1c-bb46-fda3935e9688"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="90aadc2e-cf1f-4532-894d-c4aaac0fac39"
+            name="Főmenübe lépés"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f5139a5b-8803-4309-a1e5-381a96ce491e"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="0bc308c0-1009-4f1c-bb46-fda3935e9688"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="neptun_2.0_uml.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="0bc308c0-1009-4f1c-bb46-fda3935e9688"
+            name="ActivityFinal1"
+            isLeaf="false" />
         </nodes>
       </activity>
     </packageHasNamedElement>
@@ -7114,8 +7171,8 @@
                   direction="Return">
                   <type_NamedElement>
                     <primitiveTypeMoniker
-                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
-                      LastKnownName="Boolean"
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
                       LastKnownLocation="neptun_2.0_uml.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -7124,7 +7181,7 @@
           </operation>
           <operation
             Id="fd544225-1704-488f-a346-220a53e7d986"
-            name="GetUser"
+            name="GetAdmin"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -7145,8 +7202,8 @@
                   isUnique="false">
                   <type_NamedElement>
                     <classMoniker
-                      Id="90cbd197-6fe6-4c68-9270-ab4e0146bcd2"
-                      LastKnownName="User"
+                      Id="197208e9-0277-4ae3-a5e6-eeffd0cd3817"
+                      LastKnownName="Admin"
                       LastKnownLocation="neptun_2.0_uml.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -7275,8 +7332,8 @@
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="dd37ea4a-7fd4-44bf-96f9-7d4032e2440d"
-                      LastKnownName="List&lt;subject&gt;"
+                      Id="f401601e-f12c-4e81-bcdc-957534c2f58e"
+                      LastKnownName="List&lt;Subject&gt;"
                       LastKnownLocation="neptun_2.0_uml.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -7640,7 +7697,7 @@
           </operation>
           <operation
             Id="da32d739-2aa8-4409-b097-24fc8f9db415"
-            name="requesSubmission"
+            name="requestSubmission"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -7732,6 +7789,123 @@
                     <primitiveTypeMoniker
                       Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
                       LastKnownName="Boolean"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b6b67562-b61c-4a8e-a1e3-de30cea42124"
+            name="GetTeacher"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0af64cbd-5d16-4cd7-8b7e-7ee99a2bcf9b"
+                  name="string id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="af7765aa-922d-464e-a47b-b18ab3017ef7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="af3414d7-1977-4dee-ae65-f5c56bfb5aed"
+                      LastKnownName="Teacher"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="841a3dc8-0dec-46bd-9bb5-2872381ce64b"
+            name="GetStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e7f975a3-a8e8-4f74-9396-4656c7e9247e"
+                  name="string id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bb6456c6-b0a5-4918-874f-5cdca15f7741"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="9508a319-ff31-434d-a1b8-1776496a238e"
+                      LastKnownName="Student"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="211326ac-c2bc-4d6d-85c1-86ee67e3f067"
+            name="maintenance"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b6ecac87-9770-4fc0-b4bc-b64adae2c1ea"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="500416e9-9c0f-4328-a23c-3b60e110e414"
+                      LastKnownName="bool"
+                      LastKnownLocation="neptun_2.0_uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0b8f8f5e-148a-43b4-8355-cd04234ecd30"
+            name="getRequest"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9bcf3a61-7e59-47cb-8991-cf6048c1db45"
+                  name="String request_id"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="790b1146-ad76-4b71-8256-75ff2a46c004"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="587f9cae-f49c-41c1-9155-572c23019141"
+                      LastKnownName="Request"
                       LastKnownLocation="neptun_2.0_uml.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -9595,6 +9769,11 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f401601e-f12c-4e81-bcdc-957534c2f58e"
+        name="List&lt;Subject&gt;" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

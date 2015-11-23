@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="bdf31bc1-04be-40ef-97de-f298be5c972b" name="Targyfelvetel" linkedPackageId="7a78a6ba-4e26-4dbd-853b-096750a8ad4b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="5a585993-3020-466e-a105-be646bdb6032">
-      <profileInstance Id="7cac9445-0bbf-4d7c-a2de-b59a2a68213f" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="eaa2c4be-4ca6-4773-b65f-3e7659d664ad">
-      <profileInstance Id="ceacf5f3-d4dd-4169-a1e1-654ee3980e6b" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="bdf31bc1-04be-40ef-97de-f298be5c972b" name="Targyfelvetel" linkedPackageId="7a78a6ba-4e26-4dbd-853b-096750a8ad4b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
   <packagedElements>
     <activityRootModelHasActivity>
       <activity Id="147ed789-78df-4125-a161-756e9a8e766a" name="Targyfelvetel" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
@@ -71,22 +57,22 @@
           <opaqueAction Id="87097cf1-edcf-4ac7-a382-128dab1bb1a7" name="Tárgy kiválasztása" isLeaf="false">
             <elementDefinition Id="89db401d-ff4b-402f-9a65-cceaae896a42" />
             <flowNodeTargets>
-              <controlFlow Id="840dd12a-6c22-4ebc-ac26-fd42dbe6cc54" isLeaf="false">
-                <decisionNodeMoniker Id="13cd9438-3140-43e1-b1da-c2c401e98a54" LastKnownName="Decision1" />
-                <elementDefinition Id="5fdaa553-752a-48a0-8ac0-9e9a5a873b6c" />
+              <controlFlow Id="e718b90a-4faf-46ed-8695-c88a01d717e9" isLeaf="false">
+                <decisionNodeMoniker Id="d99977cd-e43b-4268-8d8d-36b6f9df16c6" LastKnownName="Decision3" />
+                <elementDefinition Id="b7254d2a-a76a-4611-8900-13f66bab3f59" />
               </controlFlow>
             </flowNodeTargets>
           </opaqueAction>
           <decisionNode Id="13cd9438-3140-43e1-b1da-c2c401e98a54" name="Decision1" isLeaf="false">
             <elementDefinition Id="fa7c02d4-a9d1-417f-9071-33e185fefc02" />
             <flowNodeTargets>
-              <controlFlow Id="53b32b0d-b397-40cc-a8a3-a254426fcc27" guard="tiltólista vagy létszámlimit" isLeaf="false">
+              <controlFlow Id="53b32b0d-b397-40cc-a8a3-a254426fcc27" guard="megtelt létszám" isLeaf="false">
                 <mergeNodeMoniker Id="9d9c39c4-9da1-4006-8ad1-fce8b18e0a09" LastKnownName="Merge2" />
                 <elementDefinition Id="af8dd33d-9339-492b-aa80-0a9a4e08b597" />
               </controlFlow>
-              <controlFlow Id="2feaab05-b9d0-47fb-9d6b-4b1c451e1ba4" isLeaf="false">
-                <activityFinalNodeMoniker Id="6ab8d989-dfef-4191-b44f-17a986ad0577" LastKnownName="ActivityFinal1" />
-                <elementDefinition Id="c198d5d9-68a9-45b0-a11b-554529736bd3" />
+              <controlFlow Id="54caa735-0608-4116-b176-8a8860cbed09" guard="nincs elérve a maximum létszám" isLeaf="false">
+                <opaqueActionMoniker Id="26413e1d-d68b-448d-94fb-5c32a653e399" LastKnownName="Tárgy felvétele" />
+                <elementDefinition Id="252a2fad-437e-48a7-a8c5-2d956c85a981" />
               </controlFlow>
             </flowNodeTargets>
           </decisionNode>
@@ -102,11 +88,47 @@
           <activityFinalNode Id="6ab8d989-dfef-4191-b44f-17a986ad0577" name="ActivityFinal1" isLeaf="false">
             <elementDefinition Id="7ae2d35a-7a27-4c20-8032-4005f624bd55" />
           </activityFinalNode>
+          <decisionNode Id="d99977cd-e43b-4268-8d8d-36b6f9df16c6" name="Decision3" isLeaf="false">
+            <elementDefinition Id="bf8bba63-ab1b-48ef-8033-208ea106b1c4" />
+            <flowNodeTargets>
+              <controlFlow Id="d3b693c5-17fe-423e-aa89-76907168dbbc" guard="nincs tiltólistán a diák" isLeaf="false">
+                <decisionNodeMoniker Id="13cd9438-3140-43e1-b1da-c2c401e98a54" LastKnownName="Decision1" />
+                <elementDefinition Id="7063be19-3eba-43ee-b6ff-852eeb3d732f" />
+              </controlFlow>
+              <controlFlow Id="e6ff1ff0-651c-4ba6-a826-5286d874e8a1" guard="tiltólistán van a diák" isLeaf="false">
+                <mergeNodeMoniker Id="9d9c39c4-9da1-4006-8ad1-fce8b18e0a09" LastKnownName="Merge2" />
+                <elementDefinition Id="16e11bad-bf36-40e4-a538-f1bc2f20d631" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="26413e1d-d68b-448d-94fb-5c32a653e399" name="Tárgy felvétele" isLeaf="false">
+            <elementDefinition Id="26bc9871-7351-4c73-af11-d6e45d213b27" />
+            <flowNodeTargets>
+              <controlFlow Id="2e4df3ca-274f-48bf-bb1d-395eeae90b5d" isLeaf="false">
+                <activityFinalNodeMoniker Id="6ab8d989-dfef-4191-b44f-17a986ad0577" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="0ec111b8-82ee-415e-a6a9-c0e326476cfb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
         </nodes>
       </activity>
     </activityRootModelHasActivity>
   </packagedElements>
   <package Id="7a78a6ba-4e26-4dbd-853b-096750a8ad4b" name="neptun_2.0_uml">
     <elementDefinition Id="fd2f2ae6-892f-4eb1-aca4-596f48131679" />
+    <profileInstances>
+      <packageHasProfileInstances Id="5a585993-3020-466e-a105-be646bdb6032">
+        <profileInstance Id="7cac9445-0bbf-4d7c-a2de-b59a2a68213f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="eaa2c4be-4ca6-4773-b65f-3e7659d664ad">
+        <profileInstance Id="ceacf5f3-d4dd-4169-a1e1-654ee3980e6b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>
