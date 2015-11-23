@@ -123,7 +123,7 @@ namespace Neptun_2._0
             for (int i = 0; i < countdemand; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
-                Console.Write(demands[i].getTeacherId() + "   " + demands[i].getSubjectName() + "   " + demands[i].getRoomId() + "  " + demands[i].getDay()+ "  " + demands[i].getStartTime() + "  " + demands[i].getEndTime() + "   ");
+                Console.Write(demands[i].getOwner() + "   " + demands[i].getSubjectName() + "   " + demands[i].getRoomId() + "  " + demands[i].getDay()+ "  " + demands[i].getStartTime() + "  " + demands[i].getEndTime() + "   ");
             }
             Console.SetCursorPosition(8 + back.Length, 8);
             do
@@ -145,7 +145,7 @@ namespace Neptun_2._0
             if (position == 1)
                 command.cmd = "exit";
             else            
-                command.data.Add(demands[position - 2].getDemandId());                            
+                command.data.Add(demands[position - 2].getId());                            
             return command;
         }
         private void DemandorRequestUnderline(int max)

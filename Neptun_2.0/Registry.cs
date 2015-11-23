@@ -147,7 +147,7 @@ namespace Neptun_2._0
         {
             for (int i = 0; i < demands.Count; i++)
             {
-                if (demands[i].getDemandId() == id)
+                if (demands[i].getId() == id)
                 {
                     demands.RemoveAt(i);
                 }
@@ -258,7 +258,7 @@ namespace Neptun_2._0
         {
             foreach (Demand demand in demands)
             {
-                if (demand.getDemandId() == id)
+                if (demand.getId() == id)
                 {
                     return demand;
                 }

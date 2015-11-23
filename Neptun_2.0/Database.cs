@@ -165,7 +165,7 @@ namespace Neptun_2._0
 
         public bool demandSubmission(Demand newDemand, String neptun_code)
         {
-            bool user = userHandler.AppendDemand(neptun_code, newDemand.getDemandId());
+            bool user = userHandler.AppendDemand(neptun_code, newDemand.getId());
             bool demand = demandHandler.CreateDemand(newDemand);
             return user && demand;
         }
@@ -278,7 +278,7 @@ namespace Neptun_2._0
             {
                 Demand newDemand = demandHandler.GetDemand(demand_id);
 
-                Subject newSubject = new Subject(newDemand.getSubjectId(), newDemand.getSubjectName(), newDemand.getTeacherId(),
+                Subject newSubject = new Subject(newDemand.getSubjectId(), newDemand.getSubjectName(), newDemand.getOwner(),
                         newDemand.getDay(), newDemand.getStartTime(), newDemand.getEndTime(), 
                         new List<string>(), new List<string>());
 
