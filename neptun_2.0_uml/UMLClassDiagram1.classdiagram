@@ -417,29 +417,6 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="e3c60fc0-1d6e-4bca-a2ce-d8011bf53cb6" name="RemoveNodeByAttr: void" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="2ac5b2bf-9816-47f8-ab81-0620d731aa2d" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="8eb125e4-0a97-413c-9766-fb6933d5cec9" name="string filepath" direction="In" isUnique="false">
-                  <elementDefinition Id="793a69b5-563c-4158-b81f-183d973d3855" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="cf9a12ea-a43c-4c46-96d7-423230dd2680" name="string xpath" direction="In" isUnique="false">
-                  <elementDefinition Id="b8225f05-8870-42d1-bf37-9b81fdcf4dfa" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="5314bd40-ae5a-479b-aae9-cb2c3674025d" direction="Return">
-                  <elementDefinition Id="5ce29881-8459-4901-8c61-9f51fd0d1e67" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="86501419-f820-43af-bd20-983c2e9332fc" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
           <operation Id="48bee90a-f857-4151-b13e-837809ebbf9b" name="CreateXPathWithAttr" visibility="Protected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="3290b762-ac7a-418b-aa01-7edb95f75899" />
             <ownedParameters>
@@ -504,6 +481,34 @@
                   <elementDefinition Id="1a90efd6-4a7d-47df-82f3-22e046e0b76c" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="eb90356c-e2e1-44fb-a6f6-efb0df353fcd" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3be1a39a-e5fe-4de0-b5f4-49a2913125a1" name="SetValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="54cfb4c8-63b9-4df4-bcb3-cc85aa20f142" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="45954c73-8561-471b-950a-c72388c333ac" name="string filepath" direction="In" isUnique="false">
+                  <elementDefinition Id="c08f4155-ac97-437a-ae96-4fa6825c48af" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4ef3111a-fca0-47a9-beb9-2c6fcc2ef382" name="string xpath" direction="In" isUnique="false">
+                  <elementDefinition Id="dce85751-933e-4448-b0a1-e21911a8acda" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="da364e94-1cdf-4b4c-907c-82dcb71b2297" name="string value" direction="In" isUnique="false">
+                  <elementDefinition Id="c3574465-450d-44fe-b0c5-290f7065d51a" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e55816b2-0b5e-451c-9b64-71da50cead80" direction="Return" isUnique="false">
+                  <elementDefinition Id="2c5d8f1b-1fdb-472d-b24d-955abd4ec394" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8338a417-7bfc-41e7-803a-30c9a737bd8d" LastKnownName="void" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -2701,11 +2706,6 @@
     </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="8338a417-7bfc-41e7-803a-30c9a737bd8d" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
-        <elementDefinition Id="ae5b1e1b-e904-4d66-be05-c0d8423f0ca3" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="86501419-f820-43af-bd20-983c2e9332fc" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
         <elementDefinition Id="ae5b1e1b-e904-4d66-be05-c0d8423f0ca3" />
       </referencedType>
     </packageHasNamedElement>

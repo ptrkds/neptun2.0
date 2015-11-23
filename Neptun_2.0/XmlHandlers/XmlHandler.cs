@@ -165,6 +165,8 @@ namespace Neptun_2._0
         }
         #endregion
 
+       // private string GetXmlFileName(string id) { }
+
         #region left over code
         internal void Start()
         {

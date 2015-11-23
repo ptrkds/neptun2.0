@@ -14,7 +14,7 @@ namespace Neptun_2._0
         {
             string name = "";
 
-            XmlReader xmlReader = XmlReader.Create("Lectures/" + subjId + ".xml");
+            XmlReader xmlReader = XmlReader.Create("Subjects/" + subjId + ".xml");
             name = GetValue(ref xmlReader, "name");
 
             xmlReader.Dispose();
@@ -53,6 +53,7 @@ namespace Neptun_2._0
             string id = "";
             string name = "";
             string teacher = "";
+            string room = "";
             string day = "";
             string startTime = "";
             string endTime = "";
@@ -63,11 +64,12 @@ namespace Neptun_2._0
             {
                 while (xmlReader.Read()) //loop needed?
                 {
-                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "lecture") && (xmlReader.GetAttribute("id") == subjId))
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "subject") && (xmlReader.GetAttribute("id") == subjId))
                     {
                         id = xmlReader.GetAttribute("id");
                         name = GetValue(ref xmlReader, "name");
                         teacher = GetValue(ref xmlReader, "teacher");
+                        room = GetValue(ref xmlReader, "room");
                         day = GetValue(ref xmlReader, "day");
                         startTime = GetValue(ref xmlReader, "startTime");
                         endTime = GetValue(ref xmlReader, "endTime");
@@ -83,7 +85,7 @@ namespace Neptun_2._0
                 //TODO e
             }
 
-            return new Subject(id, name, teacher, day, startTime, endTime, studentIds, blockedStudentIds);
+            return new Subject(id, name, teacher,room, day, startTime, endTime, studentIds, blockedStudentIds);
         }
         #endregion
 
@@ -101,7 +103,8 @@ namespace Neptun_2._0
                 writer.WriteAttributeString("id", subject.getId());
 
                 writer.WriteElementString("name", subject.getName());
-                writer.WriteElementString("teacherId", subject.getTeacher());
+                writer.WriteElementString("teacher", subject.getTeacher());
+                writer.WriteElementString("room", subject.getClassRoom());
                 writer.WriteElementString("day", subject.getDay());
                 writer.WriteElementString("startTime", subject.getStartTime());
                 writer.WriteElementString("endTime", subject.getEndTime());
