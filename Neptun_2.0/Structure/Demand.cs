@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Neptun_2._0
 {
-    public class Demand
+    class Demand : Document
     {
-        private string demandId;
-        private string state;
-        private string teacherId;
         private string roomId;
         private string subjectId;
         private string subjectName;
@@ -19,10 +16,7 @@ namespace Neptun_2._0
         private string endTime;
 
         public Demand(string demandId, string state, string teacherId, string roomId, string subjectId, string subjectName, string day, string startTime, string endTime)
-        {
-            this.demandId = demandId;
-            this.state = state;
-            this.teacherId = teacherId;
+         :base(demandId, state, teacherId){
             this.roomId = roomId;
             this.subjectId = subjectId;
             this.subjectName = subjectName;
@@ -31,20 +25,7 @@ namespace Neptun_2._0
             this.endTime = endTime;
         }
 
-        public String getDemandId()
-        {
-            return demandId;
-        }
-
-        public String getState()
-        {
-            return state;
-        }
-
-        public String getTeacherId()
-        {
-            return teacherId;
-        }
+       
         public String getSubjectId()
         {
             return subjectId;
@@ -70,20 +51,7 @@ namespace Neptun_2._0
             return subjectName;
         }
 
-        public void setDemandId(String _demandId)
-        {
-            demandId = _demandId;
-        }
-
-        public void setState(String _state)
-        {
-            state = _state;
-        }
-
-        public void setTeacherId(String _teacherId)
-        {
-            teacherId = _teacherId;
-        }
+       
 
         public void setSubjectId(String _subjectId)
         {
