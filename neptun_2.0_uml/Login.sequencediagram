@@ -88,84 +88,6 @@
                           <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                         </coveredLifelines>
                         <fragments>
-                          <combinedFragment Id="ee7107c7-76ba-444d-9af7-64cc27942a0e" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Try">
-                            <coveredLifelines>
-                              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-                              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-                              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                            </coveredLifelines>
-                            <operands>
-                              <interactionOperand Id="c2858e11-e640-450e-9f62-6ef9e561afc8" name="InteractionOperand1">
-                                <coveredLifelines>
-                                  <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-                                  <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-                                  <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                </coveredLifelines>
-                                <fragments>
-                                  <combinedFragment Id="6d247127-d205-4b00-afa9-d8d6edf3ea5a" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Try">
-                                    <coveredLifelines>
-                                      <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                    </coveredLifelines>
-                                    <operands>
-                                      <interactionOperand Id="cf83f164-b054-49fb-bf45-fd6d0355a7c1" name="InteractionOperand1">
-                                        <coveredLifelines>
-                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                        </coveredLifelines>
-                                        <guard>
-                                          <interactionConstraint Id="302f8679-fc77-44aa-ad9d-819fca760a5f" guardText="try" />
-                                        </guard>
-                                        <operandOccurrenceSpecifications>
-                                          <operandOccurrenceSpecificationMoniker Id="15d29852-51d1-4c73-b70e-4cd0e629c85f" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="7821f8cb-9dbe-40ec-ba73-eac729b64e64" LastKnownName="OperandOccurrenceSpecification" />
-                                        </operandOccurrenceSpecifications>
-                                      </interactionOperand>
-                                      <interactionOperand Id="0a943a6e-da9e-43ea-b41f-4544c008f804" name="InteractionOperand2">
-                                        <coveredLifelines>
-                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                        </coveredLifelines>
-                                        <guard>
-                                          <interactionConstraint Id="25a670a8-590a-49ab-af48-b6bf6ad34b98" guardText="catch (Exception)" />
-                                        </guard>
-                                        <operandOccurrenceSpecifications>
-                                          <operandOccurrenceSpecificationMoniker Id="41bae369-c7f4-4aab-91d6-92483b771871" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="06e4741f-5faa-4e58-a806-74217a49d46f" LastKnownName="OperandOccurrenceSpecification" />
-                                        </operandOccurrenceSpecifications>
-                                      </interactionOperand>
-                                    </operands>
-                                  </combinedFragment>
-                                </fragments>
-                                <guard>
-                                  <interactionConstraint Id="79576572-900b-480d-ba9c-fd93a79c2ca0" guardText="try" />
-                                </guard>
-                                <operandOccurrenceSpecifications>
-                                  <operandOccurrenceSpecificationMoniker Id="21d9b724-e9bb-4be6-8023-87d78be4dcb1" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="24d6a775-aa9e-462d-a3c4-20a54e3cebb5" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="01cca2e6-7020-4945-a67f-16c59c2ddea1" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="a5122856-6e8f-4592-b199-7fafe930169f" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="74bdb07f-9056-4ab7-8ad4-485d702b1947" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="a5972ffc-9b52-489f-9ca2-a95c4eaab21c" LastKnownName="OperandOccurrenceSpecification" />
-                                </operandOccurrenceSpecifications>
-                              </interactionOperand>
-                              <interactionOperand Id="abcd54b6-6e36-4da3-9cd3-c091b10235f9" name="InteractionOperand2">
-                                <coveredLifelines>
-                                  <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-                                  <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-                                  <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                </coveredLifelines>
-                                <guard>
-                                  <interactionConstraint Id="25555b39-01d9-45ce-8019-94e95b89c0be" guardText="catch (Exception)" />
-                                </guard>
-                                <operandOccurrenceSpecifications>
-                                  <operandOccurrenceSpecificationMoniker Id="7cf7a3c3-201d-4f81-9cff-a763625ed955" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="1e613b76-b7c7-4f32-ae4d-8c22465297e0" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="65ff598f-0433-4e23-b2f6-fff10642e2fa" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="a12ad33c-0d91-49b3-9156-2036bb636faf" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="65396447-34de-421c-9d92-42b9e2b01bcd" LastKnownName="OperandOccurrenceSpecification" />
-                                  <operandOccurrenceSpecificationMoniker Id="672a3c4b-ebb6-4bb7-b195-e9cf201b6b40" LastKnownName="OperandOccurrenceSpecification" />
-                                </operandOccurrenceSpecifications>
-                              </interactionOperand>
-                            </operands>
-                          </combinedFragment>
                           <combinedFragment Id="07555cd9-6bec-4a8f-a2d1-f24ffaea989a" name="CombinedFragment2" interactionOperator="Alt" customInteractionOperator="If">
                             <coveredLifelines>
                               <lifelineMoniker Id="533ad498-56df-486e-8eda-00fcb9f9bafc" LastKnownName="this : Neptun" />
@@ -182,358 +104,245 @@
                                   <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                 </coveredLifelines>
                                 <fragments>
-                                  <combinedFragment Id="3c03b10f-1449-463a-97d3-6baca1e80789" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Try">
+                                  <combinedFragment Id="6fff62d3-757a-4a93-b783-9418603a99e7" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Switch">
                                     <coveredLifelines>
                                       <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
                                       <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
                                       <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                     </coveredLifelines>
                                     <operands>
-                                      <interactionOperand Id="7f30c0eb-c4be-4b88-8f3d-013b782291be" name="InteractionOperand1">
+                                      <interactionOperand Id="a91984c7-b073-4a95-b11c-19705b285890" name="InteractionOperand1">
                                         <coveredLifelines>
                                           <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
                                           <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
                                           <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                         </coveredLifelines>
                                         <fragments>
-                                          <combinedFragment Id="6fff62d3-757a-4a93-b783-9418603a99e7" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Switch">
+                                          <combinedFragment Id="6113fdb8-76e4-47e1-b0ce-d999b9f13461" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Try">
                                             <coveredLifelines>
-                                              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-                                              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
                                               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                             </coveredLifelines>
                                             <operands>
-                                              <interactionOperand Id="a91984c7-b073-4a95-b11c-19705b285890" name="InteractionOperand1">
+                                              <interactionOperand Id="696cd81b-103c-45e8-a771-4045351e2db4" name="InteractionOperand1">
                                                 <coveredLifelines>
-                                                  <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-                                                  <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
                                                   <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                                 </coveredLifelines>
                                                 <fragments>
-                                                  <combinedFragment Id="6113fdb8-76e4-47e1-b0ce-d999b9f13461" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Try">
+                                                  <combinedFragment Id="65c805eb-d8bf-423c-9757-d04f7136c0b9" name="CombinedFragment1" interactionOperator="Loop" customInteractionOperator="Loop">
                                                     <coveredLifelines>
                                                       <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                                     </coveredLifelines>
                                                     <operands>
-                                                      <interactionOperand Id="696cd81b-103c-45e8-a771-4045351e2db4" name="InteractionOperand1">
+                                                      <interactionOperand Id="b25d1f1a-1b8f-47ba-8644-c4679be1a942" name="InteractionOperand1">
                                                         <coveredLifelines>
                                                           <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                                         </coveredLifelines>
                                                         <fragments>
-                                                          <combinedFragment Id="65c805eb-d8bf-423c-9757-d04f7136c0b9" name="CombinedFragment1" interactionOperator="Loop" customInteractionOperator="Loop">
+                                                          <combinedFragment Id="3d9235ee-990f-420a-93a6-925b6c584c34" name="CombinedFragment1" interactionOperator="Opt" customInteractionOperator="If">
                                                             <coveredLifelines>
                                                               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                                             </coveredLifelines>
                                                             <operands>
-                                                              <interactionOperand Id="b25d1f1a-1b8f-47ba-8644-c4679be1a942" name="InteractionOperand1">
+                                                              <interactionOperand Id="96f0f433-0393-4c55-8d7c-f78a6d30a2e7" name="InteractionOperand1">
                                                                 <coveredLifelines>
                                                                   <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                                                 </coveredLifelines>
-                                                                <fragments>
-                                                                  <combinedFragment Id="3d9235ee-990f-420a-93a6-925b6c584c34" name="CombinedFragment1" interactionOperator="Opt" customInteractionOperator="If">
-                                                                    <coveredLifelines>
-                                                                      <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                                    </coveredLifelines>
-                                                                    <operands>
-                                                                      <interactionOperand Id="96f0f433-0393-4c55-8d7c-f78a6d30a2e7" name="InteractionOperand1">
-                                                                        <coveredLifelines>
-                                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                                        </coveredLifelines>
-                                                                        <guard>
-                                                                          <interactionConstraint Id="7e068552-2f3a-46ff-b797-862c4d015917" guardText="if ((xmlReader.NodeType == XmlNodeType.Element) &amp;&amp; (xmlReader.Name == &quot;user&quot;) &amp;&amp; (xmlReader.GetAttribute(&quot;id&quot;) == neptunCode))" />
-                                                                        </guard>
-                                                                        <operandOccurrenceSpecifications>
-                                                                          <operandOccurrenceSpecificationMoniker Id="f7d71b1e-ace9-4365-88a2-ad8b7f6b60fc" LastKnownName="OperandOccurrenceSpecification" />
-                                                                          <operandOccurrenceSpecificationMoniker Id="471fd9cd-9567-45ce-92ea-7627752ceb21" LastKnownName="OperandOccurrenceSpecification" />
-                                                                        </operandOccurrenceSpecifications>
-                                                                      </interactionOperand>
-                                                                    </operands>
-                                                                  </combinedFragment>
-                                                                </fragments>
                                                                 <guard>
-                                                                  <interactionConstraint Id="6fa77911-21b6-4f4a-a408-248f891a4a98" guardText="while (xmlReader.Read())">
-                                                                    <maxInt>
-                                                                      <literalString Id="b765e81f-7113-4aa0-9769-1c4f86dc4d22" name="LiteralString1" />
-                                                                    </maxInt>
-                                                                    <minInt>
-                                                                      <literalString Id="9fe7ecb1-ce78-4dd5-ba8e-9cb993f7b1ee" name="LiteralString2" />
-                                                                    </minInt>
-                                                                  </interactionConstraint>
+                                                                  <interactionConstraint Id="7e068552-2f3a-46ff-b797-862c4d015917" guardText="if ((xmlReader.NodeType == XmlNodeType.Element) &amp;&amp; (xmlReader.Name == &quot;user&quot;) &amp;&amp; (xmlReader.GetAttribute(&quot;id&quot;) == neptunCode))" />
                                                                 </guard>
                                                                 <operandOccurrenceSpecifications>
-                                                                  <operandOccurrenceSpecificationMoniker Id="704a6e73-34a0-4cf6-9d43-c92b05108c78" LastKnownName="OperandOccurrenceSpecification" />
-                                                                  <operandOccurrenceSpecificationMoniker Id="e63aa1b7-e103-4825-9476-14e0577cf2af" LastKnownName="OperandOccurrenceSpecification" />
+                                                                  <operandOccurrenceSpecificationMoniker Id="f7d71b1e-ace9-4365-88a2-ad8b7f6b60fc" LastKnownName="OperandOccurrenceSpecification" />
+                                                                  <operandOccurrenceSpecificationMoniker Id="471fd9cd-9567-45ce-92ea-7627752ceb21" LastKnownName="OperandOccurrenceSpecification" />
                                                                 </operandOccurrenceSpecifications>
                                                               </interactionOperand>
                                                             </operands>
                                                           </combinedFragment>
                                                         </fragments>
                                                         <guard>
-                                                          <interactionConstraint Id="78e0b371-841c-4b8d-9cca-58ddc7a86065" guardText="try" />
+                                                          <interactionConstraint Id="6fa77911-21b6-4f4a-a408-248f891a4a98" guardText="while (xmlReader.Read())">
+                                                            <maxInt>
+                                                              <literalString Id="b765e81f-7113-4aa0-9769-1c4f86dc4d22" name="LiteralString1" />
+                                                            </maxInt>
+                                                            <minInt>
+                                                              <literalString Id="9fe7ecb1-ce78-4dd5-ba8e-9cb993f7b1ee" name="LiteralString2" />
+                                                            </minInt>
+                                                          </interactionConstraint>
                                                         </guard>
                                                         <operandOccurrenceSpecifications>
-                                                          <operandOccurrenceSpecificationMoniker Id="bdc6b227-5772-402d-9996-1f8993746d52" LastKnownName="OperandOccurrenceSpecification" />
-                                                          <operandOccurrenceSpecificationMoniker Id="b0da9817-3f61-4791-ad60-178a434da1f9" LastKnownName="OperandOccurrenceSpecification" />
-                                                        </operandOccurrenceSpecifications>
-                                                      </interactionOperand>
-                                                      <interactionOperand Id="59b11fcc-dfd3-45a2-87a8-48e350c759fd" name="InteractionOperand2">
-                                                        <coveredLifelines>
-                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                        </coveredLifelines>
-                                                        <guard>
-                                                          <interactionConstraint Id="f2be6eca-34c5-4c6a-b1b6-779869827b40" guardText="catch (Exception)" />
-                                                        </guard>
-                                                        <operandOccurrenceSpecifications>
-                                                          <operandOccurrenceSpecificationMoniker Id="76d6a8f5-b2ca-46ea-84d5-6af55d8b0965" LastKnownName="OperandOccurrenceSpecification" />
-                                                          <operandOccurrenceSpecificationMoniker Id="76ea5a1c-1ddb-4ce9-8df2-95a547957105" LastKnownName="OperandOccurrenceSpecification" />
+                                                          <operandOccurrenceSpecificationMoniker Id="704a6e73-34a0-4cf6-9d43-c92b05108c78" LastKnownName="OperandOccurrenceSpecification" />
+                                                          <operandOccurrenceSpecificationMoniker Id="e63aa1b7-e103-4825-9476-14e0577cf2af" LastKnownName="OperandOccurrenceSpecification" />
                                                         </operandOccurrenceSpecifications>
                                                       </interactionOperand>
                                                     </operands>
                                                   </combinedFragment>
                                                 </fragments>
                                                 <guard>
-                                                  <interactionConstraint Id="51efcfa1-592a-4d10-9db4-ec6dd150d6cd" guardText="case &quot;admin&quot;:" />
+                                                  <interactionConstraint Id="78e0b371-841c-4b8d-9cca-58ddc7a86065" guardText="try" />
                                                 </guard>
                                                 <operandOccurrenceSpecifications>
-                                                  <operandOccurrenceSpecificationMoniker Id="439f87bb-ea67-4bfb-99bc-4f63c6959c0e" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="bdd64d1d-e6f5-40dc-8f15-3f6380638f94" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="e1bd508b-c89b-4bd3-a591-e7b082b09073" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="350270c0-e713-4881-a1b3-a4e7e777e33e" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="7ba8d8fb-a506-4357-897e-85bd7c078b64" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="579b377c-3619-492b-93b9-daa1c8fa19e3" LastKnownName="OperandOccurrenceSpecification" />
+                                                  <operandOccurrenceSpecificationMoniker Id="bdc6b227-5772-402d-9996-1f8993746d52" LastKnownName="OperandOccurrenceSpecification" />
+                                                  <operandOccurrenceSpecificationMoniker Id="b0da9817-3f61-4791-ad60-178a434da1f9" LastKnownName="OperandOccurrenceSpecification" />
                                                 </operandOccurrenceSpecifications>
                                               </interactionOperand>
-                                              <interactionOperand Id="25578c87-1bd1-4c30-8ecb-ad444f90caaa" name="InteractionOperand2">
+                                              <interactionOperand Id="59b11fcc-dfd3-45a2-87a8-48e350c759fd" name="InteractionOperand2">
                                                 <coveredLifelines>
-                                                  <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-                                                  <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
                                                   <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                                 </coveredLifelines>
-                                                <fragments>
-                                                  <combinedFragment Id="09857389-448b-44e4-93f7-f911344613ed" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Try">
-                                                    <coveredLifelines>
-                                                      <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                    </coveredLifelines>
-                                                    <operands>
-                                                      <interactionOperand Id="3ecc6377-61b8-4e8a-94de-310b798bc591" name="InteractionOperand1">
-                                                        <coveredLifelines>
-                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                        </coveredLifelines>
-                                                        <fragments>
-                                                          <combinedFragment Id="7aeca257-dc53-4e65-a74c-f25ee0278a52" name="CombinedFragment1" interactionOperator="Loop" customInteractionOperator="Loop">
-                                                            <coveredLifelines>
-                                                              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                            </coveredLifelines>
-                                                            <operands>
-                                                              <interactionOperand Id="8b53ea43-f9b0-469a-9cd5-9c25bcd1187c" name="InteractionOperand1">
-                                                                <coveredLifelines>
-                                                                  <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                                </coveredLifelines>
-                                                                <fragments>
-                                                                  <combinedFragment Id="939aadab-62c0-439d-afd3-8391fbdc560f" name="CombinedFragment1" interactionOperator="Opt" customInteractionOperator="If">
-                                                                    <coveredLifelines>
-                                                                      <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                                    </coveredLifelines>
-                                                                    <operands>
-                                                                      <interactionOperand Id="73a112b0-0389-4374-9f69-aa25884948bd" name="InteractionOperand1">
-                                                                        <coveredLifelines>
-                                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                                        </coveredLifelines>
-                                                                        <guard>
-                                                                          <interactionConstraint Id="acd10e45-3b30-4d51-a0c7-40b2b79be7a0" guardText="if ((xmlReader.NodeType == XmlNodeType.Element) &amp;&amp; (xmlReader.Name == &quot;user&quot;) &amp;&amp; (xmlReader.GetAttribute(&quot;id&quot;) == neptunCode))" />
-                                                                        </guard>
-                                                                        <operandOccurrenceSpecifications>
-                                                                          <operandOccurrenceSpecificationMoniker Id="3f6c3a9c-d228-418c-a042-e8535f844a87" LastKnownName="OperandOccurrenceSpecification" />
-                                                                          <operandOccurrenceSpecificationMoniker Id="af4478cb-590c-40cc-ab9d-06e53c445341" LastKnownName="OperandOccurrenceSpecification" />
-                                                                        </operandOccurrenceSpecifications>
-                                                                      </interactionOperand>
-                                                                    </operands>
-                                                                  </combinedFragment>
-                                                                </fragments>
-                                                                <guard>
-                                                                  <interactionConstraint Id="805399b9-eb4b-484b-8ff5-2a7d43d1356d" guardText="while (xmlReader.Read())">
-                                                                    <maxInt>
-                                                                      <literalString Id="bc7dbc2d-2131-4baf-89f6-670e176df716" name="LiteralString1" />
-                                                                    </maxInt>
-                                                                    <minInt>
-                                                                      <literalString Id="0cdce238-e579-495f-9f5e-a6a48434aac9" name="LiteralString2" />
-                                                                    </minInt>
-                                                                  </interactionConstraint>
-                                                                </guard>
-                                                                <operandOccurrenceSpecifications>
-                                                                  <operandOccurrenceSpecificationMoniker Id="8976f315-4a9b-4555-9259-9dd1d4b59f11" LastKnownName="OperandOccurrenceSpecification" />
-                                                                  <operandOccurrenceSpecificationMoniker Id="0867a211-d934-417e-9728-2d87e76860e0" LastKnownName="OperandOccurrenceSpecification" />
-                                                                </operandOccurrenceSpecifications>
-                                                              </interactionOperand>
-                                                            </operands>
-                                                          </combinedFragment>
-                                                        </fragments>
-                                                        <guard>
-                                                          <interactionConstraint Id="9c0c6a92-600b-403f-932f-e5bbd96747e6" guardText="try" />
-                                                        </guard>
-                                                        <operandOccurrenceSpecifications>
-                                                          <operandOccurrenceSpecificationMoniker Id="7a2c8ae3-1f10-4676-bec2-547c252fd11c" LastKnownName="OperandOccurrenceSpecification" />
-                                                          <operandOccurrenceSpecificationMoniker Id="558d78a6-3b9e-41d1-9950-c303019cd5cd" LastKnownName="OperandOccurrenceSpecification" />
-                                                        </operandOccurrenceSpecifications>
-                                                      </interactionOperand>
-                                                      <interactionOperand Id="56f4b7f9-bb0c-4983-817e-1422a3a367ba" name="InteractionOperand2">
-                                                        <coveredLifelines>
-                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                        </coveredLifelines>
-                                                        <guard>
-                                                          <interactionConstraint Id="362997cd-e05a-44ac-bd98-33ed013ead8c" guardText="catch (Exception)" />
-                                                        </guard>
-                                                        <operandOccurrenceSpecifications>
-                                                          <operandOccurrenceSpecificationMoniker Id="f72fddc4-3a3e-439a-95d3-88edb5e11784" LastKnownName="OperandOccurrenceSpecification" />
-                                                          <operandOccurrenceSpecificationMoniker Id="9913ee53-1d42-45e8-b5ec-7e1335c1c454" LastKnownName="OperandOccurrenceSpecification" />
-                                                        </operandOccurrenceSpecifications>
-                                                      </interactionOperand>
-                                                    </operands>
-                                                  </combinedFragment>
-                                                </fragments>
                                                 <guard>
-                                                  <interactionConstraint Id="0920d0fb-6192-4d63-a3c0-407758fa72ff" guardText="case &quot;teacher&quot;:" />
+                                                  <interactionConstraint Id="f2be6eca-34c5-4c6a-b1b6-779869827b40" guardText="catch (Exception)" />
                                                 </guard>
                                                 <operandOccurrenceSpecifications>
-                                                  <operandOccurrenceSpecificationMoniker Id="8e548959-c49d-432b-a128-d4a91fd15bb2" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="d912dde9-c9d7-4967-9586-a90a7ccf6d59" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="590cd920-6e02-49d2-91b3-4e52bfc51297" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="71761951-9e61-485e-b904-7eb16f4d6a7f" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="46916ed4-7e62-466f-9eb9-83547688b844" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="b0af1bc3-5044-4302-8828-fc1d2d75683f" LastKnownName="OperandOccurrenceSpecification" />
-                                                </operandOccurrenceSpecifications>
-                                              </interactionOperand>
-                                              <interactionOperand Id="ee637136-ff05-4ea1-b174-3f4057ab873e" name="InteractionOperand3">
-                                                <coveredLifelines>
-                                                  <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-                                                  <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-                                                  <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                </coveredLifelines>
-                                                <fragments>
-                                                  <combinedFragment Id="9b42ddfb-7ef8-4d66-9d3c-6cbcbfb0af36" name="CombinedFragment1" interactionOperator="Alt" customInteractionOperator="Try">
-                                                    <coveredLifelines>
-                                                      <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                    </coveredLifelines>
-                                                    <operands>
-                                                      <interactionOperand Id="771a229e-941e-466f-9e88-368c2fcc9ac5" name="InteractionOperand1">
-                                                        <coveredLifelines>
-                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                        </coveredLifelines>
-                                                        <fragments>
-                                                          <combinedFragment Id="c566c929-1bc4-4f92-b1b4-41ac1f469051" name="CombinedFragment1" interactionOperator="Loop" customInteractionOperator="Loop">
-                                                            <coveredLifelines>
-                                                              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                            </coveredLifelines>
-                                                            <operands>
-                                                              <interactionOperand Id="e653f255-ce7e-4ced-bd9d-b447bc5a8709" name="InteractionOperand1">
-                                                                <coveredLifelines>
-                                                                  <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                                </coveredLifelines>
-                                                                <fragments>
-                                                                  <combinedFragment Id="8a1739ec-8b77-48b6-a195-2974cad754dd" name="CombinedFragment1" interactionOperator="Opt" customInteractionOperator="If">
-                                                                    <coveredLifelines>
-                                                                      <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                                    </coveredLifelines>
-                                                                    <operands>
-                                                                      <interactionOperand Id="e85ff047-eed4-45a5-8a4f-9485ab3e04b5" name="InteractionOperand1">
-                                                                        <coveredLifelines>
-                                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                                        </coveredLifelines>
-                                                                        <guard>
-                                                                          <interactionConstraint Id="b718ca2d-210e-480b-8852-5de94b83fee4" guardText="if ((xmlReader.NodeType == XmlNodeType.Element) &amp;&amp; (xmlReader.Name == &quot;user&quot;) &amp;&amp; (xmlReader.GetAttribute(&quot;id&quot;) == neptunCode))" />
-                                                                        </guard>
-                                                                        <operandOccurrenceSpecifications>
-                                                                          <operandOccurrenceSpecificationMoniker Id="24f947ba-2e63-419d-8c5b-63c841e4a209" LastKnownName="OperandOccurrenceSpecification" />
-                                                                          <operandOccurrenceSpecificationMoniker Id="cb0b6a15-09d9-4666-9fab-c6ff89bdba45" LastKnownName="OperandOccurrenceSpecification" />
-                                                                        </operandOccurrenceSpecifications>
-                                                                      </interactionOperand>
-                                                                    </operands>
-                                                                  </combinedFragment>
-                                                                </fragments>
-                                                                <guard>
-                                                                  <interactionConstraint Id="974a6383-ba7a-4f31-9a10-af33217fd980" guardText="while (xmlReader.Read())">
-                                                                    <maxInt>
-                                                                      <literalString Id="35190f41-a88d-4d86-a79a-9db5262c4486" name="LiteralString1" />
-                                                                    </maxInt>
-                                                                    <minInt>
-                                                                      <literalString Id="385e0597-5e39-426a-a5a7-8c003cefc7f3" name="LiteralString2" />
-                                                                    </minInt>
-                                                                  </interactionConstraint>
-                                                                </guard>
-                                                                <operandOccurrenceSpecifications>
-                                                                  <operandOccurrenceSpecificationMoniker Id="df39ae4e-f104-4d44-bc06-9b7fd579666a" LastKnownName="OperandOccurrenceSpecification" />
-                                                                  <operandOccurrenceSpecificationMoniker Id="d0665325-17c3-41b4-b446-f9e1a855b4e5" LastKnownName="OperandOccurrenceSpecification" />
-                                                                </operandOccurrenceSpecifications>
-                                                              </interactionOperand>
-                                                            </operands>
-                                                          </combinedFragment>
-                                                        </fragments>
-                                                        <guard>
-                                                          <interactionConstraint Id="11bfa328-b54c-495d-ac3b-a1e1792eee17" guardText="try" />
-                                                        </guard>
-                                                        <operandOccurrenceSpecifications>
-                                                          <operandOccurrenceSpecificationMoniker Id="4e853363-2ddd-46ea-8aad-620792ccc0a9" LastKnownName="OperandOccurrenceSpecification" />
-                                                          <operandOccurrenceSpecificationMoniker Id="6de98c6d-bbd3-450e-8a29-6e89ebfa0c27" LastKnownName="OperandOccurrenceSpecification" />
-                                                        </operandOccurrenceSpecifications>
-                                                      </interactionOperand>
-                                                      <interactionOperand Id="9f064469-d209-4738-b63a-6dc78e4600cf" name="InteractionOperand2">
-                                                        <coveredLifelines>
-                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-                                                        </coveredLifelines>
-                                                        <guard>
-                                                          <interactionConstraint Id="3d9016c8-4d66-4696-b6c9-740ba0ec0137" guardText="catch (IOException)" />
-                                                        </guard>
-                                                        <operandOccurrenceSpecifications>
-                                                          <operandOccurrenceSpecificationMoniker Id="78b25309-9db8-46c9-8bba-e7eb36e39d82" LastKnownName="OperandOccurrenceSpecification" />
-                                                          <operandOccurrenceSpecificationMoniker Id="e3a3ca5c-033c-4779-808b-44f685926bf8" LastKnownName="OperandOccurrenceSpecification" />
-                                                        </operandOccurrenceSpecifications>
-                                                      </interactionOperand>
-                                                    </operands>
-                                                  </combinedFragment>
-                                                </fragments>
-                                                <guard>
-                                                  <interactionConstraint Id="210b3b82-0939-4ee0-bcc2-03acfac86323" guardText="case &quot;student&quot;:" />
-                                                </guard>
-                                                <operandOccurrenceSpecifications>
-                                                  <operandOccurrenceSpecificationMoniker Id="7fc1532a-0051-482c-bf33-6dd9e7ae0f4a" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="c41a5f26-19d0-45ce-a044-d3c0d7f28ecb" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="1c24e2d5-69b2-4efd-850d-5edc58beead7" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="950dc7fa-2a1b-46e1-9402-4d2432d91a04" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="edad6365-b028-43d1-90a0-f8759823fbe7" LastKnownName="OperandOccurrenceSpecification" />
-                                                  <operandOccurrenceSpecificationMoniker Id="33eb4fb2-635a-4c11-9cea-f12fb4d0ddc3" LastKnownName="OperandOccurrenceSpecification" />
+                                                  <operandOccurrenceSpecificationMoniker Id="76d6a8f5-b2ca-46ea-84d5-6af55d8b0965" LastKnownName="OperandOccurrenceSpecification" />
+                                                  <operandOccurrenceSpecificationMoniker Id="76ea5a1c-1ddb-4ce9-8df2-95a547957105" LastKnownName="OperandOccurrenceSpecification" />
                                                 </operandOccurrenceSpecifications>
                                               </interactionOperand>
                                             </operands>
                                           </combinedFragment>
                                         </fragments>
                                         <guard>
-                                          <interactionConstraint Id="d587e375-d930-4d92-a922-c47bc31108f5" guardText="try" />
+                                          <interactionConstraint Id="51efcfa1-592a-4d10-9db4-ec6dd150d6cd" guardText="case &quot;admin&quot;:" />
                                         </guard>
                                         <operandOccurrenceSpecifications>
-                                          <operandOccurrenceSpecificationMoniker Id="1660ccfc-9d3f-4f7a-b35e-92074d435f58" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="57785f2e-c059-454a-be06-26d4448ccf15" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="4c730093-7c57-4797-8c69-eff9e56095f6" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="8090a674-6d72-43a3-bf2e-21d14e77453f" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="279735e8-1ebc-4aa8-98ed-d07aaa30d7f3" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="34337cf9-318b-44ba-8ca5-652310efac85" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="439f87bb-ea67-4bfb-99bc-4f63c6959c0e" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="bdd64d1d-e6f5-40dc-8f15-3f6380638f94" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="e1bd508b-c89b-4bd3-a591-e7b082b09073" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="350270c0-e713-4881-a1b3-a4e7e777e33e" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="7ba8d8fb-a506-4357-897e-85bd7c078b64" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="579b377c-3619-492b-93b9-daa1c8fa19e3" LastKnownName="OperandOccurrenceSpecification" />
                                         </operandOccurrenceSpecifications>
                                       </interactionOperand>
-                                      <interactionOperand Id="6a2c7cff-0251-4d85-84b9-8e938113c45b" name="InteractionOperand2">
+                                      <interactionOperand Id="25578c87-1bd1-4c30-8ecb-ad444f90caaa" name="InteractionOperand2">
                                         <coveredLifelines>
                                           <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
                                           <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
                                           <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
                                         </coveredLifelines>
+                                        <fragments>
+                                          <combinedFragment Id="7aeca257-dc53-4e65-a74c-f25ee0278a52" name="CombinedFragment1" interactionOperator="Loop" customInteractionOperator="Loop">
+                                            <coveredLifelines>
+                                              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+                                            </coveredLifelines>
+                                            <operands>
+                                              <interactionOperand Id="8b53ea43-f9b0-469a-9cd5-9c25bcd1187c" name="InteractionOperand1">
+                                                <coveredLifelines>
+                                                  <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+                                                </coveredLifelines>
+                                                <fragments>
+                                                  <combinedFragment Id="939aadab-62c0-439d-afd3-8391fbdc560f" name="CombinedFragment1" interactionOperator="Opt" customInteractionOperator="If">
+                                                    <coveredLifelines>
+                                                      <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+                                                    </coveredLifelines>
+                                                    <operands>
+                                                      <interactionOperand Id="73a112b0-0389-4374-9f69-aa25884948bd" name="InteractionOperand1">
+                                                        <coveredLifelines>
+                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+                                                        </coveredLifelines>
+                                                        <guard>
+                                                          <interactionConstraint Id="acd10e45-3b30-4d51-a0c7-40b2b79be7a0" guardText="if ((xmlReader.NodeType == XmlNodeType.Element) &amp;&amp; (xmlReader.Name == &quot;user&quot;) &amp;&amp; (xmlReader.GetAttribute(&quot;id&quot;) == neptunCode))" />
+                                                        </guard>
+                                                        <operandOccurrenceSpecifications>
+                                                          <operandOccurrenceSpecificationMoniker Id="3f6c3a9c-d228-418c-a042-e8535f844a87" LastKnownName="OperandOccurrenceSpecification" />
+                                                          <operandOccurrenceSpecificationMoniker Id="af4478cb-590c-40cc-ab9d-06e53c445341" LastKnownName="OperandOccurrenceSpecification" />
+                                                        </operandOccurrenceSpecifications>
+                                                      </interactionOperand>
+                                                    </operands>
+                                                  </combinedFragment>
+                                                </fragments>
+                                                <guard>
+                                                  <interactionConstraint Id="805399b9-eb4b-484b-8ff5-2a7d43d1356d" guardText="while (xmlReader.Read())">
+                                                    <maxInt>
+                                                      <literalString Id="bc7dbc2d-2131-4baf-89f6-670e176df716" name="LiteralString1" />
+                                                    </maxInt>
+                                                    <minInt>
+                                                      <literalString Id="0cdce238-e579-495f-9f5e-a6a48434aac9" name="LiteralString2" />
+                                                    </minInt>
+                                                  </interactionConstraint>
+                                                </guard>
+                                                <operandOccurrenceSpecifications>
+                                                  <operandOccurrenceSpecificationMoniker Id="8976f315-4a9b-4555-9259-9dd1d4b59f11" LastKnownName="OperandOccurrenceSpecification" />
+                                                  <operandOccurrenceSpecificationMoniker Id="0867a211-d934-417e-9728-2d87e76860e0" LastKnownName="OperandOccurrenceSpecification" />
+                                                </operandOccurrenceSpecifications>
+                                              </interactionOperand>
+                                            </operands>
+                                          </combinedFragment>
+                                        </fragments>
                                         <guard>
-                                          <interactionConstraint Id="c798e85e-9d49-45dd-96e8-f864ff3b2ded" guardText="catch (Exception)" />
+                                          <interactionConstraint Id="0920d0fb-6192-4d63-a3c0-407758fa72ff" guardText="case &quot;teacher&quot;:" />
                                         </guard>
                                         <operandOccurrenceSpecifications>
-                                          <operandOccurrenceSpecificationMoniker Id="ceb9b7f9-2a8d-432a-ad86-071436a6ad26" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="6a86e02e-7b9d-4386-a4de-990a65d81986" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="27f88490-be46-4281-8e82-20dae16180b4" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="33b44541-6071-43fa-8c25-8309bdd90f8e" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="470a3e1d-a96d-4d6a-8c67-3b88350e39f6" LastKnownName="OperandOccurrenceSpecification" />
-                                          <operandOccurrenceSpecificationMoniker Id="8734fe0d-43be-457a-a096-817622280a1b" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="8e548959-c49d-432b-a128-d4a91fd15bb2" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="d912dde9-c9d7-4967-9586-a90a7ccf6d59" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="590cd920-6e02-49d2-91b3-4e52bfc51297" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="71761951-9e61-485e-b904-7eb16f4d6a7f" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="46916ed4-7e62-466f-9eb9-83547688b844" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="b0af1bc3-5044-4302-8828-fc1d2d75683f" LastKnownName="OperandOccurrenceSpecification" />
+                                        </operandOccurrenceSpecifications>
+                                      </interactionOperand>
+                                      <interactionOperand Id="ee637136-ff05-4ea1-b174-3f4057ab873e" name="InteractionOperand3">
+                                        <coveredLifelines>
+                                          <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
+                                          <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
+                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+                                        </coveredLifelines>
+                                        <fragments>
+                                          <combinedFragment Id="c566c929-1bc4-4f92-b1b4-41ac1f469051" name="CombinedFragment1" interactionOperator="Loop" customInteractionOperator="Loop">
+                                            <coveredLifelines>
+                                              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+                                            </coveredLifelines>
+                                            <operands>
+                                              <interactionOperand Id="e653f255-ce7e-4ced-bd9d-b447bc5a8709" name="InteractionOperand1">
+                                                <coveredLifelines>
+                                                  <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+                                                </coveredLifelines>
+                                                <fragments>
+                                                  <combinedFragment Id="8a1739ec-8b77-48b6-a195-2974cad754dd" name="CombinedFragment1" interactionOperator="Opt" customInteractionOperator="If">
+                                                    <coveredLifelines>
+                                                      <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+                                                    </coveredLifelines>
+                                                    <operands>
+                                                      <interactionOperand Id="e85ff047-eed4-45a5-8a4f-9485ab3e04b5" name="InteractionOperand1">
+                                                        <coveredLifelines>
+                                                          <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+                                                        </coveredLifelines>
+                                                        <guard>
+                                                          <interactionConstraint Id="b718ca2d-210e-480b-8852-5de94b83fee4" guardText="if ((xmlReader.NodeType == XmlNodeType.Element) &amp;&amp; (xmlReader.Name == &quot;user&quot;) &amp;&amp; (xmlReader.GetAttribute(&quot;id&quot;) == neptunCode))" />
+                                                        </guard>
+                                                        <operandOccurrenceSpecifications>
+                                                          <operandOccurrenceSpecificationMoniker Id="24f947ba-2e63-419d-8c5b-63c841e4a209" LastKnownName="OperandOccurrenceSpecification" />
+                                                          <operandOccurrenceSpecificationMoniker Id="cb0b6a15-09d9-4666-9fab-c6ff89bdba45" LastKnownName="OperandOccurrenceSpecification" />
+                                                        </operandOccurrenceSpecifications>
+                                                      </interactionOperand>
+                                                    </operands>
+                                                  </combinedFragment>
+                                                </fragments>
+                                                <guard>
+                                                  <interactionConstraint Id="974a6383-ba7a-4f31-9a10-af33217fd980" guardText="while (xmlReader.Read())">
+                                                    <maxInt>
+                                                      <literalString Id="35190f41-a88d-4d86-a79a-9db5262c4486" name="LiteralString1" />
+                                                    </maxInt>
+                                                    <minInt>
+                                                      <literalString Id="385e0597-5e39-426a-a5a7-8c003cefc7f3" name="LiteralString2" />
+                                                    </minInt>
+                                                  </interactionConstraint>
+                                                </guard>
+                                                <operandOccurrenceSpecifications>
+                                                  <operandOccurrenceSpecificationMoniker Id="df39ae4e-f104-4d44-bc06-9b7fd579666a" LastKnownName="OperandOccurrenceSpecification" />
+                                                  <operandOccurrenceSpecificationMoniker Id="d0665325-17c3-41b4-b446-f9e1a855b4e5" LastKnownName="OperandOccurrenceSpecification" />
+                                                </operandOccurrenceSpecifications>
+                                              </interactionOperand>
+                                            </operands>
+                                          </combinedFragment>
+                                        </fragments>
+                                        <guard>
+                                          <interactionConstraint Id="210b3b82-0939-4ee0-bcc2-03acfac86323" guardText="case &quot;student&quot;:" />
+                                        </guard>
+                                        <operandOccurrenceSpecifications>
+                                          <operandOccurrenceSpecificationMoniker Id="7fc1532a-0051-482c-bf33-6dd9e7ae0f4a" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="c41a5f26-19d0-45ce-a044-d3c0d7f28ecb" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="1c24e2d5-69b2-4efd-850d-5edc58beead7" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="950dc7fa-2a1b-46e1-9402-4d2432d91a04" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="edad6365-b028-43d1-90a0-f8759823fbe7" LastKnownName="OperandOccurrenceSpecification" />
+                                          <operandOccurrenceSpecificationMoniker Id="33eb4fb2-635a-4c11-9cea-f12fb4d0ddc3" LastKnownName="OperandOccurrenceSpecification" />
                                         </operandOccurrenceSpecifications>
                                       </interactionOperand>
                                     </operands>
@@ -700,14 +509,14 @@
               <lifelineMoniker Id="533ad498-56df-486e-8eda-00fcb9f9bafc" LastKnownName="this : Neptun" />
             </covered>
           </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="1e85fac6-5895-4e3b-a233-aa94a23dd9bd" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="6722228c-9f5b-4afa-99db-1441e92d7329" LastKnownName="this.il : InterfaceLogin" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="cf56d923-f708-4a7b-9c1b-d3cc19dc8e48" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="533ad498-56df-486e-8eda-00fcb9f9bafc" LastKnownName="this : Neptun" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="1e85fac6-5895-4e3b-a233-aa94a23dd9bd" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="6722228c-9f5b-4afa-99db-1441e92d7329" LastKnownName="this.il : InterfaceLogin" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="624eaf5b-55cc-40c8-8b0a-7b5f3e53ac9c" name="ExecutionOccurrenceSpecification">
@@ -752,12 +561,8 @@
             </start>
             <nestedOccurrences>
               <messageOccurrenceSpecificationMoniker Id="a1e47ad5-b5cd-418c-8e66-e7afb4ad4b59" LastKnownName="MessageOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="21d9b724-e9bb-4be6-8023-87d78be4dcb1" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="d7b418c0-9564-4042-b8c4-8bb5261b05c8" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="9e345911-98b1-47e4-bb99-6c8975e8926c" LastKnownName="MessageOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="24d6a775-aa9e-462d-a3c4-20a54e3cebb5" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="7cf7a3c3-201d-4f81-9cff-a763625ed955" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="1e613b76-b7c7-4f32-ae4d-8c22465297e0" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="76df8510-5749-4ec0-a878-ec1efd35f11b" LastKnownName="MessageOccurrenceSpecification" />
             </nestedOccurrences>
           </behaviorExecutionSpecification>
@@ -781,21 +586,6 @@
               <lifelineMoniker Id="533ad498-56df-486e-8eda-00fcb9f9bafc" LastKnownName="this : Neptun" />
             </covered>
           </messageOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="74bdb07f-9056-4ab7-8ad4-485d702b1947" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="01cca2e6-7020-4945-a67f-16c59c2ddea1" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="21d9b724-e9bb-4be6-8023-87d78be4dcb1" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
           <behaviorExecutionSpecification Id="0bcfe09b-9078-4dc3-abc3-5556ce6b7ccb" name="BehaviorExecutionSpecification">
             <coveredLifelines>
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
@@ -823,14 +613,14 @@
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="c6127fed-529c-4582-ba6b-8fa98c833f7d" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="d7b418c0-9564-4042-b8c4-8bb5261b05c8" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="c6127fed-529c-4582-ba6b-8fa98c833f7d" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
             </covered>
           </messageOccurrenceSpecification>
           <behaviorExecutionSpecification Id="1d5c2c7a-21b6-4c70-8568-554904b6c98c" name="BehaviorExecutionSpecification">
@@ -845,12 +635,8 @@
             </start>
             <nestedOccurrences>
               <messageOccurrenceSpecificationMoniker Id="9859c7d6-f62f-4beb-86f6-650e35dd24dc" LastKnownName="MessageOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="15d29852-51d1-4c73-b70e-4cd0e629c85f" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="166d8931-e058-4c7b-a32d-9650adfe6875" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="63080bfc-c017-4daa-a329-6a31422a442b" LastKnownName="MessageOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="7821f8cb-9dbe-40ec-ba73-eac729b64e64" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="41bae369-c7f4-4aab-91d6-92483b771871" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="06e4741f-5faa-4e58-a806-74217a49d46f" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="da346aa5-3a2e-4bbc-99a1-b99de5b71d4d" LastKnownName="MessageOccurrenceSpecification" />
             </nestedOccurrences>
           </behaviorExecutionSpecification>
@@ -874,11 +660,6 @@
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
             </covered>
           </messageOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="15d29852-51d1-4c73-b70e-4cd0e629c85f" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
           <lostFoundTarget Id="2a290403-9dc9-422a-9cbc-d8a7921c225c" name="LostFoundTarget" />
           <messageOccurrenceSpecification Id="166d8931-e058-4c7b-a32d-9650adfe6875" name="MessageOccurrenceSpecification">
             <covered>
@@ -891,21 +672,6 @@
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
           </messageOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="7821f8cb-9dbe-40ec-ba73-eac729b64e64" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="41bae369-c7f4-4aab-91d6-92483b771871" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="06e4741f-5faa-4e58-a806-74217a49d46f" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
           <messageOccurrenceSpecification Id="50373035-6d59-4e3b-bc52-a339df2a893c" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
@@ -946,51 +712,6 @@
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
             </covered>
           </executionOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="a5972ffc-9b52-489f-9ca2-a95c4eaab21c" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="24d6a775-aa9e-462d-a3c4-20a54e3cebb5" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="a5122856-6e8f-4592-b199-7fafe930169f" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="65396447-34de-421c-9d92-42b9e2b01bcd" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="65ff598f-0433-4e23-b2f6-fff10642e2fa" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="7cf7a3c3-201d-4f81-9cff-a763625ed955" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="672a3c4b-ebb6-4bb7-b195-e9cf201b6b40" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="a12ad33c-0d91-49b3-9156-2036bb636faf" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="1e613b76-b7c7-4f32-ae4d-8c22465297e0" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
           <messageOccurrenceSpecification Id="a063694d-d60e-43b4-857f-eac93c9fb8e3" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="533ad498-56df-486e-8eda-00fcb9f9bafc" LastKnownName="this : Neptun" />
@@ -1043,7 +764,6 @@
             </start>
             <nestedOccurrences>
               <messageOccurrenceSpecificationMoniker Id="35efce5c-8079-4a6b-8625-2a74f6405f7a" LastKnownName="MessageOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="1660ccfc-9d3f-4f7a-b35e-92074d435f58" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="439f87bb-ea67-4bfb-99bc-4f63c6959c0e" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="ebf702b8-60ec-47c2-802b-5822202b2427" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="2adc795f-b0ba-46f0-b4af-c61f75581982" LastKnownName="MessageOccurrenceSpecification" />
@@ -1056,9 +776,6 @@
               <messageOccurrenceSpecificationMoniker Id="a0043ea0-822b-49a3-8942-b412d84a3f83" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="2359eb01-7e22-43f6-9153-c7efb39ac0c3" LastKnownName="MessageOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="c41a5f26-19d0-45ce-a044-d3c0d7f28ecb" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="57785f2e-c059-454a-be06-26d4448ccf15" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="ceb9b7f9-2a8d-432a-ad86-071436a6ad26" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="6a86e02e-7b9d-4386-a4de-990a65d81986" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="4b1f74b1-fc33-414c-80cb-d52ad70d09b2" LastKnownName="MessageOccurrenceSpecification" />
             </nestedOccurrences>
           </behaviorExecutionSpecification>
@@ -1082,21 +799,6 @@
               <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
             </covered>
           </messageOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="279735e8-1ebc-4aa8-98ed-d07aaa30d7f3" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="4c730093-7c57-4797-8c69-eff9e56095f6" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="1660ccfc-9d3f-4f7a-b35e-92074d435f58" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="e1bd508b-c89b-4bd3-a591-e7b082b09073" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
@@ -1225,12 +927,12 @@
             </covered>
           </messageOccurrenceSpecification>
           <lostFoundTarget Id="3e7f7a3d-72f9-4c96-a12e-4b8df9bc8d24" name="LostFoundTarget" />
+          <lostFoundTarget Id="43369c1d-1f06-464b-acfd-e010e3f30ba0" name="LostFoundTarget" />
           <messageOccurrenceSpecification Id="e3fe6f73-b83e-475b-a1fc-90f54b298854" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
           </messageOccurrenceSpecification>
-          <lostFoundTarget Id="43369c1d-1f06-464b-acfd-e010e3f30ba0" name="LostFoundTarget" />
           <messageOccurrenceSpecification Id="b5f3cdd3-1cdf-46a0-97b2-559374af3ad6" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
@@ -1294,14 +996,14 @@
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="2adc795f-b0ba-46f0-b4af-c61f75581982" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="abf55fd3-d382-49cc-a24f-fc74c7878ebb" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="2adc795f-b0ba-46f0-b4af-c61f75581982" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="df923129-48f0-4573-b923-6e7169b6b923" name="ExecutionOccurrenceSpecification">
@@ -1393,7 +1095,6 @@
             </start>
             <nestedOccurrences>
               <messageOccurrenceSpecificationMoniker Id="2640a244-c4a8-4e38-8eb1-f00b9c8e8bdf" LastKnownName="MessageOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="7a2c8ae3-1f10-4676-bec2-547c252fd11c" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="17ff0ce3-4dc9-4adb-a795-9eefaf411dd3" LastKnownName="MessageOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="8976f315-4a9b-4555-9259-9dd1d4b59f11" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="3f6c3a9c-d228-418c-a042-e8535f844a87" LastKnownName="OperandOccurrenceSpecification" />
@@ -1404,10 +1105,6 @@
               <messageOccurrenceSpecificationMoniker Id="51bdb9cd-f803-4b82-8ba7-cc13bbcc8f3e" LastKnownName="MessageOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="af4478cb-590c-40cc-ab9d-06e53c445341" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="0867a211-d934-417e-9728-2d87e76860e0" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="558d78a6-3b9e-41d1-9950-c303019cd5cd" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="f72fddc4-3a3e-439a-95d3-88edb5e11784" LastKnownName="OperandOccurrenceSpecification" />
-              <messageOccurrenceSpecificationMoniker Id="f2578ca4-6f6a-4972-bd91-97d07855ec63" LastKnownName="MessageOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="9913ee53-1d42-45e8-b5ec-7e1335c1c454" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="4176b3b5-7c58-40ba-bf8c-bf0de20d35f6" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="84f19324-989d-474b-a6c5-02d8c6620f8f" LastKnownName="MessageOccurrenceSpecification" />
             </nestedOccurrences>
@@ -1432,11 +1129,6 @@
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
           </messageOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="7a2c8ae3-1f10-4676-bec2-547c252fd11c" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
           <lostFoundTarget Id="b0d14577-9d21-4543-a2fd-13922a155343" name="LostFoundTarget" />
           <messageOccurrenceSpecification Id="17ff0ce3-4dc9-4adb-a795-9eefaf411dd3" name="MessageOccurrenceSpecification">
             <covered>
@@ -1493,27 +1185,6 @@
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
           </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="558d78a6-3b9e-41d1-9950-c303019cd5cd" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="f72fddc4-3a3e-439a-95d3-88edb5e11784" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <lostFoundTarget Id="5d5be2cd-ad21-48fd-ae57-60aa6d0374eb" name="LostFoundTarget" />
-          <messageOccurrenceSpecification Id="f2578ca4-6f6a-4972-bd91-97d07855ec63" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="9913ee53-1d42-45e8-b5ec-7e1335c1c454" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
           <messageOccurrenceSpecification Id="4176b3b5-7c58-40ba-bf8c-bf0de20d35f6" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
@@ -1560,11 +1231,6 @@
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
             </covered>
           </executionOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="d912dde9-c9d7-4967-9586-a90a7ccf6d59" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="71761951-9e61-485e-b904-7eb16f4d6a7f" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
@@ -1573,6 +1239,11 @@
           <operandOccurrenceSpecification Id="b0af1bc3-5044-4302-8828-fc1d2d75683f" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="d912dde9-c9d7-4967-9586-a90a7ccf6d59" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="edad6365-b028-43d1-90a0-f8759823fbe7" name="OperandOccurrenceSpecification">
@@ -1639,7 +1310,6 @@
             </start>
             <nestedOccurrences>
               <messageOccurrenceSpecificationMoniker Id="40e6f12c-be0b-4444-85b4-95058ab277e9" LastKnownName="MessageOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="4e853363-2ddd-46ea-8aad-620792ccc0a9" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="ccd2a092-c6a1-483f-b3cc-dcd2491b3246" LastKnownName="MessageOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="df39ae4e-f104-4d44-bc06-9b7fd579666a" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="24f947ba-2e63-419d-8c5b-63c841e4a209" LastKnownName="OperandOccurrenceSpecification" />
@@ -1650,10 +1320,6 @@
               <messageOccurrenceSpecificationMoniker Id="2d3954c1-7220-4ba4-9f1f-114a55781e16" LastKnownName="MessageOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="cb0b6a15-09d9-4666-9fab-c6ff89bdba45" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="d0665325-17c3-41b4-b446-f9e1a855b4e5" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="6de98c6d-bbd3-450e-8a29-6e89ebfa0c27" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="78b25309-9db8-46c9-8bba-e7eb36e39d82" LastKnownName="OperandOccurrenceSpecification" />
-              <messageOccurrenceSpecificationMoniker Id="09d158b4-7946-4436-a59f-8ef549e6082f" LastKnownName="MessageOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="e3a3ca5c-033c-4779-808b-44f685926bf8" LastKnownName="OperandOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="3509754f-22b5-4552-828d-5b83bd6915b0" LastKnownName="MessageOccurrenceSpecification" />
               <messageOccurrenceSpecificationMoniker Id="b8e54ccf-b69d-4bbb-832f-40c5c10d4fcf" LastKnownName="MessageOccurrenceSpecification" />
             </nestedOccurrences>
@@ -1678,17 +1344,12 @@
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
             </covered>
           </messageOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="4e853363-2ddd-46ea-8aad-620792ccc0a9" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <lostFoundTarget Id="b82d53b6-313e-4c9a-b4f8-b92502a4f0da" name="LostFoundTarget" />
           <messageOccurrenceSpecification Id="ccd2a092-c6a1-483f-b3cc-dcd2491b3246" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
           </messageOccurrenceSpecification>
+          <lostFoundTarget Id="b82d53b6-313e-4c9a-b4f8-b92502a4f0da" name="LostFoundTarget" />
           <operandOccurrenceSpecification Id="df39ae4e-f104-4d44-bc06-9b7fd579666a" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
@@ -1735,27 +1396,6 @@
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="d0665325-17c3-41b4-b446-f9e1a855b4e5" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="6de98c6d-bbd3-450e-8a29-6e89ebfa0c27" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="78b25309-9db8-46c9-8bba-e7eb36e39d82" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="09d158b4-7946-4436-a59f-8ef549e6082f" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <lostFoundTarget Id="39738115-6589-4221-b520-faee5adf881e" name="LostFoundTarget" />
-          <operandOccurrenceSpecification Id="e3a3ca5c-033c-4779-808b-44f685926bf8" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
@@ -1821,51 +1461,6 @@
               <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
             </covered>
           </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="8090a674-6d72-43a3-bf2e-21d14e77453f" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="57785f2e-c059-454a-be06-26d4448ccf15" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="34337cf9-318b-44ba-8ca5-652310efac85" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="470a3e1d-a96d-4d6a-8c67-3b88350e39f6" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="27f88490-be46-4281-8e82-20dae16180b4" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="ceb9b7f9-2a8d-432a-ad86-071436a6ad26" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="33b44541-6071-43fa-8c25-8309bdd90f8e" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="8734fe0d-43be-457a-a096-817622280a1b" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="6a86e02e-7b9d-4386-a4de-990a65d81986" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
           <messageOccurrenceSpecification Id="1a99e64e-a436-4e13-9b86-5afe6b979430" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="533ad498-56df-486e-8eda-00fcb9f9bafc" LastKnownName="this : Neptun" />
@@ -1886,6 +1481,11 @@
               <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
             </covered>
           </executionOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="6709c2be-4e0e-4cfa-9509-be7702777926" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
+            </covered>
+          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="3bbc5c31-2693-4ce1-a80f-863274c56ffd" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
@@ -1901,9 +1501,14 @@
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
           </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="6709c2be-4e0e-4cfa-9509-be7702777926" name="OperandOccurrenceSpecification">
+          <operandOccurrenceSpecification Id="a34e482e-3b57-4a7a-9ee0-a813729fa6d3" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="fa582498-cfda-45c4-b217-fea13601e531" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="41baeef5-6fb6-4b6b-b433-004e065ccc98" name="OperandOccurrenceSpecification">
@@ -1914,16 +1519,6 @@
           <operandOccurrenceSpecification Id="c2cdc580-d38e-448c-a592-86af69ea60fa" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="533ad498-56df-486e-8eda-00fcb9f9bafc" LastKnownName="this : Neptun" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="fa582498-cfda-45c4-b217-fea13601e531" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="a34e482e-3b57-4a7a-9ee0-a813729fa6d3" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
             </covered>
           </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="c4b456a6-039f-4299-bf76-c43692c4b067" name="OperandOccurrenceSpecification">
@@ -1966,6 +1561,11 @@
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
             </covered>
           </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="f0ce61f8-cc8a-4539-8904-c4b5e9473e4e" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
+            </covered>
+          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="549e644f-2dc0-4507-ace1-98751c447ccf" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
@@ -1979,11 +1579,6 @@
           <operandOccurrenceSpecification Id="d8028e54-91d2-4717-be8b-06db06c1cb24" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="f0ce61f8-cc8a-4539-8904-c4b5e9473e4e" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
             </covered>
           </operandOccurrenceSpecification>
           <messageOccurrenceSpecification Id="ed52f161-ff19-46db-a843-ca0c737789a7" name="MessageOccurrenceSpecification">
@@ -2056,6 +1651,21 @@
               <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
             </covered>
           </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="f75f0e71-775b-4aff-8cf2-c3c4a160c2eb" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="6722228c-9f5b-4afa-99db-1441e92d7329" LastKnownName="this.il : InterfaceLogin" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="e26e7ee3-e580-40cb-8812-6681cfddc081" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="6891bbac-7058-4bae-aaa8-d736f88b84cc" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="533ad498-56df-486e-8eda-00fcb9f9bafc" LastKnownName="this : Neptun" />
+            </covered>
+          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="b0066c1d-b8f8-407b-aec4-ff61940dced1" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="426a3262-c72c-4b3e-a7bd-d9afd495a4e5" LastKnownName="this.controller.db.userHandler : UserXmlHandler" />
@@ -2064,21 +1674,6 @@
           <operandOccurrenceSpecification Id="0ce0b32d-ffe5-42fd-ac92-1b564a497d40" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="22d92d88-b744-4e1b-81b6-e8b9cde1f571" LastKnownName="this.controller.db : Database" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="e26e7ee3-e580-40cb-8812-6681cfddc081" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="bc212583-67b1-4688-a649-473286dbfb57" LastKnownName="this.controller : Controller" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="f75f0e71-775b-4aff-8cf2-c3c4a160c2eb" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="6722228c-9f5b-4afa-99db-1441e92d7329" LastKnownName="this.il : InterfaceLogin" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="6891bbac-7058-4bae-aaa8-d736f88b84cc" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="533ad498-56df-486e-8eda-00fcb9f9bafc" LastKnownName="this : Neptun" />
             </covered>
           </operandOccurrenceSpecification>
           <executionOccurrenceSpecification Id="9bfd2d82-185c-4f31-bcd5-5573be43c1ca" name="ExecutionOccurrenceSpecification">
@@ -2145,14 +1740,9 @@
             <topLevelOccurrences>
               <operandOccurrenceSpecificationMoniker Id="078fa8a9-b81d-42ca-9f8c-44b811ad4ce6" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="5f1deaae-fefb-4ebc-8b98-d445b3ffeb62" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="01cca2e6-7020-4945-a67f-16c59c2ddea1" LastKnownName="OperandOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="5c53869e-bc8d-4af7-b11a-a5bbb1adfa7f" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="07d83bf6-8598-432c-a05d-cc5f8ef7db06" LastKnownName="ExecutionOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="a5122856-6e8f-4592-b199-7fafe930169f" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="65ff598f-0433-4e23-b2f6-fff10642e2fa" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="a12ad33c-0d91-49b3-9156-2036bb636faf" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="f1327d10-b04e-466e-8684-04c0083db633" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="4c730093-7c57-4797-8c69-eff9e56095f6" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="e1bd508b-c89b-4bd3-a591-e7b082b09073" LastKnownName="OperandOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="60d21b8b-5b99-4721-9a96-3ed04d853a14" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="df923129-48f0-4573-b923-6e7169b6b923" LastKnownName="ExecutionOccurrenceSpecification" />
@@ -2165,9 +1755,6 @@
               <executionOccurrenceSpecificationMoniker Id="e608eb88-2f0d-4346-938d-5c49062ca4b7" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="54307558-25df-4b78-817f-a5651d01d5e0" LastKnownName="ExecutionOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="950dc7fa-2a1b-46e1-9402-4d2432d91a04" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="8090a674-6d72-43a3-bf2e-21d14e77453f" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="27f88490-be46-4281-8e82-20dae16180b4" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="33b44541-6071-43fa-8c25-8309bdd90f8e" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="3bbc5c31-2693-4ce1-a80f-863274c56ffd" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="41baeef5-6fb6-4b6b-b433-004e065ccc98" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="c4b456a6-039f-4299-bf76-c43692c4b067" LastKnownName="OperandOccurrenceSpecification" />
@@ -2185,14 +1772,9 @@
             <topLevelOccurrences>
               <operandOccurrenceSpecificationMoniker Id="9afcf31a-9efd-4736-aa27-0d80c8b08b45" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="88a0f572-469c-44be-ad2b-7fe04c899287" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="74bdb07f-9056-4ab7-8ad4-485d702b1947" LastKnownName="OperandOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="1278a779-1146-47c6-8cd9-9260a0bc68e7" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="b363d8cd-db64-4468-ba42-ab3f6d5a543f" LastKnownName="ExecutionOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="a5972ffc-9b52-489f-9ca2-a95c4eaab21c" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="65396447-34de-421c-9d92-42b9e2b01bcd" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="672a3c4b-ebb6-4bb7-b195-e9cf201b6b40" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="827da170-142a-41e8-a3dc-fca5c3c9fa09" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="279735e8-1ebc-4aa8-98ed-d07aaa30d7f3" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="7ba8d8fb-a506-4357-897e-85bd7c078b64" LastKnownName="OperandOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="8fccda9b-ebc9-47aa-b8c9-624ad4bf2d10" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="74489a4f-05e3-4212-84c9-5de8378ac21f" LastKnownName="ExecutionOccurrenceSpecification" />
@@ -2205,9 +1787,6 @@
               <executionOccurrenceSpecificationMoniker Id="819d07ac-220b-407f-95d5-e2aaf7c490cf" LastKnownName="ExecutionOccurrenceSpecification" />
               <executionOccurrenceSpecificationMoniker Id="e23d306f-ecec-4cb5-a252-519605329688" LastKnownName="ExecutionOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="33eb4fb2-635a-4c11-9cea-f12fb4d0ddc3" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="34337cf9-318b-44ba-8ca5-652310efac85" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="470a3e1d-a96d-4d6a-8c67-3b88350e39f6" LastKnownName="OperandOccurrenceSpecification" />
-              <operandOccurrenceSpecificationMoniker Id="8734fe0d-43be-457a-a096-817622280a1b" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="29417573-c4bc-43d8-b592-24c3983c2c85" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="fa582498-cfda-45c4-b217-fea13601e531" LastKnownName="OperandOccurrenceSpecification" />
               <operandOccurrenceSpecificationMoniker Id="d65f9934-b1f7-46ad-826f-b1b98378c0a4" LastKnownName="OperandOccurrenceSpecification" />
@@ -2603,14 +2182,6 @@ GetList(ref xmlReader, "demands", "id")</generationState>
               <lostFoundTargetMoniker Id="05072a65-d1bd-46c7-8df2-9ad9f659ece4" LastKnownName="LostFoundTarget" />
             </receiveEvent>
           </message>
-          <message Id="5f6f6884-1973-4b31-8b2f-4459fef0c1aa" name="Return" messageKind="Lost" messageSort="AsynchCall" createSelfMessage="false" signatureText="return null">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker Id="f2578ca4-6f6a-4972-bd91-97d07855ec63" LastKnownName="MessageOccurrenceSpecification" />
-            </sendEvent>
-            <receiveEvent>
-              <lostFoundTargetMoniker Id="5d5be2cd-ad21-48fd-ae57-60aa6d0374eb" LastKnownName="LostFoundTarget" />
-            </receiveEvent>
-          </message>
           <message Id="ca972bf6-77fa-4d5f-9b72-2ace80f54344" name="Create Teacher" messageKind="Lost" messageSort="AsynchCall" createSelfMessage="false">
             <referencesInternal>
               <reference Id="321c7f58-3384-48a1-9cd4-d13c8a9b016c" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=Neptun_2._0)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(e6388391-50c5-4d80-9425-ed854a766094.OutputPathUri)&amp;quot; Namespace=Neptun_2._0 Type=Teacher)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(e6388391-50c5-4d80-9425-ed854a766094.OutputPathUri)&amp;quot; Namespace=Neptun_2._0 Type=Teacher Member=(Name=.ctor OverloadingParameters=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/mscorlib.dll&amp;quot; Namespace=System Type=String),(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/mscorlib.dll&amp;quot; Namespace=System Type=String),(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/mscorlib.dll&amp;quot; Namespace=System Type=String),(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/mscorlib.dll&amp;quot; Namespace=System Type=String),(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/mscorlib.dll&amp;quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1 GenericArguments=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/mscorlib.dll&amp;quot; Namespace=System Type=String)])),(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/mscorlib.dll&amp;quot; Namespace=System.Collections.Generic Type=(Name=List GenericParameterCount=1 GenericArguments=[(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5.2/mscorlib.dll&amp;quot; Namespace=System Type=String)]))]))&quot;)" tag="DGQL" />
@@ -2761,14 +2332,6 @@ GetList(ref xmlReader, "requests", "id")</generationState>
             </sendEvent>
             <receiveEvent>
               <lostFoundTargetMoniker Id="5e18f880-6898-48de-a317-08b6e4d47f83" LastKnownName="LostFoundTarget" />
-            </receiveEvent>
-          </message>
-          <message Id="fb2dec0f-8d19-4a50-a385-5cf00be687a5" name="Return" messageKind="Lost" messageSort="AsynchCall" createSelfMessage="false" signatureText="return null">
-            <sendEvent>
-              <messageOccurrenceSpecificationMoniker Id="09d158b4-7946-4436-a59f-8ef549e6082f" LastKnownName="MessageOccurrenceSpecification" />
-            </sendEvent>
-            <receiveEvent>
-              <lostFoundTargetMoniker Id="39738115-6589-4221-b520-faee5adf881e" LastKnownName="LostFoundTarget" />
             </receiveEvent>
           </message>
           <message Id="8785055e-54ae-45fb-9a2f-5d2851a4d34a" name="Create Student" messageKind="Lost" messageSort="AsynchCall" createSelfMessage="false">

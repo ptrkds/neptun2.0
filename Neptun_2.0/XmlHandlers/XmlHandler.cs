@@ -42,7 +42,7 @@ namespace Neptun_2._0
             return list;
         }
 
-        protected List<string> GetAllIds(string directory)
+        public List<string> GetAllIds(string directory)
         {
             //string[] pdfFiles = Directory.GetFiles(directory, "*.xml").Select(path => Path.GetFileName(path)).ToArray();
 

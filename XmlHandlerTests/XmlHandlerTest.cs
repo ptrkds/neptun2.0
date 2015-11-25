@@ -22,10 +22,10 @@ namespace XmlHandlerTest
             XmlHandler handler = new XmlHandler();
 
             XmlReader xmlReader = XmlReader.Create(dir+"/"+file);
-            List<string> result = handler.GetList(ref xmlReader, node, attr);
+            //List<string> result = handler.GetList(ref xmlReader, node, attr);
 
             xmlReader.Dispose();
-            Console.WriteLine(ObjectDumper.Dump(result));
+            //Console.WriteLine(ObjectDumper.Dump(result));
         }
 
         [TestMethod]
@@ -40,10 +40,10 @@ namespace XmlHandlerTest
 
             XmlReader xmlReader = XmlReader.Create(dir + "/" + file);
             List<string> empty = new List<string>();
-            List<string> result = handler.GetList(ref xmlReader, node, attr);
+            //List<string> result = handler.GetList(ref xmlReader, node, attr);
 
-            Console.WriteLine(ObjectDumper.Dump(result));
-            Assert.IsTrue(result.Count == 0);
+            //Console.WriteLine(ObjectDumper.Dump(result));
+            //Assert.IsTrue(result.Count == 0);
          
             xmlReader.Dispose();
         }
