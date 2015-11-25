@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<user id="BATMAN">
+<admin id="BATMAN">
   <name>Batman</name>
   <type>admin</type>
   <pw>123456</pw>
-  <lectures count="4">
-    <lecture id="VEMFK32" />
-  </lectures>
+  <subjects count="4">
+    <subject id="VEMFK32" />
+  </subjects>
   <documents>
   </documents>
-</user>
+</admin>

@@ -159,7 +159,7 @@ namespace Neptun_2._0
 
         public List<short_subject> getAllSubject()
         {
-            List<string> ids = subjectHandler.GetAllIds("Lectures/");
+            List<string> ids = subjectHandler.GetAllIds("Subjects/");
 
             List<short_subject> subjects = new List<short_subject>();
 

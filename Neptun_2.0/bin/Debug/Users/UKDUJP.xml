@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<user id="UKDUJP">
+<student id="UKDUJP">
   <name>Kiso</name>
   <type>student</type>
   <pw>123456</pw>
-  <lectures count="4">
-    <lecture id="VEMFK22" />
-  </lectures>
+  <subjects count="4">
+    <subject id="VEMFK22" />
+  </subjects>
   <documents>
   </documents>
-</user>
+</student>
