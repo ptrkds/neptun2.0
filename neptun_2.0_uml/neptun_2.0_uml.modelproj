@@ -72,12 +72,12 @@
       <SubType>Content</SubType>
       <DependentUpon>Neptun2.0.usecasediagram</DependentUpon>
     </Content>
-    <Content Include="RequestTeacherTimeTable.sequencediagram">
+    <Content Include="RequestStudentTimeTable.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="RequestTeacherTimeTable.sequencediagram.layout">
+    <Content Include="RequestStudentTimeTable.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>RequestTeacherTimeTable.sequencediagram</DependentUpon>
+      <DependentUpon>RequestStudentTimeTable.sequencediagram</DependentUpon>
     </Content>
     <Content Include="StudentBlock.sequencediagram">
       <SubType>Content</SubType>

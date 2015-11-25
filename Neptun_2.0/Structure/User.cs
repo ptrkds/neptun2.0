@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Neptun_2._0
 {
-    abstract class User
+    class User
     {
         protected String neptunCode;
         protected String name;
@@ -21,20 +21,21 @@ namespace Neptun_2._0
             this.pw = pw;
         }
 
-        abstract public String getNeptunCode();
-
-        abstract public void setNeptunCode(String _neptunCode);
-
-        abstract public String getName();
-
-        abstract public void setName(String _name);
-
-        abstract public String getType();
-
-        abstract public void setType(String _type);
-
-        abstract public String getPw();
-
-        public abstract void setPw(String _pw);
+        public String getNeptunCode()
+        {
+            return neptunCode;
+        }
+        public String getType()
+        {
+            return type;
+        }
+        public String getName()
+        {
+            return name;
+        }
+        public String getPw()
+        {
+            return pw;
+        }
     }
 }

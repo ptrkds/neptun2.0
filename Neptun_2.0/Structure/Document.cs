@@ -33,20 +33,5 @@ namespace Neptun_2._0
         {
             return owner;
         }
-
-        public void setId(String _id)
-        {
-            id = _id;
-        }
-
-        public void setState(String _state)
-        {
-            state = _state;
-        }
-
-        public void setOwner(String _owner)
-        {
-            owner = _owner;
-        }
     }
 }

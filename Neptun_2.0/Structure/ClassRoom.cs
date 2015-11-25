@@ -33,21 +33,6 @@ namespace Neptun_2._0
         {
             return subjectIds;
         }
-
-        public void setId(String _id)
-        {
-            id = _id;
-        }
-
-        public void setLimit(int _limit)
-        {
-            limit = _limit;
-        }
-
-        public void setSubjectIds(List<String> _subjectIds)
-        {
-            subjectIds = _subjectIds;
-        }
     }
 
 }

@@ -29,16 +29,5 @@ namespace Neptun_2._0
         {
             return text;
         }
-
-
-        public void setSubject(String _subject)
-        {
-            subject = _subject;
-        }
-
-        public void setText(String _text)
-        {
-            text = _text;
-        }
     }
 }

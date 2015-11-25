@@ -38,90 +38,38 @@ namespace Neptun_2._0
         {
             return id;
         }
-
-        public void setId(String _id)
-        {
-            id = _id;
-        }
-
         public String getClassRoom()
         {
             return classRoom;
-        }
-
-        public void setClassRoom(string _classRoom)
-        {
-            classRoom = _classRoom;
         }
 
         public String getName()
         {
             return name;
         }
-
-        public void setName(String  _name)
-        {
-            name = _name;
-        }
-
         public String getTeacher()
         {
             return teacher;
         }
-
-        public void setTeacher(String _teacher)
-        {
-            teacher = _teacher;
-        }
-
         public String getDay()
         {
             return day;
         }
-
-        public void setDay(String _day)
-        {
-            day = _day;
-        }
-
         public String getStartTime()
         {
             return startTime;
         }
-
-        public void setStartTime(String _startTime)
-        {
-            startTime = _startTime;
-        }
-
         public String getEndTime()
         {
             return id;
         }
-
-        public void setEndTime(String _endTime)
-        {
-            endTime = _endTime;
-        }
-
         public List<String> getStudents()
         {
             return students;
         }
-
-        public void setStudents(List<String> _students)
-        {
-            students = _students;
-        }
-
         public List<String> getBlacklist()
         {
             return blacklist;
-        }
-
-        public void setBlacklist(List<String> _blacklist)
-        {
-            blacklist = _blacklist;
         }
     }
 }
