@@ -85,6 +85,7 @@ namespace Neptun_2._0
                 //TODO e
             }
 
+            xmlReader.Dispose();
             return new Subject(id, name, teacher,room, day, startTime, endTime, studentIds, blockedStudentIds);
         }
         #endregion
@@ -99,7 +100,7 @@ namespace Neptun_2._0
             using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(subject.getId()), settings))
             {
                 writer.WriteStartDocument();
-                writer.WriteStartElement("lecture");
+                writer.WriteStartElement("subject");
                 writer.WriteAttributeString("id", subject.getId());
 
                 writer.WriteElementString("name", subject.getName());
@@ -135,7 +136,7 @@ namespace Neptun_2._0
         public bool Register(string subjId, string neptunCode)
         {
             //TODO error handling
-            AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "/lecture/students/", "student", "id", neptunCode);
+            AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "/subject/students/", "student", "id", neptunCode);
             return true;
         }
 
@@ -143,7 +144,7 @@ namespace Neptun_2._0
         {
             //TODO error handling
             //RemoveNodeByAttr(GetXmlFileName(subj_id), "lecture/students/student[@id=\""+neptunCode+"\"]");
-            RemoveNodeByAttr(GetXmlFileName(subjId), CreateXPathWithAttr("lecture/students/student", "id", neptunCode));
+            RemoveNodeByAttr(GetXmlFileName(subjId), CreateXPathWithAttr("subject/students/student", "id", neptunCode));
             return true;
         }
 
@@ -154,7 +155,7 @@ namespace Neptun_2._0
             // isOnSubj()
 
             DeRegister(subjId, neptunCode);
-            AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "lecture/blacklist", "student", "id", neptunCode);
+            AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "subject/blacklist", "student", "id", neptunCode);
 
             return true;
         }
@@ -164,7 +165,7 @@ namespace Neptun_2._0
 
         private string GetXmlFileName(string id)
         {
-            return "Lectures/" + id + ".xml";
+            return "Subjects/" + id + ".xml";
         }
         #endregion
 

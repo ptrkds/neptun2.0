@@ -9,7 +9,7 @@ namespace Neptun_2._0
     class XmlHandler
     { 
         #region getters
-        public static string GetValue(ref XmlReader xmlReader, string node)
+        protected string GetValue(ref XmlReader xmlReader, string node)
         {
             //TODO try catch
             string str;
@@ -20,7 +20,7 @@ namespace Neptun_2._0
             return str;
         }
 
-        public List<string> GetList(ref XmlReader xmlReader, string parentNode, string attr)
+        protected List<string> GetList(ref XmlReader xmlReader, string parentNode, string attr)
         {
             List<string> list = new List<string>();
             xmlReader.ReadToFollowing(parentNode);
@@ -42,7 +42,7 @@ namespace Neptun_2._0
             return list;
         }
 
-        public List<string> GetAllIds(string directory)
+        protected List<string> GetAllIds(string directory)
         {
             //string[] pdfFiles = Directory.GetFiles(directory, "*.xml").Select(path => Path.GetFileName(path)).ToArray();
 
@@ -58,7 +58,7 @@ namespace Neptun_2._0
         #endregion
 
         #region setters
-        public void SetAttribute(string filepath, string xpath, int idx, string value)
+        protected void SetAttribute(string filepath, string xpath, int idx, string value)
         {
             //TODO try catch
             //sets value as the [idx] attribute of the given xpath
@@ -72,7 +72,7 @@ namespace Neptun_2._0
             doc.Save(filepath);
         }
 
-        public void SetValue(string filepath, string xpath, string value)
+        protected void SetValue(string filepath, string xpath, string value)
         {
             //TODO try catch
             //sets value as the [idx] attribute of the given xpath
@@ -87,7 +87,7 @@ namespace Neptun_2._0
         #endregion
 
         #region append methods
-        public void AppendNode(string filepath, string xpath, string node_name, string node_value)
+        protected void AppendNode(string filepath, string xpath, string node_name, string node_value)
         {
             //TODO try catch
             //append node with given value
@@ -103,7 +103,7 @@ namespace Neptun_2._0
             doc.Save(filepath);
         }
 
-        public void AppendNode(string filepath, string xpath, string node_name, string node_value, string attr_name, string attr_value)
+        protected void AppendNode(string filepath, string xpath, string node_name, string node_value, string attr_name, string attr_value)
         {
             //TODO try catch
             //append node with given value and attribute
@@ -121,7 +121,7 @@ namespace Neptun_2._0
             doc.Save(filepath);
         }
 
-        public void AppendEmptyNodeWithAttr(string filepath, string xpath, string node_name, string attr_name, string attr_value)
+        protected void AppendEmptyNodeWithAttr(string filepath, string xpath, string node_name, string attr_name, string attr_value)
         {
             //TODO try catch
             //append an empty child node with the given attribute
@@ -142,7 +142,7 @@ namespace Neptun_2._0
         #endregion
 
         #region remove methods
-        public void RemoveNodeByAttr(string filepath, string xpath)
+        protected void RemoveNodeByAttr(string filepath, string xpath)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(filepath);
