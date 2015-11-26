@@ -488,38 +488,49 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
-                if (position < 3)
+                /*int asd = Console.CursorLeft;
+                Console.SetCursorPosition(50, 15);
+                Console.Write(asd);*/
+                if (Console.CursorLeft > 78)
                 {
                     Console.Write("\b ");
                 }
-                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && input.Key != ConsoleKey.Backspace)
+                else
                 {
-                    Console.Write("\b ");
-                }
-                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)))
-                {
-                    switch (position)
+
+                    if (position < 3)
                     {
-                        case 3:
-                            lengthID++;
-                            subjectID += input.KeyChar;
-                            break;
-                        case 4:
-                            lengthName++;
-                            subjectName += input.KeyChar;
-                            break;
-                        case 5:
-                            lengthDay++;
-                            day += input.KeyChar;
-                            break;
-                        case 6:
-                            lengthStart++;
-                            start += input.KeyChar;
-                            break;
-                        case 7:
-                            lengthEnd++;
-                            end += input.KeyChar;
-                            break;
+                        Console.Write("\b ");
+                    }
+                    if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && input.Key != ConsoleKey.Backspace)
+                    {
+                        Console.Write("\b ");
+                    }
+                    if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)))
+                    {
+                        switch (position)
+                        {
+                            case 3:
+                                lengthID++;
+                                subjectID += input.KeyChar;
+                                break;
+                            case 4:
+                                lengthName++;
+                                subjectName += input.KeyChar;
+                                break;
+                            case 5:
+                                lengthDay++;
+                                day += input.KeyChar;
+                                break;
+                            case 6:
+                                lengthStart++;
+                                start += input.KeyChar;
+                                break;
+                            case 7:
+                                lengthEnd++;
+                                end += input.KeyChar;
+                                break;
+                        }
                     }
                 }
                 if (input.Key == ConsoleKey.Backspace)
