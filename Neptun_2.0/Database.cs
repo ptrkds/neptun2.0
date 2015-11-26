@@ -198,7 +198,9 @@ namespace Neptun_2._0
 
         public bool deregisterSubject(String neptun_code, String subject_id)
         {
-            return userHandler.DeRegister(neptun_code, subject_id);
+            bool student = userHandler.DeRegister(neptun_code, subject_id);
+            bool subject = subjectHandler.DeRegister(subject_id, neptun_code);
+            return student && subject;
         }
 
         public List<ClassRoom> getFreeClasses(String startTime, String endTime)
