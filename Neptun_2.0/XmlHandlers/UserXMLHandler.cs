@@ -23,7 +23,7 @@ namespace Neptun_2._0
             {
                 xmlReader = XmlReader.Create(GetXmlFileName(neptunCode));
 
-                //TODO resolve Hax
+                //TODO resolve this Hax
                 xmlReader.Read();
                 xmlReader.Read();
 
@@ -44,7 +44,7 @@ namespace Neptun_2._0
             }
             catch (IOException e)
             {
-                //TODO resolva hax
+                //TODO resolve hax
                 return null;
             }
            
