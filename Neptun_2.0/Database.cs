@@ -19,11 +19,6 @@ namespace Neptun_2._0
             return userHandler.CheckLogin(id, pw);
         }
 
-        /*public User GetUser(string id)
-        {
-            return userHandler.GetUser(id);
-        }*/
-
         public Teacher GetTeacher(string id)
         {
             return userHandler.GetTeacher(id);
