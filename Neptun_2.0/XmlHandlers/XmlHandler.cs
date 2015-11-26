@@ -60,76 +60,80 @@ namespace Neptun_2._0
         #region setters
         protected void SetAttribute(string filepath, string xpath, int idx, string value)
         {
-            //TODO try catch
-
             //sets value as the [idx] attribute of the given xpath
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            XmlNode node = doc.SelectSingleNode(xpath);
-            //Console.WriteLine(node.Name);
-            
-            node.Attributes[idx].Value = value;
-            
-            doc.Save(filepath);
+
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(filepath);
+                XmlNode node = doc.SelectSingleNode(xpath);
+                node.Attributes[idx].Value = value;
+
+                doc.Save(filepath);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         protected void SetValue(string filepath, string xpath, string value)
         {
-            //TODO try catch
             //sets value as the [idx] attribute of the given xpath
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            XmlNode node = doc.SelectSingleNode(xpath);
+            
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(filepath);
+                XmlNode node = doc.SelectSingleNode(xpath);
 
-            node.InnerText = value;
+                node.InnerText = value;
 
-            doc.Save(filepath);
+                doc.Save(filepath);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            
         }
         #endregion
 
         #region append methods
         protected void AppendNode(string filepath, string xpath, string node_name, string node_value)
         {
-            //TODO try catch
             //append node with given value
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            XmlNode node = doc.SelectSingleNode(xpath);
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(filepath);
+                XmlNode node = doc.SelectSingleNode(xpath);
 
-            XmlElement elem = doc.CreateElement(node_name);
-            elem.InnerText = node_name;
+                XmlElement elem = doc.CreateElement(node_name);
+                elem.InnerText = node_name;
 
-            node.AppendChild(elem);
+                node.AppendChild(elem);
 
-            doc.Save(filepath);
+                doc.Save(filepath);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            
         }
 
         protected void AppendNode(string filepath, string xpath, string node_name, string node_value, string attr_name, string attr_value)
         {
-            //TODO try catch
+            
             //append node with given value and attribute
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-            XmlNode node = doc.SelectSingleNode(xpath);
-
-            XmlElement elem = doc.CreateElement(node_name);
-            elem.InnerText = attr_value;
-            elem.IsEmpty = true;
-
-            elem.SetAttribute(attr_name, attr_value);
-            node.AppendChild(elem);
-
-            doc.Save(filepath);
-        }
-
-        protected void AppendEmptyNodeWithAttr(string filepath, string xpath, string node_name, string attr_name, string attr_value)
-        {
-            //TODO try catch
-            //append an empty child node with the given attribute
-            XmlDocument doc = new XmlDocument();
-
             try
             {
+                XmlDocument doc = new XmlDocument();
                 doc.Load(filepath);
                 XmlNode node = doc.SelectSingleNode(xpath);
 
@@ -139,27 +143,60 @@ namespace Neptun_2._0
 
                 elem.SetAttribute(attr_name, attr_value);
                 node.AppendChild(elem);
+
+                doc.Save(filepath);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        protected void AppendEmptyNodeWithAttr(string filepath, string xpath, string node_name, string attr_name, string attr_value)
+        { 
+            //append an empty child node with the given attribute
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(filepath);
+                XmlNode node = doc.SelectSingleNode(xpath);
+
+                XmlElement elem = doc.CreateElement(node_name);
+                elem.InnerText = attr_value;
+                elem.IsEmpty = true;
+
+                elem.SetAttribute(attr_name, attr_value);
+                node.AppendChild(elem);
+                doc.Save(filepath);
             }
             catch (Exception e)
             {
                 throw e;
             }
-
-            doc.Save(filepath);
         }
         #endregion
 
         #region remove methods
         protected void RemoveNodeByAttr(string filepath, string xpath)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filepath);
-
-
-            XmlNode parent = doc.SelectSingleNode(xpath).ParentNode;
-            parent.RemoveChild(doc.SelectSingleNode(xpath));
             
-            doc.Save(filepath);
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(filepath);
+
+
+                XmlNode parent = doc.SelectSingleNode(xpath).ParentNode;
+                parent.RemoveChild(doc.SelectSingleNode(xpath));
+
+                doc.Save(filepath);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         //MAINTENACNE diák deregister, tárgyak törlése

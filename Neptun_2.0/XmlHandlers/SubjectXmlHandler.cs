@@ -37,10 +37,17 @@ namespace Neptun_2._0
         {
             List<string> ids = new List<string>();
 
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(subjId));
-            ids = GetList(ref xmlReader, "blacklist", "id");
+            try
+            {
+                XmlReader xmlReader = XmlReader.Create(GetXmlFileName(subjId));
+                ids = GetList(ref xmlReader, "blacklist", "id");
+                xmlReader.Dispose();
+            }
+            catch (Exception)
+            {
 
-            xmlReader.Dispose();
+               // throw;
+            }
             return ids;
         }
 
@@ -87,6 +94,24 @@ namespace Neptun_2._0
 
             xmlReader.Dispose();
             return new Subject(id, name, teacher,room, day, startTime, endTime, studentIds, blockedStudentIds);
+        }
+
+        string GetRoomId(string subjectId)
+        {
+            string room = "";
+
+            try
+            {
+                XmlReader xmlReader = XmlReader.Create(GetXmlFileName(subjectId));
+                room = GetValue(ref xmlReader, "room");
+                xmlReader.Dispose();
+            }
+            catch (Exception)
+            {
+                //room remains ""
+            }
+
+            return room;
         }
         #endregion
 

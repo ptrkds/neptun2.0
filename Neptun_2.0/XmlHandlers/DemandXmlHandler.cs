@@ -38,7 +38,7 @@ namespace Neptun_2._0
                     endTime = GetValue(ref xmlReader, "endTime");
                 }
             }
-
+            xmlReader.Dispose();
             return new Demand(demandId, state, teacherId, roomId, subjectId, subjectName, day, startTime, endTime);
         }
         

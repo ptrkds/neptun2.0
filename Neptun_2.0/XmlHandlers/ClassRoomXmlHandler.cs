@@ -25,6 +25,8 @@ namespace Neptun_2._0
             return ids;
         }
 
+        
+
         public int GetLimit(string roomId)
         {
             int limit;
@@ -82,13 +84,28 @@ namespace Neptun_2._0
 
         public bool RegisterSubject(string roomId, string subjId)
         {
-            AppendEmptyNodeWithAttr(GetXmlFileName(roomId), "/room/subjects", "subject", "id", subjId);
+            try
+            {
+                AppendEmptyNodeWithAttr(GetXmlFileName(roomId), "/room/subjects", "subject", "id", subjId);
+            }
+            catch (Exception)
+            {
+                return false; ;
+            }
             return true;
         }
 
-        public void DeRegister(string roomId, string subjId)
+        public bool DeRegister(string roomId, string subjId)
         {
-            RemoveNodeByAttr(GetXmlFileName(roomId), CreateXPathWithAttr("/room/subjects/subject", "id", subjId));
+            try
+            {
+                RemoveNodeByAttr(GetXmlFileName(roomId), CreateXPathWithAttr("/room/subjects/subject", "id", subjId));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         #endregion

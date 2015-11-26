@@ -32,7 +32,7 @@ namespace Neptun_2._0
                     text = GetValue(ref xmlReader, "text");
                 }
             }
-
+            xmlReader.Dispose();
             return new Request(requestId, state, ownerId, subject, text);
         }
 
