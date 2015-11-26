@@ -140,9 +140,9 @@ namespace Neptun_2._0
                 elem.SetAttribute(attr_name, attr_value);
                 node.AppendChild(elem);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                throw e;
             }
 
             doc.Save(filepath);

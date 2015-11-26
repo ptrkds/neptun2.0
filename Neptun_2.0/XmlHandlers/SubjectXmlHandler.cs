@@ -80,7 +80,7 @@ namespace Neptun_2._0
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //TODO e
             }
@@ -136,7 +136,7 @@ namespace Neptun_2._0
         public bool Register(string subjId, string neptunCode)
         {
             //TODO error handling
-            AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "/subject/students/", "student", "id", neptunCode);
+            AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "/subject/students", "student", "id", neptunCode);
             return true;
         }
 

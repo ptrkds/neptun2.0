@@ -15,12 +15,12 @@ namespace Neptun_2._0
 
         #region getters
 
-        public List<string> GetLectureIds(string roomId)
+        public List<string> GetSubjectIds(string roomId)
         {
             List<string> ids = new List<string>();
             XmlReader xmlReader = XmlReader.Create(GetXmlFileName(roomId));
 
-            ids = GetList(ref xmlReader, "lectures", "id");
+            ids = GetList(ref xmlReader, "subjects", "id");
 
             return ids;
         }
@@ -29,7 +29,7 @@ namespace Neptun_2._0
         {
             int limit;
 
-            XmlReader xmlReader = XmlReader.Create("ClassRooms/" + roomId + ".xml");
+            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(roomId));
 
             limit = Int32.Parse(GetValue(ref xmlReader, "limit"));
 
@@ -61,13 +61,13 @@ namespace Neptun_2._0
                         id = xmlReader.GetAttribute("id");
                         limit = Int32.Parse(GetValue(ref xmlReader, "limit"));
 
-                        subjectIds = GetList(ref xmlReader, "lectures", "id");
+                        subjectIds = GetList(ref xmlReader, "subjects", "id");
                     }
                 }
 
                 xmlReader.Dispose();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //TODO hax
                 return null;
@@ -82,13 +82,13 @@ namespace Neptun_2._0
 
         public bool RegisterSubject(string roomId, string subjId)
         {
-            AppendEmptyNodeWithAttr(GetXmlFileName(roomId), "/room/lectures/", "lecture", "id", subjId);
+            AppendEmptyNodeWithAttr(GetXmlFileName(roomId), "/room/subjects", "subject", "id", subjId);
             return true;
         }
 
         public void DeRegister(string roomId, string subjId)
         {
-            RemoveNodeByAttr(GetXmlFileName(roomId), CreateXPathWithAttr("/room/lectures/lecture", "id", subjId));
+            RemoveNodeByAttr(GetXmlFileName(roomId), CreateXPathWithAttr("/room/subjects/subject", "id", subjId));
         }
 
         #endregion

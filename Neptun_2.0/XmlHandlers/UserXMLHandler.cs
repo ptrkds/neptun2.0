@@ -42,7 +42,7 @@ namespace Neptun_2._0
 
                 xmlReader.Dispose();
             }
-            catch (IOException e)
+            catch (IOException)
             {
                 //TODO resolve hax
                 return null;
@@ -84,7 +84,7 @@ namespace Neptun_2._0
 
                 xmlReader.Dispose();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //TODO resolva hax
                 return null;
@@ -126,7 +126,7 @@ namespace Neptun_2._0
 
                 xmlReader.Dispose();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //TODO resolve hax
                 return null;
@@ -227,9 +227,9 @@ namespace Neptun_2._0
 
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                //TODO e
+                ret = null;
             }
 
             return ret;
@@ -240,26 +240,42 @@ namespace Neptun_2._0
 
         public bool Register(string neptunCode, string subjId)
         {
-            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/subjects/", "subject", "id", subjId);
+            try
+            {
+                AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/subjects", "subject", "id", subjId);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            
             return true;
         }
 
         public bool DeRegister(string neptunCode, string subjId)
         {
             //RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
-            RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/subjects/subject", "id", subjId));
+            try
+            {
+                RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/subjects/subject", "id", subjId));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
             return true;
         }
 
         public bool AppendDemand(string neptunCode, string docId)
         {
-            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/demands/", "demand", "id", docId);
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/demands", "demand", "id", docId); // /?
             return true;
         }
 
         public bool AppendRequest(string neptunCode, string docId)
         {
-            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/requests/", "request", "id", docId);
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/requests", "request", "id", docId); // /?
             return true;
         }
 
