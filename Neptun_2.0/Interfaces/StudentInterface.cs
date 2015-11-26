@@ -34,13 +34,8 @@ namespace Neptun_2._0
             //Action
             do
             {
-                input = Console.ReadKey();                
-                if(input.Key != ConsoleKey.RightArrow || input.Key != ConsoleKey.LeftArrow)
-                {
-                   Console.Write("\b ");
-                }
-                Console.SetCursorPosition(65, +logOut.Length);
-                Console.Write("    ");
+                input = Console.ReadKey();
+                Console.Write("\b ");
                 if (input.Key == ConsoleKey.RightArrow)
                     position++;
                 if (input.Key == ConsoleKey.LeftArrow)
@@ -122,7 +117,7 @@ namespace Neptun_2._0
                         Console.SetCursorPosition(65 + i, 3);
                         Console.Write("-");
                     }
-                    Console.SetCursorPosition(66 + logOut.Length, 2);
+                    Console.SetCursorPosition(65 + logOut.Length, 2);
                     break;
             }
         }
@@ -207,6 +202,8 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
+                Console.Write("\b ");
+                Console.SetCursorPosition(4 + back.Length, 6);
             } while (input.Key != ConsoleKey.Enter);
             CMD command = new CMD();
             return command;
@@ -376,28 +373,28 @@ namespace Neptun_2._0
         }
         public void regForSubject_successful()
         {
-            subMenuremove(6, countsubject+2);
+            subMenuremove(6, countsubject+4);
             Console.SetCursorPosition(3, 11);
             Console.Write("A tárgy felvétele sikeres volt!");
             input = Console.ReadKey();
         }
         public void regForSubject_unsuccessful()
         {
-            subMenuremove(6, countsubject + 2);
+            subMenuremove(6, countsubject + 4);
             Console.SetCursorPosition(3, 11);
             Console.Write("A tárgy felvétele sikertelen volt!");
             input = Console.ReadKey();
         }
         public void deregister_successful()
         {
-            subMenuremove(6, countsubject + 2);
+            subMenuremove(6, countsubject + 4);
             Console.SetCursorPosition(3, 11);
             Console.Write("A tárgy leadása sikeres volt!");
             input = Console.ReadKey();
         }
         public void deregister_unsuccessful()
         {
-            subMenuremove(6, countsubject + 2);
+            subMenuremove(6, countsubject + 4);
             Console.SetCursorPosition(3, 11);
             Console.Write("A tárgy leadása sikertelen volt!");
             input = Console.ReadKey();

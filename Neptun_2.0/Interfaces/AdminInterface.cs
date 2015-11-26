@@ -31,7 +31,8 @@ namespace Neptun_2._0
             //Action
             do
             {
-                input = Console.ReadKey();                
+                input = Console.ReadKey();
+                Console.Write("\b ");
                 if (input.Key == ConsoleKey.RightArrow)
                     position++;
                 if (input.Key == ConsoleKey.LeftArrow)
@@ -195,6 +196,7 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
+                Console.Write("\b ");
                 if (input.Key == ConsoleKey.RightArrow)
                     position++;
                 if (input.Key == ConsoleKey.LeftArrow)
@@ -258,14 +260,14 @@ namespace Neptun_2._0
         }
         public void demand_accept()
         {
-            subMenuremove(6, countdemand + 2);
+            subMenuremove(6, countdemand + 4);
             Console.SetCursorPosition(3, 11);
             Console.Write("Az igényt elfogadta!");
             input = Console.ReadKey();
         }
         public void demand_decline()
         {
-            subMenuremove(6, countdemand + 2);
+            subMenuremove(6, countdemand + 4);
             Console.SetCursorPosition(3, 11);
             Console.Write("Az igényt elutasította!");
             input = Console.ReadKey();
@@ -289,6 +291,7 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
+                Console.Write("\b ");
                 if (input.Key == ConsoleKey.RightArrow)
                     position++;
                 if (input.Key == ConsoleKey.LeftArrow)
@@ -312,14 +315,14 @@ namespace Neptun_2._0
         }
         public void maintenance_successful()
         {
-            subMenuremove(6, countdemand + 2);
+            subMenuremove(6, countdemand + 4);
             Console.SetCursorPosition(3, 11);
             Console.Write("Az igények és a kérvények törlése sikeres volt!");
             input = Console.ReadKey();
         }
         public void maintenance_unsuccessful()
         {
-            subMenuremove(6, countdemand + 2);
+            subMenuremove(6, countdemand + 4);
             Console.SetCursorPosition(3, 11);
             Console.Write("Az igények és a kérvények törlése sikertelen volt!");
             input = Console.ReadKey();
@@ -391,6 +394,7 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
+                Console.Write("\b ");
                 if (input.Key == ConsoleKey.RightArrow)
                     position++;
                 if (input.Key == ConsoleKey.LeftArrow)
@@ -419,14 +423,14 @@ namespace Neptun_2._0
         }
         public void request_accept()
         {
-            subMenuremove(6, countrequest + 2);
+            subMenuremove(6, countrequest + 4);
             Console.SetCursorPosition(3, 11);
             Console.Write("A kérvényt elfogadta!");
             input = Console.ReadKey();
         }
         public void request_decline()
         {
-            subMenuremove(6, countrequest + 2);
+            subMenuremove(6, countrequest + 4);
             Console.SetCursorPosition(3, 11);
             Console.Write("A kérvényt elutasította!");
             input = Console.ReadKey();

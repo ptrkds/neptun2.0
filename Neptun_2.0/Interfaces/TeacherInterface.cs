@@ -40,6 +40,7 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
+                Console.Write("\b ");
                 if (input.Key == ConsoleKey.RightArrow)
                     position++;
                 if (input.Key == ConsoleKey.LeftArrow)
@@ -121,7 +122,7 @@ namespace Neptun_2._0
                         Console.SetCursorPosition(65 + i, 3);
                         Console.Write("-");
                     }
-                    Console.SetCursorPosition(66 + logOut.Length, 2);
+                    Console.SetCursorPosition(65 + logOut.Length, 2);
                     break;
             }
         }
@@ -143,6 +144,7 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
+                Console.Write("\b ");
                 if (input.Key == ConsoleKey.RightArrow)
                     position++;
                 if (input.Key == ConsoleKey.LeftArrow)
@@ -334,8 +336,11 @@ namespace Neptun_2._0
             command.data = new List<string>();
             if (position == 1)
                 command.cmd = "exit";
-            int demandNumb = position - 2;
-            command.data.Add(demands[demandNumb].getId());
+            else
+            {
+                int demandNumb = position - 2;
+                command.data.Add(demands[demandNumb].getId()); 
+            }
             return command;
         }
         public CMD demandChangeSubMenu(Demand demand, List<ClassRoom> rooms)
@@ -405,7 +410,7 @@ namespace Neptun_2._0
             {
                 List<String> list;
                 list = new List<string>();
-                list = demandSubMenu(demand.getSubjectId(), demand.getSubjectName(), day, demand.getStartTime().Remove(demand.getStartTime().Length - 3), demand.getEndTime().Remove(demand.getEndTime().Length - 3));
+                list = demandSubMenu(demand.getSubjectId(), demand.getSubjectName(), day, demand.getStartTime(), demand.getEndTime());
                 subjectID = list[0];
                 subjectName = list[1];
                 day = list[2];
@@ -463,8 +468,16 @@ namespace Neptun_2._0
             Console.SetCursorPosition(2, 21);
             Console.Write("Melyik napon legyen (számot írjon: 1 - Hétfő ... 5 - Péntek): " + day);
             Console.SetCursorPosition(2, 23);
+            if(start != "")
+            {
+                start = start.Remove(start.Length - 3);
+            }
             Console.Write("Mikor kezdődjön (Csak 8, 10,...,18 számokat írjon be, Pl: 8->8:00): " + start);
             Console.SetCursorPosition(2, 24);
+            if (start != "")
+            {
+                end = end.Remove(end.Length - 3);
+            }
             Console.Write("Óra vége (Rendszerben 2 órásak az órák. Pl: kezdés: 8 -> vége: 10): " + end);
             int lengthID = subjectID.Length;
             int lengthName = subjectName.Length;
@@ -548,7 +561,7 @@ namespace Neptun_2._0
                         case 7:
                             if (lengthEnd > 0)
                             {
-                                end = start.Remove(end.Length - 1);
+                                end = end.Remove(end.Length - 1);
                                 lengthEnd--;
                                 Console.Write(" ");
                             }
@@ -762,7 +775,7 @@ namespace Neptun_2._0
             countrooms = rooms.Count;
             for (int i = 0; i < countrooms; i++)
             {
-                Console.SetCursorPosition(5, 15 + i);
+                Console.SetCursorPosition(5, 10 + i);
                 Console.Write(rooms[i].getId() + "   ");
             }
             subMainUnderline(countrooms, 0);
@@ -783,8 +796,29 @@ namespace Neptun_2._0
             command.data = new List<string>();
             if (position == 1)
                     command.cmd = "exit";
-                else
-            command.data.Add(rooms[position - 2].getId());
+            else
+            {
+                command.data.Add(rooms[position - 2].getId());
+                subMenuremove(4, 6+ countrooms);
+                position = 1;
+                for (int i = 0; i < 20; i++)
+                {
+                    Console.SetCursorPosition(i * 4, 8);
+                    Console.Write("____");
+                }
+                Console.SetCursorPosition(36, 4);
+                Console.Write("_________________|_________________");
+                Console.SetCursorPosition(36, 5);
+                Console.Write("|                |                |");
+                Console.SetCursorPosition(28, 6);
+                Console.Write(demandSubmission);
+                Console.SetCursorPosition(46, 6);
+                Console.Write(demandChange);
+                Console.SetCursorPosition(65, 6);
+                Console.Write(back);
+                demandMenuUnderline();
+            }
+            
             return command;
         }
         private void selectFilterUnderline(int start, int end)
@@ -910,6 +944,8 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
+                Console.Write("\b ");
+                Console.SetCursorPosition(4 + back.Length, 6);
             } while (input.Key != ConsoleKey.Enter);
             CMD command = new CMD();
             return command;
@@ -928,13 +964,14 @@ namespace Neptun_2._0
             Console.SetCursorPosition(5, 8);
             Console.Write(back + "   ");
             countsubject = subject.Count;
-            subMainUnderline(countsubject,0);
+            subMainUnderline(countsubject,0);            
             for (int i = 0; i < subject.Count; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
                 Console.Write(subject[i].name + "   ");
                 
             }
+            Console.SetCursorPosition(8 + back.Length, 8);
             do
             {
                 input = Console.ReadKey();
@@ -970,6 +1007,7 @@ namespace Neptun_2._0
                 Console.SetCursorPosition(5, 10 + i);
                 Console.Write(users[i].id + "  " + users[i].name + "   ");                
             }
+            Console.SetCursorPosition(8 + back.Length, 8);
             do
             {
                 input = Console.ReadKey();
