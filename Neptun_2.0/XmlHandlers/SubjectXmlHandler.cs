@@ -96,7 +96,7 @@ namespace Neptun_2._0
             return new Subject(id, name, teacher,room, day, startTime, endTime, studentIds, blockedStudentIds);
         }
 
-        string GetRoomId(string subjectId)
+        public string GetRoomId(string subjectId)
         {
             string room = "";
 

@@ -187,7 +187,7 @@ namespace Neptun_2._0
 
             bool limit = false;
 
-            if (students == roomHandler.GetLimit(subjectHandler.GetSubject(subject_id).getClassRoom()))
+            if (students == roomHandler.GetLimit(subjectHandler.GetRoomId(subject_id)))
             {
                 limit = true;
             }
