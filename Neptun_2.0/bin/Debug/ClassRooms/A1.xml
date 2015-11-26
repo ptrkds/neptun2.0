@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <room id="A1">
 	<limit>150</limit>
-	<lectures>
-		<lecture id="VEMFK12"/>
-		<lecture id="VEMFK42"/>
-		<lecture id="VEMFK32"/>
-		<lecture id="VEMFK22"/>
-	</lectures>
+	<subjects>
+		<subject id="VEMFK12"/>
+		<subject id="VEMFK42"/>
+		<subject id="VEMFK32"/>
+		<subject id="VEMFK22"/>
+	</subjects>
 </room>

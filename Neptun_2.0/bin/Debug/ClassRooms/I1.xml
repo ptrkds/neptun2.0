@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <room id="I1">
 	<limit>100</limit>
-	<lectures>
-		<lecture id="VEMFK42"/>
-	</lectures>
+	<subjects>
+		<subject id="VEMFK42"/>
+	</subjects>
 </room>
