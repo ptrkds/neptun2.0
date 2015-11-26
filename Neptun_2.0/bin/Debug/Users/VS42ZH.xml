@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<teacher id="VS42ZH">
+<user id="VS42ZH">
   <name>Patrik</name>
   <type>teacher</type>
   <pw>123456</pw>
@@ -10,4 +10,4 @@
   <documents>
 	<document id="ASDF1234"/>
   </documents>
-</teacher>
+</user>
