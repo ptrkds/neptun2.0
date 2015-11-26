@@ -219,7 +219,7 @@ namespace Neptun_2._0
             {
                 ClassRoom room = roomHandler.GetClassRoom(id);
 
-                List<String> subj_ids = roomHandler.GetLectureIds(id);
+                List<String> subj_ids = roomHandler.GetSubjectIds(id);
 
                 foreach (string subjId in subj_ids)
                 {
