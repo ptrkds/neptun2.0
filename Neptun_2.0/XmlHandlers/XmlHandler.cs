@@ -128,15 +128,22 @@ namespace Neptun_2._0
             //append an empty child node with the given attribute
             XmlDocument doc = new XmlDocument();
 
-            doc.Load(filepath);
-            XmlNode node = doc.SelectSingleNode(xpath);
+            try
+            {
+                doc.Load(filepath);
+                XmlNode node = doc.SelectSingleNode(xpath);
 
-            XmlElement elem = doc.CreateElement(node_name);
-            elem.InnerText = attr_value;
-            elem.IsEmpty = true;
+                XmlElement elem = doc.CreateElement(node_name);
+                elem.InnerText = attr_value;
+                elem.IsEmpty = true;
 
-            elem.SetAttribute(attr_name, attr_value);
-            node.AppendChild(elem);
+                elem.SetAttribute(attr_name, attr_value);
+                node.AppendChild(elem);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
             doc.Save(filepath);
         }

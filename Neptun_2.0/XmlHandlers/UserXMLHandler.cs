@@ -240,15 +240,14 @@ namespace Neptun_2._0
 
         public bool Register(string neptunCode, string subjId)
         {
-            //TODO implement
-            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/lectures/", "lecture", "id", subjId);
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/subjects/", "subject", "id", subjId);
             return true;
         }
 
         public bool DeRegister(string neptunCode, string subjId)
         {
             //RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
-            RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/lectures/lecture", "id", subjId));
+            RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/subjects/subject", "id", subjId));
             return true;
         }
 
