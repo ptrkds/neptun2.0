@@ -13,6 +13,7 @@ namespace Neptun_2._0
         private String registerForSubject = "Tárgy felvétel";
         private String deregisterSubject = "Tárgy leadás";
         private int countsubject = 0;
+        private int rowText = 1;
         public CMD StudentMainMenu()
         {
             //WriteMenu
@@ -221,9 +222,9 @@ namespace Neptun_2._0
             String text = "";
             int lengthThema = 0;
             int lengthText = 0;
-            int rowText = 1;
+            rowText = 1;
             List<int> rowslength = new List<int>();            
-            requestUnderline(lengthThema, lengthText, rowText);
+            requestUnderline(lengthThema, lengthText);
             do
             {
                 input = Console.ReadKey();
@@ -292,7 +293,7 @@ namespace Neptun_2._0
                     position = 4;
                 if (position > 4)
                     position = 1;
-                requestUnderline(lengthThema, lengthText, rowText);
+                requestUnderline(lengthThema, lengthText);
             } while (input.Key != ConsoleKey.Enter || position > 2);
             CMD command = new CMD();
             command.data = new List<string>();
@@ -307,19 +308,19 @@ namespace Neptun_2._0
         }
         public void requestSubmission_successful()
         {
-            subMenuremove(6, countsubject + 2);
+            subMenuremove(6, rowText + 9);
             Console.SetCursorPosition(3, 11);
             Console.Write("A kérvény leadása sikeres volt!");
             input = Console.ReadKey();
         }
         public void requestSubmission_unsuccessful()
         {
-            subMenuremove(6, countsubject + 2);
+            subMenuremove(6, rowText + 9);
             Console.SetCursorPosition(3, 11);
             Console.Write("A kérvény leadása sikertelen volt!");
             input = Console.ReadKey();
         }
-        private void requestUnderline(int lengthThema, int lengthText, int rowText)
+        private void requestUnderline(int lengthThema, int lengthText)
         {
             if (position != 1)
             {

@@ -335,7 +335,7 @@ namespace Neptun_2._0
             if (position == 1)
                 command.cmd = "exit";
             int demandNumb = position - 2;
-            command.data.Add(demandNumb.ToString());
+            command.data.Add(demands[demandNumb].getId());
             return command;
         }
         public CMD demandChangeSubMenu(Demand demand, List<ClassRoom> rooms)
@@ -577,28 +577,28 @@ namespace Neptun_2._0
 
         public void demandSubmission_successful()
         {
-            subMenuremove(11,13);            
+            subMenuremove(11,14);            
             Console.SetCursorPosition(3, 11);
             Console.Write("Az igény felvitele sikeres volt!");            
             input = Console.ReadKey();
         }
         public void demandSubmission_unsuccessful()
         {
-            subMenuremove(11, 13);
+            subMenuremove(11, 14);
             Console.SetCursorPosition(3, 11);
             Console.Write("Az igény felvitele sikertelen volt!");
             input = Console.ReadKey();
         }
         public void demandChange_successful()
         {
-            subMenuremove(11, 13);
+            subMenuremove(11, 14);
             Console.SetCursorPosition(3, 11);
             Console.Write("Az igény módosítása sikeres volt!");
             input = Console.ReadKey();
         }
         public void demandChange_unsuccessful()
         {
-            subMenuremove(11, 13);
+            subMenuremove(11, 14);
             Console.SetCursorPosition(3, 11);
             Console.Write("Az igény módosítása sikertelen volt!");
             input = Console.ReadKey();
