@@ -3,7 +3,7 @@
   <name>Kiso</name>
   <type>student</type>
   <pw>123456</pw>
-  <subjects count="4">
+  <subjects>
     <subject id="VEMFK22" />
   </subjects>
   <documents>
