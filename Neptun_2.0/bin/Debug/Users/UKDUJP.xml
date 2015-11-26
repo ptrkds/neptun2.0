@@ -6,8 +6,11 @@
   <subjects>
     <subject id="VEMFK12" />
     <subject id="VEMFK22" />
+    <subject id="VEMFK32" />
+    <subject id="VEMFK42" />
   </subjects>
   <requests>
     <request id="UKDUJP11-26-15-01-24-24" />
+    <request id="UKDUJP11-26-15-02-05-01" />
   </requests>
 </user>

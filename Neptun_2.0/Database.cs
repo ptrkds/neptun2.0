@@ -185,14 +185,37 @@ namespace Neptun_2._0
 
             int students = subjectHandler.GetStudentIds(subject_id).Count;
 
-            //TODO classRoom limit
+            bool limit = false;
+
+            if (students == roomHandler.GetLimit(subjectHandler.GetSubject(subject_id).getClassRoom()))
+            {
+                limit = true;
+            }
+
+            bool exist = false;
+
+            if (!blocked && !limit)
+            {
+                List<String> subjects = userHandler.GetSubjectIds(neptun_code);
+
+                foreach (string s in subjects)
+                {
+                    if (s == subject_id)
+                    {
+                        exist = true;
+                    }
+                }
+            }
+
+
             bool user = false;
             bool subject = false;
-            if (!blocked)
+            if (!exist)
             {
                 user = userHandler.Register(neptun_code, subject_id);
                 subject = subjectHandler.Register(subject_id, neptun_code);
             }
+
             return user && subject;
         }
 
