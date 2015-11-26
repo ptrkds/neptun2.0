@@ -34,7 +34,13 @@ namespace Neptun_2._0
             //Action
             do
             {
-                input = Console.ReadKey();
+                input = Console.ReadKey();                
+                if(input.Key != ConsoleKey.RightArrow || input.Key != ConsoleKey.LeftArrow)
+                {
+                   Console.Write("\b ");
+                }
+                Console.SetCursorPosition(65, +logOut.Length);
+                Console.Write("    ");
                 if (input.Key == ConsoleKey.RightArrow)
                     position++;
                 if (input.Key == ConsoleKey.LeftArrow)
