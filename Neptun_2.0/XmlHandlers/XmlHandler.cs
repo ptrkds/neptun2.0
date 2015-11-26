@@ -26,7 +26,7 @@ namespace Neptun_2._0
             xmlReader.ReadToFollowing(parentNode);
             while (xmlReader.Read() && xmlReader.Name != parentNode && xmlReader.IsStartElement()) //HasValue
             {
-                if (xmlReader.IsStartElement())
+                if (xmlReader.IsStartElement()) //unnecessary
                 {
                     string str = "";
                     str = xmlReader.GetAttribute(attr);
@@ -50,7 +50,7 @@ namespace Neptun_2._0
             List<string> pdfFileNames = new List<string>();
             foreach (string str in pdfFiles)
             {
-                pdfFileNames.Add(str.Remove(str.Length - 4)); //TODO resolve HAX
+                pdfFileNames.Add(str.Remove(str.Length - 4)); //TODO better way?
             }
 
             return pdfFileNames;
@@ -61,6 +61,7 @@ namespace Neptun_2._0
         protected void SetAttribute(string filepath, string xpath, int idx, string value)
         {
             //TODO try catch
+
             //sets value as the [idx] attribute of the given xpath
             XmlDocument doc = new XmlDocument();
             doc.Load(filepath);
@@ -68,7 +69,7 @@ namespace Neptun_2._0
             //Console.WriteLine(node.Name);
             
             node.Attributes[idx].Value = value;
-
+            
             doc.Save(filepath);
         }
 
