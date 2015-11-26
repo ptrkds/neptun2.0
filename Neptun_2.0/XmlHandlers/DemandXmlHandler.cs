@@ -1,13 +1,12 @@
 ﻿using System.Xml;
+using System;
 
 namespace Neptun_2._0
 {
-
-
     class DemandXmlHandler : XmlHandler
     {
         #region getters
-        
+
         public Demand GetDemand(string demand_Id)
         {
             string demandId = "";
@@ -20,128 +19,115 @@ namespace Neptun_2._0
             string startTime = "";
             string endTime = "";
 
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(demand_Id));
+            XmlReader xmlReader = null;
 
-
-            while (xmlReader.Read())
+            try
             {
-                if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "demand") && (xmlReader.GetAttribute("id") == demand_Id))
+                xmlReader = XmlReader.Create(GetXmlFileName(demand_Id));
+
+                while (xmlReader.Read())
                 {
-                    demandId = xmlReader.GetAttribute("id");
-                    state = GetValue(ref xmlReader, "state");
-                    teacherId = GetValue(ref xmlReader, "teacherId");
-                    roomId = GetValue(ref xmlReader, "roomId");
-                    subjectId = GetValue(ref xmlReader, "subjectId");
-                    subjectName = GetValue(ref xmlReader, "subjectName");
-                    day = GetValue(ref xmlReader, "day");
-                    startTime = GetValue(ref xmlReader, "startTime");
-                    endTime = GetValue(ref xmlReader, "endTime");
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "demand") && (xmlReader.GetAttribute("id") == demand_Id))
+                    {
+                        demandId = xmlReader.GetAttribute("id");
+                        state = GetValue(ref xmlReader, "state");
+                        teacherId = GetValue(ref xmlReader, "teacherId");
+                        roomId = GetValue(ref xmlReader, "roomId");
+                        subjectId = GetValue(ref xmlReader, "subjectId");
+                        subjectName = GetValue(ref xmlReader, "subjectName");
+                        day = GetValue(ref xmlReader, "day");
+                        startTime = GetValue(ref xmlReader, "startTime");
+                        endTime = GetValue(ref xmlReader, "endTime");
+                    }
                 }
             }
-            xmlReader.Dispose();
+            catch (System.Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                if (xmlReader != null)
+                {
+                    xmlReader.Dispose();
+                }
+            }
             return new Demand(demandId, state, teacherId, roomId, subjectId, subjectName, day, startTime, endTime);
         }
-        
+
         #endregion
 
         #region functional methods
-        
-    public bool CreateDemand(Demand demand)
-    {
-        XmlWriterSettings settings = new XmlWriterSettings();
-        settings.Indent = true;
-        settings.IndentChars = "\t";
 
-        using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(demand.getId()), settings))
+        public bool CreateDemand(Demand demand)
         {
-            writer.WriteStartDocument();
-            writer.WriteStartElement("demand");
-            writer.WriteAttributeString("id", demand.getId());
-            writer.WriteElementString("state", demand.getState());
-            writer.WriteElementString("teacherId", demand.getOwner());
-            writer.WriteElementString("roomId", demand.getRoomId());
-            writer.WriteElementString("subjectId", demand.getSubjectId());
-            writer.WriteElementString("subjectName", demand.getSubjectName());
-            writer.WriteElementString("day", demand.getDay());
-            writer.WriteElementString("startTime", demand.getStartTime());
-            writer.WriteElementString("endTime", demand.getEndTime());
+            //TODO try catch
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = "\t";
 
-            writer.WriteEndElement();
-            writer.WriteEndDocument();
+            using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(demand.getId()), settings))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("demand");
+                writer.WriteAttributeString("id", demand.getId());
+                writer.WriteElementString("state", demand.getState());
+                writer.WriteElementString("teacherId", demand.getOwner());
+                writer.WriteElementString("roomId", demand.getRoomId());
+                writer.WriteElementString("subjectId", demand.getSubjectId());
+                writer.WriteElementString("subjectName", demand.getSubjectName());
+                writer.WriteElementString("day", demand.getDay());
+                writer.WriteElementString("startTime", demand.getStartTime());
+                writer.WriteElementString("endTime", demand.getEndTime());
+
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+            }
+
+            return true;
         }
 
-        return true;
-    }
-
-    public bool ChangeDemand(Demand newDemand)
-    {
-        CreateDemand(newDemand);
-
-        return true;
-    }
-
-    public bool JudgeDemand(string demandId, bool judge)
-    {   
-        string judgestr;
-        if (judge)
+        public bool ChangeDemand(Demand newDemand)
         {
-            judgestr = "accepted";
-        }
-        else
-        {
-            judgestr = "declined";
+            //TODO try catch
+            CreateDemand(newDemand);
+
+            return true;
         }
 
-        SetValue(GetXmlFileName(demandId), "/demand/state", judgestr);
+        public bool JudgeDemand(string demandId, bool judge)
+        {
+            string judgestr;
+            if (judge)
+            {
+                judgestr = "accepted";
+            }
+            else
+            {
+                judgestr = "declined";
+            }
 
-        return true;
-    }
-    
+            try
+            {
+                SetValue(GetXmlFileName(demandId), "/demand/state", judgestr);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         #endregion
 
         #region helper method
-        
-    private string GetXmlFileName(string demandId)
-    {
-        return "Demands/" + demandId + ".xml";
-    }
+
+        private string GetXmlFileName(string demandId)
+        {
+            return "Demands/" + demandId + ".xml";
+        }
 
         #endregion
-
-
-
-        /* public Demand GetDemand(string dir, string demand_Id)
-       {
-           string demandId = "";
-           string state = "";
-           string teacherId = "";
-           string roomId = "";
-           string subjectId = "";
-           string subjectName = "";
-           string day = "";
-           string startTime = "";
-           string endTime = "";
-
-           XmlReader xmlReader = XmlReader.Create(dir + demandId + ".xml");
-
-
-           while (xmlReader.Read())
-           {
-               if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "demand") && (xmlReader.GetAttribute("id") == demand_Id))
-               {
-                   demandId = xmlReader.GetAttribute("id");
-                   state = GetValue(ref xmlReader, "state");
-                   teacherId = GetValue(ref xmlReader, "teacherId");
-                   roomId = GetValue(ref xmlReader, "roomId");
-                   subjectId = GetValue(ref xmlReader, "subjectId");
-                   subjectName = GetValue(ref xmlReader, "subjectName");
-                   day = GetValue(ref xmlReader, "day");
-                   startTime = GetValue(ref xmlReader, "startTime");
-                   endTime = GetValue(ref xmlReader, "endTime");
-               }
-           }
-
-           return new Demand(demandId, state, teacherId, roomId, subjectId, subjectName, day, startTime, endTime);
-       }*/
     }
 }

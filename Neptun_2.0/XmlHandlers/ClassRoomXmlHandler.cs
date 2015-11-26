@@ -10,44 +10,64 @@ namespace Neptun_2._0
 {
     class ClassRoomXmlHandler : XmlHandler
     {
-        //TODO ???
-        //public void Save(ClassRoom room)
-
         #region getters
 
         public List<string> GetSubjectIds(string roomId)
         {
             List<string> ids = new List<string>();
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(roomId));
-
-            ids = GetList(ref xmlReader, "subjects", "id");
+            XmlReader xmlReader = null;
+            try
+            {
+                xmlReader = XmlReader.Create(GetXmlFileName(roomId));
+                ids = GetList(ref xmlReader, "subjects", "id");
+                xmlReader.Dispose();
+            }
+            catch (Exception)
+            {
+                return null;
+            } 
+            finally
+            {
+                if(xmlReader != null)
+                {
+                    xmlReader.Dispose();
+                }
+            }
 
             return ids;
         }
 
-        
-
         public int GetLimit(string roomId)
         {
             int limit;
+            XmlReader xmlReader = null;
+            try
+            {
+                xmlReader = XmlReader.Create(GetXmlFileName(roomId));
+                limit = Int32.Parse(GetValue(ref xmlReader, "limit"));
+            }
+            catch(Exception)
+            {
+                return -1;
+            }
+            finally
+            {
+                if (xmlReader != null)
+                {
+                    xmlReader.Dispose();
+                }
+            }
 
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(roomId));
-
-            limit = Int32.Parse(GetValue(ref xmlReader, "limit"));
-
-            xmlReader.Dispose();
             return limit;
         }
 
         public ClassRoom GetClassRoom(string roomId)
         {
-            XmlReader xmlReader;
-            //TODO .Create() exception handling + try catch
-
+            
             string id = "";
             int limit = 0;
             List<string> subjectIds = new List<string>();
-
+            XmlReader xmlReader = null;
             try
             {
                 xmlReader = XmlReader.Create(GetXmlFileName(roomId));
@@ -66,13 +86,17 @@ namespace Neptun_2._0
                         subjectIds = GetList(ref xmlReader, "subjects", "id");
                     }
                 }
-
-                xmlReader.Dispose();
             }
             catch (Exception)
             {
-                //TODO hax
                 return null;
+            }
+            finally
+            {
+                if (xmlReader != null)
+                {
+                    xmlReader.Dispose();
+                }
             }
 
             return new ClassRoom(id, limit, subjectIds);
@@ -90,7 +114,7 @@ namespace Neptun_2._0
             }
             catch (Exception)
             {
-                return false; ;
+                return false;
             }
             return true;
         }

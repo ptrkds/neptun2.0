@@ -13,50 +13,75 @@ namespace Neptun_2._0
         public string GetSubjectName(string subjId)
         {
             string name = "";
-
-            XmlReader xmlReader = XmlReader.Create("Subjects/" + subjId + ".xml");
-            name = GetValue(ref xmlReader, "name");
-
-            xmlReader.Dispose();
+            XmlReader xmlReader = null;
+            try
+            {
+                xmlReader = XmlReader.Create("Subjects/" + subjId + ".xml");
+                name = GetValue(ref xmlReader, "name");
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                if (xmlReader != null)
+                {
+                    xmlReader.Dispose(); 
+                }
+            }
+            
             return name;
         }
 
         public List<string> GetStudentIds(string subjId)
         {
             List<string> ids = new List<string>();
+            XmlReader xmlReader = null;
+            try
+            {
+                xmlReader = XmlReader.Create(GetXmlFileName(subjId));
+                ids = GetList(ref xmlReader, "students", "id");
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                if(xmlReader != null)
+                {
+                    xmlReader.Dispose();
+                }
+            }
 
-
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(subjId));
-            ids = GetList(ref xmlReader, "students", "id");
-
-            xmlReader.Dispose();
             return ids;
         }
 
         public List<string> GetBlockedStudentIds(string subjId)
         {
             List<string> ids = new List<string>();
-
+            XmlReader xmlReader = null;
             try
             {
-                XmlReader xmlReader = XmlReader.Create(GetXmlFileName(subjId));
+                xmlReader = XmlReader.Create(GetXmlFileName(subjId));
                 ids = GetList(ref xmlReader, "blacklist", "id");
                 xmlReader.Dispose();
             }
             catch (Exception)
             {
-
-               // throw;
+                return null;
             }
+            finally
+            {
+                xmlReader.Dispose();
+            }
+
             return ids;
         }
 
         public Subject GetSubject(string subjId)
         {
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(subjId));
-            xmlReader.Read();
-            xmlReader.Read();
-
             string id = "";
             string name = "";
             string teacher = "";
@@ -66,10 +91,17 @@ namespace Neptun_2._0
             string endTime = "";
             List<string> studentIds = new List<string>();
             List<string> blockedStudentIds = new List<string>();
-
+            XmlReader xmlReader = null;
+         
             try
             {
-                while (xmlReader.Read()) //loop needed?
+                xmlReader = XmlReader.Create(GetXmlFileName(subjId));
+
+                //TODO resolve hax
+                xmlReader.Read();
+                xmlReader.Read();
+
+                while (xmlReader.Read())
                 {
                     if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "subject") && (xmlReader.GetAttribute("id") == subjId))
                     {
@@ -89,26 +121,40 @@ namespace Neptun_2._0
             }
             catch (Exception)
             {
-                //TODO e
+                return null;
             }
-
-            xmlReader.Dispose();
+            finally
+            {
+                if (xmlReader != null)
+                {
+                    xmlReader.Dispose(); 
+                }
+            }
+            
             return new Subject(id, name, teacher,room, day, startTime, endTime, studentIds, blockedStudentIds);
         }
 
         public string GetRoomId(string subjectId)
         {
             string room = "";
+            XmlReader xmlReader = null;
 
             try
             {
-                XmlReader xmlReader = XmlReader.Create(GetXmlFileName(subjectId));
+                xmlReader = XmlReader.Create(GetXmlFileName(subjectId));
                 room = GetValue(ref xmlReader, "room");
                 xmlReader.Dispose();
             }
             catch (Exception)
             {
-                //room remains ""
+                return null;
+            }
+            finally
+            {
+                if(xmlReader != null)
+                {
+                    xmlReader.Dispose();
+                }
             }
 
             return room;
@@ -118,6 +164,7 @@ namespace Neptun_2._0
         #region functional methods
         public bool CreateSubject(Subject subject)
         {
+            //TODO try catch
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.IndentChars = "\t";
@@ -160,27 +207,43 @@ namespace Neptun_2._0
 
         public bool Register(string subjId, string neptunCode)
         {
-            //TODO error handling
-            AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "/subject/students", "student", "id", neptunCode);
+            try
+            {
+                AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "/subject/students", "student", "id", neptunCode);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
             return true;
         }
 
         public bool DeRegister(string subjId, string neptunCode)
         {
-            //TODO error handling
             //RemoveNodeByAttr(GetXmlFileName(subj_id), "lecture/students/student[@id=\""+neptunCode+"\"]");
-            RemoveNodeByAttr(GetXmlFileName(subjId), CreateXPathWithAttr("subject/students/student", "id", neptunCode));
+            try
+            {
+                RemoveNodeByAttr(GetXmlFileName(subjId), CreateXPathWithAttr("subject/students/student", "id", neptunCode));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
             return true;
         }
 
         public bool BlockStudent(string subjId, string neptunCode)
         {
-            //TODO error handling
-            //TODO isValid() in user
-            // isOnSubj()
-
-            DeRegister(subjId, neptunCode);
-            AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "subject/blacklist", "student", "id", neptunCode);
+            //TODO incomplete error handling! for example: student deregistered, but not added to blacklist!
+            try
+            {
+                DeRegister(subjId, neptunCode);
+                AppendEmptyNodeWithAttr(GetXmlFileName(subjId), "subject/blacklist", "student", "id", neptunCode);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
 
             return true;
         }

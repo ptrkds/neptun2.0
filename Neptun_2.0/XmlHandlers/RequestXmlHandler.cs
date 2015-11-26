@@ -19,102 +19,98 @@ namespace Neptun_2._0
             string subject = "";
             string text = "";
 
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(request_Id));
+            XmlReader xmlReader = null;
 
-            while (xmlReader.Read())
+            try
             {
-                if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "request") && (xmlReader.GetAttribute("id") == request_Id))
+                xmlReader = XmlReader.Create(GetXmlFileName(request_Id));
+
+                while (xmlReader.Read())
                 {
-                    requestId = xmlReader.GetAttribute("id");
-                    state = GetValue(ref xmlReader, "state");
-                    ownerId = GetValue(ref xmlReader, "owner");
-                    subject = GetValue(ref xmlReader, "subject");
-                    text = GetValue(ref xmlReader, "text");
+                    if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "request") && (xmlReader.GetAttribute("id") == request_Id))
+                    {
+                        requestId = xmlReader.GetAttribute("id");
+                        state = GetValue(ref xmlReader, "state");
+                        ownerId = GetValue(ref xmlReader, "owner");
+                        subject = GetValue(ref xmlReader, "subject");
+                        text = GetValue(ref xmlReader, "text");
+                    }
                 }
             }
-            xmlReader.Dispose();
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                if (xmlReader != null)
+                {
+                    xmlReader.Dispose();
+                }
+            }
+
             return new Request(requestId, state, ownerId, subject, text);
         }
-
-       /* public Request GetRequest(string request_Id)
-        {
-            string requestId = "";
-            string state = "";
-            string ownerId = "";
-            string subject = "";
-            string text = "";
-
-            XmlReader xmlReader = XmlReader.Create(GetXmlFileName(request_Id));
-
-
-            while (xmlReader.Read())
-            {
-                if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "request") && (xmlReader.GetAttribute("id") == request_Id))
-                {
-                    requestId = xmlReader.GetAttribute("id");
-                    state = GetValue(ref xmlReader, "state");
-                    ownerId = GetValue(ref xmlReader, "owner");
-                    subject = GetValue(ref xmlReader, "subject");
-                    text = GetValue(ref xmlReader, "text");
-                }
-            }
-
-            return new Request(requestId,state, ownerId, subject, text);
-        }*/
-        
         #endregion
 
         #region functional methods
-        
-    public bool CreateRequest(Request request)
-    {
-        XmlWriterSettings settings = new XmlWriterSettings();
-        settings.Indent = true;
-        settings.IndentChars = "\t";
 
-        using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(request.getId()), settings))
+        public bool CreateRequest(Request request)
         {
-            writer.WriteStartDocument();
-            writer.WriteStartElement("request");
-            writer.WriteAttributeString("id", request.getId());
-            writer.WriteElementString("owner", request.getOwner());
-            writer.WriteElementString("text", request.getText());
+            //TODO try catch
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = "\t";
 
-            writer.WriteEndElement();
-            writer.WriteEndDocument();
+            using (XmlWriter writer = XmlWriter.Create(GetXmlFileName(request.getId()), settings))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("request");
+                writer.WriteAttributeString("id", request.getId());
+                writer.WriteElementString("owner", request.getOwner());
+                writer.WriteElementString("text", request.getText());
+
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+            }
+
+            return true;
         }
 
-        return true;
-    }
-
-    public bool JudgeRequest(string requestId, bool judge)
-    {
-        //TODO implement
-        string judgestr;
-        if(judge)
+        public bool JudgeRequest(string requestId, bool judge)
         {
-            judgestr = "accepted";
-        }
-        else
-        {
-            judgestr = "declined";
+            string judgestr;
+            if (judge)
+            {
+                judgestr = "accepted";
+            }
+            else
+            {
+                judgestr = "declined";
+            }
+
+            try
+            {
+                SetValue(GetXmlFileName(requestId), "/request/state", judgestr);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
         }
 
-        SetValue(GetXmlFileName(requestId), "/request/state", judgestr);
-
-        return true;
-    }
-    
         #endregion
 
         #region help method
-        
-    private string GetXmlFileName(string requestId)
-    {
-        return "Requests/" + requestId + ".xml";
-    }
-    
+
+        private string GetXmlFileName(string requestId)
+        {
+            return "Requests/" + requestId + ".xml";
+        }
+
         #endregion
-       
+
     }
 }
