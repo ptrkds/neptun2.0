@@ -7,7 +7,7 @@
     <subject id="VEMFK12"/>
     <subject id="VEMFK42"/>
   </subjects>
-  <documents>
-	<document id="ASDF1234"/>
-  </documents>
+  <demands>
+	<demand id="ASDF1234"/>
+  </demands>
 </user>

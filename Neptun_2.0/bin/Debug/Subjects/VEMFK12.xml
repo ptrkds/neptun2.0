@@ -6,6 +6,9 @@
 	<day>Szerda</day>
 	<startTime>10:00</startTime>
 	<endTime>12:00</endTime>
-	<students></students>
-	<blacklist></blacklist>
+	<students>
+		<student id="UKDUJP" />
+	</students>
+	<blacklist>
+	</blacklist>
 </subject>

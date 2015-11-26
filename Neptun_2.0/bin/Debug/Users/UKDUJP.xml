@@ -4,8 +4,10 @@
   <type>student</type>
   <pw>123456</pw>
   <subjects>
+	<subject id="VEMFK12" />
     <subject id="VEMFK22" />
   </subjects>
-  <documents>
-  </documents>
+  <requests>
+	<request id="UKDUJP1"/>
+  </requests>
 </user>

@@ -3,6 +3,8 @@
 	<limit>150</limit>
 	<lectures>
 		<lecture id="VEMFK12"/>
+		<lecture id="VEMFK42"/>
+		<lecture id="VEMFK32"/>
 		<lecture id="VEMFK22"/>
 	</lectures>
 </room>

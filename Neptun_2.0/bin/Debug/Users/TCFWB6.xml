@@ -3,10 +3,4 @@
   <name>Andris</name>
   <type>admin</type>
   <pw>123456</pw>
-  <subjects>
-    <subjects id="VEMFK22" />
-    <subjects id="VEMFK32" />
-  </subjects>
-  <documents>
-  </documents>
 </user>
