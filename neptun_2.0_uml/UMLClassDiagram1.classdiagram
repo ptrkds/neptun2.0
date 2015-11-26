@@ -2361,7 +2361,7 @@
             <elementDefinition Id="e86fff7d-7fed-46d5-8745-a986ade07ff9" />
           </association>
           <association Id="f997e8a7-74d1-4993-a606-935343321df6" isDerived="false" sourceEndRoleName="Database" targetEndRoleName="CMD1" isLeaf="false" isAbstract="false">
-            <classMoniker Id="af4b5e88-024e-4f6d-b674-fae465e0c76c" LastKnownName="CMD1" />
+            <classMoniker Id="af4b5e88-024e-4f6d-b674-fae465e0c76c" LastKnownName="CMD" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="8653c721-239c-4c07-bee5-a3aa8d00f0a0" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
@@ -4278,7 +4278,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="af4b5e88-024e-4f6d-b674-fae465e0c76c" name="CMD1" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="af4b5e88-024e-4f6d-b674-fae465e0c76c" name="CMD" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="9cac3526-5e71-420b-bbd6-b26f29659a6a" />
         <ownedAttributesInternal>
           <property Id="309b2554-2b4d-4334-abfd-ad5f7a6a2409" name="cmd" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
