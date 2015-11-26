@@ -269,13 +269,13 @@ namespace Neptun_2._0
 
         public bool AppendDemand(string neptunCode, string docId)
         {
-            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/demands", "demand", "id", docId); // /?
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/demands", "demand", "id", docId); 
             return true;
         }
 
         public bool AppendRequest(string neptunCode, string docId)
         {
-            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/requests", "request", "id", docId); // /?
+            AppendEmptyNodeWithAttr(GetXmlFileName(neptunCode), "/user/requests", "request", "id", docId);
             return true;
         }
 

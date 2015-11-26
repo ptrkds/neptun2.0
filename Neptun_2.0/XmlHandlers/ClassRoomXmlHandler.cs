@@ -101,7 +101,5 @@ namespace Neptun_2._0
         }
 
         #endregion
-
-
     }
 }
