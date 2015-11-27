@@ -485,111 +485,174 @@ namespace Neptun_2._0
             int lengthStart = start.Length;
             int lengthEnd = end.Length;
             demandUnderline(lengthID, lengthName, lengthDay, lengthStart, lengthEnd);
-            do
-            {
-                input = Console.ReadKey();
-                /*int asd = Console.CursorLeft;
-                Console.SetCursorPosition(50, 15);
-                Console.Write(asd);*/
-                if (Console.CursorLeft > 78)
+            Boolean again = true;
+            do {
+                do
                 {
-                    Console.Write("\b ");
-                }
-                else
-                {
+                    input = Console.ReadKey();
+                    if (Console.CursorLeft > 78)
+                    {
+                        Console.Write("\b ");
+                    }
+                    else
+                    {
 
-                    if (position < 3)
-                    {
-                        Console.Write("\b ");
+                        if (position < 3)
+                        {
+                            Console.Write("\b ");
+                        }
+                        if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && input.Key != ConsoleKey.Backspace)
+                        {
+                            Console.Write("\b ");
+                        }
+                        if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)))
+                        {
+                            switch (position)
+                            {
+                                case 3:
+                                    lengthID++;
+                                    subjectID += input.KeyChar;
+                                    break;
+                                case 4:
+                                    lengthName++;
+                                    subjectName += input.KeyChar;
+                                    break;
+                                case 5:
+                                    lengthDay++;
+                                    day += input.KeyChar;
+                                    break;
+                                case 6:
+                                    lengthStart++;
+                                    start += input.KeyChar;
+                                    break;
+                                case 7:
+                                    lengthEnd++;
+                                    end += input.KeyChar;
+                                    break;
+                            }
+                        }
                     }
-                    if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && input.Key != ConsoleKey.Backspace)
-                    {
-                        Console.Write("\b ");
-                    }
-                    if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)))
+                    if (input.Key == ConsoleKey.Backspace)
                     {
                         switch (position)
                         {
                             case 3:
-                                lengthID++;
-                                subjectID += input.KeyChar;
+                                if (lengthID > 0)
+                                {
+                                    subjectID = subjectID.Remove(subjectID.Length - 1);
+                                    lengthID--;
+                                    Console.Write(" ");
+                                }
                                 break;
                             case 4:
-                                lengthName++;
-                                subjectName += input.KeyChar;
+                                if (lengthName > 0)
+                                {
+                                    subjectName = subjectName.Remove(subjectName.Length - 1);
+                                    lengthName--;
+                                    Console.Write(" ");
+                                }
                                 break;
                             case 5:
-                                lengthDay++;
-                                day += input.KeyChar;
+                                if (lengthDay > 0)
+                                {
+                                    day = day.Remove(day.Length - 1);
+                                    lengthDay--;
+                                    Console.Write(" ");
+                                }
                                 break;
                             case 6:
-                                lengthStart++;
-                                start += input.KeyChar;
+                                if (lengthStart > 0)
+                                {
+                                    start = start.Remove(start.Length - 1);
+                                    lengthStart--;
+                                    Console.Write(" ");
+                                }
                                 break;
                             case 7:
-                                lengthEnd++;
-                                end += input.KeyChar;
+                                if (lengthEnd > 0)
+                                {
+                                    end = end.Remove(end.Length - 1);
+                                    lengthEnd--;
+                                    Console.Write(" ");
+                                }
                                 break;
                         }
                     }
-                }
-                if (input.Key == ConsoleKey.Backspace)
+                    if (input.Key == ConsoleKey.DownArrow)
+                        position++;
+                    if (input.Key == ConsoleKey.UpArrow)
+                        position--;
+                    if (position < 1)
+                        position = 7;
+                    if (position > 7)
+                        position = 1;
+                    demandUnderline(lengthID, lengthName, lengthDay, lengthStart, lengthEnd);
+                } while (input.Key != ConsoleKey.Enter || position > 2);
+
+                if(position == 1) again = false;
+                if(position == 2)
                 {
-                    switch (position)
+                    if (lengthID > 0 && lengthName > 0)
                     {
-                        case 3:
-                            if (lengthID > 0)
+                        try
+                        {
+                            int dayNumb = Int16.Parse(day);
+                            if (dayNumb >= 1 && dayNumb <= 5)
                             {
-                                subjectID = subjectID.Remove(subjectID.Length - 1);
-                                lengthID--;
-                                Console.Write(" ");
-                            }
-                            break;
-                        case 4:
-                            if (lengthName > 0)
+                                try
+                                {
+                                    int startNumb = Int16.Parse(start);
+                                    int endNumb = Int16.Parse(end);
+                                    if (startNumb >= 8 && startNumb <= 18 && endNumb >= 10 && endNumb <= 20 && startNumb % 2 == 0 && endNumb % 2 == 0 && startNumb + 2 == endNumb)
+                                    {
+                                        again = false;
+                                    }                                
+                                    else
+                                    {
+                                        Console.SetCursorPosition(25, 15);
+                                        for (int i = 0; i < 10; i++)
+                                            Console.Write("     ");
+                                        Console.SetCursorPosition(25, 15);
+                                        Console.Write("Hibásan adta meg az óra kezdését, vagy végét!");
+                                    }
+                                }
+                                catch (FormatException)
+                                {
+                                    Console.SetCursorPosition(25, 15);
+                                    for (int i = 0; i < 10; i++)
+                                        Console.Write("     ");
+                                    Console.SetCursorPosition(25, 15);
+                                    Console.Write("Hibásan adta meg az óra kezdését, vagy végét!");
+                                }
+                            }                                       
+                            else
                             {
-                                subjectName = subjectName.Remove(subjectName.Length - 1);
-                                lengthName--;
-                                Console.Write(" ");
+                                Console.SetCursorPosition(25, 15);
+                                for (int i = 0; i < 10; i++)
+                                    Console.Write("     ");
+                                Console.SetCursorPosition(25, 15);
+                                Console.Write("Hibásan adta meg a napot!");
                             }
-                            break;
-                        case 5:
-                            if (lengthDay > 0)
-                            {
-                                day = day.Remove(day.Length - 1);
-                                lengthDay--;
-                                Console.Write(" ");
-                            }
-                            break;
-                        case 6:
-                            if (lengthStart > 0)
-                            {
-                                start = start.Remove(start.Length - 1);
-                                lengthStart--;
-                                Console.Write(" ");
-                            }
-                            break;
-                        case 7:
-                            if (lengthEnd > 0)
-                            {
-                                end = end.Remove(end.Length - 1);
-                                lengthEnd--;
-                                Console.Write(" ");
-                            }
-                            break;
+                        }
+                        catch (FormatException e)
+                        {
+                            Console.SetCursorPosition(25, 15);
+                            for (int i = 0; i < 10; i++)
+                                Console.Write("     ");
+                            Console.SetCursorPosition(25, 15);
+                            Console.Write("Hibásan adta meg a napot!");
+                        }
+                    }
+                    else
+                    {
+                        Console.SetCursorPosition(25, 15);
+                        for (int i = 0; i < 10; i++)
+                            Console.Write("     ");
+                        Console.SetCursorPosition(25, 15);
+                        Console.Write("Nem adott tanrágy ID-t vagy nevet!");
                     }
                 }
-                if (input.Key == ConsoleKey.DownArrow)
-                    position++;
-                if (input.Key == ConsoleKey.UpArrow)
-                    position--;
-                if (position < 1)
-                    position = 7;
-                if (position > 7)
-                    position = 1;
-                demandUnderline(lengthID, lengthName, lengthDay, lengthStart, lengthEnd);
-            } while (input.Key != ConsoleKey.Enter || position > 2);
-
+            }while(again);
             list = new List<string>();
             list.Add(subjectID);
             list.Add(subjectName);
@@ -704,63 +767,103 @@ namespace Neptun_2._0
             int lengthStart = 0;
             int lengthEnd = 0;
             selectFilterUnderline(lengthStart, lengthEnd);
+            Boolean again = true;
             do
             {
-                input = Console.ReadKey();
-                if (position < 3)
+                do
                 {
-                    Console.Write("\b ");
-                }
-                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && input.Key != ConsoleKey.Backspace)
-                {
-                    Console.Write("\b ");
-                }
-                if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)))
-                {
-                    switch (position)
+                    input = Console.ReadKey();
+                    if (Console.CursorLeft > 78)
                     {
-                        case 3:
-                            lengthStart++;
-                            start += input.KeyChar;
-                            break;
-                        case 4:
-                            lengthEnd++;
-                            end += input.KeyChar;
-                            break;
+                        Console.Write("\b ");
                     }
-                }
-                if (input.Key == ConsoleKey.Backspace)
-                {
-                    switch (position)
+                    else
                     {
-                        case 3:
-                            if (lengthStart > 0)
+                        if (position < 3)
+                        {
+                            Console.Write("\b ");
+                        }
+                        if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)) && input.Key != ConsoleKey.Backspace)
+                        {
+                            Console.Write("\b ");
+                        }
+                        if (((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar)))
+                        {
+                            switch (position)
                             {
-                                start = start.Remove(start.Length - 1);
-                                lengthStart--;
-                                Console.Write(" ");
+                                case 3:
+                                    lengthStart++;
+                                    start += input.KeyChar;
+                                    break;
+                                case 4:
+                                    lengthEnd++;
+                                    end += input.KeyChar;
+                                    break;
                             }
-                            break;
-                        case 4:
-                            if (lengthEnd > 0)
-                            {
-                                end = end.Remove(end.Length - 1);
-                                lengthEnd--;
-                                Console.Write(" ");
-                            }
-                            break;
+                        }
                     }
+                    if (input.Key == ConsoleKey.Backspace)
+                    {
+                        switch (position)
+                        {
+                            case 3:
+                                if (lengthStart > 0)
+                                {
+                                    start = start.Remove(start.Length - 1);
+                                    lengthStart--;
+                                    Console.Write(" ");
+                                }
+                                break;
+                            case 4:
+                                if (lengthEnd > 0)
+                                {
+                                    end = end.Remove(end.Length - 1);
+                                    lengthEnd--;
+                                    Console.Write(" ");
+                                }
+                                break;
+                        }
+                    }
+                    if (input.Key == ConsoleKey.DownArrow)
+                        position++;
+                    if (input.Key == ConsoleKey.UpArrow)
+                        position--;
+                    if (position < 1)
+                        position = 4;
+                    if (position > 4)
+                        position = 1;
+                    selectFilterUnderline(lengthStart, lengthEnd);
+                } while (input.Key != ConsoleKey.Enter || position > 2);
+                if (position == 1) again = false;
+                if (position == 2)
+                {                
+                    try
+                    {
+                        int startNumb = Int16.Parse(start);
+                        int endNumb = Int16.Parse(end);
+                        if (startNumb >= 8 && startNumb <= 18 && endNumb >= 10 && endNumb <= 20 && startNumb % 2 == 0 && endNumb % 2 == 0 && startNumb + 2 == endNumb)
+                        {
+                            again = false;
+                        }
+                        else
+                        {
+                            Console.SetCursorPosition(25, 10);
+                            for (int i = 0; i < 10; i++)
+                                Console.Write("     ");
+                            Console.SetCursorPosition(25, 10);
+                            Console.Write("Hibásan adta meg az óra kezdését, vagy végét!");
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        Console.SetCursorPosition(25, 10);
+                        for (int i = 0; i < 10; i++)
+                            Console.Write("     ");
+                        Console.SetCursorPosition(25, 10);
+                        Console.Write("Hibásan adta meg az óra kezdését, vagy végét!");
+                    }                
                 }
-                if (input.Key == ConsoleKey.DownArrow)
-                    position++;
-                if (input.Key == ConsoleKey.UpArrow)
-                    position--;
-                if (position < 1)
-                    position = 4;
-                if (position > 4)
-                    position = 1;
-                selectFilterUnderline(lengthStart, lengthEnd);
-            } while (input.Key != ConsoleKey.Enter || position > 2) ;      
+            } while (again);
             CMD command = new CMD();
             command.data = new List<string>();
             if(position == 1)
@@ -1045,7 +1148,7 @@ namespace Neptun_2._0
         }
         public void studentBlock_successful()
         {
-            subMenuremove(10, countusers);
+            subMenuremove(5, countusers+5);
             position = 1;
             subMainUnderline(0,0);
             Console.SetCursorPosition(3, 6);
@@ -1058,7 +1161,7 @@ namespace Neptun_2._0
         }
         public void studentBlock_unsuccessful()
         {
-            subMenuremove(10, countusers);
+            subMenuremove(5, countusers+5);
             position = 1;
             subMainUnderline(0,0);
             Console.SetCursorPosition(3, 6);

@@ -211,6 +211,11 @@ namespace Neptun_2._0
         public CMD requestSubmissionMenu()
         {
             position = 1;
+            for (int i = 0; i < 20; i++)
+            {
+                Console.SetCursorPosition(i * 4, 4);
+                Console.Write("____");
+            }
             Console.SetCursorPosition(1, 6);
             Console.Write("Adja meg a felvinni kívánt kérvény támáját, és kifejtését!");
             Console.SetCursorPosition(2, 8);
@@ -231,26 +236,33 @@ namespace Neptun_2._0
             do
             {
                 input = Console.ReadKey();
-                if (position < 3)
+                if (Console.CursorLeft > 78)
                 {
                     Console.Write("\b ");
                 }
-                if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.')) && input.Key != ConsoleKey.Backspace)
+                else
                 {
-                    Console.Write("\b ");
-                }
-                if ((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.'))
-                {
-                    switch (position)
+                    if (position < 3)
                     {
-                        case 3:
-                            lengthThema++;
-                            thema += input.KeyChar;
-                            break;
-                        case 4:
-                            lengthText++;
-                            text += input.KeyChar;
-                            break;
+                        Console.Write("\b ");
+                    }
+                    if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.')) && input.Key != ConsoleKey.Backspace)
+                    {
+                        Console.Write("\b ");
+                    }
+                    if ((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.'))
+                    {
+                        switch (position)
+                        {
+                            case 3:
+                                lengthThema++;
+                                thema += input.KeyChar;
+                                break;
+                            case 4:
+                                lengthText++;
+                                text += input.KeyChar;
+                                break;
+                        }
                     }
                 }
                 if(position == 4 && input.Key == ConsoleKey.Enter)
