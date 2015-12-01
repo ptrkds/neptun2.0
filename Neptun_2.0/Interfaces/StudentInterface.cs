@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Neptun_Stucture;
 
 namespace Neptun_2._0
 {
@@ -233,83 +231,103 @@ namespace Neptun_2._0
             rowText = 1;
             List<int> rowslength = new List<int>();            
             requestUnderline(lengthThema, lengthText);
+            Boolean again = true;
             do
             {
-                input = Console.ReadKey();
-                if (Console.CursorLeft > 78)
+                do
                 {
-                    Console.Write("\b ");
-                }
-                else
-                {
-                    if (position < 3)
+                    input = Console.ReadKey();
+                    if (Console.CursorLeft > 78)
                     {
                         Console.Write("\b ");
                     }
-                    if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.')) && input.Key != ConsoleKey.Backspace)
+                    else
                     {
-                        Console.Write("\b ");
+                        if (position < 3)
+                        {
+                            Console.Write("\b ");
+                        }
+                        if (!((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.')) && input.Key != ConsoleKey.Backspace)
+                        {
+                            Console.Write("\b ");
+                        }
+                        if ((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.'))
+                        {
+                            switch (position)
+                            {
+                                case 3:
+                                    lengthThema++;
+                                    thema += input.KeyChar;
+                                    break;
+                                case 4:
+                                    lengthText++;
+                                    text += input.KeyChar;
+                                    break;
+                            }
+                        }
                     }
-                    if ((input.KeyChar >= 'a' && input.KeyChar <= 'z') || (input.KeyChar >= 'A' && input.KeyChar <= 'Z') || (input.KeyChar >= '0' && input.KeyChar <= '9') || (input.Key == ConsoleKey.Spacebar) || (input.KeyChar == '.'))
+                    if (position == 4 && input.Key == ConsoleKey.Enter)
+                    {
+                        rowslength.Add(lengthText);
+                        text += " ";
+                        lengthText = 0;
+                        rowText++;
+                    }
+                    if (lengthText == 0 && rowText - 1 > 0 && input.Key == ConsoleKey.Backspace && position == 4)
+                    {
+                        rowText--;
+                        lengthText = rowslength[rowText - 1] + 1;
+                    }
+
+                    if (input.Key == ConsoleKey.Backspace)
                     {
                         switch (position)
                         {
                             case 3:
-                                lengthThema++;
-                                thema += input.KeyChar;
+                                if (lengthThema > 0)
+                                {
+                                    thema = thema.Remove(thema.Length - 1);
+                                    lengthThema--;
+                                    Console.Write(" ");
+                                }
                                 break;
                             case 4:
-                                lengthText++;
-                                text += input.KeyChar;
+                                if (lengthText > 0)
+                                {
+                                    text = text.Remove(text.Length - 1);
+                                    lengthText--;
+                                    Console.Write(" ");
+                                }
                                 break;
                         }
                     }
-                }
-                if(position == 4 && input.Key == ConsoleKey.Enter)
+                    if (input.Key == ConsoleKey.DownArrow)
+                        position++;
+                    if (input.Key == ConsoleKey.UpArrow)
+                        position--;
+                    if (position < 1)
+                        position = 4;
+                    if (position > 4)
+                        position = 1;
+                    requestUnderline(lengthThema, lengthText);
+                } while (input.Key != ConsoleKey.Enter || position > 2);
+                if (position == 1) again = false;
+                if (position == 2)
                 {
-                    rowslength.Add(lengthText);                    
-                    text += " ";
-                    lengthText = 0;
-                    rowText++;
-                }
-                if(lengthText == 0 && rowText-1 > 0 && input.Key == ConsoleKey.Backspace && position == 4)
-                {
-                    rowText--;                    
-                    lengthText = rowslength[rowText-1] + 1;               
-                }
-
-                if (input.Key == ConsoleKey.Backspace)
-                {
-                    switch (position)
+                    if (lengthThema > 0 && (lengthText > 0 || rowText > 1))
                     {
-                        case 3:
-                            if (lengthThema > 0)
-                            {
-                                thema = thema.Remove(thema.Length - 1);
-                                lengthThema--;
-                                Console.Write(" ");
-                            }
-                            break;
-                        case 4:
-                            if (lengthText > 0)
-                            {
-                                text = text.Remove(text.Length - 1);
-                                lengthText--;
-                                Console.Write(" ");
-                            }
-                            break;
+                        again = false;
+                    }
+                    else
+                    {
+                        Console.SetCursorPosition(25, 10);
+                        for (int i = 0; i < 10; i++)
+                            Console.Write("     ");
+                        Console.SetCursorPosition(25, 10);
+                        Console.Write("Nem adott témát, vagy kifejtést!");
                     }
                 }
-                if (input.Key == ConsoleKey.DownArrow)
-                    position++;
-                if (input.Key == ConsoleKey.UpArrow)
-                    position--;
-                if (position < 1)
-                    position = 4;
-                if (position > 4)
-                    position = 1;
-                requestUnderline(lengthThema, lengthText);
-            } while (input.Key != ConsoleKey.Enter || position > 2);
+            } while (again);
             CMD command = new CMD();
             command.data = new List<string>();
             if (position == 1)
