@@ -355,14 +355,19 @@ namespace Neptun_2._0
                 cmd = aui.selectDemand(demands);
                 if (cmd.cmd != "exit")
                 {
-                    if (requestDemandJudgement(cmd.data[0]))
+                    int judg = requestDemandJudgement(cmd.data[0]);
+                    if (judg == 1)
                     {
                         aui.demand_accept();
                         return true;
                     }
-                    else
+                    else if (judg == 0)
                     {
                         aui.demand_decline();
+                        return true;
+                    }
+                    else
+                    {
                         return false;
                     }
                 }
@@ -372,23 +377,30 @@ namespace Neptun_2._0
                 }
             }
         }
-        private bool requestDemandJudgement(String demand_id)
+        private int requestDemandJudgement(String demand_id)
         {
             cmd = aui.judgeDemand();
             if (cmd.cmd != "exit")
             {
                 if (db.demandJudgement(demand_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.cmd)))
                 {
-                    return true;
+                    if (db.getDemand(demand_id).getState() == "accepted")
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
                 }
                 else
                 {
-                    return false;
+                    return -1;
                 }
             }
             else
             {
-                return false;
+                return -1;
             }
         }
         
@@ -578,14 +590,19 @@ namespace Neptun_2._0
                 cmd = aui.selectRequest(requests);
                 if (cmd.cmd != "exit")
                 {
-                    if (requestRequestJudgement(cmd.data[0]))
+                    int judg = requestRequestJudgement(cmd.data[0]);
+                    if (judg == 1)
                     {
                         aui.request_accept();
                         return true;
                     }
-                    else
+                    else if (judg == 0)
                     {
                         aui.request_decline();
+                        return true;
+                    }
+                    else
+                    {
                         return false;
                     }
                 }
@@ -595,17 +612,24 @@ namespace Neptun_2._0
                 }
             }
         }
-        private bool requestRequestJudgement(String request_id)
+        private int requestRequestJudgement(String request_id)
         {
             cmd = aui.judgeRequest(db.getRequest(request_id));
             //request delete
             if (db.requestJudgement(request_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.data[0])))
             {
-                return true;
+                if (db.getRequest(request_id).getState() == "accepted")
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
             }
             else
             {
-                return false;
+                return -1;
             }
         }
 
@@ -617,8 +641,8 @@ namespace Neptun_2._0
             if (cmd.cmd != "exit")
             {
                 String time = DateTime.Now.ToString("MM-dd-yy-hh-mm-ss");
-                Request newRequest = new Request(userLoggedIn.getNeptunCode()+time, "null", userLoggedIn.getNeptunCode(),
-                   cmd.data[0], cmd.data[1]);
+                Request newRequest = new Request(userLoggedIn.getNeptunCode()+time, "null", cmd.data[0], userLoggedIn.getNeptunCode(),
+                    cmd.data[1]);
 
 
                 if (db.requestSubmission(newRequest, userLoggedIn.getNeptunCode()))

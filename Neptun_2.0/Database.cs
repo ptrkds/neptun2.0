@@ -139,7 +139,7 @@ namespace Neptun_2._0
             foreach (string id in ids)
             {
                 Demand newDemand = demandHandler.GetDemand(id);
-                if (newDemand.getState() == "accepted" || newDemand.getState() == "declined")
+                if (newDemand.getState() != "accepted" && newDemand.getState() != "declined")
                 {
                     demands.Add(newDemand);
                 }
@@ -303,7 +303,10 @@ namespace Neptun_2._0
             foreach (string id in ids)
             {
                 Request newRequest = requestHandler.GetRequest(id);
-                requests.Add(newRequest);
+                if (newRequest.getState() != "accepted" && newRequest.getState() != "declined")
+                {
+                    requests.Add(newRequest);
+                }
             }
 
             return requests;
