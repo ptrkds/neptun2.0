@@ -205,7 +205,7 @@ namespace Neptun_XML
                 List<string> files = GetAllIds(directory);
                 foreach (string file in files)
                 {
-                    File.Delete(directory + "/" + file);
+                    File.Delete(directory + "/" + file + ".xml");
                 }
             }
             catch (Exception)
