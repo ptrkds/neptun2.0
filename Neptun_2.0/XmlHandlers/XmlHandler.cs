@@ -156,6 +156,7 @@ namespace Neptun_XML
         protected void AppendEmptyNodeWithAttr(string filepath, string xpath, string node_name, string attr_name, string attr_value)
         {
             //append an empty child node with the given attribute
+
             try
             {
                 XmlDocument doc = new XmlDocument();
@@ -172,8 +173,10 @@ namespace Neptun_XML
             }
             catch (Exception)
             {
+
                 throw;
             }
+         
         }
         #endregion
 
