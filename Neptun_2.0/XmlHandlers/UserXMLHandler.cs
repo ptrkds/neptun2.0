@@ -325,12 +325,12 @@ namespace Neptun_XML
 
                 foreach (string demandId in demandIds)
                 {
-                    RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/subjects/subject", "id", demandId));
+                    RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/demands/demand", "id", demandId));
                 }
-
+                
                 foreach (string requestId in requestIds)
                 {
-                    RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/subjects/subject", "id", requestId));
+                    RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/requests/request", "id", requestId));
                 }
             }
             catch (Exception)
