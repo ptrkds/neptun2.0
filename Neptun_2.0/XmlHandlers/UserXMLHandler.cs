@@ -367,6 +367,36 @@ namespace Neptun_XML
             return true;
         }
 
+        public bool DeleteDemand(string neptunCode, string demandId)
+        {
+            //RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
+            try
+            {
+                RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/demands/demand", "id", demandId));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool DeleteRequest(string neptunCode, string demandId)
+        {
+            //RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
+            try
+            {
+                RemoveNodeByAttr(GetXmlFileName(neptunCode), CreateXPathWithAttr("/user/requests/request", "id", demandId));
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         #endregion
 
         #region helper methods
