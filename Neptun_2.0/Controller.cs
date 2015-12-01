@@ -170,7 +170,7 @@ namespace Neptun_2._0
         //Student Block
         private bool studentBlock()
         {
-            List<short_subject> subjects = db.getSubjects(userLoggedIn.getNeptunCode());
+            List<short_subject> subjects = db.getShortSubjects(userLoggedIn.getNeptunCode());
 
             while (true)
             {

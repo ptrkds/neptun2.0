@@ -35,7 +35,7 @@ namespace Neptun_2._0
         }
 
 
-        public List<short_subject> getSubjects(string neptunCode)
+        public List<short_subject> getShortSubjects(string neptunCode)
         {
             List<string> ids = userHandler.GetSubjectIds(neptunCode);
 
@@ -46,6 +46,21 @@ namespace Neptun_2._0
                 short_subject ss = new short_subject();
                 ss.id = id;
                 ss.name = subjectHandler.GetSubjectName(id);
+                subj.Add(ss);
+            }
+
+            return subj;
+        }
+
+        public List<Subject> getSubjects(string neptunCode)
+        {
+            List<string> ids = userHandler.GetSubjectIds(neptunCode);
+
+            //get subjectnames
+            List<Subject> subj = new List<Subject>();
+            foreach (string id in ids)
+            {
+                Subject ss = subjectHandler.GetSubject(id);
                 subj.Add(ss);
             }
 
