@@ -235,12 +235,13 @@ namespace Neptun_2._0
             time.startTime = startTime;
             time.endTime = endTime;
 
-            HashSet<busy_time> set = new HashSet<busy_time>();
 
             List<string> ids = roomHandler.GetAllIds("ClassRooms/");
 
             foreach (string id in ids)
             {
+                HashSet<busy_time> set = new HashSet<busy_time>();
+
                 ClassRoom room = roomHandler.GetClassRoom(id);
 
                 List<String> subj_ids = roomHandler.GetSubjectIds(id);

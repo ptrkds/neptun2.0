@@ -252,7 +252,25 @@ namespace Neptun_2._0
                 command.data.Add(selected_room);
             String subjectID = "";
             String subjectName = "";
-            String day = defday;
+            String day = "";
+            switch (defday)
+            {
+                case "Hetfo":
+                    day = "1";
+                    break;
+                case "Kedd":
+                    day = "2";
+                    break;
+                case "Szerda":
+                    day = "3";
+                    break;
+                case "Csutortok":
+                    day = "4";
+                    break;
+                case "Pentek":
+                    day = "5";
+                    break;
+            }
             String start = defstart;
             String end = defend;
             if (command.cmd != "exit")

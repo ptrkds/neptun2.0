@@ -58,7 +58,7 @@ namespace Neptun_Structure
         }
         public String getEndTime()
         {
-            return id;
+            return endTime;
         }
         public List<String> getStudents()
         {
