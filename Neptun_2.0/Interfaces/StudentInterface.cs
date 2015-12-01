@@ -473,12 +473,12 @@ namespace Neptun_2._0
                 command.cmd = "exit";
             else
             {
-                command.data.Add(subjects[position - 2].id);
+                command.data.Add(subjects[position - 2].getId());
             }
             return command;
         }
 
-        public CMD deregisterSubjectMenu(List<short_subject> subjects)
+        public CMD deregisterSubjectMenu(List<Subject> subjects)
         {
             CMD command = new CMD();
             command.data = new List<string>();

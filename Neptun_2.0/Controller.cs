@@ -478,7 +478,7 @@ namespace Neptun_2._0
         //Deregister Subject
         private bool deregisterSubject()
         {
-            List<short_subject> subjects = db.getSubjects(userLoggedIn.getNeptunCode());
+            List<Subject> subjects = db.getSubjects(userLoggedIn.getNeptunCode());
 
             while (true)
             {
