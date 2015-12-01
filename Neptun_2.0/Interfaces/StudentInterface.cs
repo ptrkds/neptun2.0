@@ -268,7 +268,14 @@ namespace Neptun_2._0
                     }
                     if (position == 4 && input.Key == ConsoleKey.Enter)
                     {
-                        rowslength.Add(lengthText);
+                        if (rowText-1 == rowslength.Count)
+                        {
+                            rowslength.Add(lengthText);
+                        }
+                        else
+                        {
+                            rowslength[rowText-1] = lengthText;
+                        }
                         text += " ";
                         lengthText = 0;
                         rowText++;
@@ -277,6 +284,7 @@ namespace Neptun_2._0
                     {
                         rowText--;
                         lengthText = rowslength[rowText - 1] + 1;
+                        rowslength[rowText-1] = 0;
                     }
 
                     if (input.Key == ConsoleKey.Backspace)
