@@ -394,7 +394,7 @@ namespace Neptun_2._0
                     break;
             }
         }
-        public CMD selectSubject(List<short_subject> subjects)
+        public CMD selectSubject(List<Subject> subjects)
         {
             CMD command = new CMD();
             command.data = new List<string>();
@@ -430,7 +430,7 @@ namespace Neptun_2._0
             input = Console.ReadKey();
         }
 
-        private CMD registerOrDeregiseterSubject(List<short_subject> subjects, Boolean register)
+        private CMD registerOrDeregiseterSubject(List<Subject> subjects, Boolean register)
         {
             position = 1;
             for (int i = 0; i < 20; i++)
@@ -450,7 +450,7 @@ namespace Neptun_2._0
             for (int i = 0; i < subjects.Count; i++)
             {
                 Console.SetCursorPosition(5, 10 + i);
-                Console.Write(subjects[i].id + "   " + subjects[i].name + "   ");
+                Console.Write(subjects[i].getId() + "  " + subjects[i].getName() + "  " + subjects[i].getDay() + "  " + subjects[i].getStartTime() + "  " + subjects[i].getEndTime() + "   ");
 
             }
             Console.SetCursorPosition(8 + back.Length, 8);
