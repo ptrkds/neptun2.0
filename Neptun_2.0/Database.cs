@@ -139,7 +139,10 @@ namespace Neptun_2._0
             foreach (string id in ids)
             {
                 Demand newDemand = demandHandler.GetDemand(id);
-                demands.Add(newDemand);
+                if (newDemand.getState() == "accepted" || newDemand.getState() == "declined")
+                {
+                    demands.Add(newDemand);
+                }
             }
 
             return demands;
@@ -314,6 +317,7 @@ namespace Neptun_2._0
         public bool demandJudgement(String demand_id, String neptun_code, Boolean state)
         {
             bool subject = true;
+            bool user = true;
             if (state)
             {
                 Demand newDemand = demandHandler.GetDemand(demand_id);
@@ -323,11 +327,13 @@ namespace Neptun_2._0
                         new List<string>(), new List<string>());
 
                 subject = subjectHandler.CreateSubject(newSubject);
+
+                user = userHandler.Register(neptun_code, newDemand.getSubjectId());
             }
 
             bool demand = demandHandler.JudgeDemand(demand_id, state);
 
-            return demand && subject;
+            return demand && subject && user;
         }
 
         public Request getRequest(String request_id)
