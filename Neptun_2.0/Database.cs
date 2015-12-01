@@ -283,6 +283,52 @@ namespace Neptun_2._0
 
         public bool maintenance()
         {
+            //összes user subject leszedése (deregister)
+            List<String> userids = userHandler.GetAllIds("Users");
+
+            foreach (string userid in userids)
+            {
+                bool user = userHandler.DeRegisterAll(userid);
+
+                if (!user)
+                {
+                    return false;
+                }
+            }
+
+            //összes terem subject leszedése (deregister)
+
+            List<String> roomids = roomHandler.GetAllIds("ClassRooms");
+
+            foreach (string roomid in roomids)
+            {
+                bool room = roomHandler.DeRegisterAll(roomid);
+
+                if (!room)
+                {
+                    return false;
+                }
+            }
+
+            bool demand = demandHandler.DeleteContent("Demands");
+            if (demand)
+            {
+                bool request = requestHandler.DeleteContent("Requests");
+                if (request)
+                {
+
+                    bool subject = subjectHandler.DeleteContent("Subjects");
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -321,6 +367,7 @@ namespace Neptun_2._0
         {
             bool subject = true;
             bool user = true;
+            bool delDemand = true;
             if (state)
             {
                 Demand newDemand = demandHandler.GetDemand(demand_id);
@@ -332,11 +379,13 @@ namespace Neptun_2._0
                 subject = subjectHandler.CreateSubject(newSubject);
 
                 user = userHandler.Register(neptun_code, newDemand.getSubjectId());
+
+                delDemand = userHandler.DeleteDemand(neptun_code, demand_id);
             }
 
             bool demand = demandHandler.JudgeDemand(demand_id, state);
 
-            return demand && subject && user;
+            return demand && subject && user && delDemand;
         }
 
         public Request getRequest(String request_id)
