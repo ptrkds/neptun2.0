@@ -206,7 +206,7 @@ namespace Neptun_2._0
                     break;
             }
         }
-        public CMD demandSubmissionMenu(List<ClassRoom> rooms, string selected_room="", string defstart="", string defend="")
+        public CMD demandSubmissionMenu(List<ClassRoom> rooms, string selected_room="", string defday = "", string defstart="", string defend="")
         {
             if (selected_room == "")
             {
@@ -254,7 +254,7 @@ namespace Neptun_2._0
                 command.data.Add(selected_room);
             String subjectID = "";
             String subjectName = "";
-            String day = "";
+            String day = defday;
             String start = defstart;
             String end = defend;
             if (command.cmd != "exit")
@@ -756,17 +756,21 @@ namespace Neptun_2._0
             Console.SetCursorPosition(2, 8);
             Console.Write(back + "   ");
             Console.SetCursorPosition(2, 10);
-            Console.Write(filtering + "   ");                       
-            Console.SetCursorPosition(2, 12);            
+            Console.Write(filtering + "   ");
+            Console.SetCursorPosition(2, 12);
+            Console.Write("Melyik napon legyen (számot írjon: 1 - Hétfő ... 5 - Péntek): ");
+            Console.SetCursorPosition(2, 14);            
             Console.Write("Mikor kezdődjön (Csak 8, 10,...,18 számokat írjon be, Pl: 8->8:00): ");
-            Console.SetCursorPosition(2, 14);
+            Console.SetCursorPosition(2, 16);
             Console.Write("Óra vége (Rendszerben 2 órásak az órák. Pl: kezdés: 8 -> vége: 10): ");
 
+            String day = "";
             String start = "";
             String end = "";
+            int lengthDay = 0;
             int lengthStart = 0;
             int lengthEnd = 0;
-            selectFilterUnderline(lengthStart, lengthEnd);
+            selectFilterUnderline(lengthDay, lengthStart, lengthEnd);
             Boolean again = true;
             do
             {
@@ -792,10 +796,14 @@ namespace Neptun_2._0
                             switch (position)
                             {
                                 case 3:
+                                    lengthDay++;
+                                    day += input.KeyChar;
+                                    break;
+                                case 4:
                                     lengthStart++;
                                     start += input.KeyChar;
                                     break;
-                                case 4:
+                                case 5:
                                     lengthEnd++;
                                     end += input.KeyChar;
                                     break;
@@ -807,6 +815,14 @@ namespace Neptun_2._0
                         switch (position)
                         {
                             case 3:
+                                if (lengthDay > 0)
+                                {
+                                    day = day.Remove(day.Length - 1);
+                                    lengthDay--;
+                                    Console.Write(" ");
+                                }
+                                break;
+                            case 4:
                                 if (lengthStart > 0)
                                 {
                                     start = start.Remove(start.Length - 1);
@@ -814,7 +830,7 @@ namespace Neptun_2._0
                                     Console.Write(" ");
                                 }
                                 break;
-                            case 4:
+                            case 5:
                                 if (lengthEnd > 0)
                                 {
                                     end = end.Remove(end.Length - 1);
@@ -829,21 +845,44 @@ namespace Neptun_2._0
                     if (input.Key == ConsoleKey.UpArrow)
                         position--;
                     if (position < 1)
-                        position = 4;
-                    if (position > 4)
+                        position = 5;
+                    if (position > 5)
                         position = 1;
-                    selectFilterUnderline(lengthStart, lengthEnd);
+                    selectFilterUnderline(lengthDay, lengthStart, lengthEnd);
                 } while (input.Key != ConsoleKey.Enter || position > 2);
                 if (position == 1) again = false;
                 if (position == 2)
-                {                
+                {
                     try
                     {
-                        int startNumb = Int16.Parse(start);
-                        int endNumb = Int16.Parse(end);
-                        if (startNumb >= 8 && startNumb <= 18 && endNumb >= 10 && endNumb <= 20 && startNumb % 2 == 0 && endNumb % 2 == 0 && startNumb + 2 == endNumb)
+                        int dayNumb = Int16.Parse(day);
+                        if (dayNumb >= 1 && dayNumb <= 5)
                         {
-                            again = false;
+                            try
+                            {
+                                int startNumb = Int16.Parse(start);
+                                int endNumb = Int16.Parse(end);
+                                if (startNumb >= 8 && startNumb <= 18 && endNumb >= 10 && endNumb <= 20 && startNumb % 2 == 0 && endNumb % 2 == 0 && startNumb + 2 == endNumb)
+                                {
+                                    again = false;
+                                }
+                                else
+                                {
+                                    Console.SetCursorPosition(25, 10);
+                                    for (int i = 0; i < 10; i++)
+                                        Console.Write("     ");
+                                    Console.SetCursorPosition(25, 10);
+                                    Console.Write("Hibásan adta meg az óra kezdését, vagy végét!");
+                                }
+                            }
+                            catch (FormatException)
+                            {
+                                Console.SetCursorPosition(25, 10);
+                                for (int i = 0; i < 10; i++)
+                                    Console.Write("     ");
+                                Console.SetCursorPosition(25, 10);
+                                Console.Write("Hibásan adta meg az óra kezdését, vagy végét!");
+                            }
                         }
                         else
                         {
@@ -851,27 +890,47 @@ namespace Neptun_2._0
                             for (int i = 0; i < 10; i++)
                                 Console.Write("     ");
                             Console.SetCursorPosition(25, 10);
-                            Console.Write("Hibásan adta meg az óra kezdését, vagy végét!");
+                            Console.Write("Hibásan adta meg a napot!");
                         }
                     }
-                    catch (FormatException)
+                    catch (FormatException e)
                     {
                         Console.SetCursorPosition(25, 10);
                         for (int i = 0; i < 10; i++)
                             Console.Write("     ");
                         Console.SetCursorPosition(25, 10);
-                        Console.Write("Hibásan adta meg az óra kezdését, vagy végét!");
-                    }                
+                        Console.Write("Hibásan adta meg a napot!");
+                    }
                 }
             } while (again);
             CMD command = new CMD();
             command.data = new List<string>();
-            if(position == 1)
+            String subjectDay = "";
+            switch (day)
+            {
+                case "1":
+                    subjectDay = "Hetfo";
+                    break;
+                case "2":
+                    subjectDay = "Kedd";
+                    break;
+                case "3":
+                    subjectDay = "Szerda";
+                    break;
+                case "4":
+                    subjectDay = "Csutortok";
+                    break;
+                case "5":
+                    subjectDay = "Pentek";
+                    break;
+            }
+            if (position == 1)
             {
                 command.cmd = "exit";
             }
             else
             {
+                command.data.Add(subjectDay);
                 command.data.Add(start + ":00");
                 command.data.Add(end + ":00");
             }
@@ -935,7 +994,7 @@ namespace Neptun_2._0
             
             return command;
         }
-        private void selectFilterUnderline(int start, int end)
+        private void selectFilterUnderline(int day, int start, int end)
         {
             if (position != 1)
             {
@@ -969,10 +1028,13 @@ namespace Neptun_2._0
             switch (position)
             {                
                 case 3:
-                    Console.SetCursorPosition(70 + start, 12);
+                    Console.SetCursorPosition(66 + day, 12);
                     break;
                 case 4:
-                    Console.SetCursorPosition(70 + end, 14);
+                    Console.SetCursorPosition(70 + start, 14);
+                    break;
+                case 5:
+                    Console.SetCursorPosition(70 + end, 16);
                     break;
             }
         }
