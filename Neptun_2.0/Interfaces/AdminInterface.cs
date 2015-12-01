@@ -272,6 +272,14 @@ namespace Neptun_2._0
             input = Console.ReadKey();
         }
 
+        public void demand_unsuccessful()
+        {
+            subMenuremove(6, countdemand + 4);
+            Console.SetCursorPosition(3, 11);
+            Console.Write("Az igény elbírálás sikertelen volt!");
+            input = Console.ReadKey();
+        }
+
         public CMD requestMaintenanceMenu()
         {
             position = 1;
