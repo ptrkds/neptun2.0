@@ -3,6 +3,7 @@ using System.Xml;
 using System.Collections.Generic;
 using Neptun_Structure;
 
+//created by Kristóf Weisz - UKDUJP
 namespace Neptun_XML
 {
     class UserXmlHandler : XmlHandler
@@ -338,19 +339,16 @@ namespace Neptun_XML
 
         #region helper methods
 
-        bool IsValid()
-        {
-            //TODO implement
-            return true;
-        }
+        //bool IsValid()
+        //{
+        //    //TODO implement
+        //    return true;
+        //}
 
         private string GetXmlFileName(string id)
         {
             return "Users/" + id + ".xml";
         }
         #endregion
-
     }
 }
-
-//created by Kristóf Weisz - UKDUJP

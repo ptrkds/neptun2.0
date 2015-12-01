@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 
+//created by Kristóf Weisz - UKDUJP
 namespace Neptun_XML
 {
     class XmlHandler
@@ -206,10 +207,5 @@ namespace Neptun_XML
         #endregion
 
         // private string GetXmlFileName(string id) { }
-
-        //MAINTENACNE diák deregister, tárgyak törlése
-
     }
 }
-
-//created by Kristóf Weisz - UKDUJP

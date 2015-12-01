@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using Neptun_Structure;
 
+//created by Kristóf Weisz - UKDUJP
 namespace Neptun_XML
 {
     class DemandXmlHandler : XmlHandler
@@ -152,5 +153,3 @@ namespace Neptun_XML
         #endregion
     }
 }
-
-//created by Kristóf Weisz - UKDUJP

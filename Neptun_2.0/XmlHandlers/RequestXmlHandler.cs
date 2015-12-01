@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml;
 using Neptun_Structure;
 
+//created by Kristóf Weisz - UKDUJP
 namespace Neptun_XML
 {
     class RequestXmlHandler : XmlHandler
@@ -133,5 +134,3 @@ namespace Neptun_XML
 
     }
 }
-
-//created by Kristóf Weisz - UKDUJP

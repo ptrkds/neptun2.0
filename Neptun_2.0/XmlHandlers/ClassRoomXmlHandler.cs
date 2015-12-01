@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using Neptun_Structure;
 
+//created by Kristóf Weisz - UKDUJP
 namespace Neptun_XML
 {
     class ClassRoomXmlHandler : XmlHandler
@@ -142,4 +143,4 @@ namespace Neptun_XML
     }
 }
 
-//created by Kristóf Weisz - UKDUJP
+
