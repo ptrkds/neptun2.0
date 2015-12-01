@@ -616,15 +616,23 @@ namespace Neptun_2._0
         {
             cmd = aui.judgeRequest(db.getRequest(request_id));
             //request delete
-            if (db.requestJudgement(request_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.data[0])))
+            if (cmd.cmd != "exit")
             {
-                if (db.getRequest(request_id).getState() == "accepted")
+
+                if (db.requestJudgement(request_id, userLoggedIn.getNeptunCode(), Boolean.Parse(cmd.cmd)))
                 {
-                    return 1;
+                    if (db.getRequest(request_id).getState() == "accepted")
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
                 }
                 else
                 {
-                    return 0;
+                    return -1;
                 }
             }
             else

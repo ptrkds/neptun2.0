@@ -11,6 +11,7 @@ namespace Neptun_2._0
         private String requestJudgement = "Kérvény elbírálása";
         private int countdemand = 0;
         private int countrequest = 0;
+        private int requestLength = 0;
         public CMD AdminMainMenu()
         {
             //WriteMenu
@@ -388,6 +389,7 @@ namespace Neptun_2._0
             Console.Write(request.getSubject());
             Console.SetCursorPosition(1, 12);
             Console.Write(request.getText());
+            requestLength = request.getText().Length;
             judgeDemandOrRequestUnderline();
             do
             {
@@ -421,14 +423,14 @@ namespace Neptun_2._0
         }
         public void request_accept()
         {
-            subMenuremove(6, countrequest + 4);
+            subMenuremove(6, requestLength / 70 + 7);
             Console.SetCursorPosition(3, 11);
             Console.Write("A kérvényt elfogadta!");
             input = Console.ReadKey();
         }
         public void request_decline()
         {
-            subMenuremove(6, countrequest + 4);
+            subMenuremove(6, requestLength / 70  + 7);
             Console.SetCursorPosition(3, 11);
             Console.Write("A kérvényt elutasította!");
             input = Console.ReadKey();
