@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<room id="I1">
+	<limit>100</limit>
+	<subjects>
+		<subject id="PEMIK01" />
+		<subject id="PEMIK02" />
+		<subject id="PEMIK42" />
+	</subjects>
+</room>

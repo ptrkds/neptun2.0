@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<subject id="PEMK666">
+	<name>Fizika 1</name>
+	<teacher>FIZIKA</teacher>
+	<room>A2</room>
+	<day>Pentek</day>
+	<startTime>8:00</startTime>
+	<endTime>10:00</endTime>
+	<students>
+	</students>
+	<blacklist>
+	</blacklist>
+</subject>

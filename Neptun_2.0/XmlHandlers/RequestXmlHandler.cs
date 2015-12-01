@@ -66,7 +66,9 @@ namespace Neptun_XML
                 writer.WriteStartDocument();
                 writer.WriteStartElement("request");
                 writer.WriteAttributeString("id", request.getId());
+                writer.WriteElementString("state", request.getState());
                 writer.WriteElementString("owner", request.getOwner());
+                writer.WriteElementString("subject", request.getSubject());
                 writer.WriteElementString("text", request.getText());
 
                 writer.WriteEndElement();

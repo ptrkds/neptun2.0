@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<user id="ABCDEF">
+	<name>Dummy Teacher</name>
+	<type>teacher</type>
+	<pw>123456</pw>
+	<subjects>
+		<subject id="PEMFTK00" />
+	</subjects>
+	<demands>
+	</demands>
+</user>

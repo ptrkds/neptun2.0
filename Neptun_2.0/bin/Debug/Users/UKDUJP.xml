@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<user id="UKDUJP">
+  <name>Kiso</name>
+  <type>student</type>
+  <pw>123456</pw>
+  <subjects>
+  </subjects>
+  <requests>
+    <request id="UKDUJP12-01-15-10-02-36" />
+    <request id="UKDUJP12-01-15-10-08-01" />
+    <request id="UKDUJP12-01-15-10-08-59" />
+    <request id="UKDUJP12-01-15-10-12-34" />
+  </requests>
+</user>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<subject id="PEGTK666">
+	<name>Vallalkozoi Ismeretek</name>
+	<teacher></teacher>
+	<room>A1</room>
+	<day>Hetfo</day>
+	<startTime>8:00</startTime>
+	<endTime>10:00</endTime>
+	<students>
+	</students>
+	<blacklist>
+	</blacklist>
+</subject>

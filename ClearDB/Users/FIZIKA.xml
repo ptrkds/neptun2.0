@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<user id="FIZIKA">
+	<name>FIZIKA GOD</name>
+	<type>teacher</type>
+	<pw>123456</pw>
+	<subjects>
+		<subject id="PEMIK666" />
+	</subjects>
+	<demands>
+	</demands>
+</user>
