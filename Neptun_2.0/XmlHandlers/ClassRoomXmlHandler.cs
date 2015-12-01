@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
+using Neptun_Structure;
 
-namespace Neptun_2._0
+namespace Neptun_XML
 {
     class ClassRoomXmlHandler : XmlHandler
     {
@@ -144,3 +141,5 @@ namespace Neptun_2._0
         #endregion
     }
 }
+
+//created by Kristóf Weisz - UKDUJP

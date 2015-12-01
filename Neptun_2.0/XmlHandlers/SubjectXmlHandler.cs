@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Xml;
+using Neptun_Structure;
 
-namespace Neptun_2._0
+namespace Neptun_XML
 {
     class SubjectXmlHandler : XmlHandler
     {
@@ -247,6 +246,25 @@ namespace Neptun_2._0
 
             return true;
         }
+
+        public bool DeleteSubjects()
+        {
+            //TODO test
+            try
+            {
+                List<string> files = GetAllIds("Subjects");
+                foreach (string file in files)
+                {             
+                        File.Delete("Subjects/" + file); 
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+    
         #endregion
 
         #region helper methods
@@ -259,3 +277,5 @@ namespace Neptun_2._0
 
     }
 }
+
+//created by Kristóf Weisz - UKDUJP

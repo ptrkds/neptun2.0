@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Xml;
 using System.Collections.Generic;
-using System.IO;
+using Neptun_Structure;
 
-namespace Neptun_2._0
+namespace Neptun_XML
 {
     class UserXmlHandler : XmlHandler
     {
@@ -352,3 +352,5 @@ namespace Neptun_2._0
 
     }
 }
+
+//created by Kristóf Weisz - UKDUJP

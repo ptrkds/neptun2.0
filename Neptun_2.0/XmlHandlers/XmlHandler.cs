@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 
-namespace Neptun_2._0
+namespace Neptun_XML
 {
     class XmlHandler
     {
@@ -211,3 +211,5 @@ namespace Neptun_2._0
 
     }
 }
+
+//created by Kristóf Weisz - UKDUJP
