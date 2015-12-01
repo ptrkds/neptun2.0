@@ -315,7 +315,7 @@ namespace Neptun_2._0
 
             if (cmd.cmd != "exit")
             {
-                Demand newDemand = new Demand(cmd.data[1], null, userLoggedIn.getNeptunCode(), 
+                Demand newDemand = new Demand(cmd.data[1], "null", userLoggedIn.getNeptunCode(), 
                     cmd.data[0], cmd.data[1], cmd.data[2], cmd.data[3], cmd.data[4], cmd.data[5]);
                 
                 bool ret = db.demandChange(newDemand);
