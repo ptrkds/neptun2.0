@@ -378,9 +378,9 @@ namespace Neptun_2._0
 
                 subject = subjectHandler.CreateSubject(newSubject);
 
-                user = userHandler.Register(neptun_code, newDemand.getSubjectId());
+                user = userHandler.Register(newDemand.getOwner(), newDemand.getSubjectId());
 
-                delDemand = userHandler.DeleteDemand(neptun_code, demand_id);
+                delDemand = userHandler.DeleteDemand(newDemand.getOwner(), demand_id);
             }
 
             bool demand = demandHandler.JudgeDemand(demand_id, state);
