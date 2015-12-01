@@ -27,6 +27,7 @@ namespace Neptun_2._0
 
     public struct busy_time
     {
+        public string day;
         public string startTime;
         public string endTime;
     }

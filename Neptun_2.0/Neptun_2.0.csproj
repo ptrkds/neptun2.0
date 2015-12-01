@@ -69,7 +69,6 @@
     <Compile Include="Database.cs" />
     <Compile Include="XmlHandlers\UserXmlHandler.cs" />
     <Compile Include="XmlHandlers\XmlHandler.cs" />
-    <Compile Include="XmlHandlers\XMLLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -210,7 +210,7 @@ namespace Neptun_2._0
 
             bool user = false;
             bool subject = false;
-            if (!exist)
+            if (!exist && !blocked && !limit)
             {
                 user = userHandler.Register(neptun_code, subject_id);
                 subject = subjectHandler.Register(subject_id, neptun_code);
@@ -226,11 +226,12 @@ namespace Neptun_2._0
             return student && subject;
         }
 
-        public List<ClassRoom> getFreeClasses(String startTime, String endTime)
+        public List<ClassRoom> getFreeClasses(String day, String startTime, String endTime)
         {
             List<ClassRoom> classes = new List<ClassRoom>();
 
             busy_time time = new busy_time();
+            time.day = day;
             time.startTime = startTime;
             time.endTime = endTime;
 
@@ -248,6 +249,7 @@ namespace Neptun_2._0
                 {
                     busy_time busyTime = new busy_time();
                     Subject subj = subjectHandler.GetSubject(subjId);
+                    busyTime.day = subj.getDay();
                     busyTime.startTime = subj.getStartTime();
                     busyTime.endTime = subj.getEndTime();
 

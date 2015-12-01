@@ -295,7 +295,11 @@ namespace Neptun_2._0
                       {
                           tui.demandChange_unsuccessful();
                           return true;
-                      }                  
+                      }
+                      else
+                      {
+                          return false;
+                      }             
                 }
                 else
                 {
@@ -392,11 +396,11 @@ namespace Neptun_2._0
         
         
         //Demand Submission
-        private bool requestDemandSubmission(String selected_class = "", String startTime = "", String endTime="")
+        private bool requestDemandSubmission(String selected_class = "", String day="", String startTime = "", String endTime="")
         {
             List<ClassRoom> rooms = db.getAllRoom();
 
-            cmd = tui.demandSubmissionMenu(rooms, selected_class, startTime, endTime);
+            cmd = tui.demandSubmissionMenu(rooms, selected_class, day, startTime, endTime);
 
             
             if (cmd.cmd != "exit")
@@ -520,11 +524,11 @@ namespace Neptun_2._0
 
             if (cmd.cmd != "exit")
             {
-                List<ClassRoom> classes = db.getFreeClasses(cmd.data[0], cmd.data[1]);
+                List<ClassRoom> classes = db.getFreeClasses(cmd.data[0], cmd.data[1], cmd.data[2]);
                 CMD cmd2 = tui.filterSelectClass(classes);
                 if (cmd2.cmd != "exit")
                 {
-                    requestDemandSubmission(cmd2.data[0], cmd.data[0], cmd.data[1]);
+                    requestDemandSubmission(cmd2.data[0], cmd.data[0], cmd.data[1], cmd.data[2]);
                     return true;
                 }
                 else
