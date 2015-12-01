@@ -130,6 +130,25 @@ namespace Neptun_XML
             return true;
         }
 
+        public bool DeRegisterAll(string roomId)
+        {
+            //RemoveNodeByAttr(GetXmlFileName(neptunCode), "user/lectures/lecture[@id=\"" + subjId + "\"]");
+            List<string> ids = GetSubjectIds(roomId);
+            try
+            {
+                foreach (string id in ids)
+                {
+                    RemoveNodeByAttr(GetXmlFileName(roomId), CreateXPathWithAttr("/user/subjects/subject", "id", id));
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         #endregion
 
         #region helper methods
