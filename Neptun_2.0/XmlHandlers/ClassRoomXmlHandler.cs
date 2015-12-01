@@ -17,8 +17,7 @@ namespace Neptun_XML
             try
             {
                 xmlReader = XmlReader.Create(GetXmlFileName(roomId));
-                ids = GetList(ref xmlReader, "subjects", "id");
-                xmlReader.Dispose();
+                ids = GetList(ref xmlReader, "subjects", "id");     
             }
             catch (Exception)
             {
@@ -138,7 +137,7 @@ namespace Neptun_XML
             {
                 foreach (string id in ids)
                 {
-                    RemoveNodeByAttr(GetXmlFileName(roomId), CreateXPathWithAttr("/user/subjects/subject", "id", id));
+                    RemoveNodeByAttr(GetXmlFileName(roomId), CreateXPathWithAttr("/room/subjects/subject", "id", id));
                 }
             }
             catch (Exception)
