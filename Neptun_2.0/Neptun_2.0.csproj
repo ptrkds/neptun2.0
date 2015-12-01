@@ -47,7 +47,6 @@
     <Compile Include="Structure\ClassRoom.cs" />
     <Compile Include="Structure\Demand.cs" />
     <Compile Include="Interfaces\AdminInterface.cs" />
-    <Compile Include="Registry.cs" />
     <Compile Include="Structure\Document.cs" />
     <Compile Include="Structure\Request.cs" />
     <Compile Include="Structure\Student.cs" />
