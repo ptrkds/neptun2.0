@@ -103,27 +103,9 @@ namespace Neptun_XML
             return true;
         }
 
-        public bool DeleteSubjects()
-        {
-            //TODO test
-            try
-            {
-                List<string> files = GetAllIds("Requests");
-                foreach (string file in files)
-                {
-                    File.Delete("Requests/" + file);
-                }
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            return true;
-        }
-
         #endregion
 
-        #region help method
+        #region helper methods
 
         private string GetXmlFileName(string requestId)
         {

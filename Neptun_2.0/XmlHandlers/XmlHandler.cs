@@ -197,6 +197,24 @@ namespace Neptun_XML
             }
         }
 
+        public bool DeleteContent(string directory)
+        {
+            //TODO test
+            try
+            {
+                List<string> files = GetAllIds(directory);
+                foreach (string file in files)
+                {
+                    File.Delete(directory + "/" + file);
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
         #endregion
 
         #region helper methods

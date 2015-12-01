@@ -123,24 +123,6 @@ namespace Neptun_XML
             return true;
         }
 
-        public bool DeleteSubjects()
-        {
-            //TODO test
-            try
-            {
-                List<string> files = GetAllIds("Demands/");
-                foreach (string file in files)
-                {
-                    File.Delete("Demands/" + file);
-                }
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-            return true;
-        }
-
         #endregion
 
         #region helper method
