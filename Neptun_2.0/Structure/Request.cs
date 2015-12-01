@@ -7,7 +7,7 @@ namespace Neptun_Structure
         private String subject;
         private String text;
 
-        public Request(string id, string state, string subject, string owner, string text):
+        public Request(string id, string state, string owner, string subject, string text):
             base(id, state, owner)
         {
             this.subject = subject;
