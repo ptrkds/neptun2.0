@@ -281,7 +281,7 @@ namespace Neptun_2._0
                 Console.Write("____");
             }
             Console.SetCursorPosition(3, 6);
-            Console.Write("Biztosan törölni szeretné a tanárok igényeit, és a diákok kérvényeit?");
+            Console.Write("Biztosan szeretné kiüríteni az adatbázist?");
             Console.SetCursorPosition(3, 8);
             Console.Write(yes);
             Console.SetCursorPosition(12, 8);
@@ -316,14 +316,14 @@ namespace Neptun_2._0
         {
             subMenuremove(6, countdemand + 4);
             Console.SetCursorPosition(3, 11);
-            Console.Write("Az igények és a kérvények törlése sikeres volt!");
+            Console.Write("A karbantartás sikeres volt!");
             input = Console.ReadKey();
         }
         public void maintenance_unsuccessful()
         {
             subMenuremove(6, countdemand + 4);
             Console.SetCursorPosition(3, 11);
-            Console.Write("Az igények és a kérvények törlése sikertelen volt!");
+            Console.Write("A karbantartás sikertelen volt!");
             input = Console.ReadKey();
         }
         public CMD selectRequest(List<Request> requests)
