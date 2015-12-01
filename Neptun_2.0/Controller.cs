@@ -428,7 +428,7 @@ namespace Neptun_2._0
         //Register For Subject
         private bool registerForSubject()
         {
-            List<short_subject> subjects = new List<short_subject>();
+            List<Subject> subjects = new List<Subject>();
 
             try
             {

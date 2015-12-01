@@ -152,17 +152,15 @@ namespace Neptun_2._0
             return user && demand;
         }
 
-        public List<short_subject> getAllSubject()
+        public List<Subject> getAllSubject()
         {
             List<string> ids = subjectHandler.GetAllIds("Subjects/");
 
-            List<short_subject> subjects = new List<short_subject>();
+            List<Subject> subjects = new List<Subject>();
 
             foreach (string id in ids)
             {
-                short_subject newSubject = new short_subject();
-                newSubject.id = id;
-                newSubject.name = subjectHandler.GetSubjectName(id);
+                Subject newSubject = subjectHandler.GetSubject(id);
                 subjects.Add(newSubject);
             }
 
