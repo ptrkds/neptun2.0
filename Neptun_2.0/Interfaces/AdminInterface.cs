@@ -306,7 +306,7 @@ namespace Neptun_2._0
             {
                 command.cmd = "True";
             }
-            if (position == 1)
+            if (position == 2)
             {
                 command.cmd = "exit";
             }
