@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Neptun_Stucture;
+using Neptun_Structure;
 
 namespace Neptun_2._0
 {

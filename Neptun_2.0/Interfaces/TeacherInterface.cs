@@ -632,7 +632,7 @@ namespace Neptun_2._0
                                 Console.Write("Hibásan adta meg a napot!");
                             }
                         }
-                        catch (FormatException e)
+                        catch (FormatException)
                         {
                             Console.SetCursorPosition(25, 15);
                             for (int i = 0; i < 10; i++)
@@ -891,7 +891,7 @@ namespace Neptun_2._0
                             Console.Write("Hibásan adta meg a napot!");
                         }
                     }
-                    catch (FormatException e)
+                    catch (FormatException)
                     {
                         Console.SetCursorPosition(25, 10);
                         for (int i = 0; i < 10; i++)
