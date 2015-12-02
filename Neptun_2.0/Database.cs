@@ -368,6 +368,7 @@ namespace Neptun_2._0
             bool subject = true;
             bool user = true;
             bool delDemand = true;
+            bool room = true;
             if (state)
             {
                 Demand newDemand = demandHandler.GetDemand(demand_id);
@@ -380,12 +381,16 @@ namespace Neptun_2._0
 
                 user = userHandler.Register(newDemand.getOwner(), newDemand.getSubjectId());
 
+                room = roomHandler.RegisterSubject(newDemand.getRoomId(), newDemand.getSubjectId());
+
                 delDemand = userHandler.DeleteDemand(newDemand.getOwner(), demand_id);
+
+
             }
 
             bool demand = demandHandler.JudgeDemand(demand_id, state);
 
-            return demand && subject && user && delDemand;
+            return demand && subject && user && delDemand && room;
         }
 
         public Request getRequest(String request_id)
