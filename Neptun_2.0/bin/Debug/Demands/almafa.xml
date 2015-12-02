@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <demand id="almafa">
-  <state>accepted</state>
-  <teacherId>MIKGOD</teacherId>
-  <roomId>I403</roomId>
-  <subjectId>almafa</subjectId>
-  <subjectName>almafanagy</subjectName>
-  <day>Hetfo</day>
-  <startTime>16:00</startTime>
-  <endTime>18:00</endTime>
+	<state>null</state>
+	<teacherId>MIKGOD</teacherId>
+	<roomId>I403</roomId>
+	<subjectId>almafa</subjectId>
+	<subjectName>almafanagy</subjectName>
+	<day>Hetfo</day>
+	<startTime>16:00</startTime>
+	<endTime>18:00</endTime>
 </demand>
