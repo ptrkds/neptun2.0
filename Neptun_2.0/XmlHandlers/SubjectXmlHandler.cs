@@ -180,22 +180,52 @@ namespace Neptun_XML
                 writer.WriteElementString("day", subject.getDay());
                 writer.WriteElementString("startTime", subject.getStartTime());
                 writer.WriteElementString("endTime", subject.getEndTime());
+
                 writer.WriteStartElement("students");
-                foreach(string student in subject.getStudents())
+                if (subject.getStudents().Count != 0)
                 {
-                    writer.WriteElementString("student", string.Empty);
-                    writer.WriteAttributeString("id", student);
+                    foreach (string student in subject.getStudents())
+                    {
+                        writer.WriteElementString("student", string.Empty);
+                        writer.WriteAttributeString("id", student);
+                    }
+                }
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("blacklist");
+                if (subject.getBlacklist().Count != 0)
+                {
+                    foreach (string student in subject.getBlacklist())
+                    {
+                        writer.WriteElementString("student", string.Empty);
+                        writer.WriteAttributeString("id", student);
+
+                    }
+                }
+                writer.WriteEndElement();
+
+                /*writer.WriteStartElement("students");
+                if (subject.getStudents().Count != 0)
+                {
+                    foreach (string student in subject.getStudents())
+                    {
+                        writer.WriteElementString("student", string.Empty);
+                        writer.WriteAttributeString("id", student);
+                    } 
                 }
                 writer.WriteEndElement();
                 writer.WriteStartElement("blacklist");
 
-                foreach (string student in subject.getBlacklist())
+                if (subject.getBlacklist().Count != 0)
                 {
-                    writer.WriteElementString("student", string.Empty);
-                    writer.WriteAttributeString("id", student);
+                    foreach (string student in subject.getBlacklist())
+                    {
+                        writer.WriteElementString("student", string.Empty);
+                        writer.WriteAttributeString("id", student);
 
+                    } 
                 }
-                writer.WriteEndElement();
+                writer.WriteEndElement();*/
 
                 writer.WriteEndElement();
                 writer.WriteEndDocument();

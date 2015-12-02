@@ -34,11 +34,13 @@ namespace Neptun_XML
                 xmlReader.ReadToFollowing(parentNode);
                 while (xmlReader.Read() && xmlReader.Name != parentNode && xmlReader.IsStartElement()) //+HasValue?
                 {
-                    if (xmlReader.IsStartElement()) //unnecessary?
+                    if (xmlReader.IsStartElement()) //unnecessary!
                     {
-                        string str = "";
-                        str = xmlReader.GetAttribute(attr);
-                        list.Add(str);
+                        string str = xmlReader.GetAttribute(attr);
+                        if (str != null)
+                        {
+                            list.Add(str); 
+                        }
                     }
                 }
             }
